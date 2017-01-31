@@ -1,0 +1,32 @@
+{
+  "name": "oc-template-jade",
+  "version": "1.0.0",
+  "description": "OC-template-jade",
+  "main": "index.js",
+  "scripts": {
+    "precommit": "npm run test",
+    "lint": "eslint .",
+    "test": "npm run lint && jest"
+  },
+  "info": {
+    "type": "jade"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentable/oc-template-jade.git"
+  },
+  "keywords": [],
+  "author": "Nick Balestra <nick@balestra.ch>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/opentable/oc-template-jade/issues"
+  },
+  "homepage": "https://github.com/opentable/oc-template-jade#readme",
+  "devDependencies": {
+    "eslint": "^3.14.0",
+    "eslint-config-opentable": "^6.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "husky": "^0.13.1",
+    "jest": "^18.1.0"
+  }
+}
