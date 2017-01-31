@@ -5,14 +5,13 @@ describe('getInfo method', () => {
     const info = getInfo();
 
     test('should return the correct version', () => {
-      expect(info.version).toBe('1.0.0');
+      expect(info.version).toMatchSnapshot();
     });
     test('should return the correct template type', () => {
       expect(info.type).toBe('jade');
     });
     test('should return the list of dependencies', () => {
-      const dependencies = { jade: '^1.11.0' };
-      expect(info.dependencies).toMatchObject(dependencies);
+      expect(info.dependencies).toMatchSnapshot();
     });
   });
 });
