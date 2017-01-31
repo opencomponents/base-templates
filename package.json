@@ -2,7 +2,7 @@
   "name": "oc-template-jade",
   "version": "1.0.0",
   "description": "OC-template-jade",
-  "main": "index.js",
+  "main": "src",
   "scripts": {
     "precommit": "npm run test",
     "lint": "eslint .",
@@ -28,5 +28,8 @@
     "eslint-plugin-import": "^1.16.0",
     "husky": "^0.13.1",
     "jest": "^18.1.0"
+  },
+  "dependencies": {
+    "jade": "^1.11.0"
   }
 }
