@@ -1,0 +1,10 @@
+{
+  "extends": "opentable",
+  "globals": {
+    "describe": true,
+    "test": true,
+    "it": true,
+    "jest": true,
+    "expect": true
+  }
+}
