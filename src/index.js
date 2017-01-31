@@ -1,11 +1,11 @@
-const precompile = require('./precompile');
-// const getPrecompiledTemplate = require('./getPrecompiledTemplate');
-// const render = require('./render');
 const getInfo = require('./getInfo');
+const getPrecompiledTemplate = require('./getPrecompiledTemplate');
+const precompile = require('./precompile');
+const render = require('./render');
 
 module.exports = {
+  getInfo,
+  getPrecompiledTemplate,
   precompile,
-  // getPrecompiledTemplate,
-  // render,
-  getInfo
+  render
 };
