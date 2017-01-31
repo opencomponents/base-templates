@@ -3,6 +3,5 @@ exports[`getInfo method when invoking the method should return the correct versi
 exports[`getInfo method when invoking the method should return the list of dependencies 1`] = `
 Object {
   "jade": "^1.11.0",
-  "lodash.assign": "^4.2.0",
 }
 `;
