@@ -5,7 +5,7 @@ describe('getInfo method', () => {
     const info = getInfo();
 
     test('should return the correct version', () => {
-      expect(info.version).toMatchSnapshot();
+      expect(info.version).toBeDefined();
     });
     test('should return the correct template type', () => {
       expect(info.type).toBe('jade');
