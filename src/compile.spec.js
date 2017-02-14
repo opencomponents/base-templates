@@ -1,16 +1,16 @@
 const path = require('path');
 const jade = require('jade');
-const precompile = require('./precompile');
+const compile = require('./compile');
 
-describe('precompile method', () => {
+describe('compile method', () => {
   describe('when invoking the method', () => {
     const template = 'Hello';
     const options = {
       viewPath: path.resolve(__dirname)
     };
-    precompile(template, options);
+    compile(template, options);
 
-    test('should correctly invoke handlebars precompile method', () => {
+    test('should correctly invoke jade compileClient method', () => {
       expect(jade.compileClient).toBeCalledWith(template, {
         compileDebug: false,
         filename: path.resolve(__dirname),
