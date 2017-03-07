@@ -8,9 +8,6 @@
     "lint": "eslint .",
     "test": "npm run lint && jest"
   },
-  "info": {
-    "type": "jade"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/opentable/oc-template-jade.git"
@@ -31,5 +28,11 @@
   },
   "dependencies": {
     "jade": "^1.11.0"
+  },
+  "externals": {
+    "jade": {
+      "global": "jade",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/jade/1.11.0/runtime.min.js"
+    }
   }
 }

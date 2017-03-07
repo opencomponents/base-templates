@@ -3,3 +3,12 @@ Object {
   "jade": "^1.11.0",
 }
 `;
+
+exports[`getInfo method when invoking the method should return the list of external dependencies 1`] = `
+Array [
+  Object {
+    "global": "jade",
+    "url": "https://cdnjs.cloudflare.com/ajax/libs/jade/1.11.0/runtime.min.js",
+  },
+]
+`;
