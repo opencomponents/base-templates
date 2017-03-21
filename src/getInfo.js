@@ -3,7 +3,7 @@
 const packageJson = require('../package.json');
 
 module.exports = () => ({
-  type: packageJson.name,
+  type: packageJson.info.type,
   version: packageJson.version,
   dependencies: packageJson.dependencies,
   externals: [

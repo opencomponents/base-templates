@@ -8,6 +8,9 @@
     "lint": "eslint .",
     "test": "npm run lint && jest"
   },
+  "info": {
+    "type": "jade"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/opentable/oc-template-jade.git"
