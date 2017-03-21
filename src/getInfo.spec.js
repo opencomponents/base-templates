@@ -13,8 +13,5 @@ describe('getInfo method', () => {
     test('should return the list of dependencies', () => {
       expect(info.dependencies).toMatchSnapshot();
     });
-    test('should return the list of external dependencies', () => {
-      expect(info.externals).toMatchSnapshot();
-    });
   });
 });
