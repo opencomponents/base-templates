@@ -1,5 +1,14 @@
 exports[`getInfo method when invoking the method should return the list of dependencies 1`] = `
 Object {
-  "jade": "^1.11.0",
+  "jade": "1.11.0",
 }
+`;
+
+exports[`getInfo method when invoking the method should return the list of externals 1`] = `
+Array [
+  Object {
+    "global": "jade",
+    "url": "https://cdnjs.cloudflare.com/ajax/libs/jade/1.11.0/runtime.min.js",
+  },
+]
 `;
