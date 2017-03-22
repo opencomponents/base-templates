@@ -1,6 +1,6 @@
 {
   "name": "oc-template-jade",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "OC-Template-Jade",
   "main": "src",
   "scripts": {
@@ -27,12 +27,12 @@
     "jest": "^18.1.0"
   },
   "dependencies": {
-    "jade": "^1.11.0"
+    "jade": "1.11.0"
   },
   "externals": {
     "jade": {
       "global": "jade",
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/jade//1.11.0/runtime.min.js"
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/jade/1.11.0/runtime.min.js"
     }
   }
 }
