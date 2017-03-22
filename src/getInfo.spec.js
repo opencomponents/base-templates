@@ -8,10 +8,13 @@ describe('getInfo method', () => {
       expect(info.version).toBeDefined();
     });
     test('should return the correct template type', () => {
-      expect(info.type).toBe('jade');
+      expect(info.type).toBe('oc-template-jade');
     });
     test('should return the list of dependencies', () => {
       expect(info.dependencies).toMatchSnapshot();
+    });
+    test('should return the list of externals', () => {
+      expect(info.externals).toMatchSnapshot();
     });
   });
 });
