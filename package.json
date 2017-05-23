@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/opentable/oc-template-jade.git"
+    "url": "git+https://github.com/opencomponents/oc-template-jade.git"
   },
   "keywords": [],
   "author": "Nick Balestra <nick@balestra.ch>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/opentable/oc-template-jade/issues"
+    "url": "https://github.com/opencomponents/oc-template-jade/issues"
   },
-  "homepage": "https://github.com/opentable/oc-template-jade#readme",
+  "homepage": "https://github.com/opencomponents/oc-template-jade#readme",
   "devDependencies": {
     "eslint": "^3.14.0",
     "eslint-config-opentable": "^6.0.0",
