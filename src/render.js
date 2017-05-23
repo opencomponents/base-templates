@@ -1,2 +1,7 @@
-module.exports = (options, callback) =>
-  callback(null, options.template(options.model).toString());
+module.exports = (options, callback) => {
+  try {
+    callback(null, options.template(options.model).toString());
+  } catch (e) {
+    callback(e);
+  }
+};
