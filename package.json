@@ -22,9 +22,9 @@
   "devDependencies": {
     "eslint": "^3.14.0",
     "eslint-config-opentable": "^6.0.0",
-    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-import": "^2.3.0",
     "husky": "^0.13.1",
-    "jest": "^18.1.0"
+    "jest": "^20.0.4"
   },
   "dependencies": {
     "jade": "1.11.0"
