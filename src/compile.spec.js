@@ -1,5 +1,5 @@
 const path = require('path');
-const jade = require('jade');
+const jade = require('jade-legacy');
 const compile = require('./compile');
 
 describe('compile method', () => {

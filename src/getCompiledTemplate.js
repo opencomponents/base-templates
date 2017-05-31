@@ -1,5 +1,5 @@
 const vm = require('vm');
-const jade = require('jade/runtime.js');
+const jade = require('jade-legacy/runtime.js');
 
 module.exports = (templateString, key) => {
   const context = { jade };

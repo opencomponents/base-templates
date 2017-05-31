@@ -1,6 +1,6 @@
 /* eslint-disable no-var */
 
-const jade = require('jade');
+const jade = require('jade-legacy');
 
 module.exports = (options, callback) => {
   var compiled;
