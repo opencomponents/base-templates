@@ -3,11 +3,6 @@
   "version": "4.0.2",
   "description": "OC-Template-Jade",
   "main": "index.js",
-  "scripts": {
-    "precommit": "npm run test",
-    "lint": "eslint .",
-    "test": "npm run lint && jest"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/opencomponents/oc-template-jade.git"
@@ -25,7 +20,7 @@
   "externals": {
     "jade": {
       "global": "jade",
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/jade/1.11.0/runtime.min.js"
+      "url": "https://unpkg.com/jade-legacy@1.11.1/runtime.js"
     }
   }
 }
