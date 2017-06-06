@@ -3,11 +3,6 @@
   "version": "0.0.1",
   "description": "OC-Template-Jade-Compiler",
   "main": "index.js",
-  "scripts": {
-    "precommit": "npm run test",
-    "lint": "eslint .",
-    "test": "npm run lint && jest"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/opencomponents/oc-template-jade.git"

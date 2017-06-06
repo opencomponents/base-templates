@@ -4,6 +4,6 @@ const template = require('oc-template-jade');
 module.exports = {
   compile,
   getInfo: template.getInfo,
-  getCompiledTemplate: template.getCompiledTemplate ,
+  getCompiledTemplate: template.getCompiledTemplate,
   render: template.render
 };
