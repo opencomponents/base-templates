@@ -1,4 +1,4 @@
-const getInfo = require('./getInfo');
+const getInfo = require('../packages/oc-template-jade/getInfo');
 
 describe('getInfo method', () => {
   describe('when invoking the method', () => {
@@ -9,9 +9,6 @@ describe('getInfo method', () => {
     });
     test('should return the correct template type', () => {
       expect(info.type).toBe('oc-template-jade');
-    });
-    test('should return the list of dependencies', () => {
-      expect(info.dependencies).toMatchSnapshot();
     });
     test('should return the list of externals', () => {
       expect(info.externals).toMatchSnapshot();

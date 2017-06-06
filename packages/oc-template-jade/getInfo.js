@@ -1,6 +1,6 @@
 /* eslint-disable dot-notation */
 
-const packageJson = require('../package.json');
+const packageJson = require('./package.json');
 
 module.exports = () => ({
   type: packageJson.name,

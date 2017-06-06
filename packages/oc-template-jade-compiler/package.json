@@ -1,0 +1,26 @@
+{
+  "name": "oc-template-jade-compiler",
+  "version": "0.0.1",
+  "description": "OC-Template-Jade-Compiler",
+  "main": "index.js",
+  "scripts": {
+    "precommit": "npm run test",
+    "lint": "eslint .",
+    "test": "npm run lint && jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opencomponents/oc-template-jade.git"
+  },
+  "keywords": [],
+  "author": "Nick Balestra <nick@balestra.ch>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/opencomponents/oc-template-jade/issues"
+  },
+  "homepage": "https://github.com/opencomponents/oc-template-jade#readme",
+  "dependencies": {
+    "oc-template-jade": "4.0.2",
+    "jade-legacy": "1.11.1"
+  }
+}

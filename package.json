@@ -1,38 +1,10 @@
 {
-  "name": "oc-template-jade",
-  "version": "4.0.2",
-  "description": "OC-Template-Jade",
-  "main": "src",
-  "scripts": {
-    "precommit": "npm run test",
-    "lint": "eslint .",
-    "test": "npm run lint && jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/opencomponents/oc-template-jade.git"
-  },
-  "keywords": [],
-  "author": "Nick Balestra <nick@balestra.ch>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/opencomponents/oc-template-jade/issues"
-  },
-  "homepage": "https://github.com/opencomponents/oc-template-jade#readme",
   "devDependencies": {
-    "eslint": "^3.14.0",
-    "eslint-config-opentable": "^6.0.0",
-    "eslint-plugin-import": "^2.3.0",
-    "husky": "^0.13.1",
+    "lerna": "^2.0.0-rc.5",
     "jest": "^20.0.4"
   },
-  "dependencies": {
-    "jade-legacy": "1.11.1"
-  },
-  "externals": {
-    "jade": {
-      "global": "jade",
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/jade/1.11.0/runtime.min.js"
-    }
+  "scripts": {
+    "test": "jest"
   }
 }
+ 

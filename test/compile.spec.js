@@ -1,6 +1,6 @@
 const path = require('path');
 const jade = require('jade-legacy');
-const compile = require('./compile');
+const compile = require('../packages/oc-template-jade-compiler/compile');
 
 describe('compile method', () => {
   describe('when invoking the method', () => {
