@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/opencomponents/oc-template-jade#readme",
   "dependencies": {
-    "oc-template-jade": "5.0.0",
+    "oc-template-jade": "4.0.2",
     "jade-legacy": "1.11.1"
   }
 }
