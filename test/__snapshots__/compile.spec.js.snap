@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compile method when invoking the method should correctly invoke jade compileClient method 1`] = `null`;
+
+exports[`compile method when invoking the method should correctly invoke jade compileClient method 2`] = `"Hello"`;
+
+exports[`compile method when invoking the method should correctly throw 1`] = `[Error: Whoops!]`;
+
+exports[`compile method when invoking the method should correctly throw 2`] = `undefined`;

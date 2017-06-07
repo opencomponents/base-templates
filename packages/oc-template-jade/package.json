@@ -1,0 +1,29 @@
+{
+  "name": "oc-template-jade",
+  "version": "5.0.0",
+  "description": "OC-Template-Jade",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opencomponents/oc-template-jade.git"
+  },
+  "keywords": [],
+  "author": { 
+    "name" : "Nick Balestra",
+    "email" : "nick@balestra.ch"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/opencomponents/oc-template-jade/issues"
+  },
+  "homepage": "https://github.com/opencomponents/oc-template-jade#readme",
+  "dependencies": {
+    "jade-legacy": "1.11.1"
+  },
+  "externals": {
+    "jade": {
+      "global": "jade",
+      "url": "https://unpkg.com/jade-legacy@1.11.1/runtime.js"
+    }
+  }
+}

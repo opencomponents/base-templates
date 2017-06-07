@@ -1,4 +1,4 @@
-const render = require('./render');
+const render = require('../packages/oc-template-jade/render');
 
 describe('render method', () => {
   describe('when invoked with a template', () => {
