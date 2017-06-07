@@ -1,7 +1,9 @@
+'use strict';
+
 const jade = require('jade-legacy');
 
 module.exports = (options, callback) => {
-  var compiled;
+  let compiled;
   try {
     compiled = jade
       .compileClient(options.template, {

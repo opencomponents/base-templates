@@ -8,7 +8,10 @@
     "url": "git+https://github.com/opencomponents/oc-template-jade.git"
   },
   "keywords": [],
-  "author": "Nick Balestra <nick@balestra.ch>",
+  "author": { 
+    "name" : "Nick Balestra",
+    "email" : "nick@balestra.ch"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/opencomponents/oc-template-jade/issues"
