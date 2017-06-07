@@ -9,6 +9,5 @@ Object {
     },
   ],
   "type": "oc-template-jade",
-  "version": "5.0.0",
 }
 `;
