@@ -4,16 +4,18 @@
     "jest": "^20.0.4",
     "lerna": "^2.0.0-rc.5",
     "lint-staged": "^3.6.0",
-    "prettier": "^1.4.2"
+    "prettier-eslint-cli": "^4.0.4"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "postinstall": "lerna bootstrap",
+    "test": "jest",
+    "publish": "lerna publish --exact",
     "precommit": "lint-staged",
-    "test": "jest"
+    "prepush": "npm test"
   },
   "lint-staged": {
     "*.js": [
-      "prettier --single-quote --write",
+      "prettier-eslint --prettier-last --write",
       "git add"
     ]
   }
