@@ -1,6 +1,6 @@
 {
   "name": "oc-template-jade",
-  "version": "4.0.2",
+  "version": "5.0.0",
   "description": "OC-Template-Jade",
   "main": "index.js",
   "repository": {
@@ -8,9 +8,9 @@
     "url": "git+https://github.com/opencomponents/oc-template-jade.git"
   },
   "keywords": [],
-  "author": { 
-    "name" : "Nick Balestra",
-    "email" : "nick@balestra.ch"
+  "author": {
+    "name": "Nick Balestra",
+    "email": "nick@balestra.ch"
   },
   "license": "MIT",
   "bugs": {
