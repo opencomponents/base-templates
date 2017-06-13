@@ -10,8 +10,7 @@
     "postinstall": "lerna bootstrap",
     "test": "jest",
     "publish": "lerna publish --exact",
-    "precommit": "lint-staged",
-    "prepush": "npm test"
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "*.js": [
