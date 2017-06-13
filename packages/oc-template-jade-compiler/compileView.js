@@ -9,11 +9,11 @@ const ocViewWrapper = require('./to-be-published/oc-view-wrapper');
 const strings = require('./resources/strings');
 
 module.exports = (options, callback) => {
-  const viewFileName = options.package.oc.files.template.src;
+  const viewFileName = options.componentPackage.oc.files.template.src;
   const viewPath = path.join(options.componentPath, viewFileName);
-  const viewContent = fs.readFileSync(viewPath); // why toString?
-  const publishPath = path.join(options.componentPath, '_package');
-  const publishFileName = 'template.js'; // can we change this to view?
+  const viewContent = fs.readFileSync(viewPath);
+  const publishPath = options.publishPath;
+  const publishFileName = 'template.js'; // Change this to view?
 
   if (!fs.existsSync(viewPath)) {
     return callback(format(strings.errors.VIEW_NOT_FOUND, viewFileName));
@@ -36,7 +36,7 @@ module.exports = (options, callback) => {
 
     fs.writeFile(path.join(publishPath, publishFileName), compiledView, err =>
       callback(err, {
-        type: options.package.files.template.type,
+        type: options.componentPackage.files.template.type,
         hashKey: viewHash,
         src: publishFileName
       })
