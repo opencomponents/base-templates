@@ -1,6 +1,7 @@
 'use strict';
 
 const compileView = require('./compileView');
+const compileServer = require('./compileServer');
 const async = require('async');
 
 // const async = require('async');
@@ -16,7 +17,7 @@ module.exports = (options, callback) => {
   // logger,
   // verbose,
   // minify
-  // packageInfo,
+  // componentPackage,
   // publishPath
   // componentPath
 
@@ -26,17 +27,17 @@ module.exports = (options, callback) => {
         // Packaging template.js
         compileView(
           {
-            componentPath: componentPath,
-            componentPackage: component
+            componentPath: options.componentPath,
+            componentPackage: options.componentPackage
           },
-          (err, packagedTemplateInfo) => {
-            if (err) {
-              return cb(err);
+          (error, info) => {
+            if (error) {
+              return cb(error);
             }
-
-            component.oc.files.template = packagedTemplateInfo;
-            delete component.oc.files.client;
-            cb(err, component);
+            // ADDRESS STUFF FOR PACKAGE.JSON
+            // component.oc.files.template = packagedTemplateInfo;
+            // delete component.oc.files.client;
+            cb(err, info);
           }
         );
       },
