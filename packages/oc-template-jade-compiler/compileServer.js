@@ -3,11 +3,12 @@
 const fs = require('fs-extra');
 const path = require('path');
 
-const configurator = require('./to-be-published/oc-webpack/').configurator;
+const webpackConfigurator = require('./to-be-published/oc-webpack/')
+  .configurator;
 const compiler = require('./to-be-published/oc-webpack/').compiler;
 const hashBuilder = require('./to-be-published/hash-builder');
 
-module.exports = function packageServerScript(options, callback) {
+module.exports = (options, callback) => {
   const serverFileName = options.componentPackage.oc.files.data;
   const serverPath = path.join(options.componentPath, serverFileName);
   const publishFileName = 'server.js';
@@ -15,7 +16,7 @@ module.exports = function packageServerScript(options, callback) {
   const stats = options.verbose ? 'verbose' : 'errors-only';
   const dependencies = options.dependencies || {};
 
-  const config = configurator({
+  const config = webpackConfigurator({
     serverPath,
     publishFileName,
     dependencies,
