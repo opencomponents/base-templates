@@ -1,5 +1,6 @@
 'use strict';
 
-module.exports = function ocViewWrapper(hash, content, nameSpace = 'oc') {
-  return `var ${nameSpace}=${nameSpace}||{};${nameSpace}.components=${nameSpace}.components||{};${nameSpace}.components['${hash}']=${content}`;
-};
+const format = require('stringformat');
+
+module.exports = (hash, content, nameSpace = 'oc') =>
+  `var ${nameSpace}=${nameSpace}||{};${nameSpace}.components=${nameSpace}.components||{};${nameSpace}.components['${hash}']=${content}`;

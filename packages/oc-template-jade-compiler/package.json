@@ -15,7 +15,25 @@
   },
   "homepage": "https://github.com/opencomponents/oc-template-jade#readme",
   "dependencies": {
+    "async": "^2.4.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.2",
+    "babili-webpack-plugin": "^0.1.1",
+    "builtin-modules": "^1.1.1",
+    "clean-css": "^4.1.4",
+    "fs-extra": "^3.0.1",
+    "infinite-loop-loader": "^1.0.1",
     "jade-legacy": "1.11.1",
-    "oc-template-jade": "5.0.0"
+    "jstransformer-clean-css": "^2.0.0",
+    "jstransformer-uglify-css": "^1.0.0",
+    "jstransformer-uglify-js": "^1.2.0",
+    "lodash": "^4.17.4",
+    "memory-fs": "^0.4.1",
+    "node-dir": "^0.1.17",
+    "oc-template-jade": "5.0.0",
+    "stringformat": "0.0.5",
+    "uglify-js": "2.6.4",
+    "webpack": "^2.6.1"
   }
 }

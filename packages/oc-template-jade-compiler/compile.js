@@ -1,9 +1,12 @@
 'use strict';
 
+const async = require('async');
+const _ = require('lodash');
+const fs = require('fs-extra');
+const path = require('path');
 const compileView = require('./compileView');
 const compileServer = require('./compileServer');
 const compileStatics = require('./compileStatics');
-const async = require('async');
 const getUnixUtcTimestamp = require('./to-be-published/get-unix-utc-timestamp');
 
 // OPTIONS
@@ -30,7 +33,7 @@ module.exports = (options, callback) => {
           // USE COMPILATION INFO TO MASSAGE COMPONENT'S PACKAGE
           componentPackage.oc.files.template = compiledViewInfo;
           delete componentPackage.oc.files.client;
-          cb(err, componentPackage);
+          cb(error, componentPackage);
         });
       },
       // Compile dataProvider
@@ -38,14 +41,16 @@ module.exports = (options, callback) => {
         if (!componentPackage.oc.files.data) {
           return cb(null, componentPackage);
         }
-        compileServer(options, (err, compiledServerInfo) => {
-          if (err) {
-            return cb(err);
+
+        compileServer(options, (error, compiledServerInfo) => {
+          if (error) {
+            return cb(error);
           }
+
           // USE COMPILATION INFO TO MASSAGE COMPONENT'S PACKAGE
           componentPackage.oc.files.dataProvider = compiledServerInfo;
-          delete component.oc.files.data;
-          cb(err, componentPackage);
+          delete componentPackage.oc.files.data;
+          cb(error, componentPackage);
         });
       },
       // Compile package.json
@@ -60,16 +65,16 @@ module.exports = (options, callback) => {
           componentPackage.oc.files.static = [componentPackage.oc.files.static];
         }
         fs.writeJson(
-          path.join(publishPath, 'package.json'),
+          path.join(options.publishPath, 'package.json'),
           componentPackage,
-          err => {
-            cb(err, componentPackage);
+          error => {
+            cb(error, componentPackage);
           }
         );
       },
       // Compile statics
       function(componentPackage, cb) {
-        compileStatics(options, err => cb(err, componentPackage));
+        compileStatics(options, error => cb(error, componentPackage));
       }
     ],
     callback

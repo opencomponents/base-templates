@@ -55,7 +55,7 @@ module.exports = function webpackConfigGenerator(params) {
     resolveLoader: {
       modules: [
         'node_modules',
-        path.resolve(__dirname, '../../../../../../node_modules')
+        path.resolve(__dirname, '../../../node_modules')
       ]
     },
     stats: params.stats

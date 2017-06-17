@@ -1,6 +1,5 @@
 'use strict';
 
-const async = require('async');
 const format = require('stringformat');
 const fs = require('fs-extra');
 const minifyFile = require('./to-be-published/minify-file');
@@ -11,7 +10,7 @@ const _ = require('lodash');
 const strings = require('./resources/strings');
 
 module.exports = (options, callback) => {
-  const staticDirectories = options.componentPackage.files.static;
+  const staticDirectories = options.componentPackage.oc.files.static;
 
   if (staticDirectories.length === 0) {
     return callback(null, 'ok');
@@ -25,29 +24,27 @@ module.exports = (options, callback) => {
   });
 };
 
-function copyDirectory(staticDirectory, options, callback) {
-  const staticDirectoryPath = path.join(options.componentPath, staticDirectory);
-  const directoryExists = fs.existsSync(staticDirectoryPath);
+function copyDirectory(directoryName, options, callback) {
+  const directoryPath = path.join(options.componentPath, directoryName);
+  const directoryExists = fs.existsSync(directoryPath);
   const isDirectory =
-    directoryExists && fs.lstatSync(staticDirectoryPath).isDirectory();
+    directoryExists && fs.lstatSync(directoryPath).isDirectory();
 
   if (!directoryExists) {
-    return callback(
-      format(strings.errors.FOLDER_NOT_FOUND, staticDirectoryPath)
-    );
+    return callback(format(strings.errors.FOLDER_NOT_FOUND, directoryPath));
   }
   if (!isDirectory) {
     return callback(
-      format(strings.errors.FOLDER_IS_NOT_A_FOLDER, staticDirectoryPath)
+      format(strings.errors.FOLDER_IS_NOT_A_FOLDER, directoryPath)
     );
   }
 
-  nodeDir.paths(staticDirectoryPath, (err, res) => {
+  nodeDir.paths(directoryPath, (err, res) => {
     _.forEach(res.files, filePath => {
       const fileName = path.basename(filePath);
       const fileExtension = path.extname(filePath).toLowerCase();
       const fileRelativePath = path.relative(
-        staticDirectoryPath,
+        directoryPath,
         path.dirname(filePath)
       );
       const fileDestinationPath = path.join(

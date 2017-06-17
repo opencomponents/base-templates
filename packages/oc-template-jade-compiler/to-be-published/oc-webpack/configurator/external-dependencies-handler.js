@@ -12,7 +12,12 @@ const coreModules = require('builtin-modules');
 const format = require('stringformat');
 const _ = require('lodash');
 
-const strings = require('../../../../../resources');
+const strings = {
+  errors: {
+    SERVERJS_DEPENDENCY_NOT_DECLARED:
+      'Missing dependencies from package.json => {0}'
+  }
+};
 
 module.exports = function externalDependenciesHandler(dependencies) {
   const deps = dependencies || {};

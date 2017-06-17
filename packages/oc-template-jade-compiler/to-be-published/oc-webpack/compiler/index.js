@@ -5,8 +5,7 @@ const webpack = require('webpack');
 
 const memoryFs = new MemoryFS();
 
-module.exports = function compiler(options, callback) {
-  const config = options.config;
+module.exports = function compiler(config, callback) {
   const compiler = webpack(config);
   compiler.outputFileSystem = memoryFs;
 

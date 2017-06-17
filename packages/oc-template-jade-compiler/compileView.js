@@ -30,13 +30,16 @@ module.exports = (options, callback) => {
       .replace('function t(locals) {', 'function(locals){');
 
     const viewHash = hashBuilder.fromString(view);
-    const compiledView = uglifyJs.minify(ocViewWrapper(viewHash, view), {
-      fromString: true
-    }).code;
+    const compiledView = uglifyJs.minify(
+      ocViewWrapper(viewHash, view.toString()),
+      {
+        fromString: true // NOTE: uglify-3 doesn't support this anymore.
+      }
+    ).code;
 
     fs.writeFile(path.join(publishPath, publishFileName), compiledView, err =>
       callback(err, {
-        type: options.componentPackage.files.template.type,
+        type: options.componentPackage.oc.files.template.type,
         hashKey: viewHash,
         src: publishFileName
       })
