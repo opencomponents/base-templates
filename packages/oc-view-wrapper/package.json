@@ -1,0 +1,17 @@
+{
+  "name": "oc-view-wrapper",
+  "version": "1.0.0",
+  "description": "Wrapper helper for oc views",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opencomponents/base-templates.git"
+  },
+  "keywords": [],
+  "author": "Nick Balestra <nick@balestra.ch>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/opencomponents/base-templates/issues"
+  },
+  "homepage": "https://github.com/opencomponents/base-templates#readme"
+}
