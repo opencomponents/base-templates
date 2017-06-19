@@ -3,10 +3,9 @@
 const fs = require('fs-extra');
 const path = require('path');
 
-const webpackConfigurator = require('./to-be-published/oc-webpack')
-  .configurator;
-const compiler = require('./to-be-published/oc-webpack/').compiler;
-const hashBuilder = require('./to-be-published/hash-builder');
+const webpackConfigurator = require('oc-webpack').configurator;
+const compiler = require('oc-webpack').compiler;
+const hashBuilder = require('oc-hash-builder');
 
 module.exports = (options, callback) => {
   const serverFileName = options.componentPackage.oc.files.data;

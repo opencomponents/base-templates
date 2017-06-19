@@ -4,8 +4,8 @@ const fs = require('fs-extra');
 const path = require('path');
 const uglifyJs = require('uglify-js');
 const jade = require('jade-legacy');
-const hashBuilder = require('./to-be-published/hash-builder');
-const ocViewWrapper = require('./to-be-published/oc-view-wrapper');
+const hashBuilder = require('oc-hash-builder');
+const ocViewWrapper = require('oc-view-wrapper');
 const strings = require('./resources/strings');
 
 module.exports = (options, callback) => {

@@ -7,7 +7,7 @@ const path = require('path');
 const compileView = require('./compileView');
 const compileServer = require('./compileServer');
 const compileStatics = require('./compileStatics');
-const getUnixUtcTimestamp = require('./to-be-published/get-unix-utc-timestamp');
+const getUnixUtcTimestamp = require('oc-get-unix-utc-timestamp');
 
 // OPTIONS
 // =======

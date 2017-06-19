@@ -2,7 +2,7 @@
 
 const format = require('stringformat');
 const fs = require('fs-extra');
-const minifyFile = require('./to-be-published/minify-file');
+const minifyFile = require('oc-minify-file');
 const nodeDir = require('node-dir');
 const path = require('path');
 const _ = require('lodash');
