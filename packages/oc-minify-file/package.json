@@ -1,0 +1,23 @@
+{
+  "name": "oc-minify-file",
+  "version": "1.0.0",
+  "description": "Minify file helper",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opencomponents/base-templates.git"
+  },
+  "keywords": [],
+  "author": "Nick Balestra <nick@balestra.ch>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/opencomponents/base-templates/issues"
+  },
+  "homepage": "https://github.com/opencomponents/base-templates#readme",
+  "dependencies": {
+    "babel-core": "^6.25.0",
+    "babel-preset-env": "^1.5.2",
+    "clean-css": "^4.1.4",
+    "uglify-js": "2.6.4"
+  }
+}
