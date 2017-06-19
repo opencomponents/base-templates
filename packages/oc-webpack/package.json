@@ -13,6 +13,9 @@
   "bugs": {
     "url": "https://github.com/opencomponents/base-templates/issues"
   },
+  "scripts": {
+    "test": "true"
+  },
   "homepage": "https://github.com/opencomponents/base-templates#readme",
   "dependencies": {
     "babel-loader": "^7.0.0",

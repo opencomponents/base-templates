@@ -13,5 +13,8 @@
   "bugs": {
     "url": "https://github.com/opencomponents/base-templates/issues"
   },
+  "scripts": {
+    "test": "true"
+  },
   "homepage": "https://github.com/opencomponents/base-templates#readme"
 }
