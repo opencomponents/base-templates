@@ -7,12 +7,3 @@ Object {
   "render": [Function],
 }
 `;
-
-exports[`template-compiler APIs should expose the correct methods 1`] = `
-Object {
-  "compile": [Function],
-  "getCompiledTemplate": [Function],
-  "getInfo": [Function],
-  "render": [Function],
-}
-`;

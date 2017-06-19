@@ -32,5 +32,11 @@
     "oc-hash-builder": "^1.0.0",
     "oc-webpack": "^1.0.0",
     "oc-get-unix-utc-timestamp": "^1.0.0"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }

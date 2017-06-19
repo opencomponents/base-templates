@@ -8,7 +8,7 @@
   },
   "scripts": {
     "postinstall": "lerna bootstrap",
-    "test": "jest",
+    "test": "lerna run test",
     "publish": "lerna publish --exact",
     "precommit": "lint-staged"
   },

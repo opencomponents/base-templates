@@ -21,7 +21,7 @@
     "transform"
   ],
   "scripts": {
-    "test": "standard && jest"
+    "test": "jest"
   },
   "standard": {
     "globals": [
@@ -35,7 +35,6 @@
     "falafel": "^2.0.0"
   },
   "devDependencies": {
-    "jest": "^18.1.0",
-    "standard": "^8.6.0"
+    "jest": "^18.1.0"
   }
 }
