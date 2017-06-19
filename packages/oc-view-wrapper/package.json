@@ -14,7 +14,7 @@
     "url": "https://github.com/opencomponents/base-templates/issues"
   },
   "scripts": {
-    "test": "true"
+    "test": "echo \"No test to be runned in here\" && exit 0"
   },
   "homepage": "https://github.com/opencomponents/base-templates#readme"
 }
