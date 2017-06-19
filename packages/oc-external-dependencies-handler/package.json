@@ -1,0 +1,22 @@
+{
+  "name": "oc-external-dependencies-handler",
+  "version": "1.0.0",
+  "description": "External dependencies handler for webpack",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opencomponents/base-templates.git"
+  },
+  "keywords": [],
+  "author": "Nick Balestra <nick@balestra.ch>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/opencomponents/base-templates/issues"
+  },
+  "homepage": "https://github.com/opencomponents/base-templates#readme",
+  "dependencies": {
+    "builtin-modules": "^1.1.1",
+    "lodash": "^4.17.4",
+    "stringformat": "0.0.5"
+  }
+}
