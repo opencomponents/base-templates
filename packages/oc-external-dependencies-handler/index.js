@@ -19,15 +19,17 @@ const strings = {
   }
 };
 
-module.exports = function externalDependenciesHandler(dependencies) {
+module.exports = dependencies => {
   const deps = dependencies || {};
 
   const missingExternalDependency = (dep, dependencies) =>
     !_.includes(_.keys(dependencies), dep) && !_.includes(coreModules, dep);
 
+  const matcher = /^[a-z@][a-z\-\/0-9]+$/i;
+
   return [
-    function(context, req, callback) {
-      if (/^[a-z@][a-z\-\/0-9]+$/i.test(req)) {
+    (context, req, callback) => {
+      if (matcher.test(req)) {
         let dependencyName = req;
         if (/\//g.test(dependencyName)) {
           dependencyName = dependencyName.substring(
@@ -39,7 +41,7 @@ module.exports = function externalDependenciesHandler(dependencies) {
           return callback(
             new Error(
               format(
-                strings.errors.cli.SERVERJS_DEPENDENCY_NOT_DECLARED,
+                strings.errors.SERVERJS_DEPENDENCY_NOT_DECLARED,
                 JSON.stringify(dependencyName)
               )
             )
@@ -48,6 +50,6 @@ module.exports = function externalDependenciesHandler(dependencies) {
       }
       callback();
     },
-    /^[a-z@][a-z\-\/0-9]+$/i
+    matcher
   ];
 };

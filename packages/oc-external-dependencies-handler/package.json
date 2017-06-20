@@ -11,14 +11,17 @@
     "url": "https://github.com/opencomponents/base-templates/issues"
   },
   "homepage": "https://github.com/opencomponents/base-templates#readme",
-  "keywords": ["oc", "opencomponents"],
+  "keywords": [
+    "oc",
+    "opencomponents"
+  ],
   "author": {
     "name": "Nick Balestra",
     "email": "nick@balestra.ch"
   },
   "license": "MIT",
   "scripts": {
-    "test": "echo \"No test to be runned in here\" && exit 0"
+    "test": "jest"
   },
   "files": [
     "index.js"
@@ -27,5 +30,8 @@
     "builtin-modules": "^1.1.1",
     "lodash": "^4.17.4",
     "stringformat": "0.0.5"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4"
   }
 }

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When a module is being used withough being declared in the package 1`] = `[Error: Missing dependencies from package.json => "lodash"]`;
