@@ -11,16 +11,22 @@
     "url": "https://github.com/opencomponents/base-templates/issues"
   },
   "homepage": "https://github.com/opencomponents/base-templates#readme",
-  "keywords": ["oc", "opencomponents"],
+  "keywords": [
+    "oc",
+    "opencomponents"
+  ],
   "author": {
     "name": "Nick Balestra",
     "email": "nick@balestra.ch"
   },
   "license": "MIT",
   "scripts": {
-   "test": "echo \"No test to be runned in here\" && exit 0"
+    "test": "jest"
   },
   "files": [
     "index.js"
-  ]
+  ],
+  "devDependencies": {
+    "jest": "^20.0.4"
+  }
 }
