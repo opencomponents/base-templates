@@ -5,15 +5,18 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/opencomponents/oc-template-jade.git"
+    "url": "https://github.com/opencomponents/base-templates.git"
   },
-  "keywords": [],
-  "author": "Nick Balestra <nick@balestra.ch>",
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/opencomponents/oc-template-jade/issues"
+    "url": "https://github.com/opencomponents/base-templates/issues"
   },
-  "homepage": "https://github.com/opencomponents/oc-template-jade#readme",
+  "homepage": "https://github.com/opencomponents/base-templates#readme",
+  "keywords": ["oc", "opencomponents"],
+  "author": {
+    "name": "Nick Balestra",
+    "email": "nick@balestra.ch"
+  },
+  "license": "MIT",
   "dependencies": {
     "async": "^2.4.1",
     "builtin-modules": "^1.1.1",
@@ -38,5 +41,9 @@
   },
   "scripts": {
     "test": "jest"
-  }
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ]
 }

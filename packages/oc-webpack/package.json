@@ -5,18 +5,21 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/opencomponents/base-templates.git"
+    "url": "https://github.com/opencomponents/base-templates.git"
   },
-  "keywords": [],
-  "author": "Nick Balestra <nick@balestra.ch>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/opencomponents/base-templates/issues"
   },
+  "homepage": "https://github.com/opencomponents/base-templates#readme",
+  "keywords": ["oc", "opencomponents"],
+  "author": {
+    "name": "Nick Balestra",
+    "email": "nick@balestra.ch"
+  },
+  "license": "MIT",
   "scripts": {
     "test": "echo \"No test to be runned in here\" && exit 0"
   },
-  "homepage": "https://github.com/opencomponents/base-templates#readme",
   "dependencies": {
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.5.2",
@@ -25,5 +28,9 @@
     "memory-fs": "^0.4.1",
     "webpack": "^2.6.1",
     "oc-external-dependencies-handler": "^1.0.0"
-  }
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ]
 }

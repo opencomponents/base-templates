@@ -1,3 +1,5 @@
+'use strict';
+
 /*
  * External Dependencies handler for webpack
  * Returns an array with handlers to indicates dependencies that should not be
@@ -5,8 +7,6 @@
  * For more info http://webpack.github.io/docs/configuration.html#externals
  *
 */
-
-'use strict';
 
 const coreModules = require('builtin-modules');
 const format = require('stringformat');

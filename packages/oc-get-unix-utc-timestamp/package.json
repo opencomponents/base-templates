@@ -5,16 +5,22 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/opencomponents/base-templates.git"
+    "url": "https://github.com/opencomponents/base-templates.git"
   },
-  "keywords": [],
-  "author": "Nick Balestra <nick@balestra.ch>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/opencomponents/base-templates/issues"
   },
-  "scripts": {
-    "test": "true"
+  "homepage": "https://github.com/opencomponents/base-templates#readme",
+  "keywords": ["oc", "opencomponents"],
+  "author": {
+    "name": "Nick Balestra",
+    "email": "nick@balestra.ch"
   },
-  "homepage": "https://github.com/opencomponents/base-templates#readme"
+  "license": "MIT",
+  "scripts": {
+   "test": "echo \"No test to be runned in here\" && exit 0"
+  },
+  "files": [
+    "index.js"
+  ]
 }

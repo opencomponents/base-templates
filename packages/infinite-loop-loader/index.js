@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('./src/infinite-loop-loader');
+module.exports = require('./lib/infinite-loop-loader');

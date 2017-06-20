@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs-extra');
-const compileServer = require('../compileServer.js');
+const compileServer = require('../lib/compileServer.js');
 
 const componentPath = path.join(__dirname, '../../../mocks/jadeComponent');
 const publishPath = path.join(componentPath, '_package');

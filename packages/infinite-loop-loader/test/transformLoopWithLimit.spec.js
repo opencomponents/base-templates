@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-escape */
 'use strict';
 
-const transformLoopWithLimit = require('../src/transformLoopWithLimit');
+const transformLoopWithLimit = require('../lib/transformLoopWithLimit');
 
 describe('transformLoopWithLimit', () => {
   it('should be a function with arity 1', () => {

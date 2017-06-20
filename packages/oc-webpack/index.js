@@ -1,7 +1,7 @@
 'use strict';
 
-const compiler = require('./compiler');
-const configurator = require('./configurator');
+const compiler = require('./lib/compiler');
+const configurator = require('./lib/configurator');
 
 module.exports = {
   compiler,

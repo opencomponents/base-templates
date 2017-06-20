@@ -1,4 +1,6 @@
-const compile = require('./compile');
+'use strict';
+
+const compile = require('./lib/compile');
 const template = require('oc-template-jade');
 
 module.exports = {
