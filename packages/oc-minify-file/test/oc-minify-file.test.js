@@ -1,31 +1,13 @@
-// 'use strict';
+const minifyFile = require('../index.js');
 
-// const expect = require('chai').expect;
+test('Minify es6 files', () => {
+  const content = 'const hi = (name) => `hello ${name}`;';
+  const minified = minifyFile('.js', content);
+  expect(minifyFile('.js', content)).toMatchSnapshot();
+});
 
-// describe('cli : domain : package-static-files : minify-file', () => {
-//   const minifyFile = require('../../src/cli/domain/package-static-files/minify-file');
-
-//   describe('when minifying .js file', () => {
-
-//     describe('when file contains es6', () => {
-
-//       const content = 'const hi = (name) => `hello ${name}`;';
-
-//       xit('should minify it', () => {
-//         const minified = minifyFile('.js', content);
-//         expect(minified).to.equal('var hi=function(n){return"hello "+n};');
-//       });
-//     });
-
-//     describe('when file contains not valid js', () => {
-//       const content = 'const a=notvalid(';
-//       const execute = function(){
-//         minifyFile('.js', content);
-//       };
-
-//       xit('should throw an exception', () => {
-//         expect(execute).to.throw('Unexpected token');
-//       });
-//     });
-//   });
-// });
+test('Minify not valid js', () => {
+  const content = 'const a=notvalid(';
+  const throwingMinify = minifyFile.bind(null, '.js', content);
+  expect(throwingMinify).toThrowErrorMatchingSnapshot();
+});

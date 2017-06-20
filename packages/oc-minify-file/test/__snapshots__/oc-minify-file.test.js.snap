@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Minify es6 files 1`] = `"var hi=function(n){return\\"hello \\"+n};"`;
+
+exports[`Minify not valid js 1`] = `"unknown: Unexpected token (1:17)"`;
