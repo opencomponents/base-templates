@@ -16,6 +16,7 @@
   "lint-staged": {
     "*.js": [
       "prettier-eslint --prettier-last --write",
+      "jest --findRelatedTests",
       "git add"
     ]
   }
