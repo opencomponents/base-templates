@@ -8,7 +8,7 @@ module.exports.data = function(context, cb) {
   
       var __ITER = 1000000000;
       while(true) { if (__ITER <= 0) {
-        throw new Error("Loop exceeded maximum allowed iterations");
+        throw new Error(\\"Loop exceeded maximum allowed iterations\\");
       }
       __ITER--;
       
@@ -18,7 +18,7 @@ module.exports.data = function(context, cb) {
   
       var __ITER = 1000000000;
       for(var i = 0; i < 10; i++) { if (__ITER <= 0) {
-        throw new Error("Loop exceeded maximum allowed iterations");
+        throw new Error(\\"Loop exceeded maximum allowed iterations\\");
       }
       __ITER--;
       
@@ -28,7 +28,7 @@ module.exports.data = function(context, cb) {
   
       var __ITER = 1000000000;
       do { if (__ITER <= 0) {
-        throw new Error("Loop exceeded maximum allowed iterations");
+        throw new Error(\\"Loop exceeded maximum allowed iterations\\");
       }
       __ITER--;
       
@@ -39,7 +39,7 @@ module.exports.data = function(context, cb) {
       var __ITER = 1000000000;
       loopWhile:
   while(true) { if (__ITER <= 0) {
-        throw new Error("Loop exceeded maximum allowed iterations");
+        throw new Error(\\"Loop exceeded maximum allowed iterations\\");
       }
       __ITER--;
       
@@ -50,7 +50,7 @@ module.exports.data = function(context, cb) {
       var __ITER = 1000000000;
       loopFor:
   for(var i = 0; i < 10; i++) { if (__ITER <= 0) {
-        throw new Error("Loop exceeded maximum allowed iterations");
+        throw new Error(\\"Loop exceeded maximum allowed iterations\\");
       }
       __ITER--;
       
@@ -61,7 +61,7 @@ module.exports.data = function(context, cb) {
       var __ITER = 1000000000;
       loopDoWhile:
   do { if (__ITER <= 0) {
-        throw new Error("Loop exceeded maximum allowed iterations");
+        throw new Error(\\"Loop exceeded maximum allowed iterations\\");
       }
       __ITER--;
       
