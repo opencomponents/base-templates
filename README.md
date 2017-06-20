@@ -19,6 +19,3 @@ and relative modules:
 - oc-webpack
 - oc-view-wrapper
 - oc-minify-file
-
-### License
-MIT
