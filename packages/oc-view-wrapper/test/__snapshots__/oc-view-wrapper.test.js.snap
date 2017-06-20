@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Wrapping a view function with a different namespace 1`] = `"var MAGIC=MAGIC||{};MAGIC.components=MAGIC.components||{};MAGIC.components['123456789']=function doSomething(someParams){return \\"someValue\\"}"`;
+
+exports[`Wrapping a view function without overriding the OC namespace 1`] = `"var oc=oc||{};oc.components=oc.components||{};oc.components['123456789']=function doSomething(someParams){return \\"someValue\\"}"`;
