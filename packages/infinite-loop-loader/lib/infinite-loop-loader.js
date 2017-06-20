@@ -3,7 +3,7 @@
 const falafel = require('falafel');
 const transformLoopWithLimit = require('./transformLoopWithLimit.js');
 
-module.exports = function(source) {
+module.exports = source => {
   let options;
   if (this && this.loaders && this.loaderIndex) {
     options = this.loaders[this.loaderIndex].options;

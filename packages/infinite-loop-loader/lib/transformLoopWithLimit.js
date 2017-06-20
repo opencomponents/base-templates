@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function transformLoopWithLimit(limit) {
+module.exports = limit => {
   const loopNodeTypes = ['WhileStatement', 'ForStatement', 'DoWhileStatement'];
 
   const isUnlabeledLoop = node =>
