@@ -6,25 +6,30 @@ const minifyFile = require('oc-minify-file');
 const nodeDir = require('node-dir');
 const path = require('path');
 const _ = require('lodash');
+const async = require('async');
 
 const strings = require('./resources/strings');
 
 module.exports = (options, callback) => {
-  const staticDirectories = options.componentPackage.oc.files.static;
+  const staticDirectories = options.componentPackage.oc.files.static || [];
 
   if (staticDirectories.length === 0) {
     return callback(null, 'ok');
   }
 
-  async.eachSeries(staticDirectories, copyDirectory, error => {
-    if (error) {
-      return callback(error);
+  async.eachSeries(
+    staticDirectories,
+    copyDirectory.bind(null, options),
+    error => {
+      if (error) {
+        return callback(error);
+      }
+      callback(null, 'ok');
     }
-    callback(null, 'ok');
-  });
+  );
 };
 
-function copyDirectory(directoryName, options, callback) {
+function copyDirectory(options, directoryName, callback) {
   const directoryPath = path.join(options.componentPath, directoryName);
   const directoryExists = fs.existsSync(directoryPath);
   const isDirectory =
@@ -49,12 +54,11 @@ function copyDirectory(directoryName, options, callback) {
       );
       const fileDestinationPath = path.join(
         options.publishPath,
-        staticDirectory,
+        directoryName,
         fileRelativePath
       );
       fs.ensureDirSync(fileDestinationPath);
       const fileDestination = path.join(fileDestinationPath, fileName);
-
       if (
         options.minify &&
         options.componentPackage.minify !== false &&

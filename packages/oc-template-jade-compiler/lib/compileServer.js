@@ -10,7 +10,7 @@ const hashBuilder = require('oc-hash-builder');
 module.exports = (options, callback) => {
   const serverFileName = options.componentPackage.oc.files.data;
   const serverPath = path.join(options.componentPath, serverFileName);
-  const publishFileName = 'server.js';
+  const publishFileName = options.publishFileName || 'server.js';
   const publishPath = options.publishPath;
   const stats = options.verbose ? 'verbose' : 'errors-only';
   const dependencies = options.dependencies || {};

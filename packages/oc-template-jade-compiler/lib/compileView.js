@@ -13,7 +13,7 @@ module.exports = (options, callback) => {
   const viewPath = path.join(options.componentPath, viewFileName);
   const viewContent = fs.readFileSync(viewPath);
   const publishPath = options.publishPath;
-  const publishFileName = 'template.js'; // Change this to view?
+  const publishFileName = options.publishFileName || 'template.js';
 
   if (!fs.existsSync(viewPath)) {
     return callback(format(strings.errors.VIEW_NOT_FOUND, viewFileName));
