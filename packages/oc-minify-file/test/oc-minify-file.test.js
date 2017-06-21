@@ -8,6 +8,5 @@ test('Minify es6 files', () => {
 
 test('Minify not valid js', () => {
   const content = 'const a=notvalid(';
-  const throwingMinify = minifyFile.bind(null, '.js', content);
-  expect(throwingMinify).toThrowErrorMatchingSnapshot();
+  expect(minifyFile.bind(null, '.js', content)).toThrowErrorMatchingSnapshot();
 });
