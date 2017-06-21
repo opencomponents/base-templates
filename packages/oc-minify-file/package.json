@@ -17,9 +17,6 @@
     "email": "nick@balestra.ch"
   },
   "license": "MIT",
-  "scripts": {
-    "test": "jest"
-  },
   "files": [
     "index.js"
   ],
@@ -28,8 +25,5 @@
     "babel-preset-env": "^1.5.2",
     "clean-css": "^4.1.4",
     "uglify-js": "2.6.4"
-  },
-  "devDependencies": {
-    "jest": "^20.0.4"
   }
 }

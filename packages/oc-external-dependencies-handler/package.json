@@ -20,9 +20,6 @@
     "email": "nick@balestra.ch"
   },
   "license": "MIT",
-  "scripts": {
-    "test": "jest"
-  },
   "files": [
     "index.js"
   ],
@@ -30,8 +27,5 @@
     "builtin-modules": "^1.1.1",
     "lodash": "^4.17.4",
     "stringformat": "0.0.5"
-  },
-  "devDependencies": {
-    "jest": "^20.0.4"
   }
 }

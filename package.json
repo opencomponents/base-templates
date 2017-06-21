@@ -10,7 +10,7 @@
     "postinstall": "lerna bootstrap",
     "clean": "lerna clean",
     "coverage": "jest --coverage",
-    "test": "lerna run test",
+    "test": "jest",
     "publish": "lerna publish --exact",
     "precommit": "lint-staged"
   },

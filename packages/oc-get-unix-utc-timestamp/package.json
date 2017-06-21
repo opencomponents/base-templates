@@ -20,13 +20,7 @@
     "email": "nick@balestra.ch"
   },
   "license": "MIT",
-  "scripts": {
-    "test": "jest"
-  },
   "files": [
     "index.js"
-  ],
-  "devDependencies": {
-    "jest": "^20.0.4"
-  }
+  ]
 }

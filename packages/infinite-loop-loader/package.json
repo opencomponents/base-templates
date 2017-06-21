@@ -29,13 +29,7 @@
     "webpackloader",
     "transform"
   ],
-  "scripts": {
-    "test": "jest"
-  },
   "dependencies": {
     "falafel": "^2.0.0"
-  },
-  "devDependencies": {
-    "jest": "^20.0.4"
   }
 }

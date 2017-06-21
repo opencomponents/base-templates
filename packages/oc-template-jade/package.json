@@ -12,9 +12,6 @@
   },
   "homepage": "https://github.com/opencomponents/base-templates#readme",
   "keywords": ["oc", "opencomponents"],
-  "scripts": {
-    "test": "jest"
-  },
   "author": {
     "name": "Nick Balestra",
     "email": "nick@balestra.ch"
@@ -22,9 +19,6 @@
   "license": "MIT",
   "dependencies": {
     "jade-legacy": "1.11.1"
-  },
-  "devDependencies": {
-    "jest": "^20.0.4"
   },
   "files": [
     "index.js",
