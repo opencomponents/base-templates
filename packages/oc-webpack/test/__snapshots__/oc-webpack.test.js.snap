@@ -23,15 +23,15 @@ Object {
         "test": /\\\\\\.js\\$/,
         "use": Array [
           Object {
-            "loader": "/Users/nbalestra/OT/oc-templates/oc-template-jade/packages/oc-webpack/node_modules/infinite-loop-loader/index.js",
+            "loader": "../node_modules/infinite-loop-loader/index.js",
           },
           Object {
-            "loader": "/Users/nbalestra/OT/oc-templates/oc-template-jade/packages/oc-webpack/node_modules/babel-loader/lib/index.js",
+            "loader": "../node_modules/babel-loader/lib/index.js",
             "options": Object {
               "cacheDirectory": true,
               "presets": Array [
                 Array [
-                  "/Users/nbalestra/OT/oc-templates/oc-template-jade/packages/oc-webpack/node_modules/babel-preset-env/lib/index.js",
+                  "../node_modules/babel-preset-env/lib/index.js",
                   Object {
                     "modules": false,
                     "targets": Object {

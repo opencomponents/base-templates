@@ -16,6 +16,15 @@ test('webpack configurator', () => {
     publishFileName: 'server.js',
     serverPath: '/path/to/server.js'
   });
+
+  // clean paths
+  const target = config.module.rules[0].use;
+  target[0].loader = path.relative(__dirname, target[0].loader);
+  target[1].loader = path.relative(__dirname, target[1].loader);
+  target[1].options.presets[0][0] = path.relative(
+    __dirname,
+    target[1].options.presets[0][0]
+  );
   expect(config).toMatchSnapshot();
 });
 
