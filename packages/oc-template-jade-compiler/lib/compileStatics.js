@@ -1,13 +1,12 @@
 'use strict';
 
+const _ = require('lodash');
+const async = require('async');
 const format = require('stringformat');
 const fs = require('fs-extra');
 const minifyFile = require('oc-minify-file');
 const nodeDir = require('node-dir');
 const path = require('path');
-const _ = require('lodash');
-const async = require('async');
-
 const strings = require('./resources/strings');
 
 module.exports = (options, callback) => {

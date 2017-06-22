@@ -1,13 +1,13 @@
 'use strict';
 
-const async = require('async');
 const _ = require('lodash');
-const fs = require('fs-extra');
-const path = require('path');
-const compileView = require('./compileView');
+const async = require('async');
 const compileServer = require('./compileServer');
 const compileStatics = require('./compileStatics');
+const compileView = require('./compileView');
+const fs = require('fs-extra');
 const getUnixUtcTimestamp = require('oc-get-unix-utc-timestamp');
+const path = require('path');
 
 // OPTIONS
 // =======

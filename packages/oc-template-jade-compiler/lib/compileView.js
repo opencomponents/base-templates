@@ -1,12 +1,12 @@
 'use strict';
 
 const fs = require('fs-extra');
-const path = require('path');
-const uglifyJs = require('uglify-js');
-const jade = require('jade-legacy');
 const hashBuilder = require('oc-hash-builder');
+const jade = require('jade-legacy');
 const ocViewWrapper = require('oc-view-wrapper');
+const path = require('path');
 const strings = require('./resources/strings');
+const uglifyJs = require('uglify-js');
 
 module.exports = (options, callback) => {
   const viewFileName = options.componentPackage.oc.files.template.src;
