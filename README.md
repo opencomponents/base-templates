@@ -1,12 +1,21 @@
-oc-template-jade
+base-templates
 ======================
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/opencomponents/oc-template-jade.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/opencomponents/base-templates.svg)](https://greenkeeper.io/)
 
-[![Build Status](https://travis-ci.org/opencomponents/oc-template-jade.svg?branch=master)](https://travis-ci.org/opencomponents/oc-template-jade)
+[![Build Status](https://travis-ci.org/opencomponents/base-templates.svg?branch=master)](https://travis-ci.org/opencomponents/base-templates)
 
-This is a module for handling [jade](https://www.npmjs.com/package/jade) templates in [OpenComponents](https://github.com/opentable/oc).
-It is part of OC frameworks's core.
+This is a monorepo including the [OpenComponents](https://github.com/opentable/oc) base-templates:
 
-### License
-MIT
+- oc-template-jade
+- oc-template-handlebars
+
+and relative modules:
+
+- infinite-loop-loader
+- oc-external-dependencies-handler
+- oc-get-unix-utc-timestamp
+- oc-hash-builder
+- oc-webpack
+- oc-view-wrapper
+- oc-minify-file

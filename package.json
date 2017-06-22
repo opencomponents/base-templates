@@ -8,14 +8,16 @@
   },
   "scripts": {
     "postinstall": "lerna bootstrap",
+    "clean": "lerna clean",
+    "coverage": "jest --coverage",
     "test": "jest",
     "publish": "lerna publish --exact",
-    "precommit": "lint-staged",
-    "prepush": "npm test"
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "*.js": [
       "prettier-eslint --prettier-last --write",
+      "jest --findRelatedTests",
       "git add"
     ]
   }

@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`infinite-loop-loader When invoked on a js file containing loops should wrap WhileStatement, ForStatement and DoWhileStatement correctly 1`] = `
+"
+module.exports.data = function(context, cb) {
+  var x, y, z;
+
+  
+      var __ITER = 1000000000;
+      while(true) { if (__ITER <= 0) {
+        throw new Error(\\"Loop exceeded maximum allowed iterations\\");
+      }
+      __ITER--;
+      
+    x = 234;
+  }
+
+  
+      var __ITER = 1000000000;
+      for(var i = 0; i < 10; i++) { if (__ITER <= 0) {
+        throw new Error(\\"Loop exceeded maximum allowed iterations\\");
+      }
+      __ITER--;
+      
+    y = 456;
+  }
+
+  
+      var __ITER = 1000000000;
+      do { if (__ITER <= 0) {
+        throw new Error(\\"Loop exceeded maximum allowed iterations\\");
+      }
+      __ITER--;
+      
+    z = 342;
+  } while(false);
+
+  
+      var __ITER = 1000000000;
+      loopWhile:
+  while(true) { if (__ITER <= 0) {
+        throw new Error(\\"Loop exceeded maximum allowed iterations\\");
+      }
+      __ITER--;
+      
+    x = 234;
+  }
+
+  
+      var __ITER = 1000000000;
+      loopFor:
+  for(var i = 0; i < 10; i++) { if (__ITER <= 0) {
+        throw new Error(\\"Loop exceeded maximum allowed iterations\\");
+      }
+      __ITER--;
+      
+    y = 456;
+  }
+
+  
+      var __ITER = 1000000000;
+      loopDoWhile:
+  do { if (__ITER <= 0) {
+        throw new Error(\\"Loop exceeded maximum allowed iterations\\");
+      }
+      __ITER--;
+      
+    z = 342;
+  } while(false);
+  return cb(null, data)
+};
+"
+`;

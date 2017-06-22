@@ -1,6 +1,8 @@
-const getInfo = require('./getInfo');
-const getCompiledTemplate = require('./getCompiledTemplate');
-const render = require('./render');
+'use strict';
+
+const getCompiledTemplate = require('./lib/getCompiledTemplate');
+const getInfo = require('./lib/getInfo');
+const render = require('./lib/render');
 
 module.exports = {
   getInfo,

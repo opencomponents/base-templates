@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should correctly compile the view 1`] = `
+Object {
+  "hashKey": "43155d7e8788d3a8b32cc7aeb4c7ff1c30d83ba7",
+  "src": "template.js",
+  "type": "jade",
+}
+`;
+
+exports[`Should correctly compile the view 2`] = `"var oc=oc||{};oc.components=oc.components||{},oc.components[\\"43155d7e8788d3a8b32cc7aeb4c7ff1c30d83ba7\\"]=function(c){var o,e=[];return e.push(\\"<h1>\\"+jade.escape(null==(o=\\"Hello jade!\\")?\\"\\":o)+\\"</h1>\\"),e.join(\\"\\")};"`;

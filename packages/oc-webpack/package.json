@@ -1,0 +1,42 @@
+{
+  "name": "oc-webpack",
+  "version": "1.0.0",
+  "description": "configurable webpack compiler for faster oc-templates development",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opencomponents/base-templates.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opencomponents/base-templates/issues"
+  },
+  "homepage": "https://github.com/opencomponents/base-templates#readme",
+  "keywords": [
+    "oc",
+    "opencomponents"
+  ],
+  "author": {
+    "name": "Nick Balestra",
+    "email": "nick@balestra.ch"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.2",
+    "babili-webpack-plugin": "^0.1.1",
+    "infinite-loop-loader": "^1.0.1",
+    "memory-fs": "^0.4.1",
+    "webpack": "^2.6.1",
+    "oc-external-dependencies-handler": "^1.0.0"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "devDependencies": {
+    "jest": "^20.0.4"
+  }
+}

@@ -1,7 +1,7 @@
 {
-  "name": "oc-template-jade",
-  "version": "5.0.0",
-  "description": "OC-Template-Jade",
+  "name": "oc-get-unix-utc-timestamp",
+  "version": "1.0.0",
+  "description": "UTC times stamp utility",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -11,23 +11,16 @@
     "url": "https://github.com/opencomponents/base-templates/issues"
   },
   "homepage": "https://github.com/opencomponents/base-templates#readme",
-  "keywords": ["oc", "opencomponents"],
+  "keywords": [
+    "oc",
+    "opencomponents"
+  ],
   "author": {
     "name": "Nick Balestra",
     "email": "nick@balestra.ch"
   },
   "license": "MIT",
-  "dependencies": {
-    "jade-legacy": "1.11.1"
-  },
   "files": [
-    "index.js",
-    "lib"
-  ],
-  "externals": {
-    "jade": {
-      "global": "jade",
-      "url": "https://unpkg.com/jade-legacy@1.11.1/runtime.js"
-    }
-  }
+    "index.js"
+  ]
 }

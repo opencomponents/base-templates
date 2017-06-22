@@ -1,7 +1,7 @@
 {
-  "name": "oc-template-jade",
-  "version": "5.0.0",
-  "description": "OC-Template-Jade",
+  "name": "oc-minify-file",
+  "version": "1.0.0",
+  "description": "Minify file helper",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -17,17 +17,13 @@
     "email": "nick@balestra.ch"
   },
   "license": "MIT",
-  "dependencies": {
-    "jade-legacy": "1.11.1"
-  },
   "files": [
-    "index.js",
-    "lib"
+    "index.js"
   ],
-  "externals": {
-    "jade": {
-      "global": "jade",
-      "url": "https://unpkg.com/jade-legacy@1.11.1/runtime.js"
-    }
+  "dependencies": {
+    "babel-core": "^6.25.0",
+    "babel-preset-env": "^1.5.2",
+    "clean-css": "^4.1.4",
+    "uglify-js": "2.6.4"
   }
 }

@@ -1,0 +1,35 @@
+{
+  "name": "infinite-loop-loader",
+  "version": "1.0.1",
+  "description": "A webpack loader to transform ∞ loops so that they throw",
+  "author": {
+    "name": "Nick Balestra",
+    "email": "nick@balestra.ch"
+  },
+  "license": "MIT",
+  "main": "index.js",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/opencomponents/base-templates.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opencomponents/base-templates/issues"
+  },
+  "homepage": "https://github.com/opencomponents/base-templates#readme",
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "keywords": [
+    "oc",
+    "opencomponents",
+    "webpack",
+    "loader",
+    "inifinite-loop",
+    "webpackloader",
+    "transform"
+  ],
+  "dependencies": {
+    "falafel": "^2.0.0"
+  }
+}

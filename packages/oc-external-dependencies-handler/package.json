@@ -1,7 +1,7 @@
 {
-  "name": "oc-template-jade",
-  "version": "5.0.0",
-  "description": "OC-Template-Jade",
+  "name": "oc-external-dependencies-handler",
+  "version": "1.0.0",
+  "description": "External dependencies handler for webpack",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -11,23 +11,21 @@
     "url": "https://github.com/opencomponents/base-templates/issues"
   },
   "homepage": "https://github.com/opencomponents/base-templates#readme",
-  "keywords": ["oc", "opencomponents"],
+  "keywords": [
+    "oc",
+    "opencomponents"
+  ],
   "author": {
     "name": "Nick Balestra",
     "email": "nick@balestra.ch"
   },
   "license": "MIT",
-  "dependencies": {
-    "jade-legacy": "1.11.1"
-  },
   "files": [
-    "index.js",
-    "lib"
+    "index.js"
   ],
-  "externals": {
-    "jade": {
-      "global": "jade",
-      "url": "https://unpkg.com/jade-legacy@1.11.1/runtime.js"
-    }
+  "dependencies": {
+    "builtin-modules": "^1.1.1",
+    "lodash": "^4.17.4",
+    "stringformat": "0.0.5"
   }
 }
