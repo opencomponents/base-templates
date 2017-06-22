@@ -4,7 +4,7 @@ const compileView = require('../lib/compileView.js');
 
 const componentPath = path.join(
   __dirname,
-  '../../../mocks/handlebarsComponent'
+  '../../../mocks/handlebars-component'
 );
 const publishPath = path.join(componentPath, '_package');
 const publishFileName = 'template.js';

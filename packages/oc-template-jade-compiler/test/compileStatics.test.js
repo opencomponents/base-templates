@@ -3,7 +3,7 @@ const fs = require('fs-extra');
 const nodeDir = require('node-dir');
 
 const compileStatics = require('../lib/compileStatics.js');
-const componentPath = path.join(__dirname, '../../../mocks/jadeComponent');
+const componentPath = path.join(__dirname, '../../../mocks/jade-component');
 const publishPath = path.join(componentPath, '_package');
 const publishFileName = 'template.js';
 const withStatic = (staticFiles, minify = false) => ({

@@ -2,9 +2,9 @@
 
 exports[`compile statics when oc.files.static contains valid folder and minify is false 1`] = `
 Array [
-  "../../../mocks/handlebarsComponent/_package/assets/css/style.css",
-  "../../../mocks/handlebarsComponent/_package/assets/img/test.png",
-  "../../../mocks/handlebarsComponent/_package/assets/js/lib.js",
+  "../../../mocks/handlebars-component/_package/assets/css/style.css",
+  "../../../mocks/handlebars-component/_package/assets/img/test.png",
+  "../../../mocks/handlebars-component/_package/assets/js/lib.js",
 ]
 `;
 
@@ -53,9 +53,9 @@ say(text);
 
 exports[`compile statics when oc.files.static contains valid folder and minify is true 1`] = `
 Array [
-  "../../../mocks/handlebarsComponent/_package/assets/css/style.css",
-  "../../../mocks/handlebarsComponent/_package/assets/img/test.png",
-  "../../../mocks/handlebarsComponent/_package/assets/js/lib.js",
+  "../../../mocks/handlebars-component/_package/assets/css/style.css",
+  "../../../mocks/handlebars-component/_package/assets/img/test.png",
+  "../../../mocks/handlebars-component/_package/assets/js/lib.js",
 ]
 `;
 

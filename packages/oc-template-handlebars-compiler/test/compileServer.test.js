@@ -6,7 +6,7 @@ const compileServer = require('../lib/compileServer.js');
 
 const componentPath = path.join(
   __dirname,
-  '../../../mocks/handlebarsComponent'
+  '../../../mocks/handlebars-component'
 );
 const publishPath = path.join(componentPath, '_package');
 const publishFileName = 'server.js';
