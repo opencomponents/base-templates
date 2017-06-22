@@ -3,7 +3,7 @@
 const format = require('stringformat');
 const fs = require('fs-extra');
 const hashBuilder = require('oc-hash-builder');
-const jade = require('jade-legacy');
+const handlebars = require('handlebars');
 const ocViewWrapper = require('oc-view-wrapper');
 const path = require('path');
 const strings = require('./resources/strings');
@@ -19,17 +19,8 @@ module.exports = (options, callback) => {
   if (!fs.existsSync(viewPath)) {
     return callback(format(strings.errors.VIEW_NOT_FOUND, viewFileName));
   }
-
   try {
-    const view = jade
-      .compileClient(viewContent, {
-        compileDebug: false,
-        name: 't',
-        filename: viewFileName
-      })
-      .toString()
-      .replace('function t(locals) {', 'function(locals){');
-
+    const view = handlebars.precompile(viewContent);
     const viewHash = hashBuilder.fromString(view);
     const compiledView = uglifyJs.minify(
       ocViewWrapper(viewHash, view.toString()),

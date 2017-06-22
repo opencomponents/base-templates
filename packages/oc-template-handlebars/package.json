@@ -1,0 +1,33 @@
+{
+  "name": "oc-template-handlebars",
+  "version": "5.0.0",
+  "description": "OC-Template-Handlebars",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opencomponents/base-templates.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opencomponents/base-templates/issues"
+  },
+  "homepage": "https://github.com/opencomponents/base-templates#readme",
+  "keywords": ["oc", "opencomponents"],
+  "author": {
+    "name": "Nick Balestra",
+    "email": "nick@balestra.ch"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "handlebars": "4.0.6"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "externals": {
+    "handlebars": {
+      "global": "Handlebars",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.runtime.min.js"
+    }
+  }
+}

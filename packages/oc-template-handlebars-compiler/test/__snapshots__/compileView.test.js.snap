@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should correctly compile the view 1`] = `
+Object {
+  "hashKey": "2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e",
+  "src": "template.js",
+  "type": "handlebars",
+}
+`;
+
+exports[`Should correctly compile the view 2`] = `"var oc=oc||{};oc.components=oc.components||{},oc.components[\\"2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e\\"]={compiler:[7,\\">= 4.0.0\\"],main:function(c,o,e,n,a){return\\"<h1>Hello handlebars!</h1>\\"},useData:!0};"`;

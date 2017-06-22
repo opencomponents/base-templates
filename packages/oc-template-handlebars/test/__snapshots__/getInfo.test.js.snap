@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should return the correct info 1`] = `
+Object {
+  "externals": Array [
+    Object {
+      "global": "Handlebars",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.runtime.min.js",
+    },
+  ],
+  "type": "oc-template-handlebars",
+}
+`;

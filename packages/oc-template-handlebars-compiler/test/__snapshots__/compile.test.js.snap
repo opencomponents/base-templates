@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should correctly invoke the various compilers 1`] = `
+Array [
+  Array [
+    Object {
+      "componentPackage": Object {
+        "oc": Object {
+          "date": "",
+          "files": Object {
+            "dataProvider": undefined,
+            "static": Array [],
+            "template": undefined,
+          },
+          "packaged": true,
+          "version": undefined,
+        },
+      },
+      "ocPackage": Object {},
+      "publishPath": "",
+    },
+    [Function],
+  ],
+]
+`;
+
+exports[`Should correctly invoke the various compilers 2`] = `
+Array [
+  Array [
+    Object {
+      "componentPackage": Object {
+        "oc": Object {
+          "date": "",
+          "files": Object {
+            "dataProvider": undefined,
+            "static": Array [],
+            "template": undefined,
+          },
+          "packaged": true,
+          "version": undefined,
+        },
+      },
+      "ocPackage": Object {},
+      "publishPath": "",
+    },
+    [Function],
+  ],
+]
+`;
+
+exports[`Should correctly invoke the various compilers 3`] = `
+Array [
+  Array [
+    Object {
+      "componentPackage": Object {
+        "oc": Object {
+          "date": "",
+          "files": Object {
+            "dataProvider": undefined,
+            "static": Array [],
+            "template": undefined,
+          },
+          "packaged": true,
+          "version": undefined,
+        },
+      },
+      "ocPackage": Object {},
+      "publishPath": "",
+    },
+    [Function],
+  ],
+]
+`;
+
+exports[`Should correctly invoke the various compilers 4`] = `
+Array [
+  Array [
+    "package.json",
+    Object {
+      "oc": Object {
+        "date": "",
+        "files": Object {
+          "dataProvider": undefined,
+          "static": Array [],
+          "template": undefined,
+        },
+        "packaged": true,
+        "version": undefined,
+      },
+    },
+    [Function],
+  ],
+]
+`;
+
+exports[`Should correctly invoke the various compilers when no server has been defined 1`] = `
+Array [
+  Array [
+    Object {
+      "componentPackage": Object {
+        "oc": Object {
+          "date": "",
+          "files": Object {
+            "static": Array [],
+            "template": undefined,
+          },
+          "packaged": true,
+          "version": undefined,
+        },
+      },
+      "ocPackage": Object {},
+      "publishPath": "",
+    },
+    [Function],
+  ],
+]
+`;
+
+exports[`Should correctly invoke the various compilers when no server has been defined 2`] = `
+Array [
+  Array [
+    Object {
+      "componentPackage": Object {
+        "oc": Object {
+          "date": "",
+          "files": Object {
+            "static": Array [],
+            "template": undefined,
+          },
+          "packaged": true,
+          "version": undefined,
+        },
+      },
+      "ocPackage": Object {},
+      "publishPath": "",
+    },
+    [Function],
+  ],
+]
+`;
+
+exports[`Should correctly invoke the various compilers when no server has been defined 3`] = `
+Array [
+  Array [
+    "package.json",
+    Object {
+      "oc": Object {
+        "date": "",
+        "files": Object {
+          "static": Array [],
+          "template": undefined,
+        },
+        "packaged": true,
+        "version": undefined,
+      },
+    },
+    [Function],
+  ],
+]
+`;
