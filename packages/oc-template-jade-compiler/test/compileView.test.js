@@ -23,7 +23,6 @@ const options = {
 };
 
 test('Should correctly compile the view', done => {
-  // fs.ensureDirSync(publishPath);
   compileView(options, (err, compiledViewInfo) => {
     expect(compiledViewInfo).toMatchSnapshot();
     expect(

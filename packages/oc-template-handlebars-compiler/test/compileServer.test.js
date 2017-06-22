@@ -25,7 +25,6 @@ const options = {
 };
 
 test('Should correctly compile the server', done => {
-  // fs.ensureDirSync(publishPath);
   compileServer(options, (err, compiledServerInfo) => {
     expect(compiledServerInfo).toMatchSnapshot();
     expect(
