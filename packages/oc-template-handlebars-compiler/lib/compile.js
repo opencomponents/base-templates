@@ -11,13 +11,14 @@ const path = require('path');
 
 // OPTIONS
 // =======
-// watch,
-// logger,
-// verbose,
-// minify
-// componentPackage,
-// publishPath
 // componentPath
+// componentPackage,
+// logger,
+// minify
+// ocPackage
+// publishPath
+// verbose,
+// watch,
 module.exports = (options, callback) => {
   const componentPackage = options.componentPackage;
   const ocPackage = options.ocPackage;
