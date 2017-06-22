@@ -3,7 +3,10 @@ const fs = require('fs-extra');
 const nodeDir = require('node-dir');
 
 const compileStatics = require('../lib/compileStatics.js');
-const componentPath = path.join(__dirname, '../../../mocks/jade-component');
+const componentPath = path.join(
+  __dirname,
+  '../../../mocks/handlebars-component'
+);
 const publishPath = path.join(componentPath, '_package');
 const publishFileName = 'template.js';
 const withStatic = (staticFiles, minify = false) => ({
@@ -40,7 +43,7 @@ test('when oc.files.static contains a folder that doesnt exist', done => {
 });
 
 test('when oc.files.static contain reference to a non-folder', done => {
-  compileStatics(withStatic(['template.jade']), (error, result) => {
+  compileStatics(withStatic(['template.hbs']), (error, result) => {
     expect(error).toContain('must be a directory');
     expect(result).toBeUndefined();
     done();

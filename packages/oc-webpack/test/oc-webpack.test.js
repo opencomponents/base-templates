@@ -35,7 +35,7 @@ test('webpack compiler', done => {
     publishFileName: 'server.js',
     serverPath: path.join(
       __dirname,
-      '../../../mocks/jadeComponent',
+      '../../../mocks/jade-component',
       'server.js'
     )
   });
