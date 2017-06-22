@@ -1,5 +1,5 @@
 const getTimeStamp = require('../index.js');
 
-test('Generates correct timestamps everytime its invoked', () => {
+test("Generates correct timestamps everytime it's invoked", () => {
   expect(getTimeStamp()).toBeLessThanOrEqual(getTimeStamp());
 });
