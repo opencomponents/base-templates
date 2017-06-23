@@ -1,6 +1,6 @@
 {
   "name": "oc-minify-file",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Minify file helper",
   "main": "index.js",
   "repository": {
@@ -11,7 +11,10 @@
     "url": "https://github.com/opencomponents/base-templates/issues"
   },
   "homepage": "https://github.com/opencomponents/base-templates#readme",
-  "keywords": ["oc", "opencomponents"],
+  "keywords": [
+    "oc",
+    "opencomponents"
+  ],
   "author": {
     "name": "Nick Balestra",
     "email": "nick@balestra.ch"

@@ -1,6 +1,6 @@
 {
   "name": "oc-webpack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "configurable webpack compiler for faster oc-templates development",
   "main": "index.js",
   "repository": {
@@ -27,10 +27,10 @@
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.5.2",
     "babili-webpack-plugin": "^0.1.1",
-    "infinite-loop-loader": "^1.0.1",
+    "infinite-loop-loader": "1.0.2",
     "memory-fs": "^0.4.1",
-    "webpack": "^2.6.1",
-    "oc-external-dependencies-handler": "^1.0.0"
+    "oc-external-dependencies-handler": "1.0.1",
+    "webpack": "^2.6.1"
   },
   "files": [
     "index.js",
