@@ -37,6 +37,7 @@
     "oc-template-jade": "6.0.0",
     "oc-view-wrapper": "1.0.1",
     "oc-webpack": "1.0.1",
+    "uglify-js": "2.6.4",
     "stringformat": "0.0.5"
   },
   "files": [
