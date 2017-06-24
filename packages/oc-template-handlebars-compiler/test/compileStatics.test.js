@@ -9,7 +9,7 @@ const componentPath = path.join(
 );
 const publishPath = path.join(componentPath, '_package');
 const publishFileName = 'template.js';
-const withStatic = (staticFiles, minify = false) => ({
+const withStatic = (staticFiles, minify) => ({
   componentPackage: {
     oc: {
       files: {
@@ -19,7 +19,7 @@ const withStatic = (staticFiles, minify = false) => ({
   },
   publishPath,
   componentPath,
-  minify
+  minify: minify || false
 });
 
 afterEach(() => {
