@@ -1,3 +1,5 @@
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000;
+
 const path = require('path');
 const fs = require('fs-extra');
 const nodeDir = require('node-dir');

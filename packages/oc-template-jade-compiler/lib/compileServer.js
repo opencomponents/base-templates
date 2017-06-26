@@ -1,4 +1,4 @@
-'use strict';
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
 
 const compiler = require('oc-webpack').compiler;
 const fs = require('fs-extra');

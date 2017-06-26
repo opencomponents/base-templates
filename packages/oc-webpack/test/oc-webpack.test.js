@@ -1,4 +1,6 @@
-'use strict';
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+
+('use strict');
 
 const path = require('path');
 const api = require('../index.js');

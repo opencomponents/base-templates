@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should correctly compile the oc component 1`] = `
+Object {
+  "description": "",
+  "name": "handlebars-component",
+  "oc": Object {
+    "date": "",
+    "files": Object {
+      "dataProvider": Object {
+        "hashKey": "46fc3cca37f747de97af6e9266895190bc6048ca",
+        "src": "server.js",
+        "type": "node.js",
+      },
+      "static": Array [
+        "assets",
+      ],
+      "template": Object {
+        "hashKey": "2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e",
+        "src": "template.js",
+        "type": "handlebars",
+      },
+    },
+    "packaged": true,
+    "version": "1.0.0",
+  },
+  "repository": "",
+  "version": "1.0.0",
+}
+`;
+
+exports[`Should correctly compile the oc component 2`] = `
+Array [
+  "../../../mocks/handlebars-component/__package/assets/css/style.css",
+  "../../../mocks/handlebars-component/__package/assets/img/test.png",
+  "../../../mocks/handlebars-component/__package/assets/js/lib.js",
+  "../../../mocks/handlebars-component/__package/package.json",
+  "../../../mocks/handlebars-component/__package/server.js",
+  "../../../mocks/handlebars-component/__package/template.js",
+]
+`;
