@@ -1,22 +1,22 @@
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000;
 
-const path = require("path");
-const compile = require("../lib/compile.js");
-const fs = require("fs-extra");
-const nodeDir = require("node-dir");
+const path = require('path');
+const compile = require('../lib/compile.js');
+const fs = require('fs-extra');
+const nodeDir = require('node-dir');
 
-const componentPackage = require("../../../mocks/handlebars-component/package.json");
+const componentPackage = require('../../../mocks/handlebars-component/package.json');
 const componentPath = path.join(
   __dirname,
-  "../../../mocks/handlebars-component/"
+  '../../../mocks/handlebars-component/'
 );
-const publishPath = path.join(componentPath, "__package");
+const publishPath = path.join(componentPath, '__package');
 
-test("Should correctly compile the oc component", done => {
+test('Should correctly compile the oc component', done => {
   const options = {
     componentPackage,
     ocPackage: {
-      version: "1.0.0"
+      version: '1.0.0'
     },
     componentPath,
     publishPath
@@ -24,7 +24,7 @@ test("Should correctly compile the oc component", done => {
   fs.ensureDirSync(publishPath);
   compile(options, (err, res) => {
     expect(err).toBeNull();
-    res.oc.date = "";
+    res.oc.date = '';
     expect(res).toMatchSnapshot();
     nodeDir.paths(publishPath, (err, res) => {
       const files = res.files
