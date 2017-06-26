@@ -25,6 +25,7 @@ module.exports = (options, callback) => {
     if (err) {
       return callback(err);
     } else {
+      fs.ensureDirSync(publishPath);
       fs.writeFile(
         path.join(publishPath, publishFileName),
         compiledServer,
