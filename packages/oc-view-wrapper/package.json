@@ -1,6 +1,6 @@
 {
   "name": "oc-view-wrapper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Wrapper helper for oc views",
   "main": "index.js",
   "repository": {
