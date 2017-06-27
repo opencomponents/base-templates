@@ -1,1 +1,0 @@
-{"name":"jade-component","description":"","version":"1.0.0","repository":"","oc":{"files":{"template":{"type":"jade","hashKey":"43155d7e8788d3a8b32cc7aeb4c7ff1c30d83ba7","src":"template.js"},"dataProvider":{"type":"node.js","hashKey":"46fc3cca37f747de97af6e9266895190bc6048ca","src":"server.js"},"static":[]},"version":"0.37.11","packaged":true,"date":1498143198149}}

@@ -1,3 +1,5 @@
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
+
 const path = require('path');
 const fs = require('fs-extra');
 const nodeDir = require('node-dir');
@@ -6,7 +8,7 @@ const compileStatics = require('../lib/compileStatics.js');
 const componentPath = path.join(__dirname, '../../../mocks/jade-component');
 const publishPath = path.join(componentPath, '_package');
 const publishFileName = 'template.js';
-const withStatic = (staticFiles, minify = false) => ({
+const withStatic = (staticFiles, minify) => ({
   componentPackage: {
     oc: {
       files: {
@@ -16,7 +18,7 @@ const withStatic = (staticFiles, minify = false) => ({
   },
   publishPath,
   componentPath,
-  minify
+  minify: minify || false
 });
 
 afterEach(() => {

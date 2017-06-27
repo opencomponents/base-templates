@@ -38,6 +38,7 @@ module.exports = (options, callback) => {
       }
     ).code;
 
+    fs.ensureDirSync(publishPath);
     fs.writeFile(path.join(publishPath, publishFileName), compiledView, err =>
       callback(err, {
         type: options.componentPackage.oc.files.template.type,

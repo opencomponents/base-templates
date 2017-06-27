@@ -1,3 +1,5 @@
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
+
 const path = require('path');
 const fs = require('fs-extra');
 const nodeDir = require('node-dir');
@@ -9,7 +11,7 @@ const componentPath = path.join(
 );
 const publishPath = path.join(componentPath, '_package');
 const publishFileName = 'template.js';
-const withStatic = (staticFiles, minify = false) => ({
+const withStatic = (staticFiles, minify) => ({
   componentPackage: {
     oc: {
       files: {
@@ -19,7 +21,7 @@ const withStatic = (staticFiles, minify = false) => ({
   },
   publishPath,
   componentPath,
-  minify
+  minify: minify || false
 });
 
 afterEach(() => {

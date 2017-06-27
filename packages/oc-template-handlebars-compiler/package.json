@@ -27,13 +27,14 @@
     "handlebars": "4.0.6",
     "lodash": "^4.17.4",
     "memory-fs": "^0.4.1",
-    "node-dir": "^0.1.17",
+    "node-dir": "0.1.16",
     "oc-get-unix-utc-timestamp": "1.0.1",
     "oc-hash-builder": "1.0.1",
     "oc-minify-file": "1.0.1",
     "oc-template-handlebars": "6.0.0",
     "oc-view-wrapper": "1.0.1",
     "oc-webpack": "1.0.1",
+    "uglify-js": "2.6.4",
     "stringformat": "0.0.5"
   },
   "files": [
