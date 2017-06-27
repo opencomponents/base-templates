@@ -1,4 +1,4 @@
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+'use strict';
 
 const format = require('stringformat');
 const fs = require('fs-extra');

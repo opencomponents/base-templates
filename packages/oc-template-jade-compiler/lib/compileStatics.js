@@ -1,4 +1,4 @@
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+'use strict';
 
 const _ = require('lodash');
 const async = require('async');
