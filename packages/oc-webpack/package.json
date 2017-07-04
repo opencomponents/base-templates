@@ -1,6 +1,6 @@
 {
   "name": "oc-webpack",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "configurable webpack compiler for faster oc-templates development",
   "main": "index.js",
   "repository": {
