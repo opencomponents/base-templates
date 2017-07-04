@@ -12,7 +12,7 @@ module.exports = (options, callback) => {
   const publishFileName = options.publishFileName || 'server.js';
   const publishPath = options.publishPath;
   const stats = options.verbose ? 'verbose' : 'errors-only';
-  const dependencies = options.dependencies || {};
+  const dependencies = options.componentPackage.dependencies || {};
 
   const config = webpackConfigurator({
     serverPath,
