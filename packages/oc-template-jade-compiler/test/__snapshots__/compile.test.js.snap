@@ -16,7 +16,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "43155d7e8788d3a8b32cc7aeb4c7ff1c30d83ba7",
+        "hashKey": "096e8ec0a00c37c4bd669e2ad046892d93766ff0",
         "src": "template.js",
         "type": "jade",
       },

@@ -2,10 +2,10 @@
 
 exports[`Should correctly compile the view 1`] = `
 Object {
-  "hashKey": "43155d7e8788d3a8b32cc7aeb4c7ff1c30d83ba7",
+  "hashKey": "096e8ec0a00c37c4bd669e2ad046892d93766ff0",
   "src": "template.js",
   "type": "jade",
 }
 `;
 
-exports[`Should correctly compile the view 2`] = `"var oc=oc||{};oc.components=oc.components||{},oc.components[\\"43155d7e8788d3a8b32cc7aeb4c7ff1c30d83ba7\\"]=function(c){var o,e=[];return e.push(\\"<h1>\\"+jade.escape(null==(o=\\"Hello jade!\\")?\\"\\":o)+\\"</h1>\\"),e.join(\\"\\")};"`;
+exports[`Should correctly compile the view 2`] = `"var oc=oc||{};oc.components=oc.components||{},oc.components[\\"096e8ec0a00c37c4bd669e2ad046892d93766ff0\\"]=function(o){var e,c=[];return c.push(\\"<h1>\\"+jade.escape(null==(e=\\"Hello jade!\\")?\\"\\":e)+\\"</h1><style>h1{color:red;font-size:100px}</style>\\"),c.join(\\"\\")};"`;
