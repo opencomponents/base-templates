@@ -25,7 +25,7 @@ module.exports = (options, callback) => {
       .compileClient(viewContent, {
         compileDebug: false,
         name: 't',
-        filename: viewFileName
+        filename: viewPath
       })
       .toString()
       .replace('function t(locals) {', 'function(locals){');
