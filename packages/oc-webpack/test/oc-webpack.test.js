@@ -33,7 +33,7 @@ test('webpack configurator', () => {
 test('webpack compiler', done => {
   const config = webpackConfigurator({
     stats: 'errors-only',
-    dependencies: {},
+    dependencies: { lodash: '' },
     publishFileName: 'server.js',
     serverPath: path.join(
       __dirname,
