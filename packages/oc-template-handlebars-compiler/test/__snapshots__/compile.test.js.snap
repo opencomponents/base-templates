@@ -2,13 +2,16 @@
 
 exports[`Should correctly compile the oc component 1`] = `
 Object {
+  "dependencies": Object {
+    "lodash": "",
+  },
   "description": "",
   "name": "handlebars-component",
   "oc": Object {
     "date": "",
     "files": Object {
       "dataProvider": Object {
-        "hashKey": "46fc3cca37f747de97af6e9266895190bc6048ca",
+        "hashKey": "1ea15b210c9e4c76e232b8341d4f96c2e0f23109",
         "src": "server.js",
         "type": "node.js",
       },

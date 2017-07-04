@@ -9,13 +9,7 @@ const publishPath = path.join(componentPath, '_package');
 const publishFileName = 'server.js';
 
 const options = {
-  componentPackage: {
-    oc: {
-      files: {
-        data: 'server.js'
-      }
-    }
-  },
+  componentPackage: fs.readJsonSync(componentPath + '/package.json'),
   componentPath,
   publishPath,
   publishFileName
@@ -23,6 +17,7 @@ const options = {
 
 test('Should correctly compile the server', done => {
   compileServer(options, (err, compiledServerInfo) => {
+    expect(err).toBeNull();
     expect(compiledServerInfo).toMatchSnapshot();
     expect(
       fs.readFileSync(path.join(publishPath, publishFileName), 'UTF8')
