@@ -10,7 +10,8 @@
   "scripts": {
     "postinstall": "lerna bootstrap",
     "clean": "lerna clean",
-    "test": "jest && codecov",
+    "coverage": "codecov",
+    "test": "jest",
     "publish": "lerna publish --exact",
     "precommit": "lint-staged"
   },
