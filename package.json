@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "codecov": "^2.2.0",
     "husky": "^0.13.4",
     "jest": "^20.0.4",
     "lerna": "^2.0.0-rc.5",
@@ -9,7 +10,7 @@
   "scripts": {
     "postinstall": "lerna bootstrap",
     "clean": "lerna clean",
-    "coverage": "jest --coverage",
+    "coverage": "codecov",
     "test": "jest",
     "publish": "lerna publish --exact",
     "precommit": "lint-staged"
@@ -20,5 +21,9 @@
       "jest --findRelatedTests",
       "git add"
     ]
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   }
 }
