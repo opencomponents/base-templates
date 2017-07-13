@@ -8,3 +8,6 @@ matrix:
 
 after_script:
   - npm run coverage
+
+notifications:
+  email: false
