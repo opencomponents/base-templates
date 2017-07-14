@@ -41,8 +41,23 @@ test('webpack compiler', done => {
       'server.js'
     )
   });
+
   webpackCompiler(config, (warning, serverContentBundled) => {
     expect(serverContentBundled).toMatchSnapshot();
+    done();
+  });
+});
+
+test('webpack compiler with error', done => {
+  const config = webpackConfigurator({
+    stats: 'errors-only',
+    dependencies: { lodash: '' },
+    publishFileName: 'server.js',
+    serverPath: path.join(__dirname, 'some/not/valid/path', 'server.js')
+  });
+
+  webpackCompiler(config, (warning, serverContentBundled) => {
+    expect(warning).toContain(`Entry module not found: Error: Can't resolve`);
     done();
   });
 });

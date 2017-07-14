@@ -22,6 +22,12 @@ module.exports = function(fileExtension, fileContent) {
 
     return uglifyJs.minify(es5TranspiledContent, { fromString: true }).code;
   } else if (fileExtension === '.css') {
-    return new CleanCss().minify(fileContent).styles;
+    const result = new CleanCss().minify(fileContent);
+
+    if (result.warnings.length > 0 || result.errors.lenght > 0) {
+      throw new Error('Css is not valid');
+    }
+
+    return result.styles;
   }
 };

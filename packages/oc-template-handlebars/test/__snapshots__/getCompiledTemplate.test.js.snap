@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Return compiled template when valid 1`] = `
+Object {
+  "compiler": Array [
+    7,
+    ">= 4.0.0",
+  ],
+  "main": [Function],
+  "useData": true,
+}
+`;
+
+exports[`Throw exception when js is not valid 1`] = `"Unexpected token )"`;
