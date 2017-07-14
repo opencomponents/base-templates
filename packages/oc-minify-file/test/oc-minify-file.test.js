@@ -20,8 +20,6 @@ test('Minify valid css file', () => {
 });
 
 test('Minify not valid css', () => {
-  const content = `body {
-    background-color: #hello`;
-
-  expect(minifyFile('.css', content)).toThrowErrorMatchingSnapshot();
+  const content = `var a = notACss;`;
+  expect(() => minifyFile('.css', content)).toThrowErrorMatchingSnapshot();
 });

@@ -2,7 +2,7 @@
 
 exports[`Minify es6 files 1`] = `"var hi=function(n){return\\"hello \\"+n};"`;
 
-exports[`Minify not valid css 1`] = `"received is not a function"`;
+exports[`Minify not valid css 1`] = `"Css is not valid"`;
 
 exports[`Minify not valid js 1`] = `"unknown: Unexpected token (1:17)"`;
 
