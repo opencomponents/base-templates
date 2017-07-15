@@ -15,6 +15,16 @@ test('When a module is being used withough being declared in the package', done 
   });
 });
 
+test('When a module/path is being used withough being declared in the package', done => {
+  const handler = externalDependenciesHandler({});
+  const handlerFunction = handler[0];
+  expect(handlerFunction).toBeInstanceOf(Function);
+  handlerFunction(null, 'lodash/package.json', err => {
+    expect(err).toMatchSnapshot();
+    done();
+  });
+});
+
 test('When a module declared in the package is being used', done => {
   const handler = externalDependenciesHandler({ lodash: '4.17.4' });
   const handlerFunction = handler[0];
