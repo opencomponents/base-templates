@@ -52,6 +52,7 @@ module.exports = function webpackConfigGenerator(options) {
         'process.env.NODE_ENV': JSON.stringify('production')
       })
     ],
+    logger: options.logger || console,
     stats: options.stats
   };
 };

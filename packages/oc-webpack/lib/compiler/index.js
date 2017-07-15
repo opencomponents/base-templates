@@ -6,7 +6,9 @@ const webpack = require('webpack');
 const memoryFs = new MemoryFS();
 
 module.exports = function compiler(config, callback) {
-  const logger = config.logger || console.log;
+  const logger = config.logger;
+  delete config.logger;
+
   const compiler = webpack(config);
   compiler.outputFileSystem = memoryFs;
 
@@ -33,7 +35,7 @@ module.exports = function compiler(config, callback) {
     const log = stats.toString(config.stats || 'errors-only');
 
     if (log) {
-      logger(log);
+      logger.log(log);
     }
 
     const serverContentBundled = memoryFs.readFileSync(

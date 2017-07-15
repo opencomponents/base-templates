@@ -27,6 +27,7 @@ test('webpack configurator', () => {
     __dirname,
     target[1].options.presets[0][0]
   );
+  delete config.logger;
   expect(config).toMatchSnapshot();
 });
 
@@ -48,7 +49,55 @@ test('webpack compiler', done => {
   });
 });
 
-test('webpack compiler with error', done => {
+test('webpack compiler verbose', done => {
+  const loggerMock = { log: jest.fn() };
+  const config = webpackConfigurator({
+    logger: loggerMock,
+    stats: 'verbose',
+    dependencies: { lodash: '' },
+    publishFileName: 'server.js',
+    serverPath: path.join(
+      __dirname,
+      '../../../mocks/jade-component',
+      'server.js'
+    )
+  });
+
+  webpackCompiler(config, (warning, serverContentBundled) => {
+    const consoleOutput = loggerMock.log.mock.calls[0][0];
+    expect(serverContentBundled).toMatchSnapshot();
+    expect(consoleOutput).toMatch(/Hash:(.*?)01e93c95dfecf93de280/);
+    expect(consoleOutput).toMatch(/Entrypoint(.*?)main(.*?)=(.*?)server.js/);
+    expect(consoleOutput).toMatch(/external \"lodash\"/);
+    done();
+  });
+});
+
+test('webpack compiler with fatal error', done => {
+  const config = webpackConfigurator({
+    stats: 'errors-only',
+    dependencies: { lodash: '' },
+    publishFileName: 'server.js',
+    serverPath: path.join(
+      __dirname,
+      '../../../mocks/jade-component',
+      'server.js'
+    )
+  });
+
+  config.plugins.push(function() {
+    this.plugin('run', (compiler, cb) =>
+      cb('This is a fatal compilation error')
+    );
+  });
+
+  webpackCompiler(config, (error, serverContentBundled) => {
+    expect(error).toMatchSnapshot();
+    done();
+  });
+});
+
+test('webpack compiler with soft error', done => {
   const config = webpackConfigurator({
     stats: 'errors-only',
     dependencies: { lodash: '' },
@@ -56,8 +105,33 @@ test('webpack compiler with error', done => {
     serverPath: path.join(__dirname, 'some/not/valid/path', 'server.js')
   });
 
+  webpackCompiler(config, (error, serverContentBundled) => {
+    expect(error).toContain(`Entry module not found: Error: Can't resolve`);
+    done();
+  });
+});
+
+test('webpack compiler with warning', done => {
+  const loggerMock = { log: jest.fn() };
+  const config = webpackConfigurator({
+    logger: loggerMock,
+    stats: 'errors-only',
+    dependencies: { lodash: '' },
+    publishFileName: 'server.js',
+    serverPath: path.join(
+      __dirname,
+      '../../../mocks/jade-component',
+      'server.js'
+    )
+  });
+
+  config.plugins.push(function() {
+    this.plugin('run', (compiler, cb) => cb.call(compiler));
+    this.plugin('done', stats => stats.compilation.warnings.push('A warning'));
+  });
+
   webpackCompiler(config, (warning, serverContentBundled) => {
-    expect(warning).toContain(`Entry module not found: Error: Can't resolve`);
+    expect(warning).toMatchSnapshot();
     done();
   });
 });
