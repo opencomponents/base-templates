@@ -9,15 +9,7 @@
 */
 
 const coreModules = require('builtin-modules');
-const format = require('stringformat');
 const _ = require('lodash');
-
-const strings = {
-  errors: {
-    SERVERJS_DEPENDENCY_NOT_DECLARED:
-      'Missing dependencies from package.json => {0}'
-  }
-};
 
 module.exports = dependencies => {
   const deps = dependencies || {};
@@ -25,7 +17,7 @@ module.exports = dependencies => {
   const missingExternalDependency = (dep, dependencies) =>
     !_.includes(_.keys(dependencies), dep) && !_.includes(coreModules, dep);
 
-  const matcher = /^[a-z@][a-z\-\/0-9]+$/i;
+  const matcher = /^[a-z@][a-z\-\/0-9\.]+$/i;
 
   return [
     (context, req, callback) => {
@@ -40,10 +32,9 @@ module.exports = dependencies => {
         if (missingExternalDependency(dependencyName, deps)) {
           return callback(
             new Error(
-              format(
-                strings.errors.SERVERJS_DEPENDENCY_NOT_DECLARED,
-                JSON.stringify(dependencyName)
-              )
+              `Missing dependencies from package.json => ${JSON.stringify(
+                dependencyName
+              )}`
             )
           );
         }

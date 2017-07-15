@@ -14,7 +14,7 @@ Object {
   "entry": "/path/to/server.js",
   "externals": Array [
     [Function],
-    /\\^\\[a-z@\\]\\[a-z\\\\-\\\\/0-9\\]\\+\\$/i,
+    /\\^\\[a-z@\\]\\[a-z\\\\-\\\\/0-9\\\\\\.\\]\\+\\$/i,
   ],
   "module": Object {
     "rules": Array [
