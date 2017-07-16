@@ -30,6 +30,6 @@
     "transform"
   ],
   "dependencies": {
-    "falafel": "^2.0.0"
+    "falafel": "https://github.com/matteofigus/node-falafel-map"
   }
 }
