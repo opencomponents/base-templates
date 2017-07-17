@@ -28,6 +28,7 @@ test('webpack configurator', () => {
     target[1].options.presets[0][0]
   );
   delete config.logger;
+
   expect(config).toMatchSnapshot();
 });
 
@@ -43,7 +44,7 @@ test('webpack compiler', done => {
     )
   });
 
-  webpackCompiler(config, (warning, serverContentBundled) => {
+  webpackCompiler(config, (error, serverContentBundled) => {
     expect(serverContentBundled).toMatchSnapshot();
     done();
   });
@@ -63,7 +64,7 @@ test('webpack compiler verbose', done => {
     )
   });
 
-  webpackCompiler(config, (warning, serverContentBundled) => {
+  webpackCompiler(config, (error, serverContentBundled) => {
     const consoleOutput = loggerMock.log.mock.calls[0][0];
     expect(serverContentBundled).toMatchSnapshot();
     expect(consoleOutput).toMatch(/Hash:(.*?)01e93c95dfecf93de280/);
@@ -130,8 +131,9 @@ test('webpack compiler with warning', done => {
     this.plugin('done', stats => stats.compilation.warnings.push('A warning'));
   });
 
-  webpackCompiler(config, (warning, serverContentBundled) => {
-    expect(warning).toMatchSnapshot();
+  webpackCompiler(config, (error, serverContentBundled) => {
+    expect(loggerMock.log.mock.calls[0][0]).toContain('A warning');
+    expect(error).toBe(null);
     done();
   });
 });

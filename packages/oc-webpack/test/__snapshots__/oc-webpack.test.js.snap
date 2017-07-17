@@ -13,8 +13,6 @@ exports[`webpack compiler verbose 1`] = `"module.exports=function(a){function b(
 
 exports[`webpack compiler with fatal error 1`] = `"This is a fatal compilation error"`;
 
-exports[`webpack compiler with warning 1`] = `"A warning"`;
-
 exports[`webpack configurator 1`] = `
 Object {
   "entry": "/path/to/server.js",

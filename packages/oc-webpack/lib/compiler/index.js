@@ -42,6 +42,6 @@ module.exports = function compiler(config, callback) {
       '/build/server.js',
       'UTF8'
     );
-    callback(warning, serverContentBundled);
+    callback(null, serverContentBundled);
   });
 };
