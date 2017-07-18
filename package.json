@@ -6,6 +6,7 @@
     "husky": "^0.14.3",
     "jest": "^20.0.4",
     "lerna": "^2.0.0-rc.5",
+    "lerna-semantic-release": "^9.1.0",
     "lint-staged": "^4.0.2",
     "prettier-eslint-cli": "^4.0.4",
     "validate-commit-msg": "^2.12.2"
@@ -17,8 +18,8 @@
     "test": "jest",
     "commitmsg": "validate-commit-msg",
     "commit": "git-cz",
-    "publish": "lerna publish --conventional-commits --exact",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "semantic-release": "lerna-semantic-release pre && lerna-semantic-release post && lerna-semantic-release perform"
   },
   "lint-staged": {
     "*.js": [
@@ -32,12 +33,11 @@
       "path": "./node_modules/cz-lerna-changelog"
     },
     "validate-commit-msg": {
-      "scope": {
-        "required": false,
-        "validate": false
-      },
       "helpMessage": "\n📦:🛠✨💥  Continuos semantic release ahead\nDon't worry, we'll walk you through...\nJust type 'npm run commit' instead of 'git commit'"
     }
+  },
+  "release": {
+    "branch": "master"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
