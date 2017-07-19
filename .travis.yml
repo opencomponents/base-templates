@@ -8,5 +8,5 @@ after_script:
 - npm run coverage
 notifications:
   email: false
-before_install: ".travis/before_install.sh"
-after_success: ".travis/after_success.sh"
+before_install: "travis/before_install.sh"
+after_success: "travis/after_success.sh"
