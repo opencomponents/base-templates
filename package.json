@@ -1,25 +1,19 @@
 {
   "devDependencies": {
     "codecov": "^2.2.0",
-    "commitizen": "^2.9.6",
-    "cz-lerna-changelog": "^1.2.1",
-    "husky": "^0.14.3",
+    "husky": "^0.13.4",
     "jest": "^20.0.4",
     "lerna": "^2.0.0-rc.5",
-    "lerna-semantic-release": "^9.1.0",
-    "lint-staged": "^4.0.2",
-    "prettier-eslint-cli": "^4.0.4",
-    "validate-commit-msg": "^2.13.0"
+    "lint-staged": "^3.6.0",
+    "prettier-eslint-cli": "^4.0.4"
   },
   "scripts": {
     "postinstall": "lerna bootstrap",
     "clean": "lerna clean",
     "coverage": "codecov",
     "test": "jest",
-    "commitmsg": "validate-commit-msg",
-    "commit": "git-cz",
-    "precommit": "lint-staged",
-    "semantic-release": "lerna-semantic-release pre && lerna-semantic-release post && lerna-semantic-release perform"
+    "publish": "lerna publish --exact",
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "*.js": [
@@ -27,17 +21,6 @@
       "jest --findRelatedTests",
       "git add"
     ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-lerna-changelog"
-    },
-    "validate-commit-msg": {
-      "helpMessage": "\n📦:🛠✨💥  Continuos semantic release ahead\nDon't worry, we'll walk you through...\nJust type 'npm run commit' instead of 'git commit'"
-    }
-  },
-  "release": {
-    "branch": "master"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
