@@ -2,12 +2,10 @@
 
 const _ = require('lodash');
 const async = require('async');
-const format = require('stringformat');
 const fs = require('fs-extra');
 const minifyFile = require('oc-minify-file');
 const nodeDir = require('node-dir');
 const path = require('path');
-const strings = require('./resources/strings');
 
 module.exports = (options, callback) => {
   const staticDirectories = options.componentPackage.oc.files.static || [];
@@ -30,46 +28,57 @@ module.exports = (options, callback) => {
 
 function copyDirectory(options, directoryName, callback) {
   const directoryPath = path.join(options.componentPath, directoryName);
-  const directoryExists = fs.existsSync(directoryPath);
-  const isDirectory =
-    directoryExists && fs.lstatSync(directoryPath).isDirectory();
+  fs.lstat(directoryPath, (err, stats) => {
+    if (err) {
+      return callback(`"${directoryPath}" not found`);
+    }
 
-  if (!directoryExists) {
-    return callback(format(strings.errors.FOLDER_NOT_FOUND, directoryPath));
-  }
-  if (!isDirectory) {
-    return callback(
-      format(strings.errors.FOLDER_IS_NOT_A_FOLDER, directoryPath)
-    );
-  }
+    if (!stats.isDirectory()) {
+      return callback(`"${directoryPath}" must be a directory`);
+    }
 
-  nodeDir.paths(directoryPath, (err, res) => {
-    _.forEach(res.files, filePath => {
-      const fileName = path.basename(filePath);
-      const fileExtension = path.extname(filePath).toLowerCase();
-      const fileRelativePath = path.relative(
-        directoryPath,
-        path.dirname(filePath)
+    nodeDir.paths(directoryPath, (err, res) => {
+      async.each(
+        res.files,
+        (filePath, next) => {
+          const fileName = path.basename(filePath);
+          const fileExtension = path.extname(filePath).toLowerCase();
+          const fileRelativePath = path.relative(
+            directoryPath,
+            path.dirname(filePath)
+          );
+          const fileDestinationPath = path.join(
+            options.publishPath,
+            directoryName,
+            fileRelativePath
+          );
+          fs.ensureDir(fileDestinationPath, err => {
+            if (err) {
+              return next(err);
+            }
+
+            const fileDestination = path.join(fileDestinationPath, fileName);
+
+            if (
+              options.minify &&
+              options.componentPackage.minify !== false &&
+              (fileExtension === '.js' || fileExtension === '.css')
+            ) {
+              fs.readFile(filePath, (err, fileContent) => {
+                if (err) {
+                  return next(err);
+                }
+
+                const minifiedContent = minifyFile(fileExtension, fileContent);
+                fs.writeFile(fileDestination, minifiedContent, next);
+              });
+            } else {
+              fs.copy(filePath, fileDestination, next);
+            }
+          });
+        },
+        err => callback(err, 'ok')
       );
-      const fileDestinationPath = path.join(
-        options.publishPath,
-        directoryName,
-        fileRelativePath
-      );
-      fs.ensureDirSync(fileDestinationPath);
-      const fileDestination = path.join(fileDestinationPath, fileName);
-      if (
-        options.minify &&
-        options.componentPackage.minify !== false &&
-        (fileExtension === '.js' || fileExtension === '.css')
-      ) {
-        const fileContent = fs.readFileSync(filePath).toString();
-        const minifiedContent = minifyFile(fileExtension, fileContent);
-        fs.writeFileSync(fileDestination, minifiedContent);
-      } else {
-        fs.copySync(filePath, fileDestination);
-      }
     });
-    callback(null, 'ok');
   });
 }

@@ -9,7 +9,7 @@ const componentPath = path.join(
   __dirname,
   '../../../mocks/handlebars-component'
 );
-const publishPath = path.join(componentPath, '_package');
+const publishPath = path.join(componentPath, '_compile-static-package');
 const publishFileName = 'template.js';
 const withStatic = (staticFiles, minify) => ({
   componentPackage: {
@@ -88,5 +88,29 @@ test('compile statics when oc.files.static contains valid folder and minify is t
       });
       done();
     });
+  });
+});
+
+test('When static files writing fails should return error', done => {
+  const original = fs.ensureDir;
+  fs.ensureDir = jest.fn((a, cb) => cb('sorry I failed'));
+
+  const minify = true;
+  compileStatics(withStatic(['assets'], minify), err => {
+    expect(err).toMatchSnapshot();
+    fs.ensureDir = original;
+    done();
+  });
+});
+
+test('When static file fails to be read should return error', done => {
+  const original = fs.readFile;
+  fs.readFile = jest.fn((a, cb) => cb('sorry I failed'));
+
+  const minify = true;
+  compileStatics(withStatic(['assets'], minify), err => {
+    expect(err).toMatchSnapshot();
+    fs.readFile = original;
+    done();
   });
 });

@@ -24,8 +24,13 @@ module.exports = (options, callback) => {
   compiler(config, (err, compiledServer) => {
     if (err) {
       return callback(err);
-    } else {
-      fs.ensureDirSync(publishPath);
+    }
+
+    fs.ensureDir(publishPath, err => {
+      if (err) {
+        return callback(err);
+      }
+
       fs.writeFile(
         path.join(publishPath, publishFileName),
         compiledServer,
@@ -37,6 +42,6 @@ module.exports = (options, callback) => {
           });
         }
       );
-    }
+    });
   });
 };

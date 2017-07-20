@@ -20,6 +20,7 @@ const path = require('path');
 // verbose,
 // watch,
 module.exports = (options, callback) => {
+  options.componentPackage = _.cloneDeep(options.componentPackage);
   const componentPackage = options.componentPackage;
   const ocPackage = options.ocPackage;
 
