@@ -1,0 +1,27 @@
+{
+  "name": "base-component-jade",
+  "description": "",
+  "version": "1.0.0",
+  "oc": {
+    "files": {
+      "data": "server.js",
+      "static": ["img"],
+      "template": {
+        "src": "template.jade",
+        "type": "oc-template-jade"
+      }
+    },
+    "parameters": {
+      "name": {
+        "default": "Jane Doe",
+        "description": "Your name",
+        "example": "Jane Doe",
+        "mandatory": false,
+        "type": "string"
+      }
+    }
+  },
+  "devDependencies": {
+    "oc-template-jade-compiler": "*"
+  }
+}
