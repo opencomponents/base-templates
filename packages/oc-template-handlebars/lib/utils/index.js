@@ -1,4 +1,4 @@
-const strings = require('../resources/strings');
+const strings = require('oc-templates-messages');
 
 module.exports = {
   validator: template => {
@@ -6,7 +6,7 @@ module.exports = {
     if (isUnsupported) {
       return {
         isValid: false,
-        error: strings.messages.legacyComponent
+        error: strings.errors.LEGACY_COMPONENT()
       };
     }
 

@@ -2,12 +2,11 @@
 
 const _ = require('lodash');
 const async = require('async');
-const format = require('stringformat');
 const fs = require('fs-extra');
 const minifyFile = require('oc-minify-file');
 const nodeDir = require('node-dir');
 const path = require('path');
-const strings = require('./resources/strings');
+const strings = require('oc-templates-messages');
 
 module.exports = (options, callback) => {
   const staticDirectories = options.componentPackage.oc.files.static || [];
@@ -35,12 +34,10 @@ function copyDirectory(options, directoryName, callback) {
     directoryExists && fs.lstatSync(directoryPath).isDirectory();
 
   if (!directoryExists) {
-    return callback(format(strings.errors.FOLDER_NOT_FOUND, directoryPath));
+    return callback(strings.errors.FOLDER_NOT_FOUND(directoryPath));
   }
   if (!isDirectory) {
-    return callback(
-      format(strings.errors.FOLDER_IS_NOT_A_FOLDER, directoryPath)
-    );
+    return callback(strings.errors.FOLDER_IS_NOT_A_FOLDER(directoryPath));
   }
 
   nodeDir.paths(directoryPath, (err, res) => {

@@ -9,6 +9,7 @@
 */
 
 const coreModules = require('builtin-modules');
+const strings = require('oc-templates-messages');
 const _ = require('lodash');
 
 module.exports = dependencies => {
@@ -32,9 +33,7 @@ module.exports = dependencies => {
         if (missingExternalDependency(dependencyName, deps)) {
           return callback(
             new Error(
-              `Missing dependencies from package.json => ${JSON.stringify(
-                dependencyName
-              )}`
+              strings.errors.MISSING_DEPENDENCY(JSON.stringify(dependencyName))
             )
           );
         }
