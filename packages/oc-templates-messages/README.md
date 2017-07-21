@@ -1,3 +1,3 @@
-# oc-error-messages
+# oc-templates-messages
 
-OC error messages
+OC messages for templates related packages
