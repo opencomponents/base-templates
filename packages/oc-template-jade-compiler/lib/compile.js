@@ -6,6 +6,7 @@ const compileServer = require('./compileServer');
 const compileStatics = require('./compileStatics');
 const compileView = require('./compileView');
 const fs = require('fs-extra');
+const getInfo = require('oc-template-jade').getInfo;
 const getUnixUtcTimestamp = require('oc-get-unix-utc-timestamp');
 const path = require('path');
 
@@ -56,6 +57,7 @@ module.exports = (options, callback) => {
       },
       // Compile package.json
       function(componentPackage, cb) {
+        componentPackage.oc.files.template.version = getInfo().version;
         componentPackage.oc.version = ocPackage.version;
         componentPackage.oc.packaged = true;
         componentPackage.oc.date = getUnixUtcTimestamp();
