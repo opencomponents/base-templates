@@ -1,18 +1,25 @@
 {
   "devDependencies": {
     "codecov": "^2.2.0",
+    "commitizen": "^2.9.6",
+    "cz-lerna-changelog": "^1.2.1",
     "husky": "^0.13.4",
     "jest": "^20.0.4",
     "lerna": "^2.0.0-rc.5",
+    "lerna-semantic-release": "^9.1.0",
     "lint-staged": "^3.6.0",
-    "prettier-eslint-cli": "^4.0.4"
+    "prettier-eslint-cli": "^4.0.4",
+    "validate-commit-msg": "2.13.0"
   },
   "scripts": {
     "postinstall": "lerna bootstrap",
     "clean": "lerna clean",
     "coverage": "codecov",
     "test": "jest",
-    "publish": "lerna publish --exact",
+    "semantic-release": "lerna-semantic-release pre && lerna-semantic-release post && lerna-semantic-release perform",
+    "changelog": "lerna-semantic-release post",
+    "commitmsg": "validate-commit-msg",
+    "commit": "git-cz",
     "precommit": "lint-staged"
   },
   "lint-staged": {
@@ -22,7 +29,21 @@
       "git add"
     ]
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
+    },
+    "validate-commit-msg": {
+      "scope": {
+        "required": false,
+        "validate": false,
+        "multiple": true
+      },
+      "helpMessage": "Please execute `npm run commit` to generate a correct commit message"
+    }
+  },
   "jest": {
+    "rootDir": "packages",
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
   }
