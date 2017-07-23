@@ -9,7 +9,7 @@
     "lerna-semantic-release": "^9.1.0",
     "lint-staged": "^3.6.0",
     "prettier-eslint-cli": "^4.0.4",
-    "validate-commit-msg": "2.13.0"
+    "validate-commit-msg": "^2.13.1"
   },
   "scripts": {
     "postinstall": "lerna bootstrap",
