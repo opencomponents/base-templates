@@ -6,6 +6,7 @@ const fs = require('fs-extra');
 const minifyFile = require('oc-minify-file');
 const nodeDir = require('node-dir');
 const path = require('path');
+const strings = require('oc-templates-messages');
 
 module.exports = (options, callback) => {
   const staticDirectories = options.componentPackage.oc.files.static || [];
@@ -30,11 +31,11 @@ function copyDirectory(options, directoryName, callback) {
   const directoryPath = path.join(options.componentPath, directoryName);
   fs.lstat(directoryPath, (err, stats) => {
     if (err) {
-      return callback(`"${directoryPath}" not found`);
+      return callback(strings.errors.folderNotFound(directoryPath));
     }
 
     if (!stats.isDirectory()) {
-      return callback(`"${directoryPath}" must be a directory`);
+      return callback(strings.errors.folderNotValid(directoryPath));
     }
 
     nodeDir.paths(directoryPath, (err, res) => {
@@ -52,6 +53,7 @@ function copyDirectory(options, directoryName, callback) {
             directoryName,
             fileRelativePath
           );
+
           fs.ensureDir(fileDestinationPath, err => {
             if (err) {
               return next(err);
@@ -64,14 +66,19 @@ function copyDirectory(options, directoryName, callback) {
               options.componentPackage.minify !== false &&
               (fileExtension === '.js' || fileExtension === '.css')
             ) {
-              fs.readFile(filePath, (err, fileContent) => {
-                if (err) {
-                  return next(err);
-                }
-
-                const minifiedContent = minifyFile(fileExtension, fileContent);
-                fs.writeFile(fileDestination, minifiedContent, next);
-              });
+              async.waterfall(
+                [
+                  cb => fs.readFile(filePath, cb),
+                  (fileContent, cb) => {
+                    const minifiedContent = minifyFile(
+                      fileExtension,
+                      fileContent
+                    );
+                    fs.writeFile(fileDestination, minifiedContent, cb);
+                  }
+                ],
+                next
+              );
             } else {
               fs.copy(filePath, fileDestination, next);
             }

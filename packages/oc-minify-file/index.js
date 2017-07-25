@@ -3,6 +3,7 @@
 const babel = require('babel-core');
 const babelPresetEnv = require('babel-preset-env');
 const CleanCss = require('clean-css');
+const strings = require('oc-templates-messages');
 const uglifyJs = require('uglify-js');
 
 module.exports = function(fileExtension, fileContent) {
@@ -25,7 +26,7 @@ module.exports = function(fileExtension, fileContent) {
     const result = new CleanCss().minify(fileContent);
 
     if (result.warnings.length > 0 || result.errors.lenght > 0) {
-      throw new Error('Css is not valid');
+      throw new Error(strings.errors.cssNotValid());
     }
 
     return result.styles;

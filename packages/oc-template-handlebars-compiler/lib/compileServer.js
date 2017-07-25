@@ -1,5 +1,6 @@
 'use strict';
 
+const async = require('async');
 const compiler = require('oc-webpack').compiler;
 const fs = require('fs-extra');
 const hashBuilder = require('oc-hash-builder');
@@ -21,27 +22,32 @@ module.exports = (options, callback) => {
     stats
   });
 
-  compiler(config, (err, compiledServer) => {
-    if (err) {
-      return callback(err);
-    }
+  let compiledServer;
 
-    fs.ensureDir(publishPath, err => {
+  async.series(
+    [
+      next =>
+        compiler(config, (err, server) => {
+          compiledServer = server;
+          next(err);
+        }),
+      next => fs.ensureDir(publishPath, next),
+      next =>
+        fs.writeFile(
+          path.join(publishPath, publishFileName),
+          compiledServer,
+          next
+        )
+    ],
+    err => {
       if (err) {
         return callback(err);
       }
-
-      fs.writeFile(
-        path.join(publishPath, publishFileName),
-        compiledServer,
-        err => {
-          callback(err, {
-            type: 'node.js',
-            hashKey: hashBuilder.fromString(compiledServer),
-            src: publishFileName
-          });
-        }
-      );
-    });
-  });
+      callback(null, {
+        type: 'node.js',
+        hashKey: hashBuilder.fromString(compiledServer),
+        src: publishFileName
+      });
+    }
+  );
 };
