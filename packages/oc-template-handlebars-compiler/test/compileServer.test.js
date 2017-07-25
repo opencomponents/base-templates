@@ -26,7 +26,7 @@ test('Should correctly compile the server', done => {
     expect(
       fs.readFileSync(path.join(publishPath, publishFileName), 'UTF8')
     ).toMatchSnapshot();
-    fs.removeSync(path.join(publishPath, publishFileName));
+    fs.removeSync(publishPath);
     done();
   });
 });

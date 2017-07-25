@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should correctly compile the oc component 1`] = `
+exports[`Happy path 1`] = `
 Object {
   "dependencies": Object {
     "lodash": "",
@@ -22,7 +22,7 @@ Object {
         "hashKey": "2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e",
         "src": "template.js",
         "type": "handlebars",
-        "version": "6.0.2",
+        "version": "",
       },
     },
     "packaged": true,
@@ -33,7 +33,7 @@ Object {
 }
 `;
 
-exports[`Should correctly compile the oc component 2`] = `
+exports[`Happy path 2`] = `
 Array [
   "../../../mocks/handlebars-component/_compile-tests-package/assets/css/style.css",
   "../../../mocks/handlebars-component/_compile-tests-package/assets/img/test.png",
@@ -64,7 +64,7 @@ Object {
         "hashKey": "2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e",
         "src": "template.js",
         "type": "handlebars",
-        "version": "6.0.2",
+        "version": "",
       },
     },
     "packaged": true,
@@ -100,7 +100,7 @@ Object {
         "hashKey": "2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e",
         "src": "template.js",
         "type": "handlebars",
-        "version": "6.0.2",
+        "version": "",
       },
     },
     "packaged": true,
@@ -143,7 +143,7 @@ Object {
         "hashKey": "2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e",
         "src": "template.js",
         "type": "handlebars",
-        "version": "6.0.2",
+        "version": "",
       },
     },
     "packaged": true,
