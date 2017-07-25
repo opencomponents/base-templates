@@ -1,6 +1,6 @@
 {
   "name": "infinite-loop-loader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A webpack loader to transform ∞ loops so that they throw",
   "author": {
     "name": "Nick Balestra",
@@ -31,6 +31,6 @@
   ],
   "dependencies": {
     "falafel": "^2.0.0",
-    "oc-templates-messages": "1.0.0"
+    "oc-templates-messages": "^1.0.1"
   }
 }

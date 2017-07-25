@@ -1,6 +1,6 @@
 {
   "name": "oc-minify-file",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Minify file helper",
   "main": "index.js",
   "repository": {
@@ -27,7 +27,7 @@
     "babel-core": "^6.25.0",
     "babel-preset-env": "^1.5.2",
     "clean-css": "^4.1.4",
-    "oc-templates-messages": "1.0.0",
+    "oc-templates-messages": "^1.0.1",
     "uglify-js": "2.6.4"
   }
 }
