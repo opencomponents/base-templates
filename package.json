@@ -17,6 +17,7 @@
     "coverage": "codecov",
     "test": "jest",
     "semantic-release": "lerna-semantic-release pre && lerna-semantic-release post && lerna-semantic-release perform",
+    "manual-release": "lerna publish -m \"chore: manual release\" ",
     "changelog": "lerna-semantic-release post",
     "commitmsg": "validate-commit-msg",
     "commit": "git-cz",
