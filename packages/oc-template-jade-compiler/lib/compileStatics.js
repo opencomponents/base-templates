@@ -34,10 +34,10 @@ function copyDirectory(options, directoryName, callback) {
     directoryExists && fs.lstatSync(directoryPath).isDirectory();
 
   if (!directoryExists) {
-    return callback(strings.errors.FOLDER_NOT_FOUND(directoryPath));
+    return callback(strings.errors.folderNotFound(directoryPath));
   }
   if (!isDirectory) {
-    return callback(strings.errors.FOLDER_IS_NOT_A_FOLDER(directoryPath));
+    return callback(strings.errors.folderNotValid(directoryPath));
   }
 
   nodeDir.paths(directoryPath, (err, res) => {

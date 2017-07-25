@@ -6,7 +6,7 @@ module.exports = {
     if (isUnsupported) {
       return {
         isValid: false,
-        error: strings.errors.LEGACY_COMPONENT()
+        error: strings.errors.legacyComponent()
       };
     }
 

@@ -25,7 +25,7 @@ module.exports = limit => {
   const addGuardsToLoopBody = node =>
     node.update(
       `{ if (__ITER <= 0) {
-        throw new Error("${strings.errors.LOOP_EXCEEDED_ITERATIONS()}");
+        throw new Error("${strings.errors.loopExceededIterations()}");
       }
       __ITER--;
       ${node.source().substr(1)}`

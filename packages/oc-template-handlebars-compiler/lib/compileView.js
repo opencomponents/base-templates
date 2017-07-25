@@ -16,7 +16,7 @@ module.exports = (options, callback) => {
   const publishFileName = options.publishFileName || 'template.js';
 
   if (!fs.existsSync(viewPath)) {
-    return callback(strings.errors.VIEW_NOT_FOUND(viewFileName));
+    return callback(strings.errors.viewNotFound(viewFileName));
   }
   try {
     const view = handlebars.precompile(viewContent);
@@ -37,6 +37,6 @@ module.exports = (options, callback) => {
       })
     );
   } catch (error) {
-    return callback(strings.errors.COMPILATION_FAILED(viewFileName, error));
+    return callback(strings.errors.compilationFailed(viewFileName, error));
   }
 };

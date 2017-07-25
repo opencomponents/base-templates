@@ -26,7 +26,7 @@ module.exports = function(fileExtension, fileContent) {
     const result = new CleanCss().minify(fileContent);
 
     if (result.warnings.length > 0 || result.errors.lenght > 0) {
-      throw new Error(strings.errors.CSS_IS_NOT_VALID());
+      throw new Error(strings.errors.cssNotValid());
     }
 
     return result.styles;

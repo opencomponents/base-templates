@@ -1,16 +1,15 @@
 module.exports = {
   errors: {
-    COMPILATION_FAILED: (viewFileName, error) =>
+    compilationFailed: (viewFileName, error) =>
       `${viewFileName} compilation failed - ${error}`,
-    CSS_IS_NOT_VALID: () => `Css is not valid`,
-    FOLDER_IS_NOT_A_FOLDER: directoryPath =>
-      `"${directoryPath}" must be a directory`,
-    FOLDER_NOT_FOUND: directoryPath => `"${directoryPath}" not found`,
-    LEGACY_COMPONENT: () =>
+    cssNotValid: () => `Css is not valid`,
+    folderNotFound: directoryPath => `"${directoryPath}" not found`,
+    folderNotValid: directoryPath => `"${directoryPath}" must be a directory`,
+    legacyComponent: () =>
       `The component can't be rendered because it was published with an older OC version`,
-    LOOP_EXCEEDED_ITERATIONS: () => `Loop exceeded maximum allowed iterations`,
-    MISSING_DEPENDENCY: dependencyName =>
+    loopExceededIterations: () => `Loop exceeded maximum allowed iterations`,
+    missingDependency: dependencyName =>
       `Missing dependencies from package.json => ${dependencyName}`,
-    VIEW_NOT_FOUND: viewFileName => `file ${viewFileName} not found`
+    viewNotFound: viewFileName => `file ${viewFileName} not found`
   }
 };

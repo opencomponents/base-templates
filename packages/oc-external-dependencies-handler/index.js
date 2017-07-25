@@ -33,7 +33,7 @@ module.exports = dependencies => {
         if (missingExternalDependency(dependencyName, deps)) {
           return callback(
             new Error(
-              strings.errors.MISSING_DEPENDENCY(JSON.stringify(dependencyName))
+              strings.errors.missingDependency(JSON.stringify(dependencyName))
             )
           );
         }
