@@ -1,0 +1,26 @@
+{
+  "name": "oc-templates-messages",
+  "version": "1.0.0",
+  "description": "OC-Templates-Messages",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opencomponents/oc-templates-messages.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opencomponents/oc-templates-messages/issues"
+  },
+  "homepage": "https://github.com/opencomponents/oc-templates-messages#readme",
+  "keywords": [
+    "oc",
+    "opencomponents"
+  ],
+  "author": {
+    "name": "Matteo Figus",
+    "email": "matteofigus@gmail.com"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ]
+}

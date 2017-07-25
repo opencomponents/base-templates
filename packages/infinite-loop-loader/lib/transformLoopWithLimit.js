@@ -1,5 +1,7 @@
 'use strict';
 
+const strings = require('oc-templates-messages');
+
 module.exports = limit => {
   const loopNodeTypes = ['WhileStatement', 'ForStatement', 'DoWhileStatement'];
 
@@ -23,7 +25,7 @@ module.exports = limit => {
   const addGuardsToLoopBody = node =>
     node.update(
       `{ if (__ITER <= 0) {
-        throw new Error("Loop exceeded maximum allowed iterations");
+        throw new Error("${strings.errors.loopExceededIterations()}");
       }
       __ITER--;
       ${node.source().substr(1)}`
