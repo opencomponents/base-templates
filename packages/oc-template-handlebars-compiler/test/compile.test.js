@@ -10,6 +10,7 @@ const componentPath = path.join(
   __dirname,
   '../../../mocks/handlebars-component/'
 );
+const getInfo = require('../index.js').getInfo;
 const publishPath = path.join(componentPath, '__package');
 
 test('Should correctly compile the oc component', done => {
@@ -24,8 +25,11 @@ test('Should correctly compile the oc component', done => {
   fs.ensureDirSync(publishPath);
   compile(options, (err, res) => {
     expect(err).toBeNull();
+    const version = res.oc.files.template.version;
+    res.oc.files.template.version = '';
     res.oc.date = '';
     expect(res).toMatchSnapshot();
+    expect(version).toBe(getInfo().version);
     nodeDir.paths(publishPath, (err, res) => {
       const files = res.files
         .map(filePath => path.relative(__dirname, filePath))
