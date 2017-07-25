@@ -1,6 +1,6 @@
 {
   "name": "oc-template-jade-compiler",
-  "version": "6.0.4",
+  "version": "6.0.6",
   "description": "OC-Template-Jade-Compiler",
   "main": "index.js",
   "repository": {
@@ -42,6 +42,7 @@
   },
   "files": [
     "index.js",
-    "lib"
+    "lib",
+    "scaffold"
   ]
 }
