@@ -21,5 +21,4 @@ results
 npm-debug.log
 node_modules
 coverage
-/_package
-/__package
+/mocks/handlebars-component/_compile-static-package6/

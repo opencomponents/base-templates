@@ -9,3 +9,14 @@ Object {
 `;
 
 exports[`Should correctly compile the view 2`] = `"var oc=oc||{};oc.components=oc.components||{},oc.components[\\"2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e\\"]={compiler:[7,\\">= 4.0.0\\"],main:function(c,o,e,n,a){return\\"<h1>Hello handlebars!</h1>\\"},useData:!0};"`;
+
+exports[`When compiled view writing fails should return error 1`] = `"template.hbs compilation failed - sorry I failed"`;
+
+exports[`When view not found should return error 1`] = `"file not-found.hbs not found"`;
+
+exports[`When view not valid should return error 1`] = `
+"template.hbs compilation failed - Error: Parse error on line 1:
+<h1>{{something</h1>
+------^
+Expecting 'ID', 'STRING', 'NUMBER', 'BOOLEAN', 'UNDEFINED', 'NULL', 'DATA', got 'INVALID'"
+`;

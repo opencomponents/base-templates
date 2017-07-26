@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should correctly compile the oc component 1`] = `
+exports[`Happy path 1`] = `
 Object {
   "dependencies": Object {
     "lodash": "",
@@ -33,13 +33,136 @@ Object {
 }
 `;
 
-exports[`Should correctly compile the oc component 2`] = `
+exports[`Happy path 2`] = `
 Array [
-  "../../../mocks/handlebars-component/__package/assets/css/style.css",
-  "../../../mocks/handlebars-component/__package/assets/img/test.png",
-  "../../../mocks/handlebars-component/__package/assets/js/lib.js",
-  "../../../mocks/handlebars-component/__package/package.json",
-  "../../../mocks/handlebars-component/__package/server.js",
-  "../../../mocks/handlebars-component/__package/template.js",
+  "../../../mocks/handlebars-component/_compile-tests-package/assets/css/style.css",
+  "../../../mocks/handlebars-component/_compile-tests-package/assets/img/test.png",
+  "../../../mocks/handlebars-component/_compile-tests-package/assets/js/lib.js",
+  "../../../mocks/handlebars-component/_compile-tests-package/package.json",
+  "../../../mocks/handlebars-component/_compile-tests-package/server.js",
+  "../../../mocks/handlebars-component/_compile-tests-package/template.js",
 ]
 `;
+
+exports[`Should handle empty static folder 1`] = `
+Object {
+  "dependencies": Object {
+    "lodash": "",
+  },
+  "description": "",
+  "name": "handlebars-component",
+  "oc": Object {
+    "date": "",
+    "files": Object {
+      "dataProvider": Object {
+        "hashKey": "1ea15b210c9e4c76e232b8341d4f96c2e0f23109",
+        "src": "server.js",
+        "type": "node.js",
+      },
+      "static": Array [],
+      "template": Object {
+        "hashKey": "2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e",
+        "src": "template.js",
+        "type": "handlebars",
+        "version": "",
+      },
+    },
+    "packaged": true,
+    "version": "1.0.0",
+  },
+  "repository": "",
+  "version": "1.0.0",
+}
+`;
+
+exports[`Should handle empty static folder 2`] = `
+Array [
+  "../../../mocks/handlebars-component/_compile-tests-package2/package.json",
+  "../../../mocks/handlebars-component/_compile-tests-package2/server.js",
+  "../../../mocks/handlebars-component/_compile-tests-package2/template.js",
+]
+`;
+
+exports[`Should handle server.js-less components 1`] = `
+Object {
+  "dependencies": Object {
+    "lodash": "",
+  },
+  "description": "",
+  "name": "handlebars-component",
+  "oc": Object {
+    "date": "",
+    "files": Object {
+      "static": Array [
+        "assets",
+      ],
+      "template": Object {
+        "hashKey": "2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e",
+        "src": "template.js",
+        "type": "handlebars",
+        "version": "",
+      },
+    },
+    "packaged": true,
+    "version": "1.0.0",
+  },
+  "repository": "",
+  "version": "1.0.0",
+}
+`;
+
+exports[`Should handle server.js-less components 2`] = `
+Array [
+  "../../../mocks/handlebars-component/_compile-tests-package4/assets/css/style.css",
+  "../../../mocks/handlebars-component/_compile-tests-package4/assets/img/test.png",
+  "../../../mocks/handlebars-component/_compile-tests-package4/assets/js/lib.js",
+  "../../../mocks/handlebars-component/_compile-tests-package4/package.json",
+  "../../../mocks/handlebars-component/_compile-tests-package4/template.js",
+]
+`;
+
+exports[`Should normalise stringified static folder 1`] = `
+Object {
+  "dependencies": Object {
+    "lodash": "",
+  },
+  "description": "",
+  "name": "handlebars-component",
+  "oc": Object {
+    "date": "",
+    "files": Object {
+      "dataProvider": Object {
+        "hashKey": "1ea15b210c9e4c76e232b8341d4f96c2e0f23109",
+        "src": "server.js",
+        "type": "node.js",
+      },
+      "static": Array [
+        "assets",
+      ],
+      "template": Object {
+        "hashKey": "2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e",
+        "src": "template.js",
+        "type": "handlebars",
+        "version": "",
+      },
+    },
+    "packaged": true,
+    "version": "1.0.0",
+  },
+  "repository": "",
+  "version": "1.0.0",
+}
+`;
+
+exports[`Should normalise stringified static folder 2`] = `
+Array [
+  "../../../mocks/handlebars-component/_compile-tests-package3/assets/css/style.css",
+  "../../../mocks/handlebars-component/_compile-tests-package3/assets/img/test.png",
+  "../../../mocks/handlebars-component/_compile-tests-package3/assets/js/lib.js",
+  "../../../mocks/handlebars-component/_compile-tests-package3/package.json",
+  "../../../mocks/handlebars-component/_compile-tests-package3/server.js",
+  "../../../mocks/handlebars-component/_compile-tests-package3/template.js",
+]
+`;
+
+exports[`When files writing fails should return an error 1`] = `"template.hbs compilation failed - sorry I failed"`;

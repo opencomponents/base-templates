@@ -1,10 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`When static file fails to be read should return error 1`] = `"sorry I failed"`;
+
+exports[`When static files writing fails should return error 1`] = `"sorry I failed"`;
+
 exports[`compile statics when oc.files.static contains valid folder and minify is false 1`] = `
 Array [
-  "../../../mocks/handlebars-component/_package/assets/css/style.css",
-  "../../../mocks/handlebars-component/_package/assets/img/test.png",
-  "../../../mocks/handlebars-component/_package/assets/js/lib.js",
+  "../../../mocks/handlebars-component/_compile-static-package4/assets/css/style.css",
+  "../../../mocks/handlebars-component/_compile-static-package4/assets/img/test.png",
+  "../../../mocks/handlebars-component/_compile-static-package4/assets/js/lib.js",
 ]
 `;
 
@@ -53,9 +57,9 @@ say(text);
 
 exports[`compile statics when oc.files.static contains valid folder and minify is true 1`] = `
 Array [
-  "../../../mocks/handlebars-component/_package/assets/css/style.css",
-  "../../../mocks/handlebars-component/_package/assets/img/test.png",
-  "../../../mocks/handlebars-component/_package/assets/js/lib.js",
+  "../../../mocks/handlebars-component/_compile-static-package5/assets/css/style.css",
+  "../../../mocks/handlebars-component/_compile-static-package5/assets/img/test.png",
+  "../../../mocks/handlebars-component/_compile-static-package5/assets/js/lib.js",
 ]
 `;
 

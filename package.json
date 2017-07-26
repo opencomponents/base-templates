@@ -8,7 +8,7 @@
     "lerna": "^2.0.0-rc.5",
     "lerna-semantic-release": "^9.1.0",
     "lint-staged": "^3.6.0",
-    "prettier-eslint-cli": "^4.0.4",
+    "prettier-eslint-cli": "^4.1.1",
     "validate-commit-msg": "^2.13.1"
   },
   "scripts": {
