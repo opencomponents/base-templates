@@ -15,48 +15,48 @@ module.exports = (options, callback) => {
   const publishPath = options.publishPath;
   const publishFileName = options.publishFileName || 'template.js';
 
-  fs.readFile(viewPath, 'UTF8', (err, viewContent) => {
-    if (err) {
-      return callback(strings.errors.viewNotFound(viewFileName));
-    }
-
-    let compiledView, viewHash;
-
-    async.series(
-      [
-        next => {
-          try {
-            const view = handlebars.precompile(viewContent);
-            viewHash = hashBuilder.fromString(view);
-            compiledView = uglifyJs.minify(
-              ocViewWrapper(viewHash, view.toString()),
-              {
-                fromString: true // NOTE: uglify-3 doesn't support this anymore.
-              }
-            ).code;
-            next();
-          } catch (err) {
-            next(err);
-          }
-        },
-        next => fs.ensureDir(publishPath, next),
-        next =>
-          fs.writeFile(
-            path.join(publishPath, publishFileName),
-            compiledView,
-            next
-          )
-      ],
-      err => {
-        if (err) {
-          return callback(strings.errors.compilationFailed(viewFileName, err));
+  const compile = (viewContent, cb) => {
+    try {
+      const preCompiledView = handlebars.precompile(viewContent);
+      const hash = hashBuilder.fromString(preCompiledView);
+      const view = uglifyJs.minify(
+        ocViewWrapper(hash, preCompiledView.toString()),
+        {
+          fromString: true // NOTE: uglify-3 doesn't support this anymore.
         }
-        callback(null, {
-          type: options.componentPackage.oc.files.template.type,
-          hashKey: viewHash,
-          src: publishFileName
-        });
+      ).code;
+      cb(null, { view, hash });
+    } catch (err) {
+      cb(err);
+    }
+  };
+
+  async.waterfall(
+    [
+      next =>
+        fs.readFile(viewPath, 'UTF-8', (err, viewContent) =>
+          next(err ? 'not found' : null, viewContent)
+        ),
+      (viewContent, next) => compile(viewContent, next),
+      (compiled, next) => fs.ensureDir(publishPath, err => next(err, compiled)),
+      (compiled, next) =>
+        fs.writeFile(
+          path.join(publishPath, publishFileName),
+          compiled.view,
+          err => next(err, compiled)
+        )
+    ],
+    (err, compiled) => {
+      if (err === 'not found') {
+        return callback(strings.errors.viewNotFound(viewFileName));
+      } else if (err) {
+        return callback(strings.errors.compilationFailed(viewFileName, err));
       }
-    );
-  });
+      callback(null, {
+        type: options.componentPackage.oc.files.template.type,
+        hashKey: compiled.hash,
+        src: publishFileName
+      });
+    }
+  );
 };

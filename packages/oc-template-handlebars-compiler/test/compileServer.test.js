@@ -42,12 +42,13 @@ test('When the server.js compilation fails should return error', done => {
 });
 
 test('When server writing fails should return error', done => {
-  const original = fs.ensureDir;
-  fs.ensureDir = jest.fn((a, cb) => cb('sorry I failed'));
+  const spy = jest
+    .spyOn(fs, 'ensureDir')
+    .mockImplementation(jest.fn((a, cb) => cb('sorry I failed')));
 
   compileServer(options, err => {
     expect(err).toMatchSnapshot();
-    fs.ensureDir = original;
+    spy.mockRestore();
     done();
   });
 });

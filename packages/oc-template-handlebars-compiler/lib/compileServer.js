@@ -22,32 +22,28 @@ module.exports = (options, callback) => {
     stats
   });
 
-  let compiledServer;
-
-  async.series(
+  async.waterfall(
     [
-      next =>
-        compiler(config, (err, server) => {
-          compiledServer = server;
-          next(err);
-        }),
-      next => fs.ensureDir(publishPath, next),
-      next =>
+      next => compiler(config, next),
+      (compiledServer, next) =>
+        fs.ensureDir(publishPath, err => next(err, compiledServer)),
+      (compiledServer, next) =>
         fs.writeFile(
           path.join(publishPath, publishFileName),
           compiledServer,
-          next
+          err =>
+            next(
+              err,
+              err
+                ? null
+                : {
+                  type: 'node.js',
+                  hashKey: hashBuilder.fromString(compiledServer),
+                  src: publishFileName
+                }
+            )
         )
     ],
-    err => {
-      if (err) {
-        return callback(err);
-      }
-      callback(null, {
-        type: 'node.js',
-        hashKey: hashBuilder.fromString(compiledServer),
-        src: publishFileName
-      });
-    }
+    callback
   );
 };

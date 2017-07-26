@@ -110,30 +110,32 @@ test('compile statics when oc.files.static contains valid folder and minify is t
 });
 
 test('When static files writing fails should return error', done => {
-  const original = fs.ensureDir;
-  fs.ensureDir = jest.fn((a, cb) => cb('sorry I failed'));
+  const spy = jest
+    .spyOn(fs, 'ensureDir')
+    .mockImplementation(jest.fn((a, cb) => cb('sorry I failed')));
 
   const minify = true;
   compileStatics(
     withStatic(['assets'], '_compile-static-package6', minify),
     err => {
       expect(err).toMatchSnapshot();
-      fs.ensureDir = original;
+      spy.mockRestore();
       fs.remove(path.join(componentPath, '_compile-static-package6'), done);
     }
   );
 });
 
 test('When static file fails to be read should return error', done => {
-  const original2 = fs.readFile;
-  fs.readFile = jest.fn((a, cb) => cb('sorry I failed'));
+  const spy = jest
+    .spyOn(fs, 'readFile')
+    .mockImplementation(jest.fn((a, cb) => cb('sorry I failed')));
 
   const minify = true;
   compileStatics(
     withStatic(['assets'], '_compile-static-package7', minify),
     err => {
       expect(err).toMatchSnapshot();
-      fs.readFile = original2;
+      spy.mockRestore();
       fs.remove(path.join(componentPath, '_compile-static-package7'), done);
     }
   );

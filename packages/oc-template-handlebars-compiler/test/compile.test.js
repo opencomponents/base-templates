@@ -15,8 +15,8 @@ const componentPackage = fs.readJsonSync(
   path.join(componentPath, 'package.json')
 );
 
-const package3 = _.cloneDeep(componentPackage);
 const package2 = _.cloneDeep(componentPackage);
+const package3 = _.cloneDeep(componentPackage);
 const package4 = _.cloneDeep(componentPackage);
 delete package2.oc.files.static;
 package3.oc.files.static = 'assets';
@@ -86,7 +86,7 @@ _.each(scenarios, (scenario, testName) => {
 });
 
 test('When server compilation fails should return an error', done => {
-  let package5 = _.cloneDeep(componentPackage);
+  const package5 = _.cloneDeep(componentPackage);
   package5.oc.files.data = 'not-found.js';
 
   const options = {
