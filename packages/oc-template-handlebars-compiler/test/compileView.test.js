@@ -49,23 +49,27 @@ test('When view not found should return error', done => {
 });
 
 test('When view not valid should return error', done => {
-  const original = fs.readFile;
-  fs.readFile = jest.fn((a, b, cb) => cb(null, '<h1>{{something</h1>'));
+  const spy = jest
+    .spyOn(fs, 'readFile')
+    .mockImplementation(
+      jest.fn((a, b, cb) => cb(null, '<h1>{{something</h1>'))
+    );
 
   compileView(options, (err, compiledViewInfo) => {
     expect(err).toMatchSnapshot();
-    fs.readFile = original;
+    spy.mockRestore();
     done();
   });
 });
 
 test('When compiled view writing fails should return error', done => {
-  const original = fs.ensureDir;
-  fs.ensureDir = jest.fn((a, cb) => cb('sorry I failed'));
+  const spy = jest
+    .spyOn(fs, 'ensureDir')
+    .mockImplementation(jest.fn((a, cb) => cb('sorry I failed')));
 
   compileView(options, (err, compiledViewInfo) => {
     expect(err).toMatchSnapshot();
-    fs.ensureDir = original;
+    spy.mockRestore();
     done();
   });
 });

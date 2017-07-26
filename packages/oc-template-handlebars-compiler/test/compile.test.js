@@ -105,8 +105,9 @@ test('When server compilation fails should return an error', done => {
 });
 
 test('When files writing fails should return an error', done => {
-  const original = fs.ensureDir;
-  fs.ensureDir = jest.fn((a, cb) => cb('sorry I failed'));
+  const spy = jest
+    .spyOn(fs, 'ensureDir')
+    .mockImplementation(jest.fn((a, cb) => cb('sorry I failed')));
 
   const options = {
     componentPackage,
@@ -119,7 +120,7 @@ test('When files writing fails should return an error', done => {
 
   execute(options, err => {
     expect(err).toMatchSnapshot();
-    fs.ensureDir = original;
+    spy.mockRestore();
     done();
   });
 });
