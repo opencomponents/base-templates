@@ -2,7 +2,7 @@
 
 const _ = require('lodash');
 const async = require('async');
-const compileServer = require('./compileServer');
+const compileServer = require('oc-server-compiler');
 const compileStatics = require('./compileStatics');
 const compileView = require('./compileView');
 const fs = require('fs-extra');
