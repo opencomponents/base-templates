@@ -1,7 +1,7 @@
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
 
 const _ = require('lodash');
-const compileServer = require('../lib/compileServer.js');
+const compileServer = require('../');
 const fs = require('fs-extra');
 const path = require('path');
 
