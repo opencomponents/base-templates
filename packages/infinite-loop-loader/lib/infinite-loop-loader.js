@@ -1,6 +1,6 @@
 'use strict';
 
-const falafel = require('falafel');
+const falafel = require('falafel-sm');
 const transformLoopWithLimit = require('./transformLoopWithLimit.js');
 
 module.exports = source => {
