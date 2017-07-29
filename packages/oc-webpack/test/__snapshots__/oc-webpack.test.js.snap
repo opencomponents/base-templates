@@ -78,8 +78,8 @@ Object {
       "options": Object {
         "parallel": true,
         "sourceMap": Object {
-          "filename": "/path/to/build",
-          "url": "/path/to/build.map",
+          "filename": "/path/to/build/server.js",
+          "url": "/path/to/build/server.js.map",
         },
       },
     },

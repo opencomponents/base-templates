@@ -58,8 +58,8 @@ module.exports = function webpackConfigGenerator(options) {
       new UglifyJSPlugin({
         parallel: true,
         sourceMap: {
-          filename: dest,
-          url: `${dest}.map`
+          filename: `${dest}/server.js`,
+          url: `${dest}/server.js.map`
         }
       }),
       new webpack.DefinePlugin({
