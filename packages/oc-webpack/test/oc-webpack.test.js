@@ -22,11 +22,11 @@ test('webpack configurator', () => {
   // clean paths
   const target = config.module.rules[0].use;
   target[0].loader = path.relative(__dirname, target[0].loader);
-  target[1].loader = path.relative(__dirname, target[1].loader);
-  target[1].options.presets[0][0] = path.relative(
+  target[0].options.presets[0][0] = path.relative(
     __dirname,
-    target[1].options.presets[0][0]
+    target[0].options.presets[0][0]
   );
+  target[1].loader = path.relative(__dirname, target[1].loader);
   delete config.logger;
 
   expect(config).toMatchSnapshot();

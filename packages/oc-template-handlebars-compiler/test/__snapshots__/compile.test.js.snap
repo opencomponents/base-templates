@@ -11,7 +11,7 @@ Object {
     "date": "",
     "files": Object {
       "dataProvider": Object {
-        "hashKey": "1ea15b210c9e4c76e232b8341d4f96c2e0f23109",
+        "hashKey": "71a1269026ed6dcc29299ed85a8a8bd5660723c3",
         "src": "server.js",
         "type": "node.js",
       },
@@ -40,6 +40,7 @@ Array [
   "../../../mocks/handlebars-component/_compile-tests-package/assets/js/lib.js",
   "../../../mocks/handlebars-component/_compile-tests-package/package.json",
   "../../../mocks/handlebars-component/_compile-tests-package/server.js",
+  "../../../mocks/handlebars-component/_compile-tests-package/server.js.map",
   "../../../mocks/handlebars-component/_compile-tests-package/template.js",
 ]
 `;
@@ -55,7 +56,7 @@ Object {
     "date": "",
     "files": Object {
       "dataProvider": Object {
-        "hashKey": "1ea15b210c9e4c76e232b8341d4f96c2e0f23109",
+        "hashKey": "71a1269026ed6dcc29299ed85a8a8bd5660723c3",
         "src": "server.js",
         "type": "node.js",
       },
@@ -79,6 +80,7 @@ exports[`Should handle empty static folder 2`] = `
 Array [
   "../../../mocks/handlebars-component/_compile-tests-package2/package.json",
   "../../../mocks/handlebars-component/_compile-tests-package2/server.js",
+  "../../../mocks/handlebars-component/_compile-tests-package2/server.js.map",
   "../../../mocks/handlebars-component/_compile-tests-package2/template.js",
 ]
 `;
@@ -132,7 +134,7 @@ Object {
     "date": "",
     "files": Object {
       "dataProvider": Object {
-        "hashKey": "1ea15b210c9e4c76e232b8341d4f96c2e0f23109",
+        "hashKey": "71a1269026ed6dcc29299ed85a8a8bd5660723c3",
         "src": "server.js",
         "type": "node.js",
       },
@@ -161,6 +163,7 @@ Array [
   "../../../mocks/handlebars-component/_compile-tests-package3/assets/js/lib.js",
   "../../../mocks/handlebars-component/_compile-tests-package3/package.json",
   "../../../mocks/handlebars-component/_compile-tests-package3/server.js",
+  "../../../mocks/handlebars-component/_compile-tests-package3/server.js.map",
   "../../../mocks/handlebars-component/_compile-tests-package3/template.js",
 ]
 `;

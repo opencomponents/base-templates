@@ -16,21 +16,26 @@ module.exports = (options, callback) => {
   const dependencies = options.componentPackage.dependencies || {};
 
   const config = webpackConfigurator({
-    serverPath,
-    publishFileName,
     dependencies,
+    publishFileName,
+    serverPath,
     stats
   });
 
   async.waterfall(
     [
       next => compiler(config, next),
-      (compiledServer, next) =>
-        fs.ensureDir(publishPath, err => next(err, compiledServer)),
-      (compiledServer, next) =>
-        fs.writeFile(
-          path.join(publishPath, publishFileName),
-          compiledServer,
+      (compiled, next) => fs.ensureDir(publishPath, err => next(err, compiled)),
+      (compiled, next) =>
+        async.eachOf(
+          compiled,
+          (bundledFileContent, bundledFileName, next2) => {
+            fs.writeFile(
+              path.join(publishPath, bundledFileName),
+              bundledFileContent,
+              next2
+            );
+          },
           err =>
             next(
               err,
@@ -38,7 +43,7 @@ module.exports = (options, callback) => {
                 ? null
                 : {
                   type: 'node.js',
-                  hashKey: hashBuilder.fromString(compiledServer),
+                  hashKey: hashBuilder.fromString(compiled[publishFileName]),
                   src: publishFileName
                 }
             )

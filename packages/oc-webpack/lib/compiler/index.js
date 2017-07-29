@@ -1,6 +1,7 @@
 'use strict';
 
 const MemoryFS = require('memory-fs');
+const path = require('path');
 const webpack = require('webpack');
 
 const memoryFs = new MemoryFS();
@@ -38,10 +39,14 @@ module.exports = function compiler(config, callback) {
       logger.log(log);
     }
 
-    const serverContentBundled = memoryFs.readFileSync(
-      '/build/server.js',
-      'UTF8'
-    );
-    callback(null, serverContentBundled);
+    const basePath = path.join(config.entry, '../build');
+
+    callback(null, {
+      'server.js': memoryFs.readFileSync(`${basePath}/server.js`, 'UTF8'),
+      'server.js.map': memoryFs.readFileSync(
+        `${basePath}/server.js.map`,
+        'UTF8'
+      )
+    });
   });
 };

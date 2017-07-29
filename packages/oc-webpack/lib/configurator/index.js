@@ -1,19 +1,24 @@
 /*jshint camelcase:false */
 'use strict';
 
-const BabiliPlugin = require('babili-webpack-plugin');
 const externalDependenciesHandlers = require('oc-external-dependencies-handler');
 const path = require('path');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = function webpackConfigGenerator(options) {
+  const dest = path.join(options.serverPath, '../build');
+
   return {
+    devtool: '#source-map',
     entry: options.serverPath,
     target: 'node',
     output: {
-      path: '/build',
+      devtoolModuleFilenameTemplate: '[absolute-resource-path]',
+      devtoolFallbackModuleFilenameTemplate: '[absolute-resource-path]?[hash]',
       filename: options.publishFileName,
-      libraryTarget: 'commonjs2'
+      libraryTarget: 'commonjs2',
+      path: dest
     },
     externals: externalDependenciesHandlers(options.dependencies),
     module: {
@@ -23,12 +28,12 @@ module.exports = function webpackConfigGenerator(options) {
           exclude: /node_modules/,
           use: [
             {
-              loader: require.resolve('infinite-loop-loader')
-            },
-            {
               loader: require.resolve('babel-loader'),
               options: {
                 cacheDirectory: true,
+                retainLines: true,
+                sourceMaps: true,
+                sourceRoot: path.join(options.serverPath, '..'),
                 presets: [
                   [
                     require.resolve('babel-preset-env'),
@@ -41,13 +46,22 @@ module.exports = function webpackConfigGenerator(options) {
                   ]
                 ]
               }
+            },
+            {
+              loader: require.resolve('infinite-loop-loader')
             }
           ]
         }
       ]
     },
     plugins: [
-      new BabiliPlugin(),
+      new UglifyJSPlugin({
+        parallel: true,
+        sourceMap: {
+          filename: dest,
+          url: `${dest}.map`
+        }
+      }),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production')
       })

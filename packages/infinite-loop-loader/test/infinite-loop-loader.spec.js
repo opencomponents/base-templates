@@ -9,8 +9,7 @@ describe('infinite-loop-loader', () => {
     expect(loader.length).toBe(1);
   });
 
-  describe('When invoked on a js file containing loops', () => {
-    const source = `
+  const source = `
 module.exports.data = function(context, cb) {
   var x, y, z;
 
@@ -43,9 +42,30 @@ module.exports.data = function(context, cb) {
   return cb(null, data)
 };
 `;
+
+  describe('When invoked on a js file containing loops', () => {
     const result = loader(source);
 
     it('should wrap WhileStatement, ForStatement and DoWhileStatement correctly', () => {
+      expect(result).toMatchSnapshot();
+    });
+  });
+
+  describe('When invoked with custom options', () => {
+    const loader2 = loader.bind({
+      loaders: [
+        {
+          options: {
+            limit: 1000
+          }
+        }
+      ],
+      loaderIndex: 0
+    });
+
+    const result = loader2(source);
+
+    it('should wrap WhileStatement, ForStatement and DoWhileStatement correctly with limit=1000', () => {
       expect(result).toMatchSnapshot();
     });
   });

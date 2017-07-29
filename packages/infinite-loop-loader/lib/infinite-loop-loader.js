@@ -1,11 +1,11 @@
 'use strict';
 
-const falafel = require('falafel');
+const falafel = require('falafel-sm');
 const transformLoopWithLimit = require('./transformLoopWithLimit.js');
 
-module.exports = source => {
+module.exports = function(source) {
   let options;
-  if (this && this.loaders && this.loaderIndex) {
+  if (this && this.loaders && this.loaderIndex >= 0) {
     options = this.loaders[this.loaderIndex].options;
   }
 
