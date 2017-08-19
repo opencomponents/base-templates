@@ -1,0 +1,27 @@
+{
+  "name": "oc-generic-template-renderer",
+  "version": "1.0.0",
+  "description": "OC-Generic-Template-Renderer",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opencomponents/base-templates.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opencomponents/base-templates/issues"
+  },
+  "homepage": "https://github.com/opencomponents/base-templates#readme",
+  "keywords": [
+    "oc",
+    "opencomponents"
+  ],
+  "author": {
+    "name": "Nick Balestra",
+    "email": "nick@balestra.ch"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "lib"
+  ]
+}
