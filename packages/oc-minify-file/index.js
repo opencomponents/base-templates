@@ -31,5 +31,4 @@ module.exports = function(fileExtension, fileContent) {
 
     return result.styles;
   }
-  // comment
 };
