@@ -1,4 +1,4 @@
-const render = require('../lib/render');
+const { render } = require('../index.js');
 
 describe('render method', () => {
   describe('when invoked with a valid template', () => {
