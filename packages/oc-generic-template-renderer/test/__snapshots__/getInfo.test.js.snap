@@ -5,10 +5,12 @@ Object {
   "externals": Array [
     Object {
       "global": "LibOne",
+      "name": "lib-one",
       "url": "https://cdn.com/lib-one/1.0.0/lib-one.min.js",
     },
     Object {
       "global": "LibTwo",
+      "name": "lib-two",
       "url": "https://cdn.com/lib-two/1.0.0/lib-two.min.js",
     },
   ],
