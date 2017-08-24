@@ -1,4 +1,4 @@
-const getInfo = require('../lib/getInfo');
+const { getInfo } = require('../index.js');
 
 test('should return the correct info', () => {
   const info = getInfo();

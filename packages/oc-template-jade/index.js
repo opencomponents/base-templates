@@ -1,11 +1,13 @@
 'use strict';
 
+const { getInfo, render } = require('oc-generic-template-renderer');
 const getCompiledTemplate = require('./lib/getCompiledTemplate');
-const getInfo = require('./lib/getInfo');
-const render = require('./lib/render');
+const packageJson = require('./package.json');
 
 module.exports = {
-  getInfo,
+  getInfo() {
+    return getInfo(packageJson);
+  },
   getCompiledTemplate,
   render
 };

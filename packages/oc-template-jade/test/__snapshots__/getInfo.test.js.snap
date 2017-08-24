@@ -5,6 +5,7 @@ Object {
   "externals": Array [
     Object {
       "global": "jade",
+      "name": "jade",
       "url": "https://unpkg.com/jade-legacy@1.11.1/runtime.js",
     },
   ],

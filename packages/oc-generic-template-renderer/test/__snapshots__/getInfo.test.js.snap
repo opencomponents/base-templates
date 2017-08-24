@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should return the correct info 1`] = `
+Object {
+  "externals": Array [
+    Object {
+      "global": "LibOne",
+      "name": "lib-one",
+      "url": "https://cdn.com/lib-one/1.0.0/lib-one.min.js",
+    },
+    Object {
+      "global": "LibTwo",
+      "name": "lib-two",
+      "url": "https://cdn.com/lib-two/1.0.0/lib-two.min.js",
+    },
+  ],
+  "type": "oc-template-generic",
+  "version": "1.0.0",
+}
+`;
