@@ -1,6 +1,6 @@
 {
   "name": "oc-minify-file",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Minify file helper",
   "main": "index.js",
   "repository": {
