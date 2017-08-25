@@ -1,5 +1,5 @@
 const fs = require('fs');
-const getCompiledTemplate = require('../lib/getCompiledTemplate');
+const getCompiledTemplate = require('../').getCompiledTemplate;
 
 test('Return compiled template when valid', () => {
   const template =
