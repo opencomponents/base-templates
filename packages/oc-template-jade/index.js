@@ -1,13 +1,16 @@
 'use strict';
 
-const { getInfo, render } = require('oc-generic-template-renderer');
-const getCompiledTemplate = require('./lib/getCompiledTemplate');
+const jade = require('jade-legacy/runtime.js');
+const renderer = require('oc-generic-template-renderer');
 const packageJson = require('./package.json');
+
+const context = { jade };
 
 module.exports = {
   getInfo() {
-    return getInfo(packageJson);
+    return renderer.getInfo(packageJson);
   },
-  getCompiledTemplate,
-  render
+  getCompiledTemplate: (templateString, key) =>
+    renderer.getCompiledTemplate(templateString, key, context),
+  render: renderer.render
 };
