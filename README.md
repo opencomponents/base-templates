@@ -29,6 +29,7 @@ Base-templates & utilties for the [OpenComponents](https://github.com/opentable/
 | [`oc-hash-builder`](/packages/oc-hash-builder) | [![npm version](https://badge.fury.io/js/oc-hash-builder.svg)](http://badge.fury.io/js/oc-hash-builder) |
 | [`oc-minify-file`](/packages/oc-minify-file) | [![npm version](https://badge.fury.io/js/oc-minify-file.svg)](http://badge.fury.io/js/oc-minify-file) |
 | [`oc-server-compiler`](/packages/oc-server-compiler) | [![npm version](https://badge.fury.io/js/oc-server-compiler.svg)](http://badge.fury.io/js/oc-server-compiler) |
+| [`oc-statics-compiler`](/packages/oc-statics-compiler) | [![npm version](https://badge.fury.io/js/oc-statics-compiler.svg)](http://badge.fury.io/js/oc-statics-compiler) |
 | [`oc-template-handlebars-compiler`](/packages/oc-template-handlebars-compiler) | [![npm version](https://badge.fury.io/js/oc-template-handlebars-compiler.svg)](http://badge.fury.io/js/oc-template-handlebars-compiler) |
 | [`oc-template-jade-compiler`](/packages/oc-template-jade-compiler) | [![npm version](https://badge.fury.io/js/oc-template-jade-compiler.svg)](http://badge.fury.io/js/oc-template-jade-compiler) |
 | [`oc-view-wrapper`](/packages/oc-view-wrapper) | [![npm version](https://badge.fury.io/js/oc-view-wrapper.svg)](http://badge.fury.io/js/oc-view-wrapper) |
