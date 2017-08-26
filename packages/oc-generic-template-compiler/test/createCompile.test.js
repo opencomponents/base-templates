@@ -14,5 +14,4 @@ test('Should correctly create a compiler function', () => {
 
   expect(compiler).toBeInstanceOf(Function);
   expect(compiler.length).toBe(2);
-  expect(compiler.toString()).toMatchSnapshot();
 });
