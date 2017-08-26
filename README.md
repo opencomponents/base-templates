@@ -24,6 +24,7 @@ Base-templates & utilties for the [OpenComponents](https://github.com/opentable/
 |--------|-------|
 | [`infinite-loop-loader`](/packages/infinite-loop-loader) | [![npm version](https://badge.fury.io/js/infinite-loop-loader.svg)](http://badge.fury.io/js/infinite-loop-loader) |
 | [`oc-external-dependencies-handler`](/packages/oc-external-dependencies-handler) | [![npm version](https://badge.fury.io/js/oc-external-dependencies-handler.svg)](http://badge.fury.io/js/oc-external-dependencies-handler) |
+| [`oc-generic-template-compiler`](/packages/oc-generic-template-compiler) | [![npm version](https://badge.fury.io/js/oc-generic-template-compiler.svg)](http://badge.fury.io/js/oc-generic-template-compiler) |
 | [`oc-generic-template-renderer`](/packages/oc-generic-template-renderer) | [![npm version](https://badge.fury.io/js/oc-generic-template-renderer.svg)](http://badge.fury.io/js/oc-generic-template-renderer) |
 | [`oc-get-unix-utc-timestamp`](/packages/oc-get-unix-utc-timestamp) | [![npm version](https://badge.fury.io/js/oc-get-unix-utc-timestamp.svg)](http://badge.fury.io/js/oc-get-unix-utc-timestamp) |
 | [`oc-hash-builder`](/packages/oc-hash-builder) | [![npm version](https://badge.fury.io/js/oc-hash-builder.svg)](http://badge.fury.io/js/oc-hash-builder) |
