@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs-extra');
 const nodeDir = require('node-dir');
 
-const compileStatics = require('../lib/compileStatics.js');
+const compileStatics = require('../index.js');
 const componentPath = path.join(
   __dirname,
   '../../../mocks/handlebars-component'
