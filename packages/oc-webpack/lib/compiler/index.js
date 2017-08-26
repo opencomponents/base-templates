@@ -37,11 +37,6 @@ module.exports = function compiler(config, callback) {
     if (log) {
       logger.log(log);
     }
-
-    const serverContentBundled = memoryFs.readFileSync(
-      '/build/server.js',
-      'UTF8'
-    );
-    callback(null, serverContentBundled);
+    callback(null, memoryFs.data);
   });
 };

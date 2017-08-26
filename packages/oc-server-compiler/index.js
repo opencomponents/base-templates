@@ -6,6 +6,7 @@ const fs = require('fs-extra');
 const hashBuilder = require('oc-hash-builder');
 const path = require('path');
 const webpackConfigurator = require('oc-webpack').configurator;
+const MemoryFS = require('memory-fs');
 
 module.exports = (options, callback) => {
   const serverFileName = options.componentPackage.oc.files.data;
@@ -25,8 +26,13 @@ module.exports = (options, callback) => {
   async.waterfall(
     [
       next => compiler(config, next),
-      (compiledServer, next) =>
-        fs.ensureDir(publishPath, err => next(err, compiledServer)),
+      (data, next) => {
+        const compiledServer = new MemoryFS(data).readFileSync(
+          '/build/server.js',
+          'UTF8'
+        );
+        return fs.ensureDir(publishPath, err => next(err, compiledServer));
+      },
       (compiledServer, next) =>
         fs.writeFile(
           path.join(publishPath, publishFileName),
