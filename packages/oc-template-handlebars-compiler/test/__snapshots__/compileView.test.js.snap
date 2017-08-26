@@ -2,9 +2,11 @@
 
 exports[`Should correctly compile the view 1`] = `
 Object {
-  "hashKey": "2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e",
-  "src": "template.js",
-  "type": "handlebars",
+  "template": Object {
+    "hashKey": "2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e",
+    "src": "template.js",
+    "type": "handlebars",
+  },
 }
 `;
 

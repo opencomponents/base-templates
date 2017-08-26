@@ -53,9 +53,11 @@ module.exports = (options, callback) => {
         return callback(strings.errors.compilationFailed(viewFileName, err));
       }
       callback(null, {
-        type: options.componentPackage.oc.files.template.type,
-        hashKey: compiled.hash,
-        src: publishFileName
+        template: {
+          type: options.componentPackage.oc.files.template.type,
+          hashKey: compiled.hash,
+          src: publishFileName
+        }
       });
     }
   );
