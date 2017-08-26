@@ -28,6 +28,8 @@
     "jstransformer-uglify-css": "^1.0.0",
     "jstransformer-uglify-js": "^1.2.0",
     "lodash": "^4.17.4",
+    "node-dir": "0.1.16",
+    "oc-generic-template-compiler": "1.0.0",
     "oc-get-unix-utc-timestamp": "1.0.1",
     "oc-hash-builder": "1.0.1",
     "oc-minify-file": "1.0.4",

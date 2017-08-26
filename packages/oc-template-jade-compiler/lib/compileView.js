@@ -40,9 +40,11 @@ module.exports = (options, callback) => {
     fs.ensureDirSync(publishPath);
     fs.writeFile(path.join(publishPath, publishFileName), compiledView, err =>
       callback(err, {
-        type: options.componentPackage.oc.files.template.type,
-        hashKey: viewHash,
-        src: publishFileName
+        template: {
+          type: options.componentPackage.oc.files.template.type,
+          hashKey: viewHash,
+          src: publishFileName
+        }
       })
     );
   } catch (error) {
