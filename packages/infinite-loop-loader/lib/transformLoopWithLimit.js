@@ -17,10 +17,17 @@ module.exports = limit => {
     node.type === 'BlockStatement' &&
     loopNodeTypes.indexOf(node.parent.type) > -1;
 
-  const addVarDeclarationBeforeNode = (node, limit) =>
+  const addVarDeclarationBeforeNode = (node, limit) => {
     node.update(`
       var __ITER = ${limit};
       ${node.source()}`);
+
+    if (node.parent && node.parent.consequent !== undefined) {
+      node.update(`{
+        ${node.source()}
+      }`);
+    }
+  };
 
   const addGuardsToLoopBody = node =>
     node.update(

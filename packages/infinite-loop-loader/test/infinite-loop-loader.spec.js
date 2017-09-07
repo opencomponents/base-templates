@@ -41,6 +41,9 @@ module.exports.data = function(context, cb) {
     z = 342;
   } while(false);
   return cb(null, data)
+ 
+  if (false) while (true) {}
+  else while (true) {}
 };
 `;
     const result = loader(source);
