@@ -11,7 +11,7 @@ Object {
     "date": "",
     "files": Object {
       "dataProvider": Object {
-        "hashKey": "1ea15b210c9e4c76e232b8341d4f96c2e0f23109",
+        "hashKey": "71a1269026ed6dcc29299ed85a8a8bd5660723c3",
         "src": "server.js",
         "type": "node.js",
       },
@@ -40,6 +40,7 @@ Array [
   "../../../mocks/jade-component/__package/assets/js/lib.js",
   "../../../mocks/jade-component/__package/package.json",
   "../../../mocks/jade-component/__package/server.js",
+  "../../../mocks/jade-component/__package/server.js.map",
   "../../../mocks/jade-component/__package/template.js",
 ]
 `;
