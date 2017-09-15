@@ -26,6 +26,6 @@
   "dependencies": {
     "builtin-modules": "^1.1.1",
     "lodash": "^4.17.4",
-    "oc-templates-messages": "^1.0.1"
+    "oc-templates-messages": "1.0.1"
   }
 }

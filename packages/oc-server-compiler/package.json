@@ -24,7 +24,7 @@
     "async": "^2.4.1",
     "fs-extra": "^4.0.0",
     "oc-hash-builder": "1.0.1",
-    "oc-webpack": "^1.0.6"
+    "oc-webpack": "1.0.7"
   },
   "files": [
     "index.js"

@@ -31,6 +31,6 @@
   ],
   "dependencies": {
     "falafel": "^2.0.0",
-    "oc-templates-messages": "^1.0.1"
+    "oc-templates-messages": "1.0.1"
   }
 }
