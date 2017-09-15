@@ -22,8 +22,8 @@
   "license": "MIT",
   "dependencies": {
     "handlebars": "4.0.6",
-    "oc-generic-template-renderer": "^2.0.0",
-    "oc-templates-messages": "^1.0.1"
+    "oc-generic-template-renderer": "2.0.1",
+    "oc-templates-messages": "1.0.1"
   },
   "files": [
     "index.js",
