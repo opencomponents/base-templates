@@ -1,6 +1,6 @@
 {
   "name": "oc-external-dependencies-handler",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "External dependencies handler for webpack",
   "main": "index.js",
   "repository": {
