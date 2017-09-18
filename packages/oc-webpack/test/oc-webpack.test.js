@@ -6,6 +6,7 @@ const path = require('path');
 const api = require('../index.js');
 const webpackConfigurator = require('../lib/configurator');
 const webpackCompiler = require('../lib/compiler');
+const MemoryFS = require('memory-fs');
 
 test('module APIs', () => {
   expect(api).toMatchSnapshot();
@@ -44,7 +45,9 @@ test('webpack compiler', done => {
     )
   });
 
-  webpackCompiler(config, (error, serverContentBundled) => {
+  webpackCompiler(config, (error, data) => {
+    const fs = new MemoryFS(data);
+    const serverContentBundled = fs.readFileSync('/build/server.js', 'UTF8');
     expect(serverContentBundled).toMatchSnapshot();
     done();
   });
@@ -64,7 +67,9 @@ test('webpack compiler verbose', done => {
     )
   });
 
-  webpackCompiler(config, (error, serverContentBundled) => {
+  webpackCompiler(config, (error, data) => {
+    const fs = new MemoryFS(data);
+    const serverContentBundled = fs.readFileSync('/build/server.js', 'UTF8');
     const consoleOutput = loggerMock.log.mock.calls[0][0];
     expect(serverContentBundled).toMatchSnapshot();
     expect(consoleOutput).toMatch(/Hash:(.*?)01e93c95dfecf93de280/);
@@ -92,7 +97,7 @@ test('webpack compiler with fatal error', done => {
     );
   });
 
-  webpackCompiler(config, (error, serverContentBundled) => {
+  webpackCompiler(config, (error, data) => {
     expect(error).toMatchSnapshot();
     done();
   });
@@ -106,7 +111,7 @@ test('webpack compiler with soft error', done => {
     serverPath: path.join(__dirname, 'some/not/valid/path', 'server.js')
   });
 
-  webpackCompiler(config, (error, serverContentBundled) => {
+  webpackCompiler(config, (error, data) => {
     expect(error).toContain(`Entry module not found: Error: Can't resolve`);
     done();
   });
@@ -131,7 +136,7 @@ test('webpack compiler with warning', done => {
     this.plugin('done', stats => stats.compilation.warnings.push('A warning'));
   });
 
-  webpackCompiler(config, (error, serverContentBundled) => {
+  webpackCompiler(config, (error, data) => {
     expect(loggerMock.log.mock.calls[0][0]).toContain('A warning');
     expect(error).toBe(null);
     done();
