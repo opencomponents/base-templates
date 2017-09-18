@@ -23,9 +23,9 @@
     "lodash": "^4.17.4",
     "async": "^2.4.1",
     "fs-extra": "^3.0.1",
-    "oc-minify-file": "^1.0.3",
+    "oc-minify-file": "1.0.5",
     "node-dir": "0.1.16",
-    "oc-templates-messages": "^1.0.1"
+    "oc-templates-messages": "1.0.1"
   },
   "license": "MIT",
   "files": [
