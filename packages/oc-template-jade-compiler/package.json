@@ -1,6 +1,6 @@
 {
   "name": "oc-template-jade-compiler",
-  "version": "6.0.11",
+  "version": "6.1.0",
   "description": "OC-Template-Jade-Compiler",
   "main": "index.js",
   "repository": {
