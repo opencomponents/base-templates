@@ -68,6 +68,25 @@ module.exports.data = function(context, cb) {
     z = 342;
   } while(false);
   return cb(null, data)
+ 
+  if (false) {
+        
+      var __ITER = 1000000000;
+      while (true) { if (__ITER <= 0) {
+        throw new Error(\\"Loop exceeded maximum allowed iterations\\");
+      }
+      __ITER--;
+      }
+      }
+  else {
+        
+      var __ITER = 1000000000;
+      while (true) { if (__ITER <= 0) {
+        throw new Error(\\"Loop exceeded maximum allowed iterations\\");
+      }
+      __ITER--;
+      }
+      }
 };
 "
 `;

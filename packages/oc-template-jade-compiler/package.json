@@ -1,6 +1,6 @@
 {
   "name": "oc-template-jade-compiler",
-  "version": "6.0.10",
+  "version": "6.0.11",
   "description": "OC-Template-Jade-Compiler",
   "main": "index.js",
   "repository": {
@@ -30,10 +30,11 @@
     "lodash": "^4.17.4",
     "oc-get-unix-utc-timestamp": "1.0.1",
     "oc-hash-builder": "1.0.1",
-    "oc-server-compiler": "^1.0.0",
-    "oc-statics-compiler": "^1.0.0",
-    "oc-template-jade": "6.0.1",
-    "oc-templates-messages": "^1.0.1",
+    "oc-minify-file": "1.0.4",
+    "oc-statics-compiler": "1.0.0",
+    "oc-server-compiler": "1.0.0",
+    "oc-template-jade": "6.0.4",
+    "oc-templates-messages": "1.0.1",
     "oc-view-wrapper": "1.0.2",
     "uglify-js": "2.6.4"
   },

@@ -1,6 +1,6 @@
 {
   "name": "oc-external-dependencies-handler",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "External dependencies handler for webpack",
   "main": "index.js",
   "repository": {
@@ -26,6 +26,6 @@
   "dependencies": {
     "builtin-modules": "^1.1.1",
     "lodash": "^4.17.4",
-    "oc-templates-messages": "^1.0.1"
+    "oc-templates-messages": "1.0.1"
   }
 }
