@@ -25,7 +25,7 @@
     "fs-extra": "^4.0.0",
     "memory-fs": "^0.4.1",
     "oc-hash-builder": "1.0.1",
-    "oc-webpack": "1.0.8"
+    "oc-webpack": "2.0.0"
   },
   "files": [
     "index.js"

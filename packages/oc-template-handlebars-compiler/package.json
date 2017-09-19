@@ -28,7 +28,7 @@
     "oc-get-unix-utc-timestamp": "1.0.1",
     "oc-hash-builder": "1.0.1",
     "oc-server-compiler": "1.0.0",
-    "oc-statics-compiler": "1.0.0",
+    "oc-statics-compiler": "2.0.0",
     "oc-template-handlebars": "6.0.5",
     "oc-templates-messages": "1.0.1",
     "oc-view-wrapper": "1.0.2",
