@@ -1,5 +1,6 @@
-/* istanbul ignore next */
 'use strict';
+
+/* istanbul ignore next */
 
 (function(f) {
   if (typeof exports === 'object' && typeof module !== 'undefined') {
