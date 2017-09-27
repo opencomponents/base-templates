@@ -1,7 +1,8 @@
 'use strict';
 
-const jade = require('jade-legacy/runtime.js');
-const generic = require('oc-generic-template-renderer');
+const jade = require('./jade-runtime.js');
+const renderer = require('oc-generic-template-renderer');
+
 const packageJson = require('./package.json');
 
 const context = { jade };
