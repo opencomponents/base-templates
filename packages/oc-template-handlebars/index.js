@@ -2,12 +2,12 @@
 
 const packageJson = require('./package.json');
 const render = require('./lib/render');
-const renderer = require('oc-generic-template-renderer');
+const generic = require('oc-generic-template-renderer');
 
 module.exports = {
   getInfo() {
-    return renderer.getInfo(packageJson);
+    return generic.getInfo(packageJson);
   },
-  getCompiledTemplate: renderer.getCompiledTemplate,
+  getCompiledTemplate: generic.getCompiledTemplate,
   render
 };

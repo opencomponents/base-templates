@@ -2,9 +2,11 @@
 
 exports[`Should correctly compile the view 1`] = `
 Object {
-  "hashKey": "096e8ec0a00c37c4bd669e2ad046892d93766ff0",
-  "src": "template.js",
-  "type": "jade",
+  "template": Object {
+    "hashKey": "096e8ec0a00c37c4bd669e2ad046892d93766ff0",
+    "src": "template.js",
+    "type": "jade",
+  },
 }
 `;
 

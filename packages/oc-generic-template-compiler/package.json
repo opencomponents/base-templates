@@ -1,7 +1,7 @@
 {
-  "name": "oc-server-compiler",
-  "version": "2.0.1",
-  "description": "OC-Server-Compiler",
+  "name": "oc-generic-template-compiler",
+  "version": "1.0.0",
+  "description": "OC-Generic-Template-Compiler",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -16,18 +16,20 @@
     "opencomponents"
   ],
   "author": {
-    "name": "Matteo Figus",
-    "email": "matteofigus@gmail.com"
+    "name": "Nick Balestra",
+    "email": "nick@balestra.ch"
   },
   "license": "MIT",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "lib"
+  ],
   "dependencies": {
     "async": "^2.4.1",
     "fs-extra": "^3.0.1",
-    "memory-fs": "^0.4.1",
-    "oc-hash-builder": "1.0.1",
-    "oc-webpack": "2.0.0"
-  },
-  "files": [
-    "index.js"
-  ]
+    "lodash": "^4.17.4",
+    "oc-get-unix-utc-timestamp": "1.0.1"
+  }
 }
