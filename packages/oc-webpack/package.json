@@ -30,7 +30,7 @@
     "infinite-loop-loader": "1.0.4",
     "memory-fs": "^0.4.1",
     "oc-external-dependencies-handler": "1.0.3",
-    "webpack": "^2.6.1"
+    "webpack": "^3.6.0"
   },
   "files": [
     "index.js",
