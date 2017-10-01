@@ -24,9 +24,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "babel-loader": "^7.0.0",
-    "babel-preset-env": "^1.5.2",
-    "babili-webpack-plugin": "^0.1.1",
+    "babel-loader": "^7.1.2",
+    "babel-minify-webpack-plugin": "^0.2.0",
+    "babel-preset-env": "^1.6.0",
     "infinite-loop-loader": "1.0.4",
     "memory-fs": "^0.4.1",
     "oc-external-dependencies-handler": "1.0.3",

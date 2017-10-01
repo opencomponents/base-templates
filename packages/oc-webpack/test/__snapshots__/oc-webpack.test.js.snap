@@ -56,9 +56,18 @@ Object {
     "path": "/build",
   },
   "plugins": Array [
-    BabiliPlugin {
-      "babiliOpts": Object {},
-      "options": Object {},
+    BabelMinifyPlugin {
+      "options": Object {
+        "babel": Object {
+          "transform": [Function],
+        },
+        "comments": /\\^\\\\\\*\\*!\\|@preserve\\|@license\\|@cc_on/,
+        "jsregex": /\\\\\\.js\\(\\$\\|\\\\\\?\\)/i,
+        "minifyOpts": Object {},
+        "minifyPreset": [Function],
+        "parserOpts": Object {},
+        "sourceMap": undefined,
+      },
     },
     DefinePlugin {
       "definitions": Object {
