@@ -9,11 +9,11 @@ matrix:
 after_script:
   - npm run coverage
 
-script:
-  - validate-commit-msg "$(git log -1 --pretty=%B)" && npm test
+# script:
+#   - validate-commit-msg "$(git log -1 --pretty=%B)" && npm test
 
 notifications:
   email: false
 
-before_install: ".travis/before_install.sh"
-after_success: ".travis/after_success.sh"
+# before_install: ".travis/before_install.sh"
+# after_success: ".travis/after_success.sh"

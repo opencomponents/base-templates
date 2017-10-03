@@ -5,7 +5,7 @@
     "cz-lerna-changelog": "^1.2.1",
     "husky": "^0.13.4",
     "jest": "^20.0.4",
-    "lerna": "^2.0.0-rc.5",
+    "lerna": "^2.3.1",
     "lerna-semantic-release": "^9.1.0",
     "lint-staged": "^3.6.0",
     "prettier-eslint-cli": "^4.1.1",
@@ -14,13 +14,13 @@
   },
   "scripts": {
     "postinstall": "lerna bootstrap",
+    "updated": "lerna updated",
     "clean": "lerna clean",
     "coverage": "codecov",
     "test": "jest",
     "semantic-release": "lerna-semantic-release pre && lerna-semantic-release post && lerna-semantic-release perform",
     "changelog": "lerna-semantic-release post",
-    "commitmsg": "validate-commit-msg",
-    "commit": "git-cz",
+    "publish": "lerna publish --exact",
     "precommit": "lint-staged"
   },
   "lint-staged": {
