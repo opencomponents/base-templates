@@ -121,7 +121,7 @@ test('webpack compiler with warning', done => {
   const loggerMock = { log: jest.fn() };
   const config = webpackConfigurator({
     logger: loggerMock,
-    stats: 'errors-only',
+    stats: 'normal',
     dependencies: { lodash: '' },
     publishFileName: 'server.js',
     serverPath: path.join(
@@ -137,8 +137,7 @@ test('webpack compiler with warning', done => {
   });
 
   webpackCompiler(config, (error, data) => {
-    // To fix
-    // expect(loggerMock.log.mock.calls[0][0]).toContain('A warning');
+    expect(loggerMock.log.mock.calls[0][0]).toContain('A warning');
     expect(error).toBe(null);
     done();
   });

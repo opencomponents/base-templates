@@ -4,6 +4,7 @@ exports[`module APIs 1`] = `
 Object {
   "compiler": [Function],
   "configurator": [Function],
+  "webpack": [Function],
 }
 `;
 
