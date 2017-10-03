@@ -1,7 +1,7 @@
 /*jshint camelcase:false */
 'use strict';
 
-const BabiliPlugin = require('babili-webpack-plugin');
+const MinifyPlugin = require('babel-minify-webpack-plugin');
 const externalDependenciesHandlers = require('oc-external-dependencies-handler');
 const path = require('path');
 const webpack = require('webpack');
@@ -47,7 +47,7 @@ module.exports = function webpackConfigGenerator(options) {
       ]
     },
     plugins: [
-      new BabiliPlugin(),
+      new MinifyPlugin(),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production')
       })

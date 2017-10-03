@@ -4,12 +4,13 @@ exports[`module APIs 1`] = `
 Object {
   "compiler": [Function],
   "configurator": [Function],
+  "webpack": [Function],
 }
 `;
 
-exports[`webpack compiler 1`] = `"module.exports=function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.i=function(a){return a},b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=1)}([function(a){a.exports=require('lodash')},function(a,b,c){'use strict';Object.defineProperty(b,'__esModule',{value:!0}),c.d(b,'data',function(){return e});var d=c(0),e=function(a,b){return b(null,{})}}]);"`;
+exports[`webpack compiler 1`] = `"module.exports=function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=0)}([function(a,b,c){'use strict';Object.defineProperty(b,'__esModule',{value:!0}),c.d(b,'data',function(){return e});var d=c(1),e=function(a,b){return b(null,{})}},function(a){a.exports=require('lodash')}]);"`;
 
-exports[`webpack compiler verbose 1`] = `"module.exports=function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.i=function(a){return a},b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=1)}([function(a){a.exports=require('lodash')},function(a,b,c){'use strict';Object.defineProperty(b,'__esModule',{value:!0}),c.d(b,'data',function(){return e});var d=c(0),e=function(a,b){return b(null,{})}}]);"`;
+exports[`webpack compiler verbose 1`] = `"module.exports=function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=0)}([function(a,b,c){'use strict';Object.defineProperty(b,'__esModule',{value:!0}),c.d(b,'data',function(){return e});var d=c(1),e=function(a,b){return b(null,{})}},function(a){a.exports=require('lodash')}]);"`;
 
 exports[`webpack compiler with fatal error 1`] = `"This is a fatal compilation error"`;
 
@@ -56,9 +57,18 @@ Object {
     "path": "/build",
   },
   "plugins": Array [
-    BabiliPlugin {
-      "babiliOpts": Object {},
-      "options": Object {},
+    BabelMinifyPlugin {
+      "options": Object {
+        "babel": Object {
+          "transform": [Function],
+        },
+        "comments": /\\^\\\\\\*\\*!\\|@preserve\\|@license\\|@cc_on/,
+        "jsregex": /\\\\\\.js\\(\\$\\|\\\\\\?\\)/i,
+        "minifyOpts": Object {},
+        "minifyPreset": [Function],
+        "parserOpts": Object {},
+        "sourceMap": undefined,
+      },
     },
     DefinePlugin {
       "definitions": Object {
