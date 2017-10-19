@@ -3,7 +3,7 @@ collectors:
   path: /  # directory where lerna.json is located
   settings:
     # by default we autodetect npm/yarn and do basic install
-    # root_install_command: npm run your-install-script
+    root_install_command: npm i
     # please use --concurrency=1 if you provide your own command
     # bootstrap_command: lerna bootstrap --concurrency 1  # this is what is used by default
 
