@@ -3,13 +3,13 @@
     "codecov": "^2.2.0",
     "commitizen": "^2.9.6",
     "cz-lerna-changelog": "^1.2.1",
-    "husky": "^0.13.4",
+    "husky": "0.14.3",
     "jest": "^20.0.4",
     "lerna": "^2.3.1",
     "lint-staged": "^3.6.0",
+    "node-dir": "0.1.16",
     "prettier-eslint-cli": "^4.1.1",
-    "validate-commit-msg": "^2.13.1",
-    "node-dir": "0.1.16"
+    "validate-commit-msg": "^2.13.1"
   },
   "scripts": {
     "postinstall": "lerna bootstrap",
