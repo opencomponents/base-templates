@@ -12,7 +12,7 @@
     "node-dir": "0.1.16"
   },
   "scripts": {
-    "postinstall": "lerna bootstrap",
+    "postinstall": "lerna bootstrap --concurrency 1",
     "updated": "lerna updated",
     "clean": "lerna clean",
     "coverage": "codecov",
