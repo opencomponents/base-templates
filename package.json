@@ -5,7 +5,7 @@
     "jest": "21.2.1",
     "lerna": "^2.3.1",
     "lint-staged": "4.3.0",
-    "node-dir": "0.1.16",
+    "node-dir": "0.1.17",
     "prettier-eslint-cli": "^4.1.1"
   },
   "scripts": {
