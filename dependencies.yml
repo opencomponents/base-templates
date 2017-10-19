@@ -6,11 +6,6 @@ collectors:
   # pull requests for updates to any version
   - type: js-npm
     versions: "Y.Y.Y"
-    settings:
-      github_labels:  # list of label names
-        - dependencies
-      github_assignees:  # list of usernames
-        - nickbalestra
 
 # - type: js-npm
 #   path: packages/oc-minify-file
