@@ -9,8 +9,5 @@ matrix:
 after_script:
   - npm run coverage
 
-script:
-  - validate-commit-msg "$(git log -1 --pretty=%B)" && npm test
-
 notifications:
   email: false
