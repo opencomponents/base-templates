@@ -21,7 +21,12 @@ module.exports = function(fileExtension, fileContent) {
     const es5TranspiledContent = babel.transform(fileContent, babelOptions)
       .code;
 
-    return uglifyJs.minify(es5TranspiledContent, { fromString: true }).code;
+    const uglified = uglifyJs.minify(es5TranspiledContent);
+
+    if (uglified.error) {
+      throw new Error(uglified.error);
+    }
+    return uglified.code;
   } else if (fileExtension === '.css') {
     const result = new CleanCss().minify(fileContent);
 
