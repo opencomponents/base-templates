@@ -1,0 +1,23 @@
+collectors:
+- type: js-lerna
+  path: /  # directory where lerna.json is located
+  settings:
+    # by default we autodetect npm/yarn and do basic install
+    # root_install_command: npm run your-install-script
+    # please use --concurrency=1 if you provide your own command
+    # bootstrap_command: lerna bootstrap --concurrency 1  # this is what is used by default
+
+    # false by default, enable if your lerna setup would benefit from
+    # also collecting/acting on the dependencies in your root package.json
+    # - this should probably be true if you use "hoist"
+    collect_root: true
+
+  actors:
+  - type: js-lerna
+    versions: "Y.Y.Y"
+    settings:
+      # github options
+      github_labels:  # list of label names
+      - dependencies
+      github_assignees:  # list of usernames
+      - nickbalestra
