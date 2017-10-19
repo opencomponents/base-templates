@@ -1,5 +1,12 @@
 collectors:
 
+- type: js-npm
+  path: /
+  actors:
+  # pull requests for updates to any version
+  - type: js-npm
+    versions: "Y.Y.Y"
+
 - type: js-lerna
   path: /
   actors:
