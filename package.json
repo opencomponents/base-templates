@@ -4,7 +4,7 @@
     "husky": "0.14.3",
     "jest": "21.2.1",
     "lerna": "^2.3.1",
-    "lint-staged": "^3.6.0",
+    "lint-staged": "4.3.0",
     "node-dir": "0.1.16",
     "prettier-eslint-cli": "^4.1.1"
   },
