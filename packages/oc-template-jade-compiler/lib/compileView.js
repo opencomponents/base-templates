@@ -31,10 +31,7 @@ module.exports = (options, callback) => {
 
     const viewHash = hashBuilder.fromString(view);
     const compiledView = uglifyJs.minify(
-      ocViewWrapper(viewHash, view.toString()),
-      {
-        fromString: true // NOTE: uglify-3 doesn't support this anymore.
-      }
+      ocViewWrapper(viewHash, view.toString())
     ).code;
 
     fs.ensureDirSync(publishPath);
