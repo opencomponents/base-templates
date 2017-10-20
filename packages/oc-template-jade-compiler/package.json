@@ -30,7 +30,7 @@
     "oc-hash-builder": "1.0.1",
     "oc-server-compiler": "2.0.1",
     "oc-statics-compiler": "2.0.0",
-    "oc-template-jade": "6.0.8",
+    "oc-template-jade": "6.0.9",
     "oc-templates-messages": "1.0.1",
     "oc-view-wrapper": "1.0.2",
     "uglify-js": "2.6.4"
