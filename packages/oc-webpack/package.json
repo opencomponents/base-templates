@@ -29,7 +29,7 @@
     "babel-preset-env": "^1.6.0",
     "infinite-loop-loader": "1.0.5",
     "memory-fs": "^0.4.1",
-    "oc-external-dependencies-handler": "1.0.3",
+    "oc-external-dependencies-handler": "1.0.4",
     "webpack": "^3.6.0"
   },
   "files": [
