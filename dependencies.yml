@@ -49,19 +49,19 @@ collectors:
   - type: js-npm
     versions: "Y.Y.Y"
 
-# - type: js-npm
-#   path: packages/oc-template-handlebars-compiler
-#   actors:
-#   # pull requests for updates to any version
-#   - type: js-npm
-#     versions: "Y.Y.Y"
+- type: js-npm
+  path: packages/oc-template-handlebars-compiler
+  actors:
+  # pull requests for updates to any version
+  - type: js-npm
+    versions: "Y.Y.Y"
 
-# - type: js-npm
-#   path: packages/oc-statics-compiler
-#   actors:
-#   # pull requests for updates to any version
-#   - type: js-npm
-#     versions: "Y.Y.Y"
+- type: js-npm
+  path: packages/oc-statics-compiler
+  actors:
+  # pull requests for updates to any version
+  - type: js-npm
+    versions: "Y.Y.Y"
 
 # - type: js-npm
 #   path: packages/oc-server-compiler
