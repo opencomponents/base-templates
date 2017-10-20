@@ -26,7 +26,7 @@
     "handlebars": "4.0.11",
     "oc-generic-template-compiler": "2.0.0",
     "oc-hash-builder": "1.0.1",
-    "oc-server-compiler": "2.0.1",
+    "oc-server-compiler": "2.0.3",
     "oc-statics-compiler": "2.0.0",
     "oc-template-handlebars": "6.0.7",
     "oc-templates-messages": "1.0.1",
