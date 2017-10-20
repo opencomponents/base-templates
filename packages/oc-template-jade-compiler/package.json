@@ -21,7 +21,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "fs-extra": "^3.0.1",
+    "fs-extra": "4.0.2",
     "jade-legacy": "1.11.1",
     "jstransformer-clean-css": "^2.0.0",
     "jstransformer-uglify-css": "^1.0.0",
