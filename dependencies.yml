@@ -91,19 +91,19 @@ collectors:
   - type: js-npm
     versions: "Y.Y.Y"
 
-# - type: js-npm
-#   path: packages/oc-generic-template-compiler
-#   actors:
-#   # pull requests for updates to any version
-#   - type: js-npm
-#     versions: "Y.Y.Y"
+- type: js-npm
+  path: packages/oc-generic-template-compiler
+  actors:
+  # pull requests for updates to any version
+  - type: js-npm
+    versions: "Y.Y.Y"
 
-# - type: js-npm
-#   path: packages/oc-get-unix-utc-timestamp
-#   actors:
-#   # pull requests for updates to any version
-#   - type: js-npm
-#     versions: "Y.Y.Y"
+- type: js-npm
+  path: packages/oc-get-unix-utc-timestamp
+  actors:
+  # pull requests for updates to any version
+  - type: js-npm
+    versions: "Y.Y.Y"
 
 # - type: js-npm
 #   path: packages/oc-template-jade
