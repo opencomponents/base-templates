@@ -35,8 +35,5 @@
   "files": [
     "index.js",
     "lib"
-  ],
-  "devDependencies": {
-    "jest": "21.2.1"
-  }
+  ]
 }
