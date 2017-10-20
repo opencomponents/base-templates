@@ -28,7 +28,7 @@
     "jstransformer-uglify-js": "^1.2.0",
     "oc-generic-template-compiler": "2.0.0",
     "oc-hash-builder": "1.0.1",
-    "oc-server-compiler": "2.0.1",
+    "oc-server-compiler": "2.0.3",
     "oc-statics-compiler": "2.0.0",
     "oc-template-jade": "6.0.9",
     "oc-templates-messages": "1.0.1",
