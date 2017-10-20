@@ -32,7 +32,7 @@
   "externals": {
     "handlebars": {
       "global": "Handlebars",
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.runtime.min.js"
+      "url": "https://unpkg.com/handlebars@4.0.11/dist/handlebars.runtime.min.js"
     }
   }
 }
