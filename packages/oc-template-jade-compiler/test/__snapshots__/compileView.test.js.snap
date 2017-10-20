@@ -10,4 +10,4 @@ Object {
 }
 `;
 
-exports[`Should correctly compile the view 2`] = `"var oc=oc||{};oc.components=oc.components||{},oc.components[\\"096e8ec0a00c37c4bd669e2ad046892d93766ff0\\"]=function(o){var e,c=[];return c.push(\\"<h1>\\"+jade.escape(null==(e=\\"Hello jade!\\")?\\"\\":e)+\\"</h1><style>h1{color:red;font-size:100px}</style>\\"),c.join(\\"\\")};"`;
+exports[`Should correctly compile the view 2`] = `"var oc=oc||{};oc.components=oc.components||{},oc.components[\\"096e8ec0a00c37c4bd669e2ad046892d93766ff0\\"]=function(e){var o=[];return o.push(\\"<h1>\\"+jade.escape(null==\\"Hello jade!\\"?\\"\\":\\"Hello jade!\\")+\\"</h1><style>h1{color:red;font-size:100px}</style>\\"),o.join(\\"\\")};"`;
