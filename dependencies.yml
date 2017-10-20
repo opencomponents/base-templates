@@ -21,12 +21,12 @@ collectors:
   - type: js-npm
     versions: "Y.Y.Y"
 
-# - type: js-npm
-#   path: packages/oc-template-jade-compiler
-#   actors:
-#   # pull requests for updates to any version
-#   - type: js-npm
-#     versions: "Y.Y.Y"
+- type: js-npm
+  path: packages/oc-template-jade-compiler
+  actors:
+  # pull requests for updates to any version
+  - type: js-npm
+    versions: "Y.Y.Y"
 
 # - type: js-npm
 #   path: packages/oc-templates-messages
