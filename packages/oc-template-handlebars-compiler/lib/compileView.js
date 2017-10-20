@@ -20,10 +20,7 @@ module.exports = (options, callback) => {
       const preCompiledView = handlebars.precompile(viewContent);
       const hash = hashBuilder.fromString(preCompiledView);
       const view = uglifyJs.minify(
-        ocViewWrapper(hash, preCompiledView.toString()),
-        {
-          fromString: true // NOTE: uglify-3 doesn't support this anymore.
-        }
+        ocViewWrapper(hash, preCompiledView.toString())
       ).code;
       cb(null, { view, hash });
     } catch (err) {
