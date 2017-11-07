@@ -31,7 +31,7 @@
     "oc-template-handlebars": "6.0.8",
     "oc-templates-messages": "1.0.1",
     "oc-view-wrapper": "1.0.2",
-    "uglify-js": "3.1.7"
+    "uglify-js": "3.1.8"
   },
   "files": [
     "index.js",
