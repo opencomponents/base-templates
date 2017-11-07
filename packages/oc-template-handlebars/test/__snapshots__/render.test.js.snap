@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render method when invoked with a valid template with valid view-models should correctly render with viewmodel = {name:"Jane"} 1`] = `
+"<img src=\\"img/logo.png\\" />
+
+<div>Hello Jane</div>
+"
+`;
+
+exports[`render method when invoked with a valid template with valid view-models should correctly render with viewmodel = {name:"John"} 1`] = `
+"<img src=\\"img/logo.png\\" />
+
+<div>Hello John</div>
+"
+`;
+
+exports[`render method when invoked with a valid template with valid view-models should correctly render with viewmodel = {name:"Mike"} 1`] = `
+"<img src=\\"img/logo.png\\" />
+
+<div>Hello Mike</div>
+"
+`;

@@ -11,10 +11,7 @@
     "url": "https://github.com/opencomponents/base-templates/issues"
   },
   "homepage": "https://github.com/opencomponents/base-templates#readme",
-  "keywords": [
-    "oc",
-    "opencomponents"
-  ],
+  "keywords": ["oc", "opencomponents"],
   "author": {
     "name": "Nick Balestra",
     "email": "nick@balestra.ch"
@@ -22,17 +19,16 @@
   "license": "MIT",
   "dependencies": {
     "handlebars": "4.0.11",
+    "nice-cache": "0.0.5",
     "oc-generic-template-renderer": "2.0.1",
     "oc-templates-messages": "1.0.1"
   },
-  "files": [
-    "index.js",
-    "lib"
-  ],
+  "files": ["index.js", "lib"],
   "externals": {
     "handlebars": {
       "global": "Handlebars",
-      "url": "https://unpkg.com/handlebars@4.0.11/dist/handlebars.runtime.min.js"
+      "url":
+        "https://unpkg.com/handlebars@4.0.11/dist/handlebars.runtime.min.js"
     }
   }
 }
