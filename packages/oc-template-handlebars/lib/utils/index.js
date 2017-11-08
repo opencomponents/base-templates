@@ -10,8 +10,6 @@ module.exports = {
       };
     }
 
-    return {
-      isValid: true
-    };
+    return { isValid: true };
   }
 };

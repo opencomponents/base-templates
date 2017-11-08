@@ -9,13 +9,14 @@
     "prettier-eslint-cli": "^4.1.1"
   },
   "scripts": {
-    "postinstall": "lerna bootstrap",
-    "updated": "lerna updated",
     "clean": "lerna clean",
     "coverage": "codecov",
-    "test": "jest",
+    "dev": "jest --watch",
+    "postinstall": "lerna bootstrap",
+    "precommit": "lint-staged",
     "publish": "lerna publish --exact",
-    "precommit": "lint-staged"
+    "test": "jest",
+    "updated": "lerna updated"
   },
   "lint-staged": {
     "*.js": [
