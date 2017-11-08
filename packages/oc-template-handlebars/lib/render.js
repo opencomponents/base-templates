@@ -1,9 +1,11 @@
 const handlebars = require('handlebars');
 const Cache = require('nice-cache');
+
+const { name, version } = require('../package');
 const utils = require('./utils');
 
 const cache = new Cache();
-const cacheType = 'handlebars-precompiled-template';
+const cacheType = `${name}-${version}-precompiled`;
 
 module.exports = (options, callback) => {
   let linked;
