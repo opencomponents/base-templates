@@ -33,7 +33,7 @@
     "oc-template-jade": "6.0.9",
     "oc-templates-messages": "1.0.1",
     "oc-view-wrapper": "1.0.2",
-    "uglify-js": "3.1.8"
+    "uglify-js": "3.1.9"
   },
   "files": [
     "index.js",
