@@ -33,6 +33,7 @@ Object {
           Object {
             "loader": "../node_modules/babel-loader/lib/index.js",
             "options": Object {
+              "babelrc": false,
               "cacheDirectory": true,
               "presets": Array [
                 Array [
