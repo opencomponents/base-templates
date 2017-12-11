@@ -37,7 +37,7 @@ Object {
               "cacheDirectory": true,
               "plugins": Array [
                 Array [
-                  "/Users/mfigus/Documents/gh/opencomponents/base-templates/packages/oc-webpack/node_modules/babel-plugin-transform-object-rest-spread/lib/index.js",
+                  "../node_modules/babel-plugin-transform-object-rest-spread/lib/index.js",
                 ],
               ],
               "presets": Array [
