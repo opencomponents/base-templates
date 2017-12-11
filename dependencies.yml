@@ -20,6 +20,13 @@ collectors:
   # pull requests for updates to any version
   - type: js-npm
     versions: "Y.Y.Y"
+  # pull request to update externals
+  - type: find-replace
+    settings:
+      paths:
+      - package.json
+      patterns:
+      - 'https://unpkg.com/{name}@{version_clean}/dist/handlebars.runtime.min.js'
 
 - type: js-npm
   path: packages/oc-template-jade-compiler
