@@ -40,6 +40,9 @@ module.exports = function webpackConfigGenerator(options) {
                       }
                     }
                   ]
+                ],
+                plugins: [
+                  [require.resolve('babel-plugin-transform-object-rest-spread')]
                 ]
               }
             }
