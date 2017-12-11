@@ -26,6 +26,7 @@
   "dependencies": {
     "babel-loader": "^7.1.2",
     "babel-minify-webpack-plugin": "^0.2.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "infinite-loop-loader": "1.0.5",
     "memory-fs": "^0.4.1",

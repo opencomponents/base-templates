@@ -28,6 +28,10 @@ test('webpack configurator', () => {
     __dirname,
     target[1].options.presets[0][0]
   );
+  target[1].options.plugins[0][0] = path.relative(
+    __dirname,
+    target[1].options.plugins[0][0]
+  );
   delete config.logger;
 
   expect(config).toMatchSnapshot();
