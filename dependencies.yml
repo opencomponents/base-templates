@@ -19,14 +19,18 @@ collectors:
   actors:
   # pull requests for updates to any version
   - type: js-npm
+    dependencies_not_matching: "^(handlebars)$"
     versions: "Y.Y.Y"
   # pull request to update externals
   - type: find-replace
+    dependencies: "^(handlebars)$"
+    versions: "Y.Y.Y"
     settings:
       paths:
-      - package.json
+      - packages/oc-template-handlebars/package.json
       patterns:
-      - 'https://unpkg.com/{name}@{version_clean}/dist/handlebars.runtime.min.js'
+      - 'https://unpkg.com/{name}@{version_clean}/'
+      - '"{name}": "{version_clean}",'
 
 - type: js-npm
   path: packages/oc-template-jade-compiler
