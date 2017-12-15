@@ -76,7 +76,7 @@ test('webpack compiler verbose', done => {
     const serverContentBundled = fs.readFileSync('/build/server.js', 'UTF8');
     const consoleOutput = loggerMock.log.mock.calls[0][0];
     expect(serverContentBundled).toMatchSnapshot();
-    expect(consoleOutput).toMatch(/Hash:(.*?)a804c4d238dce0238d07/);
+    expect(consoleOutput).toMatch(/Hash:(.*?)a0bae5720278532bc295/);
     expect(consoleOutput).toMatch(/Entrypoint(.*?)main(.*?)=(.*?)server.js/);
     expect(consoleOutput).toMatch(/external \"lodash\"/);
     done();
