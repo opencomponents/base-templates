@@ -21,7 +21,9 @@
   },
   "license": "MIT",
   "files": [
-    "index.js"
+    "index.js",
+    "README.md",
+    "LICENSE"
   ],
   "dependencies": {
     "builtin-modules": "2.0.0",

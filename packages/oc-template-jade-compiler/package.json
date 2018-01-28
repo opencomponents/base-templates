@@ -38,6 +38,8 @@
   "files": [
     "index.js",
     "lib",
-    "scaffold"
+    "scaffold",
+    "LICENSE",
+    "README.md"
   ]
 }

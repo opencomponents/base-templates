@@ -22,6 +22,8 @@
   "license": "MIT",
   "files": [
     "index.js",
-    "lib"
+    "lib",
+    "LICENSE",
+    "README.md"
   ]
 }
