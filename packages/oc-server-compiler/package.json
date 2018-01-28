@@ -28,6 +28,8 @@
     "oc-webpack": "2.2.0"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "LICENSE",
+    "README.md"
   ]
 }

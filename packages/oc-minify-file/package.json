@@ -21,7 +21,9 @@
   },
   "license": "MIT",
   "files": [
-    "index.js"
+    "index.js",
+    "LICENSE",
+    "README.md"
   ],
   "dependencies": {
     "babel-core": "^6.25.0",
