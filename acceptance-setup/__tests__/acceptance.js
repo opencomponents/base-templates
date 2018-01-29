@@ -7,7 +7,6 @@ const r = require('request-promise-native');
 const jsdom = require('jsdom');
 const JSDOM = jsdom.JSDOM;
 const fs = require('fs-extra');
-const { promisify } = require('util');
 
 jest.unmock('minimal-request');
 
@@ -44,6 +43,10 @@ beforeAll(done => {
     fs.removeSync(path.join(component.path, '_package'));
   });
 
+  const promisify = fn => options =>
+    new Promise((resolve, reject) =>
+      fn(options, err => (err ? reject(err) : resolve()))
+    );
   const packageAsync = promisify(cli.package);
 
   const packaged = components.map(component =>
