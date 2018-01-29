@@ -6,7 +6,8 @@
     "lerna": "^2.4.0",
     "lint-staged": "6.1.0",
     "node-dir": "0.1.17",
-    "prettier-eslint-cli": "^4.1.1"
+    "prettier-eslint-cli": "^4.1.1",
+    "oc": "0.42.19"
   },
   "scripts": {
     "clean": "lerna clean",
@@ -26,7 +27,10 @@
     ]
   },
   "jest": {
-    "rootDir": "packages",
+    "roots": [
+      "packages",
+      "acceptance-setup"
+    ],
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
   }
