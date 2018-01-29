@@ -1,7 +1,9 @@
 {
   "lerna": "2.4.0",
   "packages": [
-    "packages/*"
+    "packages/*",
+    "acceptance-setup",
+    "acceptance-components/*"
   ],
   "version": "independent",
   "npmClient": "npm",
