@@ -139,7 +139,7 @@ test('Registry should correctly serve unrendered components', done => {
 });
 
 test('server-side-side rendering', done => {
-  JSDOM.fromURL(serverUrl + `?name=SuperMario`, {})
+  JSDOM.fromURL(`${serverUrl}?name=SuperMario`, {})
     .then(dom => {
       const domVersionless = dom.serialize().replace(semverRegex, '6.6.6');
       expect(domVersionless).toMatchSnapshot();
