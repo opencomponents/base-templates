@@ -1,3 +1,7 @@
+/**
+ * @testEnvironment jsdom
+ */
+
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
 
 const server = require('../server');
@@ -7,8 +11,6 @@ const r = require('request-promise-native');
 const jsdom = require('jsdom');
 const JSDOM = jsdom.JSDOM;
 const fs = require('fs-extra');
-
-jest.unmock('minimal-request');
 
 const registryPort = 3000;
 const registryUrl = `http://localhost:${registryPort}/`;
@@ -102,7 +104,6 @@ test('Registry should correctly serve rendered components', done => {
       .then(body => {
         const bodyVersionless = body.replace(semverRegex, '6.6.6');
         return Promise.resolve(bodyVersionless);
-        // expect(bodyVersionless).toMatchSnapshot();
       })
       .catch(err => Promise.reject(err))
   );
@@ -125,7 +126,6 @@ test('Registry should correctly serve unrendered components', done => {
       .then(body => {
         const bodyVersionless = body.replace(semverRegex, '6.6.6');
         return Promise.resolve(bodyVersionless);
-        // expect(bodyVersionless).toMatchSnapshot();
       })
       .catch(err => Promise.reject(err))
   );
