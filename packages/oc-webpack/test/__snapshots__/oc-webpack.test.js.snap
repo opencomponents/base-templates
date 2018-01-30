@@ -28,7 +28,7 @@ Object {
         "test": /\\\\\\.js\\$/,
         "use": Array [
           Object {
-            "loader": "../node_modules/infinite-loop-loader/index.js",
+            "loader": "../../infinite-loop-loader/index.js",
           },
           Object {
             "loader": "../node_modules/babel-loader/lib/index.js",
