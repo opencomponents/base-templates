@@ -3,8 +3,16 @@ base-templates
 
 Base-templates & utilties for the [OpenComponents](https://github.com/opentable/oc) template system
 
-[![Build Status](https://travis-ci.org/opencomponents/base-templates.svg?branch=master)](https://travis-ci.org/opencomponents/base-templates)
 [![codecov](https://codecov.io/gh/opencomponents/base-templates/branch/master/graph/badge.svg)](https://codecov.io/gh/opencomponents/base-templates)
+
+| Node6             | Node7             | Node8            | 
+|-------------------|-------------------|-------------------|
+| [![Node6][1]][4] | [![Node7][2]][4] | [![Node8][3]][4] |
+
+[1]: https://travis-matrix-badges.herokuapp.com/repos/opencomponents/base-templates/branches/master/1
+[2]: https://travis-matrix-badges.herokuapp.com/repos/opencomponents/base-templates/branches/master/2
+[3]: https://travis-matrix-badges.herokuapp.com/repos/opencomponents/base-templates/branches/master/3
+[4]: https://travis-ci.org/opencomponents/base-templates
 
 
 ## Templates
