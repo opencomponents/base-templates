@@ -11,10 +11,10 @@
     "prettier-eslint-cli": "^4.1.1"
   },
   "scripts": {
-    "clean": "lerna clean",
+    "clean": "lerna clean && rm -rf node_modules/",
     "coverage": "codecov",
     "dev": "jest --watch",
-    "postinstall": "lerna bootstrap",
+    "postinstall": "lerna bootstrap --hoist",
     "precommit": "lint-staged",
     "publish": "lerna publish --exact",
     "test": "jest",
