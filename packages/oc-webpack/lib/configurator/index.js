@@ -7,15 +7,20 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = function webpackConfigGenerator(options) {
-  const buildPath = options.buildPath || '/build';
   const production =
     options.production !== undefined ? options.production : 'true';
+
+  const sourceMaps = !production;
+  const devtool = sourceMaps ? '#source-map' : '';
 
   const jsLoaders = [
     {
       loader: require.resolve('babel-loader'),
       options: {
         cacheDirectory: true,
+        retainLines: true,
+        sourceMaps,
+        sourceRoot: path.join(options.serverPath, '..'),
         babelrc: false,
         presets: [
           [
@@ -51,12 +56,15 @@ module.exports = function webpackConfigGenerator(options) {
   }
 
   return {
+    devtool,
     entry: options.serverPath,
     target: 'node',
     output: {
-      path: buildPath,
+      path: path.join(options.serverPath, '../build'),
       filename: options.publishFileName,
-      libraryTarget: 'commonjs2'
+      libraryTarget: 'commonjs2',
+      devtoolModuleFilenameTemplate: '[absolute-resource-path]',
+      devtoolFallbackModuleFilenameTemplate: '[absolute-resource-path]?[hash]'
     },
     externals: externalDependenciesHandlers(options.dependencies),
     module: {

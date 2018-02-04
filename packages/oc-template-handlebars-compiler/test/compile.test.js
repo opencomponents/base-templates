@@ -23,13 +23,23 @@ package3.oc.files.static = 'assets';
 delete package4.oc.files.data;
 
 const scenarios = {
-  'Happy path': {
+  'Happy path (production=true)': {
     componentPackage,
     ocPackage: {
       version: '1.0.0'
     },
     componentPath,
-    publishPath: path.join(componentPath, '_compile-tests-package')
+    publishPath: path.join(componentPath, '_compile-tests-package'),
+    production: true
+  },
+  'Happy path (production=false)': {
+    componentPackage,
+    ocPackage: {
+      version: '1.0.0'
+    },
+    componentPath,
+    publishPath: path.join(componentPath, '_compile-tests-package'),
+    production: false
   },
   'Should handle empty static folder': {
     componentPackage: package2,
@@ -37,7 +47,8 @@ const scenarios = {
       version: '1.0.0'
     },
     componentPath,
-    publishPath: path.join(componentPath, '_compile-tests-package2')
+    publishPath: path.join(componentPath, '_compile-tests-package2'),
+    production: true
   },
   'Should normalise stringified static folder': {
     componentPackage: package3,
@@ -45,7 +56,8 @@ const scenarios = {
       version: '1.0.0'
     },
     componentPath,
-    publishPath: path.join(componentPath, '_compile-tests-package3')
+    publishPath: path.join(componentPath, '_compile-tests-package3'),
+    production: true
   },
   'Should handle server.js-less components': {
     componentPackage: package4,
@@ -53,7 +65,8 @@ const scenarios = {
       version: '1.0.0'
     },
     componentPath,
-    publishPath: path.join(componentPath, '_compile-tests-package4')
+    publishPath: path.join(componentPath, '_compile-tests-package4'),
+    production: true
   }
 };
 

@@ -12,10 +12,36 @@ test('module APIs', () => {
   expect(api).toMatchSnapshot();
 });
 
-test('webpack configurator', () => {
+test('webpack configurator with production=false', () => {
   const config = webpackConfigurator({
     stats: 'errors-only',
     dependencies: {},
+    production: false,
+    publishFileName: 'server.js',
+    serverPath: '/path/to/server.js'
+  });
+
+  // clean paths
+  const target = config.module.rules[0].use;
+  target[0].loader = path.relative(__dirname, target[0].loader);
+  target[0].options.presets[0][0] = path.relative(
+    __dirname,
+    target[0].options.presets[0][0]
+  );
+  target[0].options.plugins[0][0] = path.relative(
+    __dirname,
+    target[0].options.plugins[0][0]
+  );
+  delete config.logger;
+
+  expect(config).toMatchSnapshot();
+});
+
+test('webpack configurator with production=true', () => {
+  const config = webpackConfigurator({
+    stats: 'errors-only',
+    dependencies: {},
+    production: true,
     publishFileName: 'server.js',
     serverPath: '/path/to/server.js'
   });
@@ -38,42 +64,53 @@ test('webpack configurator', () => {
 });
 
 test('webpack compiler', done => {
+  const serverPath = path.join(
+    __dirname,
+    '../../../mocks/jade-component',
+    'server.js'
+  );
+
+  const dest = path.join(serverPath, '../build/server.js');
+  const sourceMapDest = path.join(serverPath, '../build/server.js.map');
   const config = webpackConfigurator({
     stats: 'errors-only',
     dependencies: { lodash: '' },
+    production: false,
     publishFileName: 'server.js',
-    serverPath: path.join(
-      __dirname,
-      '../../../mocks/jade-component',
-      'server.js'
-    )
+    serverPath
   });
 
   webpackCompiler(config, (error, data) => {
     const fs = new MemoryFS(data);
-    const serverContentBundled = fs.readFileSync('/build/server.js', 'UTF8');
+    const serverContentBundled = fs.readFileSync(dest, 'UTF8');
+    const sourceMapContentBundled = fs.readFileSync(sourceMapDest, 'UTF8');
     expect(serverContentBundled).toMatchSnapshot();
+    expect(sourceMapContentBundled).toMatchSnapshot();
     done();
   });
 });
 
 test('webpack compiler verbose', done => {
+  const serverPath = path.join(
+    __dirname,
+    '../../../mocks/jade-component',
+    'server.js'
+  );
+
+  const dest = path.join(serverPath, '../build/server.js');
   const loggerMock = { log: jest.fn() };
   const config = webpackConfigurator({
     logger: loggerMock,
     stats: 'verbose',
     dependencies: { lodash: '' },
+    production: true,
     publishFileName: 'server.js',
-    serverPath: path.join(
-      __dirname,
-      '../../../mocks/jade-component',
-      'server.js'
-    )
+    serverPath
   });
 
   webpackCompiler(config, (error, data) => {
     const fs = new MemoryFS(data);
-    const serverContentBundled = fs.readFileSync('/build/server.js', 'UTF8');
+    const serverContentBundled = fs.readFileSync(dest, 'UTF8');
     const consoleOutput = loggerMock.log.mock.calls[0][0];
     expect(serverContentBundled).toMatchSnapshot();
     expect(consoleOutput).toMatch(/Hash:(.*?)a0bae5720278532bc295/);
