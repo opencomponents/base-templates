@@ -83,9 +83,12 @@ test('webpack compiler', done => {
   webpackCompiler(config, (error, data) => {
     const fs = new MemoryFS(data);
     const serverContentBundled = fs.readFileSync(dest, 'UTF8');
-    const sourceMapContentBundled = fs.readFileSync(sourceMapDest, 'UTF8');
     expect(serverContentBundled).toMatchSnapshot();
-    expect(sourceMapContentBundled).toMatchSnapshot();
+
+    const sourceMapContentBundled = fs.readFileSync(sourceMapDest, 'UTF8');
+    const sourceMapJson = JSON.parse(sourceMapContentBundled);
+    sourceMapJson.sources[1] = '/path/to/component/server.js';
+    expect(sourceMapJson).toMatchSnapshot();
     done();
   });
 });
