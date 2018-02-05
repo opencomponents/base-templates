@@ -9,17 +9,19 @@ const webpackConfigurator = require('oc-webpack').configurator;
 const MemoryFS = require('memory-fs');
 
 module.exports = (options, callback) => {
-  const serverFileName = options.componentPackage.oc.files.data;
+  const { componentPackage, production, publishPath } = options;
+
+  const serverFileName = componentPackage.oc.files.data;
   const serverPath = path.join(options.componentPath, serverFileName);
   const publishFileName = options.publishFileName || 'server.js';
-  const publishPath = options.publishPath;
   const stats = options.verbose ? 'verbose' : 'errors-only';
-  const dependencies = options.componentPackage.dependencies || {};
+  const dependencies = componentPackage.dependencies || {};
 
   const config = webpackConfigurator({
-    serverPath,
-    publishFileName,
     dependencies,
+    production,
+    publishFileName,
+    serverPath,
     stats
   });
 
@@ -27,16 +29,30 @@ module.exports = (options, callback) => {
     [
       next => compiler(config, next),
       (data, next) => {
-        const compiledServer = new MemoryFS(data).readFileSync(
-          '/build/server.js',
-          'UTF8'
-        );
-        return fs.ensureDir(publishPath, err => next(err, compiledServer));
+        const basePath = path.join(serverPath, '../build');
+        const getCompiled = fileName =>
+          new MemoryFS(data).readFileSync(`${basePath}/${fileName}`, 'UTF8');
+
+        return fs.ensureDir(publishPath, err => {
+          if (err) return next(err);
+          const result = { 'server.js': getCompiled('server.js') };
+
+          if (!production) {
+            try {
+              result['server.js.map'] = getCompiled('server.js.map');
+            } catch (e) {
+              // skip sourcemap if it doesn't exist
+            }
+          }
+
+          next(null, result);
+        });
       },
-      (compiledServer, next) =>
-        fs.writeFile(
-          path.join(publishPath, publishFileName),
-          compiledServer,
+      (compiledFiles, next) =>
+        async.eachOf(
+          compiledFiles,
+          (fileContent, fileName, next) =>
+            fs.writeFile(path.join(publishPath, fileName), fileContent, next),
           err =>
             next(
               err,
@@ -44,7 +60,9 @@ module.exports = (options, callback) => {
                 ? null
                 : {
                   type: 'node.js',
-                  hashKey: hashBuilder.fromString(compiledServer),
+                  hashKey: hashBuilder.fromString(
+                    compiledFiles[publishFileName]
+                  ),
                   src: publishFileName
                 }
             )

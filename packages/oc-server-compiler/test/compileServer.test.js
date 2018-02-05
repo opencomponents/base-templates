@@ -15,6 +15,7 @@ const publishFileName = 'server.js';
 const options = {
   componentPackage: fs.readJSONSync(componentPath + '/package.json'),
   componentPath,
+  production: true,
   publishPath,
   publishFileName
 };

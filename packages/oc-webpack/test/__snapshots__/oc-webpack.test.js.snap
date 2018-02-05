@@ -8,14 +8,276 @@ Object {
 }
 `;
 
-exports[`webpack compiler 1`] = `"module.exports=function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=0)}([function(a,b,c){'use strict';Object.defineProperty(b,'__esModule',{value:!0});const d=c(1);b.data=(a,b)=>b(null,{})},function(a){a.exports=require('lodash')}]);"`;
+exports[`webpack compiler 1`] = `
+"module.exports =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = \\"\\";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+\\"use strict\\";
+Object.defineProperty(__webpack_exports__, \\"__esModule\\", { value: true });
+const _ = __webpack_require__(1);
+
+const data = (context, callback) => {
+  return callback(null, {});
+};
+/* harmony export (immutable) */ __webpack_exports__[\\"data\\"] = data;
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+module.exports = require(\\"lodash\\");
+
+/***/ })
+/******/ ]);
+//# sourceMappingURL=server.js.map"
+`;
+
+exports[`webpack compiler 2`] = `
+Object {
+  "file": "server.js",
+  "mappings": ";;AAAA;AACA;;AAEA;AACA;;AAEA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;;AAEA;AACA;;AAEA;AACA;AACA;;;AAGA;AACA;;AAEA;AACA;;AAEA;AACA;AACA;AACA;AACA;AACA;AACA;AACA,aAAK;AACL;AACA;;AAEA;AACA;AACA;AACA,mCAA2B,0BAA0B,EAAE;AACvD,yCAAiC,eAAe;AAChD;AACA;AACA;;AAEA;AACA,8DAAsD,+DAA+D;;AAErH;AACA;;AAEA;AACA;;;;;;;;AC7DA;AAAA,MAAMA,IAAI,mBAAAC,CAAQ,CAAR,CAAV;;AAEO,MAAMC,OAAO,CAACC,OAAD,EAAUC,QAAV,KAAuB;AACzC,SAAOA,SAAS,IAAT,EAAe,EAAf,CAAP;AACD,CAFM,C;;;;;;;;ACFP,mC",
+  "names": Array [
+    "_",
+    "require",
+    "data",
+    "context",
+    "callback",
+  ],
+  "sourceRoot": "",
+  "sources": Array [
+    "webpack/bootstrap a0bae5720278532bc295",
+    "/path/to/component/server.js",
+    "external \\"lodash\\"",
+  ],
+  "sourcesContent": Array [
+    " 	// The module cache
+ 	var installedModules = {};
+
+ 	// The require function
+ 	function __webpack_require__(moduleId) {
+
+ 		// Check if module is in cache
+ 		if(installedModules[moduleId]) {
+ 			return installedModules[moduleId].exports;
+ 		}
+ 		// Create a new module (and put it into the cache)
+ 		var module = installedModules[moduleId] = {
+ 			i: moduleId,
+ 			l: false,
+ 			exports: {}
+ 		};
+
+ 		// Execute the module function
+ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+ 		// Flag the module as loaded
+ 		module.l = true;
+
+ 		// Return the exports of the module
+ 		return module.exports;
+ 	}
+
+
+ 	// expose the modules object (__webpack_modules__)
+ 	__webpack_require__.m = modules;
+
+ 	// expose the module cache
+ 	__webpack_require__.c = installedModules;
+
+ 	// define getter function for harmony exports
+ 	__webpack_require__.d = function(exports, name, getter) {
+ 		if(!__webpack_require__.o(exports, name)) {
+ 			Object.defineProperty(exports, name, {
+ 				configurable: false,
+ 				enumerable: true,
+ 				get: getter
+ 			});
+ 		}
+ 	};
+
+ 	// getDefaultExport function for compatibility with non-harmony modules
+ 	__webpack_require__.n = function(module) {
+ 		var getter = module && module.__esModule ?
+ 			function getDefault() { return module['default']; } :
+ 			function getModuleExports() { return module; };
+ 		__webpack_require__.d(getter, 'a', getter);
+ 		return getter;
+ 	};
+
+ 	// Object.prototype.hasOwnProperty.call
+ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+
+ 	// __webpack_public_path__
+ 	__webpack_require__.p = \\"\\";
+
+ 	// Load entry module and return exports
+ 	return __webpack_require__(__webpack_require__.s = 0);
+
+
+
+// WEBPACK FOOTER //
+// webpack/bootstrap a0bae5720278532bc295",
+    "const _ = require('lodash');
+
+export const data = (context, callback) => {
+  return callback(null, {});
+};
+
+
+
+// WEBPACK FOOTER //
+// ./mocks/jade-component/server.js",
+    "module.exports = require(\\"lodash\\");
+
+
+//////////////////
+// WEBPACK FOOTER
+// external \\"lodash\\"
+// module id = 1
+// module chunks = 0",
+  ],
+  "version": 3,
+}
+`;
 
 exports[`webpack compiler verbose 1`] = `"module.exports=function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=0)}([function(a,b,c){'use strict';Object.defineProperty(b,'__esModule',{value:!0});const d=c(1);b.data=(a,b)=>b(null,{})},function(a){a.exports=require('lodash')}]);"`;
 
 exports[`webpack compiler with fatal error 1`] = `"This is a fatal compilation error"`;
 
-exports[`webpack configurator 1`] = `
+exports[`webpack configurator with production=false 1`] = `
 Object {
+  "devtool": "#source-map",
+  "entry": "/path/to/server.js",
+  "externals": Array [
+    [Function],
+    /\\^\\[a-z@\\]\\[a-z\\\\-\\\\/0-9\\\\\\.\\]\\+\\$/i,
+  ],
+  "module": Object {
+    "rules": Array [
+      Object {
+        "exclude": /node_modules/,
+        "test": /\\\\\\.js\\$/,
+        "use": Array [
+          Object {
+            "loader": "../../../node_modules/babel-loader/lib/index.js",
+            "options": Object {
+              "babelrc": false,
+              "cacheDirectory": true,
+              "plugins": Array [
+                Array [
+                  "../../../node_modules/babel-plugin-transform-object-rest-spread/lib/index.js",
+                ],
+              ],
+              "presets": Array [
+                Array [
+                  "../../../node_modules/babel-preset-env/lib/index.js",
+                  Object {
+                    "modules": false,
+                    "targets": Object {
+                      "node": 6,
+                    },
+                  },
+                ],
+              ],
+              "retainLines": true,
+              "sourceMaps": true,
+              "sourceRoot": "/path/to",
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "output": Object {
+    "devtoolFallbackModuleFilenameTemplate": "[absolute-resource-path]?[hash]",
+    "devtoolModuleFilenameTemplate": "[absolute-resource-path]",
+    "filename": "server.js",
+    "libraryTarget": "commonjs2",
+    "path": "/path/to/build",
+  },
+  "plugins": Array [
+    DefinePlugin {
+      "definitions": Object {
+        "process.env.NODE_ENV": "\\"development\\"",
+      },
+    },
+  ],
+  "stats": "errors-only",
+  "target": "node",
+}
+`;
+
+exports[`webpack configurator with production=true 1`] = `
+Object {
+  "devtool": "",
   "entry": "/path/to/server.js",
   "externals": Array [
     [Function],
@@ -51,6 +313,9 @@ Object {
                   },
                 ],
               ],
+              "retainLines": true,
+              "sourceMaps": false,
+              "sourceRoot": "/path/to",
             },
           },
         ],
@@ -58,9 +323,11 @@ Object {
     ],
   },
   "output": Object {
+    "devtoolFallbackModuleFilenameTemplate": "[absolute-resource-path]?[hash]",
+    "devtoolModuleFilenameTemplate": "[absolute-resource-path]",
     "filename": "server.js",
     "libraryTarget": "commonjs2",
-    "path": "/build",
+    "path": "/path/to/build",
   },
   "plugins": Array [
     BabelMinifyPlugin {

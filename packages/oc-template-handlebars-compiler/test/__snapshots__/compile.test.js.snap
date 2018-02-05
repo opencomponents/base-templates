@@ -1,6 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Happy path 1`] = `
+exports[`Happy path (production=false) 1`] = `
+Object {
+  "dependencies": Object {
+    "lodash": "",
+  },
+  "description": "",
+  "name": "handlebars-component",
+  "oc": Object {
+    "date": "",
+    "files": Object {
+      "dataProvider": Object {
+        "hashKey": "ca5a071c4dd550d0ecbf5a4d0deea0aefe8251d4",
+        "src": "server.js",
+        "type": "node.js",
+      },
+      "static": Array [
+        "assets",
+      ],
+      "template": Object {
+        "hashKey": "2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e",
+        "src": "template.js",
+        "type": "handlebars",
+        "version": "",
+      },
+    },
+    "packaged": true,
+    "version": "1.0.0",
+  },
+  "repository": "",
+  "version": "1.0.0",
+}
+`;
+
+exports[`Happy path (production=false) 2`] = `
+Array [
+  "../../../mocks/handlebars-component/_compile-tests-package/assets/css/style.css",
+  "../../../mocks/handlebars-component/_compile-tests-package/assets/img/test.png",
+  "../../../mocks/handlebars-component/_compile-tests-package/assets/js/lib.js",
+  "../../../mocks/handlebars-component/_compile-tests-package/package.json",
+  "../../../mocks/handlebars-component/_compile-tests-package/server.js",
+  "../../../mocks/handlebars-component/_compile-tests-package/server.js.map",
+  "../../../mocks/handlebars-component/_compile-tests-package/template.js",
+]
+`;
+
+exports[`Happy path (production=true) 1`] = `
 Object {
   "dependencies": Object {
     "lodash": "",
@@ -33,7 +78,7 @@ Object {
 }
 `;
 
-exports[`Happy path 2`] = `
+exports[`Happy path (production=true) 2`] = `
 Array [
   "../../../mocks/handlebars-component/_compile-tests-package/assets/css/style.css",
   "../../../mocks/handlebars-component/_compile-tests-package/assets/img/test.png",

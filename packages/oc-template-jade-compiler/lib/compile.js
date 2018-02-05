@@ -14,6 +14,7 @@ const compileView = require('./compileView');
 // logger,
 // minify
 // ocPackage
+// production
 // publishPath
 // verbose,
 // watch,

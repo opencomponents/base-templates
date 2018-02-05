@@ -17,7 +17,8 @@ test('Should correctly compile the oc component', done => {
       version: '1.0.0'
     },
     componentPath,
-    publishPath
+    publishPath,
+    production: true
   };
   fs.ensureDirSync(publishPath);
   compile(options, (err, res) => {

@@ -13,6 +13,7 @@ const path = require('path');
 // logger,
 // minify
 // ocPackage
+// production
 // publishPath
 // verbose,
 // watch,
@@ -22,7 +23,6 @@ module.exports = ({ compileServer, compileView, compileStatics, getInfo }) => (
 ) => {
   const componentPackage = _.cloneDeep(options.componentPackage);
   const ocPackage = options.ocPackage;
-
   async.waterfall(
     [
       // Compile view
