@@ -1,6 +1,6 @@
 {
   "name": "oc-generic-template-renderer",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "OC-Generic-Template-Renderer",
   "main": "index.js",
   "repository": {

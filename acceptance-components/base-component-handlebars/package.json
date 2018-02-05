@@ -1,12 +1,14 @@
 {
   "name": "base-component-handlebars",
   "description": "",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "oc": {
     "files": {
       "data": "server.js",
-      "static": ["img"],
+      "static": [
+        "img"
+      ],
       "template": {
         "src": "template.hbs",
         "type": "oc-template-handlebars"
@@ -23,6 +25,6 @@
     }
   },
   "devDependencies": {
-    "oc-template-handlebars-compiler": "6.1.11"
+    "oc-template-handlebars-compiler": "6.2.0"
   }
 }

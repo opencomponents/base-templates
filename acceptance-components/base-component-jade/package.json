@@ -1,12 +1,14 @@
 {
   "name": "base-component-jade",
   "description": "",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "oc": {
     "files": {
       "data": "server.js",
-      "static": ["img"],
+      "static": [
+        "img"
+      ],
       "template": {
         "src": "template.jade",
         "type": "oc-template-jade"
@@ -23,6 +25,6 @@
     }
   },
   "devDependencies": {
-    "oc-template-jade-compiler": "6.1.11"
+    "oc-template-jade-compiler": "6.2.0"
   }
 }
