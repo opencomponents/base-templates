@@ -2,6 +2,7 @@
   "name": "base-component-jade",
   "description": "",
   "version": "1.0.0",
+  "private": true,
   "oc": {
     "files": {
       "data": "server.js",
