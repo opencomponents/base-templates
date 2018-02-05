@@ -17,6 +17,7 @@ results
 *.orig
 *.local
 .DS_Store
+.vscode
 
 _package*
 npm-debug.log
