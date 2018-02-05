@@ -36,8 +36,13 @@ module.exports = (options, callback) => {
         return fs.ensureDir(publishPath, err => {
           if (err) return next(err);
           const result = { 'server.js': getCompiled('server.js') };
+
           if (!production) {
-            result['server.js.map'] = getCompiled('server.js.map');
+            try {
+              result['server.js.map'] = getCompiled('server.js.map');
+            } catch (e) {
+              // skip sourcemap if it doesn't exist
+            }
           }
 
           next(null, result);
