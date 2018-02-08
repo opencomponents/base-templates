@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Throw exception when not valid 1`] = `"Cannot read property 'components' of undefined"`;
