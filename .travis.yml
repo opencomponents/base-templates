@@ -6,12 +6,13 @@ matrix:
     - node_js: "7"
     - node_js: "8"
 
-cache:
-  directories:
-    - $HOME/.npm
+cache: yarn
+
+before_script:
+  - yarn run bootstrap
 
 after_script:
-  - npm run coverage
+  - yarn run coverage
 
 notifications:
   email: false
