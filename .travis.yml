@@ -9,7 +9,10 @@ matrix:
 cache: yarn
 
 before_script:
-  - yarn run bootstrap
+  - npm install -g yarn
+
+install:
+  - yarn run setup
 
 after_script:
   - yarn run coverage
