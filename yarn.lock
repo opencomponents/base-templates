@@ -2999,13 +2999,6 @@ indexof@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/indexof/-/indexof-0.0.1.tgz#82dc336d232b9062179d05ab3293a66059fd435d"
 
-infinite-loop-loader@1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/infinite-loop-loader/-/infinite-loop-loader-1.0.6.tgz#0612b3edb8dd02ea260db883e613752e4dffef36"
-  dependencies:
-    falafel "^2.0.0"
-    oc-templates-messages "1.0.2"
-
 inflight@^1.0.4:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/inflight/-/inflight-1.0.6.tgz#49bd6331d7d02d0c09bc910a1075ba8165b56df9"
@@ -4252,10 +4245,6 @@ mimic-fn@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-1.2.0.tgz#820c86a39334640e99516928bd03fca88057d022"
 
-minimal-request@2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/minimal-request/-/minimal-request-2.2.0.tgz#0fff8ae6492680c6d184a6f2e159d3dc90400b5f"
-
 minimal-request@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/minimal-request/-/minimal-request-3.0.0.tgz#6757b457bcffddd078fde9021631cadec9e197b7"
@@ -4523,59 +4512,20 @@ object.omit@^2.0.0:
     for-own "^0.1.4"
     is-extendable "^0.1.1"
 
-oc-client-browser@1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/oc-client-browser/-/oc-client-browser-1.2.3.tgz#466f7919f0ddd2abe06a84e15a2e8980d7dfce32"
+oc-client-browser@1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/oc-client-browser/-/oc-client-browser-1.3.0.tgz#627f27f2b1156ff705b4a7b901c47d2e4a844366"
 
-oc-client@3.0.7:
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/oc-client/-/oc-client-3.0.7.tgz#0c5c6f60551102ef155179fc5841dbd951fb82ee"
+oc-client@3.0.9:
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/oc-client/-/oc-client-3.0.9.tgz#666216163a3dc75f8fe9e7291884acb12d1a18b7"
   dependencies:
-    minimal-request "2.2.0"
+    minimal-request "3.0.0"
     nice-cache "0.0.5"
-    oc-client-browser "1.2.3"
-    oc-template-handlebars "6.0.10"
-    oc-template-jade "6.0.9"
+    oc-client-browser "1.3.0"
+    oc-template-handlebars "6.0.11"
+    oc-template-jade "6.0.10"
     stringformat "0.0.5"
-
-oc-external-dependencies-handler@1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/oc-external-dependencies-handler/-/oc-external-dependencies-handler-1.0.6.tgz#961df57d72e3f6eccc285f252c110e02a75971f7"
-  dependencies:
-    builtin-modules "2.0.0"
-    lodash "^4.17.4"
-    oc-templates-messages "1.0.2"
-
-oc-generic-template-compiler@2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/oc-generic-template-compiler/-/oc-generic-template-compiler-2.0.4.tgz#e20cfa1f5402a5deac6b81cef5e4d35b4bf6ce37"
-  dependencies:
-    async "^2.4.1"
-    fs-extra "5.0.0"
-    lodash "^4.17.4"
-    oc-get-unix-utc-timestamp "1.0.2"
-
-oc-generic-template-renderer@2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/oc-generic-template-renderer/-/oc-generic-template-renderer-2.0.2.tgz#fc883be44a5eef5181be515d50206a4d2f41ca1e"
-
-oc-get-unix-utc-timestamp@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/oc-get-unix-utc-timestamp/-/oc-get-unix-utc-timestamp-1.0.2.tgz#27033de0f724dc721d48c392f1dc0b42ae633b91"
-
-oc-hash-builder@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/oc-hash-builder/-/oc-hash-builder-1.0.2.tgz#b15d0de315371a997ba056cb2624fe77ed9f1188"
-
-oc-minify-file@1.0.13:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/oc-minify-file/-/oc-minify-file-1.0.13.tgz#cde74c815d2e39448212ff50c96b51dcb5474ec7"
-  dependencies:
-    babel-core "^6.25.0"
-    babel-preset-env "^1.6.1"
-    clean-css "^4.1.4"
-    oc-templates-messages "1.0.2"
-    uglify-js "3.3.9"
 
 oc-s3-storage-adapter@1.1.2:
   version "1.1.2"
@@ -4590,104 +4540,13 @@ oc-s3-storage-adapter@1.1.2:
     oc-storage-adapters-utils "1.0.2"
     stringformat "^0.0.5"
 
-oc-server-compiler@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/oc-server-compiler/-/oc-server-compiler-2.1.0.tgz#e00b1151d1705c63e6cf633b32124ba57e178fca"
-  dependencies:
-    async "^2.4.1"
-    fs-extra "5.0.0"
-    memory-fs "^0.4.1"
-    oc-hash-builder "1.0.2"
-    oc-webpack "2.3.0"
-
-oc-statics-compiler@2.0.9:
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/oc-statics-compiler/-/oc-statics-compiler-2.0.9.tgz#3cffaac5831445c6840a9b1a936df199dacfb0fc"
-  dependencies:
-    async "^2.4.1"
-    fs-extra "5.0.0"
-    lodash "^4.17.4"
-    node-dir "0.1.17"
-    oc-minify-file "1.0.13"
-    oc-templates-messages "1.0.2"
-
 oc-storage-adapters-utils@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/oc-storage-adapters-utils/-/oc-storage-adapters-utils-1.0.2.tgz#dc0099201fbb2966b7bcb2dcb53f4912d3f94a2a"
 
-oc-template-handlebars-compiler@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/oc-template-handlebars-compiler/-/oc-template-handlebars-compiler-6.2.0.tgz#1b0de83564269f598222b342e4eef9f1f56db63b"
-  dependencies:
-    async "^2.4.1"
-    fs-extra "5.0.0"
-    handlebars "4.0.11"
-    oc-generic-template-compiler "2.0.4"
-    oc-hash-builder "1.0.2"
-    oc-server-compiler "2.1.0"
-    oc-statics-compiler "2.0.9"
-    oc-template-handlebars "6.0.11"
-    oc-templates-messages "1.0.2"
-    oc-view-wrapper "1.0.3"
-    uglify-js "3.3.9"
-
-oc-template-handlebars@6.0.11:
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/oc-template-handlebars/-/oc-template-handlebars-6.0.11.tgz#dad457306d8e97d98be4e768f4ee5acd036e4a1c"
-  dependencies:
-    handlebars "4.0.11"
-    nice-cache "0.0.5"
-    oc-generic-template-renderer "2.0.2"
-    oc-templates-messages "1.0.2"
-
-oc-template-jade-compiler@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/oc-template-jade-compiler/-/oc-template-jade-compiler-6.2.0.tgz#7a28b76b1914b6d95baf9c284971beaaa6c58f22"
-  dependencies:
-    fs-extra "5.0.0"
-    jade-legacy "1.11.1"
-    jstransformer-clean-css "^2.0.0"
-    jstransformer-uglify-css "^1.0.0"
-    jstransformer-uglify-js "^1.2.0"
-    oc-generic-template-compiler "2.0.4"
-    oc-hash-builder "1.0.2"
-    oc-server-compiler "2.1.0"
-    oc-statics-compiler "2.0.9"
-    oc-template-jade "6.0.10"
-    oc-templates-messages "1.0.2"
-    oc-view-wrapper "1.0.3"
-    uglify-js "3.3.9"
-
-oc-template-jade@6.0.10:
-  version "6.0.10"
-  resolved "https://registry.yarnpkg.com/oc-template-jade/-/oc-template-jade-6.0.10.tgz#51ed5fbac96fb4b5083447b298d3f13a38bcda92"
-  dependencies:
-    oc-generic-template-renderer "2.0.2"
-
-oc-templates-messages@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/oc-templates-messages/-/oc-templates-messages-1.0.2.tgz#72503b71a42d0d0fef9a36119f4f7fda306f3c5f"
-
-oc-view-wrapper@1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/oc-view-wrapper/-/oc-view-wrapper-1.0.3.tgz#a6ceb81bdf31e9fd03f77fada7a5dc79938845b7"
-
-oc-webpack@2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/oc-webpack/-/oc-webpack-2.3.0.tgz#8abd03878fa3de67a146ba06735cccbeaec1c2ac"
-  dependencies:
-    babel-loader "^7.1.2"
-    babel-minify-webpack-plugin "^0.2.0"
-    babel-plugin-transform-object-rest-spread "^6.26.0"
-    babel-preset-env "^1.6.1"
-    infinite-loop-loader "1.0.6"
-    memory-fs "^0.4.1"
-    oc-external-dependencies-handler "1.0.6"
-    webpack "^3.6.0"
-
-oc@0.42.20:
-  version "0.42.20"
-  resolved "https://registry.yarnpkg.com/oc/-/oc-0.42.20.tgz#a0f7d2d352c78de5c7af7e5403012c29efec8211"
+oc@^0.42.24:
+  version "0.42.25"
+  resolved "https://registry.yarnpkg.com/oc/-/oc-0.42.25.tgz#88d727ce2fb0464b50b6ee8ce675acd1ec39442d"
   dependencies:
     accept-language-parser "1.4.1"
     async "^2.6.0"
@@ -4710,15 +4569,15 @@ oc@0.42.20:
     morgan "1.9.0"
     multer "^1.3.0"
     nice-cache "0.0.5"
-    oc-client "3.0.7"
-    oc-client-browser "1.2.3"
-    oc-get-unix-utc-timestamp "1.0.1"
+    oc-client "3.0.9"
+    oc-client-browser "1.3.0"
+    oc-get-unix-utc-timestamp "1.0.2"
     oc-s3-storage-adapter "1.1.2"
     oc-storage-adapters-utils "1.0.2"
-    oc-template-handlebars "6.0.10"
-    oc-template-handlebars-compiler "6.1.11"
-    oc-template-jade "6.0.9"
-    oc-template-jade-compiler "6.1.11"
+    oc-template-handlebars "6.0.11"
+    oc-template-handlebars-compiler "6.2.0"
+    oc-template-jade "6.0.10"
+    oc-template-jade-compiler "6.2.0"
     opn "5.2.0"
     parse-author "2.0.0"
     pug "2.0.0-rc.4"
