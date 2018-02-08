@@ -14,9 +14,9 @@ jobs:
             - v1-dependencies-cache-{{ checksum "yarn.lock" }}
             - v1-dependencies-
 
-      - run:
-          name: install-dependencies
-          command: yarn run setup
+      # - run:
+      #     name: install-dependencies
+      #     command: yarn run setup
 
       - save_cache:
           key: v1-dependencies-cache-{{ checksum "yarn.lock" }}
