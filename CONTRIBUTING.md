@@ -9,3 +9,4 @@ First of all, thank you for contributing. It’s appreciated.
 6. Write code.
 7. Write test (coverage regressions will fail the build). Run test with `yarn test`. 
 9. Make a pull request against the master branch.
+
