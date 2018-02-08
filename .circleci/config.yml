@@ -16,12 +16,17 @@ jobs:
 
       - run:
           name: install-dependencies
-          command: yarn run bootstrap
+          command: yarn run setup
 
       - save_cache:
           key: v1-dependencies-cache-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
+            - packages/oc-minify-file/node_modules
+            - packages/oc-template-handlebars/node_modules
+            - packages/oc-template-handlebars-compiler/node_modules
+            - packages/oc-template-jade-compiler/node_modules
+            - packages/oc-webpack/node_modules
 
       - run:
           name: test
