@@ -23,5 +23,7 @@ _package*
 npm-debug.log
 node_modules
 package-lock.json
+yarn.lock
 coverage
+
 /mocks/handlebars-component/_compile-static-package6/

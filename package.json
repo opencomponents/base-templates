@@ -1,4 +1,5 @@
 {
+  "private": true,
   "devDependencies": {
     "codecov": "3.0.0",
     "husky": "0.14.3",
@@ -11,14 +12,15 @@
     "prettier-eslint-cli": "^4.1.1"
   },
   "scripts": {
-    "clean": "lerna clean && rm -rf node_modules/",
+    "clean": "lerna clean && rm -rf node_modules",
     "coverage": "codecov",
     "dev": "jest --watch",
-    "postinstall": "lerna bootstrap --hoist",
+    "bootstrap": "lerna bootstrap",
     "precommit": "lint-staged",
     "publish": "lerna publish --exact",
     "test": "jest",
-    "updated": "lerna updated"
+    "updated": "lerna updated",
+    "setup": "yarn --production=false && lerna bootstrap"
   },
   "lint-staged": {
     "*.js": [
@@ -35,5 +37,10 @@
     ],
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
-  }
+  },
+  "workspaces": [
+    "packages/*",
+    "acceptance-setup",
+    "acceptance-components/*"
+  ]
 }
