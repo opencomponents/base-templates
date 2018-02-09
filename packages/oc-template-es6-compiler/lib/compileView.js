@@ -2,7 +2,6 @@
 
 const fs = require('fs-extra');
 const hashBuilder = require('oc-hash-builder');
-// const jade = require('jade-legacy');
 const ocViewWrapper = require('oc-view-wrapper');
 const path = require('path');
 const strings = require('oc-templates-messages');
@@ -20,9 +19,9 @@ module.exports = (options, callback) => {
   }
 
   try {
-    const compiledView = viewContent.toString();
-    const viewHash = hashBuilder.fromString(compiledView);
-    // const compiledView = viewContent.replace('"', '\\"');
+    const viewHash = hashBuilder.fromString(viewContent);
+    const compiledView = uglifyJs.minify(ocViewWrapper(viewHash, viewContent))
+      .code;
 
     fs.ensureDirSync(publishPath);
     fs.writeFile(path.join(publishPath, publishFileName), compiledView, err =>
