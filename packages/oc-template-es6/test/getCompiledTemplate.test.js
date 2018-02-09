@@ -1,27 +1,35 @@
-// const fs = require('fs');
-// const getCompiledTemplate = require('../').getCompiledTemplate;
+const fs = require('fs');
+const getCompiledTemplate = require('../').getCompiledTemplate;
+const render = require('../').render;
 
-// test('Return compiled template when valid', () => {
-//   const template = '';
-//   const key = 'TBD';
+test('Return compiled template when valid', done => {
+  const template =
+    'var oc=oc||{};oc.components=oc.components||{},oc.components.c6fcae4d23d07fd9a7e100508caf8119e998d7a9="Hello ${name.toUpperCase()}!"';
+  const key = 'c6fcae4d23d07fd9a7e100508caf8119e998d7a9';
 
-//   expect(getCompiledTemplate(template, key).toString()).toMatchSnapshot();
-// });
+  const compiled = getCompiledTemplate(template, key);
+  expect(compiled).toMatchSnapshot();
+  render({ template: compiled, model: { name: 'es6' } }, (err, html) => {
+    expect(err).toBe(null);
+    expect(html).toBe('Hello ES6!');
+    done();
+  });
+});
 
-// test('Throw exception when not valid', () => {
-//   const template = '';
-//   const key = 'TBD';
+test('Throw exception when js is not valid', () => {
+  const template =
+    'var oc=oc||{};oc.components=oc.components||{},oc.components.c6fcae4d23d07fd9a7e100508caf8119e998d7a9=nojavascript);';
+  const key = 'c6fcae4d23d07fd9a7e100508caf8119e998d7a9';
 
-//   expect(() =>
-//     getCompiledTemplate(template, key)
-//   ).toThrowErrorMatchingSnapshot();
-// });
+  expect(() =>
+    getCompiledTemplate(template, key)
+  ).toThrowErrorMatchingSnapshot();
+});
 
-// test('Return undefined when key when valid', () => {
-//   const template = '';
-//   const key = 'TBD';
+test('Be undefined when key is not valid', () => {
+  const template =
+    'var oc=oc||{};oc.components=oc.components||{},oc.components.c6fcae4d23d07fd9a7e100508caf8119e998d7a9="Hello ${name.toUpperCase()}!"';
+  const key = 'not valid key';
 
-//   expect(getCompiledTemplate(template, key)).toBeUndefined();
-// });
-
-test('', () => {});
+  expect(getCompiledTemplate(template, key)).toBeUndefined();
+});

@@ -21,9 +21,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "nice-cache": "0.0.5",
-    "oc-generic-template-renderer": "2.0.1",
-    "oc-templates-messages": "1.0.1"
+    "express-es6-template-engine": "^2.0.2",
+    "oc-generic-template-renderer": "2.0.1"
   },
   "files": [
     "index.js",
