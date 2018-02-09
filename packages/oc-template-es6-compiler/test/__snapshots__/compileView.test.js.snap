@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should correctly compile the view 1`] = `
+Object {
+  "template": Object {
+    "hashKey": "bf6f2d67586ec877da0348aef6981a75891ab353",
+    "src": "template.js",
+    "type": "oc-template-es6",
+  },
+}
+`;
+
+exports[`Should correctly compile the view 2`] = `"var oc=oc||{};oc.components=oc.components||{},oc.components.bf6f2d67586ec877da0348aef6981a75891ab353=\\"<h1>Hello {name.toUpperCase()}!</h1>\\";"`;
