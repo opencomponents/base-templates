@@ -20,8 +20,9 @@ module.exports = (options, callback) => {
 
   try {
     const viewHash = hashBuilder.fromString(viewContent);
-    const compiledView = uglifyJs.minify(ocViewWrapper(viewHash, viewContent))
-      .code;
+    const compiledView = uglifyJs.minify(
+      ocViewWrapper(viewHash, `'${viewContent}'`)
+    ).code;
 
     fs.ensureDirSync(publishPath);
     fs.writeFile(path.join(publishPath, publishFileName), compiledView, err =>

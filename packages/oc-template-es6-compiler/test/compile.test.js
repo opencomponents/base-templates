@@ -1,44 +1,136 @@
-// jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
 
-// const path = require('path');
-// const compile = require('../lib/compile.js');
-// const fs = require('fs-extra');
-// const nodeDir = require('node-dir');
+const _ = require('lodash');
+const compile = require('../lib/compile.js');
+const fs = require('fs-extra');
+const nodeDir = require('node-dir');
+const path = require('path');
 
-// const componentPackage = require('../../../mocks/jade-component/package.json');
-// const componentPath = path.join(__dirname, '../../../mocks/jade-component/');
-// const getInfo = require('../index.js').getInfo;
-// const publishPath = path.join(componentPath, '__package');
+const componentPath = path.join(__dirname, '../../../mocks/es6-component/');
 
-// test('Should correctly compile the oc component', done => {
-//   const options = {
-//     componentPackage,
-//     ocPackage: {
-//       version: '1.0.0'
-//     },
-//     componentPath,
-//     publishPath,
-//     production: true
-//   };
-//   fs.ensureDirSync(publishPath);
-//   compile(options, (err, res) => {
-//     expect(err).toBeNull();
-//     const version = res.oc.files.template.version;
-//     res.oc.files.template.version = '';
-//     res.oc.date = '';
-//     expect(res).toMatchSnapshot();
-//     expect(version).toBe(getInfo().version);
-//     nodeDir.paths(publishPath, (err, res) => {
-//       const files = res.files
-//         .map(filePath => path.relative(__dirname, filePath))
-//         .sort();
-//       expect(files).toMatchSnapshot();
-//       fs.emptyDirSync(publishPath);
-//       done();
-//     });
-//   });
-// });
+const componentPackage = fs.readJsonSync(
+  path.join(componentPath, 'package.json')
+);
 
-test('', () => {
-  console.log('// compile.test');
+const package2 = _.cloneDeep(componentPackage);
+const package3 = _.cloneDeep(componentPackage);
+const package4 = _.cloneDeep(componentPackage);
+delete package2.oc.files.static;
+package3.oc.files.static = 'assets';
+delete package4.oc.files.data;
+
+const scenarios = {
+  'Happy path (production=true)': {
+    componentPackage,
+    ocPackage: {
+      version: '1.0.0'
+    },
+    componentPath,
+    publishPath: path.join(componentPath, '_compile-tests-package'),
+    production: true
+  },
+  'Happy path (production=false)': {
+    componentPackage,
+    ocPackage: {
+      version: '1.0.0'
+    },
+    componentPath,
+    publishPath: path.join(componentPath, '_compile-tests-package'),
+    production: false
+  },
+  'Should handle empty static folder': {
+    componentPackage: package2,
+    ocPackage: {
+      version: '1.0.0'
+    },
+    componentPath,
+    publishPath: path.join(componentPath, '_compile-tests-package2'),
+    production: true
+  },
+  'Should normalise stringified static folder': {
+    componentPackage: package3,
+    ocPackage: {
+      version: '1.0.0'
+    },
+    componentPath,
+    publishPath: path.join(componentPath, '_compile-tests-package3'),
+    production: true
+  },
+  'Should handle server.js-less components': {
+    componentPackage: package4,
+    ocPackage: {
+      version: '1.0.0'
+    },
+    componentPath,
+    publishPath: path.join(componentPath, '_compile-tests-package4'),
+    production: true
+  }
+};
+
+const execute = (options, cb) => {
+  compile(options, (err, result) => {
+    if (err) {
+      return fs.remove(options.publishPath, () => cb(err));
+    }
+
+    result.oc.date = '';
+    result.oc.files.template.version = '';
+    nodeDir.paths(options.publishPath, (err2, res2) => {
+      const files = res2.files
+        .map(filePath => path.relative(__dirname, filePath))
+        .sort();
+      fs.remove(options.publishPath, () => cb(err, { result, files }));
+    });
+  });
+};
+
+_.each(scenarios, (scenario, testName) => {
+  test(testName, done => {
+    execute(scenario, (err, { result, files }) => {
+      expect(err).toBeNull();
+      expect(result).toMatchSnapshot();
+      expect(files).toMatchSnapshot();
+      done();
+    });
+  });
+});
+
+test('When server compilation fails should return an error', done => {
+  const package5 = _.cloneDeep(componentPackage);
+  package5.oc.files.data = 'not-found.js';
+
+  const options = {
+    componentPackage: package5,
+    ocPackage: {
+      version: '1.0.0'
+    },
+    componentPath,
+    publishPath: path.join(componentPath, '_compile-tests-package5')
+  };
+
+  execute(options, err => {
+    expect(err).toContain('Entry module not found');
+    done();
+  });
+});
+
+test('When files writing fails should return an error', done => {
+  const spy = jest
+    .spyOn(fs, 'ensureDir')
+    .mockImplementation(jest.fn((a, cb) => cb('sorry I failed')));
+
+  const options = {
+    componentPackage,
+    ocPackage: {
+      version: '1.0.0'
+    },
+    componentPath,
+    publishPath: path.join(componentPath, '_compile-tests-package6')
+  };
+
+  execute(options, err => {
+    expect(err).toMatchSnapshot();
+    spy.mockRestore();
+    done();
+  });
 });
