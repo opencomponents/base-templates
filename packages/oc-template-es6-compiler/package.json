@@ -1,0 +1,42 @@
+{
+  "name": "oc-template-es6-compiler",
+  "version": "0.0.1",
+  "description": "OC-Template-ES6-Compiler",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opencomponents/base-templates.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opencomponents/base-templates/issues"
+  },
+  "homepage": "https://github.com/opencomponents/base-templates#readme",
+  "keywords": [
+    "oc",
+    "opencomponents"
+  ],
+  "author": {
+    "name": "Nick Balestra",
+    "email": "nick@balestra.ch"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.4.1",
+    "fs-extra": "5.0.0",
+    "oc-generic-template-compiler": "2.0.4",
+    "oc-hash-builder": "1.0.2",
+    "oc-server-compiler": "2.1.0",
+    "oc-statics-compiler": "2.0.9",
+    "oc-template-es6": "0.0.1",
+    "oc-templates-messages": "1.0.2",
+    "oc-view-wrapper": "1.0.3",
+    "uglify-js": "3.3.9"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "scaffold",
+    "LICENSE",
+    "README.md"
+  ]
+}
