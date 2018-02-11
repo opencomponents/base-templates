@@ -1,35 +1,29 @@
 const fs = require('fs');
 const getCompiledTemplate = require('../').getCompiledTemplate;
-const render = require('../').render;
 
-test('Return compiled template when valid', done => {
+test('Return compiled template when valid', () => {
   const template =
-    'var oc=oc||{};oc.components=oc.components||{},oc.components.c6fcae4d23d07fd9a7e100508caf8119e998d7a9="Hello ${name.toUpperCase()}!"';
+    'var oc=oc||{};oc.components=oc.components||{},oc.components.c6fcae4d23d07fd9a7e100508caf8119e998d7a9=({name})=>`Hello ${name.toUpperCase()}!`;';
   const key = 'c6fcae4d23d07fd9a7e100508caf8119e998d7a9';
 
   const compiled = getCompiledTemplate(template, key);
   expect(compiled).toMatchSnapshot();
-  render({ template: compiled, model: { name: 'es6' } }, (err, html) => {
-    expect(err).toBe(null);
-    expect(html).toBe('Hello ES6!');
-    done();
-  });
 });
 
-test('Throw exception when js is not valid', () => {
+test('Throw exception when not valid', () => {
   const template =
-    'var oc=oc||{};oc.components=oc.components||{},oc.components.c6fcae4d23d07fd9a7e100508caf8119e998d7a9=nojavascript);';
-  const key = 'c6fcae4d23d07fd9a7e100508caf8119e998d7a9';
+    'var oc=oc||{};oc.components=oc.components||{},oc.components["28144f0dfecc345da2ee82c2614e61d1bd8543a9"]=something);';
+  const key = '28144f0dfecc345da2ee82c2614e61d1bd8543a9';
 
   expect(() =>
     getCompiledTemplate(template, key)
   ).toThrowErrorMatchingSnapshot();
 });
 
-test('Be undefined when key is not valid', () => {
+test('Return undefined when key when valid', () => {
   const template =
-    'var oc=oc||{};oc.components=oc.components||{},oc.components.c6fcae4d23d07fd9a7e100508caf8119e998d7a9="Hello ${name.toUpperCase()}!"';
-  const key = 'not valid key';
+    'var oc=oc||{};oc.components=oc.components||{},oc.components["28144f0dfecc345da2ee82c2614e61d1bd8543a9"]=({name})=>`Hello ${name.toUpperCase()}!`;';
+  const key = 'another key';
 
   expect(getCompiledTemplate(template, key)).toBeUndefined();
 });
