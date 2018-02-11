@@ -21,12 +21,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "express-es6-template-engine": "^2.0.2",
     "oc-generic-template-renderer": "2.0.2"
   },
   "files": [
-    "index.js",
-    "lib"
-  ],
-  "externals": {}
+    "index.js"
+  ]
 }
