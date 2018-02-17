@@ -6,7 +6,7 @@
     "jest": "^22.1.4",
     "jest-environment-jsdom": "^22.1.4",
     "lerna": "^2.4.0",
-    "lint-staged": "6.1.0",
+    "lint-staged": "6.1.1",
     "node-dir": "0.1.17",
     "oc": "^0.42.24",
     "prettier-eslint-cli": "^4.1.1"
