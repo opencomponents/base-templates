@@ -25,6 +25,6 @@
     }
   },
   "devDependencies": {
-    "oc-template-handlebars-compiler": "^6.2.0"
+    "oc-template-handlebars-compiler": "file:../../packages/oc-template-handlebars-compiler"
   }
 }

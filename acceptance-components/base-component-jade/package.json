@@ -25,6 +25,6 @@
     }
   },
   "devDependencies": {
-    "oc-template-jade-compiler": "^6.2.0"
+    "oc-template-jade-compiler": "file:../../packages/oc-template-jade-compiler"
   }
 }
