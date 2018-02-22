@@ -4989,9 +4989,9 @@ oc-storage-adapters-utils@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/oc-storage-adapters-utils/-/oc-storage-adapters-utils-1.0.2.tgz#dc0099201fbb2966b7bcb2dcb53f4912d3f94a2a"
 
-oc@^0.42.24:
-  version "0.42.25"
-  resolved "https://registry.yarnpkg.com/oc/-/oc-0.42.25.tgz#88d727ce2fb0464b50b6ee8ce675acd1ec39442d"
+oc@^0.42.26:
+  version "0.42.26"
+  resolved "https://registry.yarnpkg.com/oc/-/oc-0.42.26.tgz#f9a8a9cff78000c38227a762e272ae3b5fd9a192"
   dependencies:
     accept-language-parser "1.4.1"
     async "^2.6.0"
