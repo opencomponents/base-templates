@@ -5,7 +5,6 @@
   "repository": "",
   "oc": {
     "files": {
-      "static": ["assets"],
       "data": "server.js",
       "template": {
         "src": "view.js",
