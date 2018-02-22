@@ -32,6 +32,11 @@ const components = [
       __dirname,
       '../../acceptance-components/base-component-jade'
     )
+  },
+  {
+    name: 'base-component-es6',
+    template: require('../../packages/oc-template-es6'),
+    path: path.join(__dirname, '../../acceptance-components/base-component-es6')
   }
 ];
 
