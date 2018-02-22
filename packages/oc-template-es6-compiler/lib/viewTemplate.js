@@ -1,8 +1,7 @@
-// TODO: add css instructions only if css !== null
-
 const viewTemplate = ({ css, bundle }) => `function(model){
   var template = ${bundle};
-  return template.default(model) +
+  return '' + 
+    template.default(model) +
     '<script>' +
       'window.oc = window.oc || {};' +
       'oc.cmd = oc.cmd || [];' +
