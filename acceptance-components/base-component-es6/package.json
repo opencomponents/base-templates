@@ -1,0 +1,30 @@
+{
+  "name": "base-component-es6",
+  "description": "",
+  "version": "1.0.0",
+  "private": true,
+  "oc": {
+    "files": {
+      "data": "server.js",
+      "static": [
+        "img"
+      ],
+      "template": {
+        "src": "view.js",
+        "type": "oc-template-es6"
+      }
+    },
+    "parameters": {
+      "name": {
+        "default": "ES6 template",
+        "description": "Your name",
+        "example": "Jane Doe",
+        "mandatory": false,
+        "type": "string"
+      }
+    }
+  },
+  "devDependencies": {
+    "oc-template-es6-compiler": "file:../../packages/oc-template-es6-compiler"
+  }
+}
