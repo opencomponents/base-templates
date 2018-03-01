@@ -1,6 +1,4 @@
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 50000;
-
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 50000;
+jest.setTimeout(50000);
 
 const path = require('path');
 const fs = require('fs-extra');

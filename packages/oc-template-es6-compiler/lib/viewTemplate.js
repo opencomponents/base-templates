@@ -2,11 +2,12 @@ const viewTemplate = ({ css, bundle }) => `function(model){
   var template = ${bundle};
   return '' + 
     template.default(model) +
+    '<style>${css}</style>' +
     '<script>' +
       'window.oc = window.oc || {};' +
       'oc.cmd = oc.cmd || [];' +
       'oc.cmd.push(function(oc){' +
-        'oc.addStylesToHead(\\'${css}\\');' +
+        'oc.events.fire(\\'oc:cssDidMount\\', \\'${css}\\');' +
     '});' +
     '</script>'
 }`;
