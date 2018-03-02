@@ -3,7 +3,7 @@
 const compileServer = require('oc-server-compiler');
 const compileStatics = require('oc-statics-compiler');
 const createCompile = require('oc-generic-template-compiler').createCompile;
-const getInfo = require('oc-template-handlebars').getInfo;
+const getInfo = require('oc-template-es6').getInfo;
 
 const compileView = require('./compileView');
 
