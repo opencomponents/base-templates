@@ -9,7 +9,7 @@
     "lint-staged": "7.0.0",
     "node-dir": "0.1.17",
     "oc": "^0.42.26",
-    "prettier-eslint-cli": "^4.1.1"
+    "prettier-eslint-cli": "^4.7.1"
   },
   "scripts": {
     "clean": "lerna clean && rm -rf node_modules",
