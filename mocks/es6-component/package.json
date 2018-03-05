@@ -1,0 +1,21 @@
+{
+  "name": "es6-component",
+  "description": "",
+  "version": "1.0.0",
+  "repository": "",
+  "oc": {
+    "files": {
+      "data": "server.js",
+      "template": {
+        "src": "view.js",
+        "type": "oc-template-es6"
+      }
+    }
+  },
+  "dependencies": {
+    "lodash": ""
+  },
+  "devDependencies": {
+    "oc-template-es6-compiler": ""
+  }
+}

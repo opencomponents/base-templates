@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should correctly compile the oc component 1`] = `
+Object {
+  "dependencies": Object {
+    "lodash": "",
+  },
+  "description": "",
+  "devDependencies": Object {
+    "oc-template-es6-compiler": "",
+  },
+  "name": "es6-component",
+  "oc": Object {
+    "date": "",
+    "files": Object {
+      "dataProvider": Object {
+        "hashKey": "9799c6ea51c6abca6180ee577e5f40beb3172a17",
+        "src": "server.js",
+        "type": "node.js",
+      },
+      "static": Array [],
+      "template": Object {
+        "hashKey": "62f9e4cc843f4e7450cdd6a7834c056d9154c6b8",
+        "src": "template.js",
+        "type": "oc-template-es6",
+        "version": "",
+      },
+    },
+    "packaged": true,
+    "version": "1.0.0",
+  },
+  "repository": "",
+  "version": "1.0.0",
+}
+`;
+
+exports[`Should correctly compile the oc component 2`] = `
+Array [
+  "../../../mocks/es6-component/__package/package.json",
+  "../../../mocks/es6-component/__package/server.js",
+  "../../../mocks/es6-component/__package/styles.css",
+  "../../../mocks/es6-component/__package/template.js",
+]
+`;

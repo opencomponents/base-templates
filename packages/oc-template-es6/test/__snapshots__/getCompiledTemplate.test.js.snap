@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Return compiled template when valid 1`] = `[Function]`;
+
+exports[`Throw exception when not valid 1`] = `"Unexpected token )"`;

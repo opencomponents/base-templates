@@ -1,0 +1,29 @@
+{
+  "name": "oc-template-es6",
+  "version": "0.0.1",
+  "description": "OC template based on ES6 template literals",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opencomponents/base-templates.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opencomponents/base-templates/issues"
+  },
+  "homepage": "https://github.com/opencomponents/base-templates#readme",
+  "keywords": [
+    "oc",
+    "opencomponents"
+  ],
+  "author": {
+    "name": "Nick Balestra",
+    "email": "nick@balestra.ch"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "oc-generic-template-renderer": "2.0.2"
+  },
+  "files": [
+    "index.js"
+  ]
+}

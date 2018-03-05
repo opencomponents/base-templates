@@ -1,7 +1,7 @@
 {
   "name": "base-component-handlebars",
   "description": "",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "oc": {
     "files": {
@@ -25,6 +25,6 @@
     }
   },
   "devDependencies": {
-    "oc-template-handlebars-compiler": "6.2.0"
+    "oc-template-handlebars-compiler": "file:../../packages/oc-template-handlebars-compiler"
   }
 }

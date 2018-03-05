@@ -1,7 +1,7 @@
 {
-  "name": "base-component-jade",
+  "name": "base-component-es6",
   "description": "",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "private": true,
   "oc": {
     "files": {
@@ -10,13 +10,13 @@
         "img"
       ],
       "template": {
-        "src": "template.jade",
-        "type": "oc-template-jade"
+        "src": "view.js",
+        "type": "oc-template-es6"
       }
     },
     "parameters": {
       "name": {
-        "default": "Jane Doe",
+        "default": "ES6 template",
         "description": "Your name",
         "example": "Jane Doe",
         "mandatory": false,
@@ -25,6 +25,6 @@
     }
   },
   "devDependencies": {
-    "oc-template-jade-compiler": "file:../../packages/oc-template-jade-compiler"
+    "oc-template-es6-compiler": "file:../../packages/oc-template-es6-compiler"
   }
 }

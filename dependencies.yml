@@ -131,6 +131,20 @@ collectors:
     versions: "Y.Y.Y"
 
 - type: js-npm
+  path: packages/oc-template-es6
+  actors:
+  # pull requests for updates to any version
+  - type: js-npm
+    versions: "Y.Y.Y"
+
+- type: js-npm
+  path: packages/oc-template-es6-compiler
+  actors:
+  # pull requests for updates to any version
+  - type: js-npm
+    versions: "Y.Y.Y"
+
+- type: js-npm
   path: acceptance-setup
   actors:
   # pull requests for updates to any version

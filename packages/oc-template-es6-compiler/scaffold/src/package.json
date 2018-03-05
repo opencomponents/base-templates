@@ -1,17 +1,14 @@
 {
-  "name": "base-component-jade",
+  "name": "base-component-es6",
   "description": "",
-  "version": "1.0.2",
-  "private": true,
+  "version": "1.0.0",
   "oc": {
     "files": {
       "data": "server.js",
-      "static": [
-        "img"
-      ],
+      "static": ["img", "css"],
       "template": {
-        "src": "template.jade",
-        "type": "oc-template-jade"
+        "src": "view.js",
+        "type": "oc-template-es6"
       }
     },
     "parameters": {
@@ -25,6 +22,6 @@
     }
   },
   "devDependencies": {
-    "oc-template-jade-compiler": "file:../../packages/oc-template-jade-compiler"
+    "oc-template-es6-compiler": "*"
   }
 }
