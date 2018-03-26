@@ -72,7 +72,15 @@ beforeAll(done => {
         port: registryPort,
         baseUrl: registryUrl,
         env: {},
-        templates: components.map(component => component.template)
+        templates: components
+          .map(component => component.template)
+          .filter(template => {
+            // we need only the non-default templates here
+            const type = template.getInfo().type;
+            return (
+              type !== 'oc-template-handlebars' && type !== 'oc-template-jade'
+            );
+          })
       });
 
       registry.start(err => {

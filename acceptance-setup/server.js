@@ -20,11 +20,12 @@ module.exports = (port, cb) => {
 
   return http
     .createServer(function(req, res) {
-      const query = querystring.parse(url.parse(req.url).query);
+      const parameters = querystring.parse(url.parse(req.url).query);
       const components = [
         { name: 'oc-client' },
-        { name: 'base-component-jade', parameters: query },
-        { name: 'base-component-handlebars', parameters: query }
+        { name: 'base-component-es6', parameters },
+        { name: 'base-component-handlebars', parameters },
+        { name: 'base-component-jade', parameters }
       ];
       const options = {
         container: false,
@@ -34,7 +35,7 @@ module.exports = (port, cb) => {
 
       client.renderComponents(components, options, function(
         err,
-        renderedComponents
+        [ocClient, es6Component, handlebarsComponent, jadeComponent]
       ) {
         if (err) {
           throw err;
@@ -46,9 +47,10 @@ module.exports = (port, cb) => {
             <title>A page</title>
           </head>
           <body>
-          ${renderedComponents[2]}
-          ${renderedComponents[1]}
-          ${renderedComponents[0]}
+            ${es6Component}
+            ${handlebarsComponent}
+            ${jadeComponent}
+            ${ocClient}
           </body>
         </html>
       `;
