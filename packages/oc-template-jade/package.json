@@ -1,6 +1,6 @@
 {
   "name": "oc-template-jade",
-  "version": "6.0.11",
+  "version": "6.0.12",
   "description": "OC-Template-Jade",
   "main": "index.js",
   "repository": {
@@ -21,7 +21,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "oc-generic-template-renderer": "2.0.3"
+    "oc-generic-template-renderer": "2.0.4"
   },
   "files": [
     "index.js",

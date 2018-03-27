@@ -1,6 +1,6 @@
 {
   "name": "oc-template-es6-compiler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "OC-Template-ES6-Compiler",
   "main": "index.js",
   "repository": {
@@ -35,12 +35,12 @@
     "oc-generic-template-compiler": "2.0.4",
     "oc-hash-builder": "1.0.2",
     "oc-minify-file": "1.0.14",
-    "oc-server-compiler": "2.1.1",
+    "oc-server-compiler": "2.1.2",
     "oc-statics-compiler": "2.0.10",
-    "oc-template-es6": "1.0.0",
+    "oc-template-es6": "1.0.1",
     "oc-templates-messages": "1.0.2",
     "oc-view-wrapper": "1.0.3",
-    "oc-webpack": "2.3.1",
+    "oc-webpack": "2.3.2",
     "postcss-extend": "^1.0.5",
     "postcss-icss-values": "^2.0.1",
     "postcss-import": "^11.0.0",

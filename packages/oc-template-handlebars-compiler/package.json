@@ -1,6 +1,6 @@
 {
   "name": "oc-template-handlebars-compiler",
-  "version": "6.2.1",
+  "version": "6.2.2",
   "description": "OC-Template-Handlebars-Compiler",
   "main": "index.js",
   "repository": {
@@ -26,9 +26,9 @@
     "handlebars": "4.0.11",
     "oc-generic-template-compiler": "2.0.4",
     "oc-hash-builder": "1.0.2",
-    "oc-server-compiler": "2.1.1",
+    "oc-server-compiler": "2.1.2",
     "oc-statics-compiler": "2.0.10",
-    "oc-template-handlebars": "6.0.12",
+    "oc-template-handlebars": "6.0.13",
     "oc-templates-messages": "1.0.2",
     "oc-view-wrapper": "1.0.3",
     "uglify-js": "3.3.10"

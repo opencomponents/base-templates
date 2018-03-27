@@ -1,6 +1,6 @@
 {
   "name": "oc-empty-response-handler",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Handler for the empty response use case",
   "main": "index.js",
   "repository": {
@@ -11,11 +11,18 @@
     "url": "https://github.com/opencomponents/base-templates/issues"
   },
   "homepage": "https://github.com/opencomponents/base-templates#readme",
-  "keywords": ["oc", "opencomponents"],
+  "keywords": [
+    "oc",
+    "opencomponents"
+  ],
   "author": {
     "name": "Matteo Figus",
     "email": "matteofigus@gmail.com"
   },
   "license": "MIT",
-  "files": ["index.js", "README.md", "LICENSE"]
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ]
 }
