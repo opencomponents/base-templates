@@ -227,7 +227,7 @@ Object {
         "test": /\\\\\\.js\\$/,
         "use": Array [
           Object {
-            "loader": "../../../node_modules/babel-loader/lib/index.js",
+            "loader": "../node_modules/babel-loader/lib/index.js",
             "options": Object {
               "babelrc": false,
               "cacheDirectory": true,
@@ -293,7 +293,7 @@ Object {
             "loader": "../../infinite-loop-loader/index.js",
           },
           Object {
-            "loader": "../../../node_modules/babel-loader/lib/index.js",
+            "loader": "../node_modules/babel-loader/lib/index.js",
             "options": Object {
               "babelrc": false,
               "cacheDirectory": true,
