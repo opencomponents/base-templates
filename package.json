@@ -5,7 +5,7 @@
     "husky": "0.14.3",
     "jest": "22.4.3",
     "jest-environment-jsdom": "22.4.3",
-    "lerna": "2.9.0",
+    "lerna": "2.9.1",
     "lint-staged": "7.0.0",
     "node-dir": "0.1.17",
     "oc": "^0.42.26",
@@ -23,11 +23,18 @@
     "setup": "yarn --production=false && lerna bootstrap"
   },
   "lint-staged": {
-    "*.js": ["prettier-eslint --write", "jest --findRelatedTests", "git add"]
+    "*.js": [
+      "prettier-eslint --write",
+      "jest --findRelatedTests",
+      "git add"
+    ]
   },
   "jest": {
     "testEnvironment": "node",
-    "roots": ["packages", "acceptance-setup"],
+    "roots": [
+      "packages",
+      "acceptance-setup"
+    ],
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
     "collectCoverageFrom": [
@@ -37,5 +44,9 @@
       "!packages/**/scaffold/**/*"
     ]
   },
-  "workspaces": ["packages/*", "acceptance-setup", "acceptance-components/*"]
+  "workspaces": [
+    "packages/*",
+    "acceptance-setup",
+    "acceptance-components/*"
+  ]
 }
