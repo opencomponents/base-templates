@@ -1,6 +1,6 @@
 {
   "name": "oc-template-es6-compiler",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "OC-Template-ES6-Compiler",
   "main": "index.js",
   "repository": {
