@@ -66,5 +66,7 @@ workflows:
   version: 2
   build_and_test:
     jobs:
+      - node10
+      - node9
       - node8
       - node6
