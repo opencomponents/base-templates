@@ -1,8 +1,8 @@
 version: 2
 jobs:
-  node8:
+  node-base: &node-base
     docker:
-      - image: circleci/node:carbon
+      - image: node
 
     working_directory: ~/repo
 
@@ -30,37 +30,26 @@ jobs:
       - run:
           name: coverage
           command: yarn run coverage
+
+  node10:
+    <<: *node-base
+    docker:
+      - image: node:10
+
+  node9:
+    <<: *node-base
+    docker:
+      - image: node:9
+      
+  node8:
+    <<: *node-base
+    docker:
+      - image: node:8
   
   node6:
+    <<: *node-base
     docker:
-      - image: circleci/node:boron
-
-    working_directory: ~/repo
-
-    steps:
-      - checkout
-
-      - restore_cache:
-          keys: 
-            - v1-dependencies-cache-{{ checksum "yarn.lock" }}
-            - v1-dependencies-
-
-      - run:
-          name: install-dependencies
-          command: yarn run setup
-
-      - save_cache:
-          key: v1-dependencies-cache-{{ checksum "yarn.lock" }}
-          paths:
-            - node_modules
-
-      - run:
-          name: test
-          command: yarn test
-
-      - run:
-          name: coverage
-          command: yarn run coverage
+      - image: node:6
 
 workflows:
   version: 2
