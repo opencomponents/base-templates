@@ -21,6 +21,7 @@ Base-templates & utilties for the [OpenComponents](https://github.com/opentable/
 | Name | Version |
 |--------|-------|
 | [`infinite-loop-loader`](/packages/infinite-loop-loader) | [![npm version](https://badge.fury.io/js/infinite-loop-loader.svg)](http://badge.fury.io/js/infinite-loop-loader) |
+| [`oc-empty-response-handler`](/packages/oc-empty-response-handler) | [![npm version](https://badge.fury.io/js/oc-empty-response-handler.svg)](http://badge.fury.io/js/oc-empty-response-handler) |
 | [`oc-external-dependencies-handler`](/packages/oc-external-dependencies-handler) | [![npm version](https://badge.fury.io/js/oc-external-dependencies-handler.svg)](http://badge.fury.io/js/oc-external-dependencies-handler) |
 | [`oc-generic-template-compiler`](/packages/oc-generic-template-compiler) | [![npm version](https://badge.fury.io/js/oc-generic-template-compiler.svg)](http://badge.fury.io/js/oc-generic-template-compiler) |
 | [`oc-generic-template-renderer`](/packages/oc-generic-template-renderer) | [![npm version](https://badge.fury.io/js/oc-generic-template-renderer.svg)](http://badge.fury.io/js/oc-generic-template-renderer) |
@@ -29,6 +30,7 @@ Base-templates & utilties for the [OpenComponents](https://github.com/opentable/
 | [`oc-minify-file`](/packages/oc-minify-file) | [![npm version](https://badge.fury.io/js/oc-minify-file.svg)](http://badge.fury.io/js/oc-minify-file) |
 | [`oc-server-compiler`](/packages/oc-server-compiler) | [![npm version](https://badge.fury.io/js/oc-server-compiler.svg)](http://badge.fury.io/js/oc-server-compiler) |
 | [`oc-statics-compiler`](/packages/oc-statics-compiler) | [![npm version](https://badge.fury.io/js/oc-statics-compiler.svg)](http://badge.fury.io/js/oc-statics-compiler) |
+| [`oc-template-es6-compiler`](/packages/oc-template-es6-compiler) | [![npm version](https://badge.fury.io/js/oc-template-es6-compiler.svg)](http://badge.fury.io/js/oc-template-es6-compiler) |
 | [`oc-template-handlebars-compiler`](/packages/oc-template-handlebars-compiler) | [![npm version](https://badge.fury.io/js/oc-template-handlebars-compiler.svg)](http://badge.fury.io/js/oc-template-handlebars-compiler) |
 | [`oc-template-jade-compiler`](/packages/oc-template-jade-compiler) | [![npm version](https://badge.fury.io/js/oc-template-jade-compiler.svg)](http://badge.fury.io/js/oc-template-jade-compiler) |
 | [`oc-templates-messages`](/packages/oc-templates-messages) | [![npm version](https://badge.fury.io/js/oc-templates-messages.svg)](http://badge.fury.io/js/oc-templates-messages) |
