@@ -5,9 +5,15 @@ const MinifyPlugin = require('babel-minify-webpack-plugin');
 const path = require('path');
 const webpack = require('oc-webpack').webpack;
 
+const createExcludeRegex = require('./createExcludeRegex');
+
 module.exports = function webpackConfigGenerator(options) {
   const buildPath = options.buildPath || '/build';
   const production = options.production;
+  const buildIncludes = options.buildIncludes.concat(
+    'oc-template-es6-compiler/utils'
+  );
+  const excludeRegex = createExcludeRegex(buildIncludes);
   const localIdentName = !production
     ? 'oc__[path][name]-[ext]__[local]__[hash:base64:8]'
     : '[local]__[hash:base64:8]';
@@ -70,7 +76,7 @@ module.exports = function webpackConfigGenerator(options) {
         cssLoader,
         {
           test: /\.jsx?$/,
-          exclude: /node_modules\/(?!(oc-template-react-compiler\/utils))/,
+          exclude: excludeRegex,
           use: [
             {
               loader: require.resolve('babel-loader'),
