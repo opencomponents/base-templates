@@ -28,7 +28,9 @@ module.exports = (options, callback) => {
   const config = webpackConfigurator({
     viewPath,
     publishFileName,
-    production
+    production,
+    buildIncludes:
+      options.componentPackage.oc.files.template.buildIncludes || []
   });
 
   const compile = (config, cb) => {
