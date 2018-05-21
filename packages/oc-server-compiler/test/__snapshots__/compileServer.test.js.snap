@@ -2,12 +2,12 @@
 
 exports[`Should correctly compile the server 1`] = `
 Object {
-  "hashKey": "0dd1586fdeac9564bcd042602e153587df69442d",
+  "hashKey": "658a82bfbd83a494b8a92881a2d6a367ac43db94",
   "src": "server.js",
   "type": "node.js",
 }
 `;
 
-exports[`Should correctly compile the server 2`] = `"module.exports=function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=0)}([function(a,b,c){'use strict';Object.defineProperty(b,'__esModule',{value:!0});const d=c(1);b.data=(a,b)=>b(null,{})},function(a){a.exports=require('lodash')}]);"`;
+exports[`Should correctly compile the server 2`] = `"module.exports=function(e){function r(n){if(t[n])return t[n].exports;var o=t[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,r),o.l=!0,o.exports}var t={};return r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{configurable:!1,enumerable:!0,get:n})},r.r=function(e){Object.defineProperty(e,\\"__esModule\\",{value:!0})},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,\\"a\\",t),t},r.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},r.p=\\"\\",r(r.s=1)}([function(e){e.exports=require(\\"lodash\\")},function(e,r,t){\\"use strict\\";t.r(r),t.d(r,\\"data\\",function(){return n});t(0);const n=(e,r)=>r(null,{})}]);"`;
 
 exports[`When server writing fails should return error 1`] = `"sorry I failed"`;

@@ -32,8 +32,7 @@
   "jest": {
     "testEnvironment": "node",
     "roots": [
-      "packages",
-      "acceptance-setup"
+      "packages"
     ],
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,

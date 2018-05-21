@@ -11,7 +11,7 @@ Object {
     "date": "",
     "files": Object {
       "dataProvider": Object {
-        "hashKey": "0dd1586fdeac9564bcd042602e153587df69442d",
+        "hashKey": "658a82bfbd83a494b8a92881a2d6a367ac43db94",
         "src": "server.js",
         "type": "node.js",
       },

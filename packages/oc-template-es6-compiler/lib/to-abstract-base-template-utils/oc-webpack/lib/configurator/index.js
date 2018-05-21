@@ -1,29 +1,29 @@
-'use strict';
+"use strict";
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const MinifyPlugin = require('babel-minify-webpack-plugin');
-const path = require('path');
-const webpack = require('oc-webpack').webpack;
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MinifyPlugin = require("babel-minify-webpack-plugin");
+const path = require("path");
+const webpack = require("webpack");
 
-const createExcludeRegex = require('./createExcludeRegex');
+const createExcludeRegex = require("./createExcludeRegex");
 
-module.exports = function webpackConfigGenerator(options) {
-  const buildPath = options.buildPath || '/build';
+module.exports = options => {
+  const buildPath = options.buildPath || "/build";
   const production = options.production;
   const buildIncludes = options.buildIncludes.concat(
-    'oc-template-es6-compiler/utils'
+    "oc-template-es6-compiler/utils"
   );
   const excludeRegex = createExcludeRegex(buildIncludes);
   const localIdentName = !production
-    ? 'oc__[path][name]-[ext]__[local]__[hash:base64:8]'
-    : '[local]__[hash:base64:8]';
+    ? "oc__[path][name]-[ext]__[local]__[hash:base64:8]"
+    : "[local]__[hash:base64:8]";
 
   const cssLoader = {
     test: /\.css$/,
     loader: ExtractTextPlugin.extract({
       use: [
         {
-          loader: require.resolve('css-loader'),
+          loader: require.resolve("css-loader"),
           options: {
             importLoaders: 1,
             modules: true,
@@ -32,14 +32,14 @@ module.exports = function webpackConfigGenerator(options) {
           }
         },
         {
-          loader: require.resolve('postcss-loader'),
+          loader: require.resolve("postcss-loader"),
           options: {
-            ident: 'postcss',
+            ident: "postcss",
             plugins: [
-              require('postcss-import'),
-              require('postcss-extend'),
-              require('postcss-icss-values'),
-              require('autoprefixer')
+              require("postcss-import"),
+              require("postcss-extend"),
+              require("postcss-icss-values"),
+              require("autoprefixer")
             ]
           }
         }
@@ -49,12 +49,12 @@ module.exports = function webpackConfigGenerator(options) {
 
   let plugins = [
     new ExtractTextPlugin({
-      filename: '[name].css',
+      filename: "[name].css",
       allChunks: true
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(
-        production ? 'production' : 'development'
+      "process.env.NODE_ENV": JSON.stringify(
+        production ? "production" : "development"
       )
     })
   ];
@@ -65,6 +65,7 @@ module.exports = function webpackConfigGenerator(options) {
   const cacheDirectory = !production;
 
   return {
+    mode: production ? "production" : "development",
     entry: options.viewPath,
     output: {
       path: buildPath,
@@ -79,18 +80,18 @@ module.exports = function webpackConfigGenerator(options) {
           exclude: excludeRegex,
           use: [
             {
-              loader: require.resolve('babel-loader'),
+              loader: require.resolve("babel-loader"),
               options: {
                 cacheDirectory,
                 babelrc: false,
                 presets: [
                   [
-                    require.resolve('babel-preset-env'),
+                    require.resolve("babel-preset-env"),
                     { modules: false, loose: true }
                   ]
                 ],
                 plugins: [
-                  [require.resolve('babel-plugin-transform-object-rest-spread')]
+                  [require.resolve("babel-plugin-transform-object-rest-spread")]
                 ]
               }
             }
