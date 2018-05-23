@@ -1,29 +1,29 @@
-"use strict";
+'use strict';
 
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const MinifyPlugin = require("babel-minify-webpack-plugin");
-const path = require("path");
-const webpack = require("webpack");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MinifyPlugin = require('babel-minify-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
 
-const createExcludeRegex = require("./createExcludeRegex");
+const createExcludeRegex = require('./createExcludeRegex');
 
 module.exports = options => {
-  const buildPath = options.buildPath || "/build";
+  const buildPath = options.buildPath || '/build';
   const production = options.production;
   const buildIncludes = options.buildIncludes.concat(
-    "oc-template-es6-compiler/utils"
+    'oc-template-es6-compiler/utils'
   );
   const excludeRegex = createExcludeRegex(buildIncludes);
   const localIdentName = !production
-    ? "oc__[path][name]-[ext]__[local]__[hash:base64:8]"
-    : "[local]__[hash:base64:8]";
+    ? 'oc__[path][name]-[ext]__[local]__[hash:base64:8]'
+    : '[local]__[hash:base64:8]';
 
   const cssLoader = {
     test: /\.css$/,
     loader: ExtractTextPlugin.extract({
       use: [
         {
-          loader: require.resolve("css-loader"),
+          loader: require.resolve('css-loader'),
           options: {
             importLoaders: 1,
             modules: true,
@@ -32,14 +32,14 @@ module.exports = options => {
           }
         },
         {
-          loader: require.resolve("postcss-loader"),
+          loader: require.resolve('postcss-loader'),
           options: {
-            ident: "postcss",
+            ident: 'postcss',
             plugins: [
-              require("postcss-import"),
-              require("postcss-extend"),
-              require("postcss-icss-values"),
-              require("autoprefixer")
+              require('postcss-import'),
+              require('postcss-extend'),
+              require('postcss-icss-values'),
+              require('autoprefixer')
             ]
           }
         }
@@ -49,12 +49,12 @@ module.exports = options => {
 
   let plugins = [
     new ExtractTextPlugin({
-      filename: "[name].css",
+      filename: '[name].css',
       allChunks: true
     }),
     new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify(
-        production ? "production" : "development"
+      'process.env.NODE_ENV': JSON.stringify(
+        production ? 'production' : 'development'
       )
     })
   ];
@@ -65,7 +65,13 @@ module.exports = options => {
   const cacheDirectory = !production;
 
   return {
-    mode: production ? "production" : "development",
+    mode: production ? 'production' : 'development',
+    optimization: {
+      // https://webpack.js.org/configuration/optimization/
+      // Override production mode optimization for minification
+      // As it currently breakes the build, still rely on babel-minify-webpack-plugin instead
+      minimize: false
+    },
     entry: options.viewPath,
     output: {
       path: buildPath,
@@ -80,18 +86,18 @@ module.exports = options => {
           exclude: excludeRegex,
           use: [
             {
-              loader: require.resolve("babel-loader"),
+              loader: require.resolve('babel-loader'),
               options: {
                 cacheDirectory,
                 babelrc: false,
                 presets: [
                   [
-                    require.resolve("babel-preset-env"),
+                    require.resolve('babel-preset-env'),
                     { modules: false, loose: true }
                   ]
                 ],
                 plugins: [
-                  [require.resolve("babel-plugin-transform-object-rest-spread")]
+                  [require.resolve('babel-plugin-transform-object-rest-spread')]
                 ]
               }
             }
@@ -99,6 +105,8 @@ module.exports = options => {
         }
       ]
     },
-    plugins
+    plugins,
+    logger: options.logger || console,
+    stats: options.stats
   };
 };
