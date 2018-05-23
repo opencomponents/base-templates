@@ -209,7 +209,7 @@ export const data = (context, callback) => {
 }
 `;
 
-exports[`webpack compiler verbose 1`] = `"module.exports=function(e){function r(n){if(t[n])return t[n].exports;var o=t[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,r),o.l=!0,o.exports}var t={};return r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{configurable:!1,enumerable:!0,get:n})},r.r=function(e){Object.defineProperty(e,\\"__esModule\\",{value:!0})},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,\\"a\\",t),t},r.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},r.p=\\"\\",r(r.s=1)}([function(e){e.exports=require(\\"lodash\\")},function(e,r,t){\\"use strict\\";t.r(r),t.d(r,\\"data\\",function(){return n});t(0);const n=(e,r)=>r(null,{})}]);"`;
+exports[`webpack compiler verbose 1`] = `"module.exports=function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{configurable:!1,enumerable:!0,get:d})},b.r=function(a){Object.defineProperty(a,'__esModule',{value:!0})},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=1)}([function(a){a.exports=require('lodash')},function(a,b,c){'use strict';c.r(b),c.d(b,'data',function(){return e});const d=c(0),e=(a,b)=>b(null,{})}]);"`;
 
 exports[`webpack compiler with fatal error 1`] = `"This is a fatal compilation error"`;
 
@@ -257,6 +257,9 @@ Object {
         ],
       },
     ],
+  },
+  "optimization": Object {
+    "minimize": false,
   },
   "output": Object {
     "devtoolFallbackModuleFilenameTemplate": "[absolute-resource-path]?[hash]",
@@ -324,6 +327,9 @@ Object {
         ],
       },
     ],
+  },
+  "optimization": Object {
+    "minimize": false,
   },
   "output": Object {
     "devtoolFallbackModuleFilenameTemplate": "[absolute-resource-path]?[hash]",
