@@ -89,13 +89,6 @@ collectors:
     versions: "Y.Y.Y"
 
 - type: js-npm
-  path: packages/oc-webpack
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
-
-- type: js-npm
   path: packages/oc-hash-builder
   actors:
   # pull requests for updates to any version
