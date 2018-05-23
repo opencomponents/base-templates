@@ -1,23 +1,23 @@
-"use strict";
+'use strict';
 
-const async = require("async");
-const fs = require("fs-extra");
-const hashBuilder = require("oc-hash-builder");
-const path = require("path");
-const MemoryFS = require("memory-fs");
+const async = require('async');
+const fs = require('fs-extra');
+const hashBuilder = require('oc-hash-builder');
+const path = require('path');
+const MemoryFS = require('memory-fs');
 
 const {
   compiler,
   configurator: webpackConfigurator
-} = require("./lib/oc-webpack");
+} = require('./lib/oc-webpack');
 
 module.exports = (options, callback) => {
   const { componentPackage, production, publishPath } = options;
 
   const serverFileName = componentPackage.oc.files.data;
   const serverPath = path.join(options.componentPath, serverFileName);
-  const publishFileName = options.publishFileName || "server.js";
-  const stats = options.verbose ? "verbose" : "errors-only";
+  const publishFileName = options.publishFileName || 'server.js';
+  const stats = options.verbose ? 'verbose' : 'errors-only';
   const dependencies = componentPackage.dependencies || {};
 
   const config = webpackConfigurator({
@@ -32,17 +32,17 @@ module.exports = (options, callback) => {
     [
       next => compiler(config, next),
       (data, next) => {
-        const basePath = path.join(serverPath, "../build");
+        const basePath = path.join(serverPath, '../build');
         const getCompiled = fileName =>
-          new MemoryFS(data).readFileSync(`${basePath}/${fileName}`, "UTF8");
+          new MemoryFS(data).readFileSync(`${basePath}/${fileName}`, 'UTF8');
 
         return fs.ensureDir(publishPath, err => {
           if (err) return next(err);
-          const result = { "server.js": getCompiled("server.js") };
+          const result = { 'server.js': getCompiled('server.js') };
 
           if (!production) {
             try {
-              result["server.js.map"] = getCompiled("server.js.map");
+              result['server.js.map'] = getCompiled('server.js.map');
             } catch (e) {
               // skip sourcemap if it doesn't exist
             }
@@ -62,12 +62,12 @@ module.exports = (options, callback) => {
               err
                 ? null
                 : {
-                    type: "node.js",
-                    hashKey: hashBuilder.fromString(
-                      compiledFiles[publishFileName]
-                    ),
-                    src: publishFileName
-                  }
+                  type: 'node.js',
+                  hashKey: hashBuilder.fromString(
+                    compiledFiles[publishFileName]
+                  ),
+                  src: publishFileName
+                }
             )
         )
     ],
