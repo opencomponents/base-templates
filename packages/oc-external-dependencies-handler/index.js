@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /*
  * External Dependencies handler for webpack
@@ -8,13 +8,14 @@
  *
 */
 
-const coreModules = require('builtin-modules');
-const strings = require('oc-templates-messages');
-const _ = require('lodash');
+const coreModules = require("builtin-modules");
+const strings = require("oc-templates-messages");
+const _ = require("lodash");
 
-module.exports = dependencies => {
+module.exports = ({ dependencies, devDependencies }) => {
   const deps = dependencies || {};
 
+  console.log(devDependencies);
   const missingExternalDependency = (dep, dependencies) =>
     !_.includes(_.keys(dependencies), dep) && !_.includes(coreModules, dep);
 
@@ -27,7 +28,7 @@ module.exports = dependencies => {
         if (/\//g.test(dependencyName)) {
           dependencyName = dependencyName.substring(
             0,
-            dependencyName.indexOf('/')
+            dependencyName.indexOf("/")
           );
         }
         if (missingExternalDependency(dependencyName, deps)) {

@@ -25,6 +25,7 @@
     }
   },
   "devDependencies": {
+    "upper-case": "^1.1.3",
     "oc-template-es6-compiler": "file:../../packages/oc-template-es6-compiler"
   }
 }
