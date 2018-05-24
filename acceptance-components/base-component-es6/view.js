@@ -1,4 +1,4 @@
-import styles from "./styles.css";
+import styles from './styles.css';
 
 export default ({ name, staticPath, upperCasedName }) =>
   `<div id="base-component-es6" class=${styles.awesome}>

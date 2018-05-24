@@ -1,4 +1,4 @@
-const upperCase = require("upper-case");
+const upperCase = require('upper-case');
 
 export const data = (context, callback) => {
   const { name } = context.params;

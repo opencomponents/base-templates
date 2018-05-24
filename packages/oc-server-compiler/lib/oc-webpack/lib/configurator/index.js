@@ -1,32 +1,32 @@
 /*jshint camelcase:false */
-"use strict";
+'use strict';
 
-const MinifyPlugin = require("babel-minify-webpack-plugin");
-const externalDependenciesHandlers = require("oc-external-dependencies-handler");
-const path = require("path");
-const webpack = require("webpack");
+const MinifyPlugin = require('babel-minify-webpack-plugin');
+const externalDependenciesHandlers = require('oc-external-dependencies-handler');
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = function webpackConfigGenerator(options) {
   const production =
-    options.production !== undefined ? options.production : "true";
+    options.production !== undefined ? options.production : 'true';
 
   const sourceMaps = !production;
-  const devtool = sourceMaps ? "#source-map" : "";
+  const devtool = sourceMaps ? '#source-map' : '';
 
   const { dependencies, devDependencies } = options;
 
   const jsLoaders = [
     {
-      loader: require.resolve("babel-loader"),
+      loader: require.resolve('babel-loader'),
       options: {
         cacheDirectory: true,
         retainLines: true,
         sourceMaps,
-        sourceRoot: path.join(options.serverPath, ".."),
+        sourceRoot: path.join(options.serverPath, '..'),
         babelrc: false,
         presets: [
           [
-            require.resolve("babel-preset-env"),
+            require.resolve('babel-preset-env'),
             {
               modules: false,
               targets: {
@@ -36,7 +36,7 @@ module.exports = function webpackConfigGenerator(options) {
           ]
         ],
         plugins: [
-          [require.resolve("babel-plugin-transform-object-rest-spread")]
+          [require.resolve('babel-plugin-transform-object-rest-spread')]
         ]
       }
     }
@@ -44,21 +44,21 @@ module.exports = function webpackConfigGenerator(options) {
 
   const plugins = [
     new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify(
-        production ? "production" : "development"
+      'process.env.NODE_ENV': JSON.stringify(
+        production ? 'production' : 'development'
       )
     })
   ];
 
   if (production) {
     jsLoaders.unshift({
-      loader: require.resolve("infinite-loop-loader")
+      loader: require.resolve('infinite-loop-loader')
     });
     plugins.unshift(new MinifyPlugin());
   }
 
   return {
-    mode: production ? "production" : "development",
+    mode: production ? 'production' : 'development',
     optimization: {
       // https://webpack.js.org/configuration/optimization/
       // Override production mode optimization for minification
@@ -67,13 +67,13 @@ module.exports = function webpackConfigGenerator(options) {
     },
     devtool,
     entry: options.serverPath,
-    target: "node",
+    target: 'node',
     output: {
-      path: path.join(options.serverPath, "../build"),
+      path: path.join(options.serverPath, '../build'),
       filename: options.publishFileName,
-      libraryTarget: "commonjs2",
-      devtoolModuleFilenameTemplate: "[absolute-resource-path]",
-      devtoolFallbackModuleFilenameTemplate: "[absolute-resource-path]?[hash]"
+      libraryTarget: 'commonjs2',
+      devtoolModuleFilenameTemplate: '[absolute-resource-path]',
+      devtoolFallbackModuleFilenameTemplate: '[absolute-resource-path]?[hash]'
     },
     externals: externalDependenciesHandlers({ dependencies, devDependencies }),
     module: {
