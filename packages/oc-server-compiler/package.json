@@ -21,11 +21,17 @@
   },
   "license": "MIT",
   "dependencies": {
+    "babel-loader": "^7.1.2",
+    "babel-minify-webpack-plugin": "0.3.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "infinite-loop-loader": "1.0.6",
+    "oc-external-dependencies-handler": "1.0.6",
     "async": "^2.4.1",
     "fs-extra": "5.0.0",
     "memory-fs": "^0.4.1",
     "oc-hash-builder": "1.0.2",
-    "oc-webpack": "2.3.2"
+    "webpack":"^4.8.3"
   },
   "files": [
     "index.js",
