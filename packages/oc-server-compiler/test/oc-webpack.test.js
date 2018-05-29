@@ -4,9 +4,12 @@ jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
 
 const path = require('path');
 const api = require('../index.js');
-const webpackConfigurator = require('../lib/configurator');
-const webpackCompiler = require('../lib/compiler');
 const MemoryFS = require('memory-fs');
+
+const {
+  compiler: webpackCompiler,
+  configurator: webpackConfigurator
+} = require('../lib/oc-webpack');
 
 test('module APIs', () => {
   expect(api).toMatchSnapshot();
@@ -116,7 +119,7 @@ test('webpack compiler verbose', done => {
     const serverContentBundled = fs.readFileSync(dest, 'UTF8');
     const consoleOutput = loggerMock.log.mock.calls[0][0];
     expect(serverContentBundled).toMatchSnapshot();
-    expect(consoleOutput).toMatch(/Hash:(.*?)a0bae5720278532bc295/);
+    expect(consoleOutput).toMatch(/Hash:(.*?)18176142b4438edd492c/);
     expect(consoleOutput).toMatch(/Entrypoint(.*?)main(.*?)=(.*?)server.js/);
     expect(consoleOutput).toMatch(/external \"lodash\"/);
     done();
