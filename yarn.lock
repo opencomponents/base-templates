@@ -4224,20 +4224,20 @@ jest-docblock@^23.0.1:
   dependencies:
     detect-newline "^2.1.0"
 
+jest-environment-jsdom@23.0.1:
+  version "23.0.1"
+  resolved "https://registry.yarnpkg.com/jest-environment-jsdom/-/jest-environment-jsdom-23.0.1.tgz#da689eb9358dc16e5708abb208f4eb26a439575c"
+  dependencies:
+    jest-mock "^23.0.1"
+    jest-util "^23.0.1"
+    jsdom "^11.5.1"
+    
 jest-each@^23.0.1:
   version "23.0.1"
   resolved "https://registry.yarnpkg.com/jest-each/-/jest-each-23.0.1.tgz#a6e5dbf530afc6bf9d74792dde69d8db70f84706"
   dependencies:
     chalk "^2.0.1"
     pretty-format "^23.0.1"
-
-jest-environment-jsdom@23.0.0:
-  version "23.0.0"
-  resolved "https://registry.yarnpkg.com/jest-environment-jsdom/-/jest-environment-jsdom-23.0.0.tgz#57b0f0dd263359a86d7952a4b712b3fabca1a625"
-  dependencies:
-    jest-mock "^23.0.0"
-    jest-util "^23.0.0"
-    jsdom "^11.5.1"
 
 jest-environment-jsdom@^22.4.1:
   version "22.4.1"
