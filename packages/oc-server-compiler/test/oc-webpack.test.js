@@ -3,7 +3,7 @@ jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
 ('use strict');
 
 const path = require('path');
-const api = require('../index.js');
+const api = require('../lib/oc-webpack/index.js');
 const MemoryFS = require('memory-fs');
 
 const {
