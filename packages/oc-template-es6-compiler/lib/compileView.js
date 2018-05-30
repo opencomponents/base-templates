@@ -6,12 +6,14 @@ const hashBuilder = require('oc-hash-builder');
 const ocViewWrapper = require('oc-view-wrapper');
 const path = require('path');
 const strings = require('oc-templates-messages');
-const compiler = require('oc-webpack').compiler;
 const MemoryFS = require('memory-fs');
 const minifyFile = require('oc-minify-file');
 const viewTemplate = require('./viewTemplate');
-const webpackConfigurator = require('./to-abstract-base-template-utils/webpackConfigurator');
 const fontFamilyUnicodeParser = require('./to-abstract-base-template-utils/font-family-unicode-parser');
+const {
+  compiler,
+  configurator: webpackConfigurator
+} = require('./to-abstract-base-template-utils/oc-webpack');
 
 module.exports = (options, callback) => {
   const viewFileName = options.componentPackage.oc.files.template.src;

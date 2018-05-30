@@ -1,13 +1,13 @@
 'use strict';
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 const path = require('path');
-const webpack = require('oc-webpack').webpack;
+const webpack = require('webpack');
 
 const createExcludeRegex = require('./createExcludeRegex');
 
-module.exports = function webpackConfigGenerator(options) {
+module.exports = options => {
   const buildPath = options.buildPath || '/build';
   const production = options.production;
   const buildIncludes = options.buildIncludes.concat(
@@ -20,35 +20,34 @@ module.exports = function webpackConfigGenerator(options) {
 
   const cssLoader = {
     test: /\.css$/,
-    loader: ExtractTextPlugin.extract({
-      use: [
-        {
-          loader: require.resolve('css-loader'),
-          options: {
-            importLoaders: 1,
-            modules: true,
-            localIdentName,
-            camelCase: true
-          }
-        },
-        {
-          loader: require.resolve('postcss-loader'),
-          options: {
-            ident: 'postcss',
-            plugins: [
-              require('postcss-import'),
-              require('postcss-extend'),
-              require('postcss-icss-values'),
-              require('autoprefixer')
-            ]
-          }
+    use: [
+      MiniCssExtractPlugin.loader,
+      {
+        loader: require.resolve('css-loader'),
+        options: {
+          importLoaders: 1,
+          modules: true,
+          localIdentName,
+          camelCase: true
         }
-      ]
-    })
+      },
+      {
+        loader: require.resolve('postcss-loader'),
+        options: {
+          ident: 'postcss',
+          plugins: [
+            require('postcss-import'),
+            require('postcss-extend'),
+            require('postcss-icss-values'),
+            require('autoprefixer')
+          ]
+        }
+      }
+    ]
   };
 
   let plugins = [
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: '[name].css',
       allChunks: true
     }),
@@ -65,6 +64,13 @@ module.exports = function webpackConfigGenerator(options) {
   const cacheDirectory = !production;
 
   return {
+    mode: production ? 'production' : 'development',
+    optimization: {
+      // https://webpack.js.org/configuration/optimization/
+      // Override production mode optimization for minification
+      // As it currently breakes the build, still rely on babel-minify-webpack-plugin instead
+      minimize: false
+    },
     entry: options.viewPath,
     output: {
       path: buildPath,
@@ -98,6 +104,8 @@ module.exports = function webpackConfigGenerator(options) {
         }
       ]
     },
-    plugins
+    plugins,
+    logger: options.logger || console,
+    stats: options.stats
   };
 };

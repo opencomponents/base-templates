@@ -1,12 +1,15 @@
 'use strict';
 
 const async = require('async');
-const compiler = require('oc-webpack').compiler;
 const fs = require('fs-extra');
 const hashBuilder = require('oc-hash-builder');
 const path = require('path');
-const webpackConfigurator = require('oc-webpack').configurator;
 const MemoryFS = require('memory-fs');
+
+const {
+  compiler,
+  configurator: webpackConfigurator
+} = require('./lib/oc-webpack');
 
 module.exports = (options, callback) => {
   const { componentPackage, production, publishPath } = options;
