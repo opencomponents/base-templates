@@ -4393,12 +4393,12 @@ jest-each@^23.0.1:
     chalk "^2.0.1"
     pretty-format "^23.0.1"
 
-jest-environment-jsdom@23.0.1, jest-environment-jsdom@^23.0.1:
-  version "23.0.1"
-  resolved "https://registry.yarnpkg.com/jest-environment-jsdom/-/jest-environment-jsdom-23.0.1.tgz#da689eb9358dc16e5708abb208f4eb26a439575c"
+jest-environment-jsdom@23.1.0:
+  version "23.1.0"
+  resolved "https://registry.yarnpkg.com/jest-environment-jsdom/-/jest-environment-jsdom-23.1.0.tgz#85929914e23bed3577dac9755f4106d0697c479c"
   dependencies:
-    jest-mock "^23.0.1"
-    jest-util "^23.0.1"
+    jest-mock "^23.1.0"
+    jest-util "^23.1.0"
     jsdom "^11.5.1"
 
 jest-environment-jsdom@^22.4.1:
@@ -4407,6 +4407,14 @@ jest-environment-jsdom@^22.4.1:
   dependencies:
     jest-mock "^22.4.3"
     jest-util "^22.4.3"
+    jsdom "^11.5.1"
+
+jest-environment-jsdom@^23.0.1:
+  version "23.0.1"
+  resolved "https://registry.yarnpkg.com/jest-environment-jsdom/-/jest-environment-jsdom-23.0.1.tgz#da689eb9358dc16e5708abb208f4eb26a439575c"
+  dependencies:
+    jest-mock "^23.0.1"
+    jest-util "^23.0.1"
     jsdom "^11.5.1"
 
 jest-environment-node@^22.4.1:
@@ -4513,6 +4521,16 @@ jest-message-util@^23.0.0:
     slash "^1.0.0"
     stack-utils "^1.0.1"
 
+jest-message-util@^23.1.0:
+  version "23.1.0"
+  resolved "https://registry.yarnpkg.com/jest-message-util/-/jest-message-util-23.1.0.tgz#9a809ba487ecac5ce511d4e698ee3b5ee2461ea9"
+  dependencies:
+    "@babel/code-frame" "^7.0.0-beta.35"
+    chalk "^2.0.1"
+    micromatch "^2.3.11"
+    slash "^1.0.0"
+    stack-utils "^1.0.1"
+
 jest-mock@^22.4.3:
   version "22.4.3"
   resolved "https://registry.yarnpkg.com/jest-mock/-/jest-mock-22.4.3.tgz#f63ba2f07a1511772cdc7979733397df770aabc7"
@@ -4520,6 +4538,10 @@ jest-mock@^22.4.3:
 jest-mock@^23.0.1:
   version "23.0.1"
   resolved "https://registry.yarnpkg.com/jest-mock/-/jest-mock-23.0.1.tgz#1569f477968c668fc728273a17c3767773b46357"
+
+jest-mock@^23.1.0:
+  version "23.1.0"
+  resolved "https://registry.yarnpkg.com/jest-mock/-/jest-mock-23.1.0.tgz#a381c31b121ab1f60c462a2dadb7b86dcccac487"
 
 jest-regex-util@^22.1.0, jest-regex-util@^22.4.3:
   version "22.4.3"
@@ -4643,6 +4665,19 @@ jest-util@^23.0.1:
     is-ci "^1.0.10"
     jest-message-util "^23.0.0"
     mkdirp "^0.5.1"
+    source-map "^0.6.0"
+
+jest-util@^23.1.0:
+  version "23.1.0"
+  resolved "https://registry.yarnpkg.com/jest-util/-/jest-util-23.1.0.tgz#c0251baf34644c6dd2fea78a962f4263ac55772d"
+  dependencies:
+    callsites "^2.0.0"
+    chalk "^2.0.1"
+    graceful-fs "^4.1.11"
+    is-ci "^1.0.10"
+    jest-message-util "^23.1.0"
+    mkdirp "^0.5.1"
+    slash "^1.0.0"
     source-map "^0.6.0"
 
 jest-validate@^22.4.0, jest-validate@^22.4.4:
@@ -5841,7 +5876,7 @@ oc-storage-adapters-utils@1.0.2:
   resolved "https://registry.yarnpkg.com/oc-storage-adapters-utils/-/oc-storage-adapters-utils-1.0.2.tgz#dc0099201fbb2966b7bcb2dcb53f4912d3f94a2a"
 
 "oc-template-es6-compiler@file:packages/oc-template-es6-compiler":
-  version "1.1.1"
+  version "1.1.2"
   dependencies:
     async "^2.4.1"
     autoprefixer "^7.2.5"
