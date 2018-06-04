@@ -65,7 +65,7 @@ exports[`server-side-side rendering 1`] = `
             <title>A page</title>
           </head>
           <body>
-            <oc-component href=\\"http://localhost:3000/base-component-es6?name=SuperMario\\" data-hash=\\"5d43f87b712b8e3c811925901e4449d91447fa91\\" data-name=\\"base-component-es6\\" data-rendered=\\"true\\" data-version=\\"6.6.6\\"><div id=\\"base-component-es6\\" class=\\"awesome__2cThMnJY\\">
+            <oc-component href=\\"http://localhost:3000/base-component-es6?name=SuperMario\\" data-name=\\"base-component-es6\\" data-rendered=\\"true\\" data-version=\\"6.6.6\\"><div id=\\"base-component-es6\\" class=\\"awesome__2cThMnJY\\">
  Hello SUPERMARIO!
  <img src=\\"http://localhost:3000/base-component-es6/6.6.6/static/img/logo.png\\">
  </div><style>.awesome__2cThMnJY{font-family:\\"Hiragino Sans\\",\\"ヒラギノ角ゴシック\\",\\"Hiragino Kaku Gothic ProN\\",\\"ヒラギノ角ゴ ProN W3\\",Roboto,\\"Droid Sans\\",\\"游ゴシック\\",YuGothic,\\"メイリオ\\",Meiryo,sans-serif;background:#db7093}</style><script>window.oc = window.oc || {};oc.cmd = oc.cmd || [];oc.cmd.push(function(oc){oc.events.fire('oc:cssDidMount', '.awesome__2cThMnJY{font-family:\\"Hiragino Sans\\",\\"ヒラギノ角ゴシック\\",\\"Hiragino Kaku Gothic ProN\\",\\"ヒラギノ角ゴ ProN W3\\",Roboto,\\"Droid Sans\\",\\"游ゴシック\\",YuGothic,\\"メイリオ\\",Meiryo,sans-serif;background:#db7093}');});</script><script>window.oc=window.oc||{};oc.renderedComponents=oc.renderedComponents||{};oc.renderedComponents[\\"base-component-es6\\"]=\\"6.6.6\\";</script></oc-component>
