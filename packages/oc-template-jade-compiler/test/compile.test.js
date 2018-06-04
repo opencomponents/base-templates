@@ -26,6 +26,8 @@ test('Should correctly compile the oc component', done => {
     const version = res.oc.files.template.version;
     res.oc.files.template.version = '';
     res.oc.date = '';
+    res.oc.files.dataProvider.hashKey = 'dummyData';
+    res.oc.files.template.hashKey = 'dummyData';
     expect(res).toMatchSnapshot();
     expect(version).toBe(getInfo().version);
     nodeDir.paths(publishPath, (err, res) => {

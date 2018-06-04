@@ -26,9 +26,13 @@ const options = {
 
 test('Should correctly compile the view', done => {
   compileView(options, (err, compiledViewInfo) => {
+    const viewHashKey = compiledViewInfo.template.hashKey;
+    compiledViewInfo.template.hashKey = 'dummyData';
     expect(compiledViewInfo).toMatchSnapshot();
     expect(
-      fs.readFileSync(path.join(publishPath, publishFileName), 'UTF8')
+      fs
+        .readFileSync(path.join(publishPath, publishFileName), 'UTF8')
+        .replace(viewHashKey, 'dummyData')
     ).toMatchSnapshot();
     fs.removeSync(path.join(publishPath, publishFileName));
     done();
