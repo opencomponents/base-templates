@@ -3,14 +3,14 @@
 exports[`Should correctly compile the view 1`] = `
 Object {
   "template": Object {
-    "hashKey": "2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e",
+    "hashKey": "dummyData",
     "src": "template.js",
     "type": "handlebars",
   },
 }
 `;
 
-exports[`Should correctly compile the view 2`] = `"var oc=oc||{};oc.components=oc.components||{},oc.components[\\"2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e\\"]={compiler:[7,\\">= 4.0.0\\"],main:function(c,o,e,n,a){return\\"<h1>Hello handlebars!</h1>\\"},useData:!0};"`;
+exports[`Should correctly compile the view 2`] = `"var oc=oc||{};oc.components=oc.components||{},oc.components[\\"dummyData\\"]={compiler:[7,\\">= 4.0.0\\"],main:function(c,o,e,n,a){return\\"<h1>Hello handlebars!</h1>\\"},useData:!0};"`;
 
 exports[`When compiled view writing fails should return error 1`] = `"template.hbs compilation failed - sorry I failed"`;
 

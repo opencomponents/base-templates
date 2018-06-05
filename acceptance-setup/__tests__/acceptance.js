@@ -115,7 +115,13 @@ test('Registry should correctly serve rendered components', done => {
   const rendered = components.map(component =>
     r(registryUrl + `${component.name}/?name=SuperMario`)
       .then(body => {
-        const bodyVersionless = body.replace(semverRegex, '6.6.6');
+        const bodyVersionless = body
+          .replace(semverRegex, '6.6.6')
+          .replace(/data-hash=\\\".*?\\\"/, '')
+          .replace(
+            /\[\\\"oc\\\",.*?\\\"reactComponents\\\",.*?\\\".*?\\\"\]/,
+            '["oc", "reactComponents", "dummyContent"]'
+          );
         return Promise.resolve(bodyVersionless);
       })
       .catch(err => Promise.reject(err))
@@ -137,7 +143,9 @@ test('Registry should correctly serve unrendered components', done => {
       }
     })
       .then(body => {
-        const bodyVersionless = body.replace(semverRegex, '6.6.6');
+        const bodyVersionless = body
+          .replace(semverRegex, '6.6.6')
+          .replace(/\"key\":\".*?\"/g, '');
         return Promise.resolve(bodyVersionless);
       })
       .catch(err => Promise.reject(err))
