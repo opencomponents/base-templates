@@ -11,7 +11,7 @@ Object {
     "date": "",
     "files": Object {
       "dataProvider": Object {
-        "hashKey": "2163eacc0b7f81122e2e233993fb72bfdda3f52c",
+        "hashKey": "dummyData",
         "src": "server.js",
         "type": "node.js",
       },
@@ -19,7 +19,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e",
+        "hashKey": "dummyData",
         "src": "template.js",
         "type": "handlebars",
         "version": "",
@@ -56,7 +56,7 @@ Object {
     "date": "",
     "files": Object {
       "dataProvider": Object {
-        "hashKey": "32ac5f920df51917cd9adfa7d3b6ab248aac43b2",
+        "hashKey": "dummyData",
         "src": "server.js",
         "type": "node.js",
       },
@@ -64,7 +64,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e",
+        "hashKey": "dummyData",
         "src": "template.js",
         "type": "handlebars",
         "version": "",
@@ -100,13 +100,13 @@ Object {
     "date": "",
     "files": Object {
       "dataProvider": Object {
-        "hashKey": "32ac5f920df51917cd9adfa7d3b6ab248aac43b2",
+        "hashKey": "dummyData",
         "src": "server.js",
         "type": "node.js",
       },
       "static": Array [],
       "template": Object {
-        "hashKey": "2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e",
+        "hashKey": "dummyData",
         "src": "template.js",
         "type": "handlebars",
         "version": "",
@@ -142,7 +142,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e",
+        "hashKey": "dummyData",
         "src": "template.js",
         "type": "handlebars",
         "version": "",
@@ -177,7 +177,7 @@ Object {
     "date": "",
     "files": Object {
       "dataProvider": Object {
-        "hashKey": "32ac5f920df51917cd9adfa7d3b6ab248aac43b2",
+        "hashKey": "dummyData",
         "src": "server.js",
         "type": "node.js",
       },
@@ -185,7 +185,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "2112a7cce970d8e5eb8a60c5ada1c4d822b22b0e",
+        "hashKey": "dummyData",
         "src": "template.js",
         "type": "handlebars",
         "version": "",

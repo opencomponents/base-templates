@@ -23,6 +23,7 @@ const options = {
 test('Should correctly compile the server', done => {
   compileServer(options, (err, compiledServerInfo) => {
     expect(err).toBeNull();
+    compiledServerInfo.hashKey = 'dummyHashData';
     expect(compiledServerInfo).toMatchSnapshot();
     expect(
       fs.readFileSync(path.join(publishPath, publishFileName), 'UTF8')
