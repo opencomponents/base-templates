@@ -1,7 +1,7 @@
 {
   "private": true,
   "devDependencies": {
-    "codecov": "3.0.2",
+    "codecov": "3.0.3",
     "husky": "0.14.3",
     "jest": "23.1.0",
     "jest-environment-jsdom": "23.1.0",
