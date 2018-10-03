@@ -2,10 +2,10 @@
   "private": true,
   "devDependencies": {
     "codecov": "3.1.0",
-    "husky": "0.14.3",
+    "husky": "1.1.0",
     "jest": "23.4.2",
     "jest-environment-jsdom": "23.4.0",
-    "lerna": "2.11.0",
+    "lerna": "3.4.0",
     "lint-staged": "7.2.0",
     "node-dir": "0.1.17",
     "oc": "^0.44.12",
