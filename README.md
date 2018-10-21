@@ -3,7 +3,7 @@ base-templates
 
 Base-templates & utilties for the [OpenComponents](https://github.com/opentable/oc) template system
 
-[![CircleCI](https://circleci.com/gh/opencomponents/base-templates.svg?style=shield)](https://circleci.com/gh/opencomponents/base-templates)
+[![travis](https://travis-ci.org/opencomponents/base-templates.svg?branch=master)](https://travis-ci.org/opencomponents/base-templates)
 [![codecov](https://codecov.io/gh/opencomponents/base-templates/branch/master/graph/badge.svg)](https://codecov.io/gh/opencomponents/base-templates)
 
 
