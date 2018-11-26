@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Return compiled template when valid 1`] = `"function (e){var a,n=[],o=e||{};return function(e,o){n.push(\\"<span>hi \\"+jade.escape(null==(a=e)?\\"\\":a)+\\" \\"+jade.escape(null==(a=o)?\\"\\":a)+\\"  </span>\\")}.call(this,\\"firstName\\"in o?o.firstName:\\"undefined\\"!=typeof firstName?firstName:void 0,\\"lastName\\"in o?o.lastName:\\"undefined\\"!=typeof lastName?lastName:void 0),n.join(\\"\\")}"`;
+exports[`Return compiled template when valid 1`] = `"function(e){var a,n=[],o=e||{};return function(e,o){n.push(\\"<span>hi \\"+jade.escape(null==(a=e)?\\"\\":a)+\\" \\"+jade.escape(null==(a=o)?\\"\\":a)+\\"  </span>\\")}.call(this,\\"firstName\\"in o?o.firstName:\\"undefined\\"!=typeof firstName?firstName:void 0,\\"lastName\\"in o?o.lastName:\\"undefined\\"!=typeof lastName?lastName:void 0),n.join(\\"\\")}"`;
 
 exports[`Throw exception when not valid 1`] = `"Unexpected token )"`;
