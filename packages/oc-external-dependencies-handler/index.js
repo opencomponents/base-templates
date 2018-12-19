@@ -6,7 +6,7 @@
  * bundled by webPack but instead remain requested by the resulting bundle.
  * For more info http://webpack.github.io/docs/configuration.html#externals
  *
-*/
+ */
 
 const coreModules = require('builtin-modules');
 const strings = require('oc-templates-messages');
@@ -24,7 +24,7 @@ module.exports = dependencies => {
     (context, req, callback) => {
       if (matcher.test(req)) {
         let dependencyName = req;
-        if (/\//g.test(dependencyName)) {
+        if (/^(?!@).*\//g.test(dependencyName)) {
           dependencyName = dependencyName.substring(
             0,
             dependencyName.indexOf('/')
