@@ -19,7 +19,7 @@ exports[`client-side-side rendering 1`] = `
   
   
   <img
-    src="http://localhost:3000/base-component-handlebars/1.0.3/static/img/logo.png"
+    src="http://localhost:3000/base-component-handlebars/1.0.4/static/img/logo.png"
   />
   
   
@@ -36,7 +36,7 @@ exports[`client-side-side rendering 2`] = `
   id="base-component-jade"
 >
   <img
-    src="http://localhost:3000/base-component-jade/1.0.3/static/img/logo.png"
+    src="http://localhost:3000/base-component-jade/1.0.4/static/img/logo.png"
   />
   <div>
     Hello SuperMario
@@ -53,7 +53,7 @@ exports[`client-side-side rendering 3`] = `
  Hello SUPERMARIO!
  
   <img
-    src="http://localhost:3000/base-component-es6/1.0.1/static/img/logo.png"
+    src="http://localhost:3000/base-component-es6/1.0.2/static/img/logo.png"
   />
   
  
