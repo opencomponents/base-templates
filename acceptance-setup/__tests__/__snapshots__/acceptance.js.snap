@@ -13,51 +13,19 @@ exports[`Registry should correctly serve unrendered components 2`] = `"{\\"type\
 exports[`Registry should correctly serve unrendered components 3`] = `"{\\"type\\":\\"oc-component-local\\",\\"version\\":\\"6.6.6\\",\\"requestVersion\\":\\"\\",\\"name\\":\\"base-component-es6\\",\\"renderMode\\":\\"unrendered\\",\\"href\\":\\"http://localhost:3000/base-component-es6?name=SuperMario\\",\\"data\\":{\\"name\\":\\"SuperMario\\",\\"staticPath\\":\\"http://localhost:3000/base-component-es6/6.6.6/static/\\"},\\"template\\":{\\"src\\":\\"http://localhost:3000/base-component-es6/6.6.6/static/template.js\\",\\"type\\":\\"oc-template-es6\\",}}"`;
 
 exports[`client-side-side rendering 1`] = `
-<div
-  id="base-component-handlebars"
->
-  
-  
-  <img
-    src="http://localhost:3000/base-component-handlebars/1.0.4/static/img/logo.png"
-  />
-  
-  
-  <div>
-    Hello SuperMario
-  </div>
-  
-
-</div>
+"<div id=\\"base-component-handlebars\\">
+  <img src=\\"http://localhost:3000/base-component-handlebars/6.6.6/static/img/logo.png\\">
+  <div>Hello SuperMario</div>
+</div>"
 `;
 
-exports[`client-side-side rendering 2`] = `
-<div
-  id="base-component-jade"
->
-  <img
-    src="http://localhost:3000/base-component-jade/1.0.4/static/img/logo.png"
-  />
-  <div>
-    Hello SuperMario
-  </div>
-</div>
-`;
+exports[`client-side-side rendering 2`] = `"<div id=\\"base-component-jade\\"><img src=\\"http://localhost:3000/base-component-jade/6.6.6/static/img/logo.png\\"><div>Hello SuperMario</div></div>"`;
 
 exports[`client-side-side rendering 3`] = `
-<div
-  class="awesome__2cThMnJY"
-  id="base-component-es6"
->
-  
+"<div id=\\"base-component-es6\\" class=\\"awesome__2cThMnJY\\">
  Hello SUPERMARIO!
- 
-  <img
-    src="http://localhost:3000/base-component-es6/1.0.2/static/img/logo.png"
-  />
-  
- 
-</div>
+ <img src=\\"http://localhost:3000/base-component-es6/6.6.6/static/img/logo.png\\">
+ </div>"
 `;
 
 exports[`server-side-side rendering 1`] = `

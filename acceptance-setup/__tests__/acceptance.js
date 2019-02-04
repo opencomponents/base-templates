@@ -180,7 +180,11 @@ test('client-side-side rendering', done => {
           new Promise(resolve => {
             setTimeout(() => {
               const node = dom.window.document.getElementById(component.name);
-              return resolve(node);
+              const nodeVersionless = node.outerHTML.replace(
+                semverRegex,
+                '6.6.6'
+              );
+              return resolve(nodeVersionless);
             }, 5000);
           })
       )
