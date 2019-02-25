@@ -20,7 +20,7 @@
     "publish": "lerna publish --exact",
     "test": "jest",
     "updated": "lerna updated",
-    "setup": "yarn --production=false && lerna bootstrap"
+    "setup": "yarn --production=false --ignore-engines && lerna bootstrap"
   },
   "lint-staged": {
     "*.js": [
