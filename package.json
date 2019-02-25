@@ -8,7 +8,7 @@
     "lerna": "3.13.0",
     "lint-staged": "8.1.4",
     "node-dir": "0.1.17",
-    "oc": "0.45.2",
+    "oc": "0.45.4",
     "prettier-eslint-cli": "^4.7.1"
   },
   "scripts": {
@@ -20,7 +20,7 @@
     "publish": "lerna publish --exact",
     "test": "jest",
     "updated": "lerna updated",
-    "setup": "yarn --production=false && lerna bootstrap"
+    "setup": "yarn --production=false --ignore-engines && lerna bootstrap"
   },
   "lint-staged": {
     "*.js": [
