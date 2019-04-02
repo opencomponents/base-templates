@@ -1,145 +1,145 @@
-collectors:
+version: 2
+dependencies:
 
-- type: js-npm
-  path: /
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
+  - type: js
+    path: /
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
 
-- type: js-npm
-  path: packages/oc-minify-file
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
+  - type: js
+    path: acceptance-setup
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
 
-- type: js-npm
-  path: packages/oc-template-handlebars
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    dependencies_not_matching: "^(handlebars)$"
-    versions: "Y.Y.Y"
-  # pull request to update externals
-  - type: find-replace
-    dependencies: "^(handlebars)$"
-    versions: "Y.Y.Y"
+  - type: js
+    path: packages/infinite-loop-loader
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
+
+  - type: js
+    path: packages/oc-empty-response-handler
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
+
+  - type: js
+    path: packages/oc-external-dependencies-handler
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
+
+  - type: js
+    path: packages/oc-generic-template-compiler
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
+
+  - type: js
+    path: packages/oc-generic-template-renderer
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
+
+  - type: js
+    path: packages/oc-get-unix-utc-timestamp
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
+
+  - type: js
+    path: packages/oc-hash-builder
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
+
+  - type: js
+    path: packages/oc-minify-file
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
+
+  - type: js
+    path: packages/oc-server-compiler
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
+
+  - type: js
+    path: packages/oc-statics-compiler
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
+
+  - type: js
+    path: packages/oc-template-es6
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
+
+  - type: js
+    path: packages/oc-template-es6-compiler
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
+
+  - type: js
+    path: packages/oc-template-handlebars
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
     settings:
-      paths:
-      - packages/oc-template-handlebars/package.json
-      patterns:
-      - 'https://unpkg.com/{name}@{version_clean}/'
-      - '"{name}": "{version_clean}",'
+      before_commit:
+      - "node dependencies"
 
-- type: js-npm
-  path: packages/oc-template-jade-compiler
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
+  - type: js
+    path: packages/oc-template-handlebars-compiler
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
 
-- type: js-npm
-  path: packages/oc-templates-messages
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
+  - type: js
+    path: packages/oc-template-jade
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
 
-- type: js-npm
-  path: packages/oc-external-dependencies-handler
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
+  - type: js
+    path: packages/oc-template-jade-compiler
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
 
-- type: js-npm
-  path: packages/oc-view-wrapper
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
+  - type: js
+    path: packages/oc-templates-messages
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
 
-- type: js-npm
-  path: packages/oc-template-handlebars-compiler
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
-
-- type: js-npm
-  path: packages/oc-statics-compiler
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
-
-- type: js-npm
-  path: packages/oc-server-compiler
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
-
-- type: js-npm
-  path: packages/oc-generic-template-renderer
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
-
-- type: js-npm
-  path: packages/oc-hash-builder
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
-
-- type: js-npm
-  path: packages/oc-generic-template-compiler
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
-
-- type: js-npm
-  path: packages/oc-get-unix-utc-timestamp
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
-
-- type: js-npm
-  path: packages/oc-template-jade
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
-
-- type: js-npm
-  path: packages/infinite-loop-loader
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
-
-- type: js-npm
-  path: packages/oc-template-es6
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
-
-- type: js-npm
-  path: packages/oc-template-es6-compiler
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
-
-- type: js-npm
-  path: acceptance-setup
-  actors:
-  # pull requests for updates to any version
-  - type: js-npm
-    versions: "Y.Y.Y"
+  - type: js
+    path: packages/oc-view-wrapper
+    manifest_updates:
+      filters:
+      - name: ".*"
+        versions: "Y.Y.Y"
