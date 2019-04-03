@@ -21,7 +21,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "fs-extra": "5.0.0",
+    "fs-extra": "7.0.1",
     "jade-legacy": "1.11.1",
     "jstransformer-clean-css": "^2.0.0",
     "jstransformer-uglify-css": "^1.0.0",
@@ -33,7 +33,7 @@
     "oc-template-jade": "6.0.13",
     "oc-templates-messages": "1.0.2",
     "oc-view-wrapper": "1.0.3",
-    "uglify-js": "3.3.10"
+    "uglify-js": "3.5.3"
   },
   "files": [
     "index.js",
