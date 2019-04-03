@@ -31,7 +31,7 @@
     "fs-extra": "5.0.0",
     "infinite-loop-loader": "^1.0.3",
     "memory-fs": "^0.4.1",
-    "mini-css-extract-plugin": "0.4.0",
+    "mini-css-extract-plugin": "0.5.0",
     "oc-generic-template-compiler": "2.0.4",
     "oc-hash-builder": "1.0.2",
     "oc-minify-file": "1.0.14",
