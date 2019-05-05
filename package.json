@@ -4,7 +4,7 @@
     "codecov": "3.3.0",
     "husky": "2.1.0",
     "jest": "24.7.1",
-    "jest-environment-jsdom": "24.7.1",
+    "jest-environment-jsdom": "24.8.0",
     "lerna": "3.13.4",
     "lint-staged": "8.1.5",
     "node-dir": "0.1.17",
