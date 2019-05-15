@@ -5,7 +5,7 @@
     "husky": "2.1.0",
     "jest": "24.7.1",
     "jest-environment-jsdom": "24.7.1",
-    "lerna": "3.13.4",
+    "lerna": "3.14.0",
     "lint-staged": "8.1.5",
     "node-dir": "0.1.17",
     "oc": "0.47.0",
