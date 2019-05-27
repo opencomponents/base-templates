@@ -1,6 +1,6 @@
 {
   "name": "oc-server-compiler",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "description": "OC-Server-Compiler",
   "main": "index.js",
   "repository": {
@@ -30,7 +30,7 @@
     "fs-extra": "8.0.1",
     "infinite-loop-loader": "1.0.6",
     "memory-fs": "^0.4.1",
-    "oc-external-dependencies-handler": "1.0.7",
+    "oc-external-dependencies-handler": "1.0.8",
     "oc-hash-builder": "1.0.2",
     "webpack": "^4.8.3"
   },
