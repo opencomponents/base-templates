@@ -3,7 +3,7 @@
   "devDependencies": {
     "codecov": "3.5.0",
     "husky": "2.1.0",
-    "jest": "24.7.1",
+    "jest": "24.8.0",
     "jest-environment-jsdom": "24.7.1",
     "lerna": "3.13.4",
     "lint-staged": "8.1.7",
