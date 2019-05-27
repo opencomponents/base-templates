@@ -33,7 +33,7 @@
   "externals": {
     "jade": {
       "global": "jade",
-      "url": "https://unpkg.com/jade-legacy@1.11.1/runtime.js"
+      "url": "https://unpkg.com/oc-jade-legacy@1.11.1/runtime.js"
     }
   }
 }
