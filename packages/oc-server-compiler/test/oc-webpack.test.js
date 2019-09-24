@@ -91,6 +91,7 @@ test('webpack compiler', done => {
     const sourceMapContentBundled = fs.readFileSync(sourceMapDest, 'UTF8');
     const sourceMapJson = JSON.parse(sourceMapContentBundled);
     sourceMapJson.sources[1] = '/path/to/component/server.js';
+    sourceMapJson.mappings = 'dummy';
     expect(sourceMapJson).toMatchSnapshot();
     done();
   });
