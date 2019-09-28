@@ -8,7 +8,7 @@
     "lerna": "3.16.4",
     "lint-staged": "9.4.0",
     "node-dir": "0.1.17",
-    "oc": "0.48.1",
+    "oc": "0.48.3",
     "prettier-eslint-cli": "5.0.0"
   },
   "scripts": {
