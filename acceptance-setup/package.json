@@ -1,7 +1,7 @@
 {
   "name": "acceptance-setup",
   "private": true,
-  "version": "0.0.12",
+  "version": "0.0.13",
   "devDependencies": {
     "fs-extra": "8.1.0",
     "request": "^2.83.0",

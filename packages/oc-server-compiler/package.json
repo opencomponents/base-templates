@@ -1,6 +1,6 @@
 {
   "name": "oc-server-compiler",
-  "version": "2.1.7",
+  "version": "2.1.8",
   "description": "OC-Server-Compiler",
   "main": "index.js",
   "repository": {
