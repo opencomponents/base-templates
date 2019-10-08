@@ -30,7 +30,7 @@
     "css-loader": "^0.28.5",
     "fs-extra": "8.1.0",
     "infinite-loop-loader": "^1.0.3",
-    "memory-fs": "^0.4.1",
+    "memory-fs": "0.5.0",
     "mini-css-extract-plugin": "0.8.0",
     "oc-generic-template-compiler": "2.0.6",
     "oc-hash-builder": "1.0.2",
