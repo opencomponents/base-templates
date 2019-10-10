@@ -1,6 +1,6 @@
 {
   "name": "oc-template-handlebars",
-  "version": "6.0.16",
+  "version": "6.0.17",
   "description": "OC-Template-Handlebars",
   "main": "index.js",
   "repository": {
