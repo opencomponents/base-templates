@@ -23,7 +23,7 @@
   "dependencies": {
     "async": "^2.4.1",
     "fs-extra": "8.1.0",
-    "handlebars": "4.1.2",
+    "handlebars": "4.7.2",
     "oc-generic-template-compiler": "2.0.6",
     "oc-hash-builder": "1.0.2",
     "oc-server-compiler": "2.1.8",
