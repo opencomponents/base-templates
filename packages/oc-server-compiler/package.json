@@ -32,7 +32,7 @@
     "memory-fs": "^0.4.1",
     "oc-external-dependencies-handler": "1.0.8",
     "oc-hash-builder": "1.0.2",
-    "webpack": "^4.8.3"
+    "webpack": "^4.43.0"
   },
   "files": [
     "lib/**/*",
