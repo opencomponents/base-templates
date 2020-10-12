@@ -21,7 +21,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "handlebars": "4.1.2",
+    "handlebars": "4.7.6",
     "nice-cache": "0.0.5",
     "oc-generic-template-renderer": "2.0.4",
     "oc-templates-messages": "1.0.2"
@@ -35,7 +35,7 @@
   "externals": {
     "handlebars": {
       "global": "Handlebars",
-      "url": "https://unpkg.com/handlebars@4.7.2/dist/handlebars.runtime.min.js"
+      "url": "https://unpkg.com/handlebars@4.7.6/dist/handlebars.runtime.min.js"
     }
   }
 }
