@@ -10,7 +10,7 @@ Object {
 }
 `;
 
-exports[`Should correctly compile the view 2`] = `"var oc=oc||{};oc.components=oc.components||{},oc.components[\\"dummyData\\"]={compiler:[7,\\">= 4.0.0\\"],main:function(c,o,e,n,a){return\\"<h1>Hello handlebars!</h1>\\"},useData:!0};"`;
+exports[`Should correctly compile the view 2`] = `"var oc=oc||{};oc.components=oc.components||{},oc.components[\\"dummyData\\"]={compiler:[8,\\">= 4.3.0\\"],main:function(c,o,e,n,a){return\\"<h1>Hello handlebars!</h1>\\"},useData:!0};"`;
 
 exports[`When compiled view writing fails should return error 1`] = `"template.hbs compilation failed - sorry I failed"`;
 
