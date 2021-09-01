@@ -6,7 +6,7 @@ Object {
     Object {
       "global": "Handlebars",
       "name": "handlebars",
-      "url": "https://unpkg.com/handlebars@4.7.2/dist/handlebars.runtime.min.js",
+      "url": "https://unpkg.com/handlebars@6.6.6/dist/handlebars.runtime.min.js",
     },
   ],
   "type": "oc-template-handlebars",
