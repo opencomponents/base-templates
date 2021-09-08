@@ -3,6 +3,7 @@
   "version": "1.0.16",
   "description": "Minify file helper",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/opencomponents/base-templates.git"

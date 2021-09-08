@@ -3,6 +3,7 @@
   "version": "1.0.8",
   "description": "External dependencies handler for webpack",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/opencomponents/base-templates.git"
@@ -29,5 +30,8 @@
     "builtin-modules": "3.1.0",
     "lodash": "^4.17.4",
     "oc-templates-messages": "1.0.2"
+  },
+  "devDependencies": {
+    "webpack": "^5.52.0"
   }
 }
