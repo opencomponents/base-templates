@@ -1,6 +1,6 @@
 {
   "name": "oc-statics-compiler",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "description": "OC-Statics-Compiler",
   "main": "index.js",
   "repository": {
@@ -24,8 +24,8 @@
     "fs-extra": "7.0.1",
     "lodash": "^4.17.4",
     "node-dir": "0.1.17",
-    "oc-minify-file": "1.0.16",
-    "oc-templates-messages": "1.0.2"
+    "oc-minify-file": "1.0.17",
+    "oc-templates-messages": "1.0.3"
   },
   "license": "MIT",
   "files": [

@@ -1,6 +1,6 @@
 {
   "name": "oc-get-unix-utc-timestamp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "UTC times stamp utility",
   "main": "index.js",
   "types": "index.d.ts",
