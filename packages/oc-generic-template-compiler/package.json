@@ -1,6 +1,6 @@
 {
   "name": "oc-generic-template-compiler",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "OC-Generic-Template-Compiler",
   "main": "index.js",
   "types": "index.d.ts",

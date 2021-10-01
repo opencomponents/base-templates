@@ -1,6 +1,6 @@
 {
   "name": "oc-empty-response-handler",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Handler for the empty response use case",
   "main": "index.js",
   "types": "index.d.ts",
