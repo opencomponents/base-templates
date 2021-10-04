@@ -3,6 +3,7 @@
   "version": "1.0.4",
   "description": "OC template based on ES6 template literals",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/opencomponents/base-templates.git"
@@ -24,6 +25,7 @@
     "oc-generic-template-renderer": "2.0.7"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ]
 }

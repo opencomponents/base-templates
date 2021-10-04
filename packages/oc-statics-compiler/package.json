@@ -3,6 +3,7 @@
   "version": "2.0.14",
   "description": "OC-Statics-Compiler",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/opencomponents/base-templates.git"
@@ -32,6 +33,7 @@
     "LICENSE",
     "README.md",
     "index.js",
+    "index.d.ts",
     "lib"
   ]
 }

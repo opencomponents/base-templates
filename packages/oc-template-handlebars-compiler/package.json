@@ -3,6 +3,7 @@
   "version": "6.2.16",
   "description": "OC-Template-Handlebars-Compiler",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/opencomponents/base-templates.git"
@@ -35,6 +36,7 @@
   },
   "files": [
     "index.js",
+    "index.d.ts",
     "lib",
     "scaffold",
     "LICENSE",

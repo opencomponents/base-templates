@@ -3,6 +3,7 @@
   "version": "7.0.4",
   "description": "OC-Template-Jade-Compiler",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/opencomponents/base-templates.git"
@@ -37,6 +38,7 @@
   },
   "files": [
     "index.js",
+    "index.d.ts",
     "lib",
     "scaffold",
     "LICENSE",
