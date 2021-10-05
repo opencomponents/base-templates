@@ -1,6 +1,6 @@
 {
   "name": "oc-template-jade",
-  "version": "7.0.3",
+  "version": "7.0.4",
   "description": "OC-Template-Jade",
   "main": "index.js",
   "types": "index.d.ts",

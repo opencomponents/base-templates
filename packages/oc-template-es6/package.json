@@ -1,6 +1,6 @@
 {
   "name": "oc-template-es6",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "OC template based on ES6 template literals",
   "main": "index.js",
   "types": "index.d.ts",

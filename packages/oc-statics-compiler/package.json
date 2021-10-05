@@ -1,6 +1,6 @@
 {
   "name": "oc-statics-compiler",
-  "version": "2.0.14",
+  "version": "2.0.15",
   "description": "OC-Statics-Compiler",
   "main": "index.js",
   "types": "index.d.ts",
