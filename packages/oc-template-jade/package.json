@@ -3,6 +3,7 @@
   "version": "7.0.3",
   "description": "OC-Template-Jade",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/opencomponents/base-templates.git"
@@ -25,6 +26,7 @@
   },
   "files": [
     "index.js",
+    "index.d.ts",
     "jade-runtime.js",
     "lib",
     "LICENSE",

@@ -3,6 +3,7 @@
   "version": "2.1.11",
   "description": "OC-Server-Compiler",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/opencomponents/base-templates.git"
