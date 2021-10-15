@@ -14,7 +14,7 @@ declare const renderer: {
   getCompiledTemplate: (
     templateString: string,
     key: string,
-    context: Record<string, unknown>
+    context?: Record<string, unknown>
   ) => CompiledTemplate;
   getInfo: (package: {
     name: string;
