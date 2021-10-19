@@ -1,8 +1,9 @@
 {
   "name": "oc-template-jade",
-  "version": "7.0.0",
+  "version": "7.0.5",
   "description": "OC-Template-Jade",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/opencomponents/base-templates.git"
@@ -21,10 +22,11 @@
   },
   "license": "MIT",
   "dependencies": {
-    "oc-generic-template-renderer": "2.0.4"
+    "oc-generic-template-renderer": "2.0.8"
   },
   "files": [
     "index.js",
+    "index.d.ts",
     "jade-runtime.js",
     "lib",
     "LICENSE",
