@@ -1,8 +1,9 @@
 {
   "name": "oc-external-dependencies-handler",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "External dependencies handler for webpack",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/opencomponents/base-templates.git"
@@ -22,12 +23,16 @@
   "license": "MIT",
   "files": [
     "index.js",
+    "index.d.ts",
     "README.md",
     "LICENSE"
   ],
   "dependencies": {
     "builtin-modules": "3.1.0",
     "lodash": "^4.17.4",
-    "oc-templates-messages": "1.0.2"
+    "oc-templates-messages": "1.0.4"
+  },
+  "devDependencies": {
+    "webpack": "^5.52.0"
   }
 }
