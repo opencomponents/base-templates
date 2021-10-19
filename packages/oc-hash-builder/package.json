@@ -1,8 +1,9 @@
 {
   "name": "oc-hash-builder",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Hash builder utility",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/opencomponents/base-templates.git"
@@ -22,6 +23,7 @@
   "license": "MIT",
   "files": [
     "index.js",
+    "index.d.ts",
     "LICENSE",
     "README.md"
   ]

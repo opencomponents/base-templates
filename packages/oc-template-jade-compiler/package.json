@@ -1,8 +1,9 @@
 {
   "name": "oc-template-jade-compiler",
-  "version": "7.0.1",
+  "version": "7.0.6",
   "description": "OC-Template-Jade-Compiler",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/opencomponents/base-templates.git"
@@ -25,18 +26,19 @@
     "jstransformer-clean-css": "^2.0.0",
     "jstransformer-uglify-css": "^1.0.0",
     "jstransformer-uglify-js": "^1.2.0",
-    "oc-generic-template-compiler": "2.0.6",
-    "oc-hash-builder": "1.0.2",
+    "oc-generic-template-compiler": "2.0.8",
+    "oc-hash-builder": "1.0.4",
     "oc-jade-legacy": "1.11.1",
-    "oc-server-compiler": "2.1.8",
-    "oc-statics-compiler": "2.0.12",
-    "oc-template-jade": "7.0.0",
-    "oc-templates-messages": "1.0.2",
-    "oc-view-wrapper": "1.0.3",
+    "oc-server-compiler": "2.1.12",
+    "oc-statics-compiler": "2.0.15",
+    "oc-template-jade": "7.0.5",
+    "oc-templates-messages": "1.0.4",
+    "oc-view-wrapper": "1.0.5",
     "uglify-js": "3.7.6"
   },
   "files": [
     "index.js",
+    "index.d.ts",
     "lib",
     "scaffold",
     "LICENSE",
