@@ -10,7 +10,7 @@
     "lerna": "3.16.4",
     "lint-staged": "10.0.7",
     "node-dir": "0.1.17",
-    "oc": "0.48.12",
+    "oc": "0.49.2",
     "prettier-eslint-cli": "5.0.0",
     "typescript": "^4.4.2"
   },
