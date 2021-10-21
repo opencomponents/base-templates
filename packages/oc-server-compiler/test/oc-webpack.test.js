@@ -99,7 +99,7 @@ test('webpack configurator with production=true', () => {
   expect(config).toMatchSnapshot();
 });
 
-test('webpack compiler', done => {
+test.only('webpack compiler', done => {
   const serverPath = path.join(
     __dirname,
     '../../../mocks/jade-component',
@@ -130,6 +130,7 @@ test('webpack compiler', done => {
       source
         .replace(new RegExp(quote(process.cwd()), 'g'), '')
         .replace(/\\/g, '/')
+        .replace(/\/\//g, '/')
     );
     expect(sourceMapJson).toMatchSnapshot();
     done();
