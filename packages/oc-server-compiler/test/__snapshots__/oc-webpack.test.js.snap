@@ -114,7 +114,7 @@ Object {
     "webpack/runtime/define property getters",
     "webpack/runtime/hasOwnProperty shorthand",
     "webpack/runtime/make namespace object",
-    "/mnt/c/Users/mkred/Desktop/Dev/oc/base-templates/mocks/jade-component/mnt/c/Users/mkred/Desktop/Dev/oc/base-templates/mocks/jade-component/server.js",
+    "/mocks/jade-component//mocks/jade-component/server.js",
   ],
   "sourcesContent": Array [
     "module.exports = require(\\"lodash\\");",
@@ -190,7 +190,7 @@ Object {
         "test": /\\\\\\.js\\$/,
         "use": Array [
           Object {
-            "loader": "../../../node_modules/babel-loader/lib/index.js",
+            "loader": "../node_modules/babel-loader/lib/index.js",
             "options": Object {
               "babelrc": false,
               "cacheDirectory": true,
@@ -260,7 +260,7 @@ Object {
             "loader": "../../infinite-loop-loader/index.js",
           },
           Object {
-            "loader": "../../../node_modules/babel-loader/lib/index.js",
+            "loader": "../node_modules/babel-loader/lib/index.js",
             "options": Object {
               "babelrc": false,
               "cacheDirectory": true,

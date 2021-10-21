@@ -88,10 +88,8 @@ test('webpack configurator with production=true', () => {
   delete config.logger;
 
   config.output.path = config.output.path.replace(/\\/g, '/');
-  config.module.rules[0].use[0].loader = config.module.rules[0].use[0].loader.replace(
-    /\\/g,
-    '/'
-  );
+  config.module.rules[0].use[0].loader =
+    config.module.rules[0].use[0].loader.replace(/\\/g, '/');
   const use = config.module.rules[0].use[1];
   use.loader = use.loader.replace(/\\/g, '/');
   use.options.sourceRoot = use.options.sourceRoot.replace(/\\/g, '/');
@@ -117,6 +115,7 @@ test('webpack compiler', done => {
     publishFileName: 'server.js',
     serverPath
   });
+  const quote = str => str.replace(/([.?*+^$[\]\\(){}-])/g, '\\$1');
 
   webpackCompiler(config, (error, data) => {
     const fs = new MemoryFS(data);
@@ -127,6 +126,11 @@ test('webpack compiler', done => {
     const sourceMapJson = JSON.parse(sourceMapContentBundled);
     sourceMapJson.sources[1] = '/path/to/component/server.js';
     sourceMapJson.mappings = 'dummy';
+    sourceMapJson.sources = sourceMapJson.sources.map(source =>
+      source
+        .replace(new RegExp(quote(process.cwd()), 'g'), '')
+        .replace(/\\/g, '/')
+    );
     expect(sourceMapJson).toMatchSnapshot();
     done();
   });
