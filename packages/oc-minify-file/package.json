@@ -31,8 +31,6 @@
     "babel-core": "^6.25.0",
     "babel-preset-env": "^1.6.1",
     "clean-css": "^4.1.4",
-    "oc-templates-messages": "1.0.2",
-    "uglify-js": "3.7.6"
     "oc-templates-messages": "1.0.4",
     "uglify-js": "3.7.6"
   }
