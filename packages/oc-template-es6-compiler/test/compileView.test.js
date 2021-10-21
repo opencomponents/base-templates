@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs-extra');
 const compileView = require('../lib/compileView.js');
 
-test('valid component', done => {
+test('valid component', (done) => {
   const componentPath = path.join(__dirname, '../../../mocks/es6-component');
   const publishPath = path.join(componentPath, '_packageCompileViewTest');
   const publishFileName = 'template.js';
@@ -14,7 +14,7 @@ test('valid component', done => {
     componentPath,
     publishPath,
     publishFileName,
-    production: true
+    production: true,
   };
 
   compileView(options, (err, compiledViewInfo) => {
@@ -25,13 +25,14 @@ test('valid component', done => {
       fs
         .readFileSync(path.join(publishPath, publishFileName), 'UTF8')
         .replace(viewHashKey, 'dummyData')
+        .replace(/awesome__\w+/g, 'awesome__HASH')
     ).toMatchSnapshot();
     fs.removeSync(publishPath);
     done();
   });
 });
 
-test('invalid component', done => {
+test('invalid component', (done) => {
   const componentPath = path.join(__dirname, '../../../mocks/es6-component');
   const publishPath = path.join(componentPath, '_packageCompileViewTest2');
   const publishFileName = 'template.js';
@@ -43,11 +44,11 @@ test('invalid component', done => {
     componentPath,
     publishPath,
     publishFileName,
-    production: true
+    production: true,
   };
 
   compileView(options, (err, compiledViewInfo) => {
-    expect(err).toContain('SyntaxError: Unexpected token (2:2)');
+    expect(err).toContain('Unexpected token (2:2)');
     done();
   });
 });

@@ -265,18 +265,18 @@ Object {
         "test": /\\\\\\.js\\$/,
         "use": Array [
           Object {
-            "loader": "../node_modules/babel-loader/lib/index.js",
+            "loader": "../../../node_modules/babel-loader/lib/index.js",
             "options": Object {
               "babelrc": false,
               "cacheDirectory": true,
               "plugins": Array [
                 Array [
-                  "../node_modules/babel-plugin-transform-object-rest-spread/lib/index.js",
+                  "../../../node_modules/babel-plugin-transform-object-rest-spread/lib/index.js",
                 ],
               ],
               "presets": Array [
                 Array [
-                  "../node_modules/babel-preset-env/lib/index.js",
+                  "../../../node_modules/babel-preset-env/lib/index.js",
                   Object {
                     "modules": false,
                     "targets": Object {
@@ -332,21 +332,21 @@ Object {
         "test": /\\\\\\.js\\$/,
         "use": Array [
           Object {
-            "loader": "../node_modules/infinite-loop-loader/index.js",
+            "loader": "../../infinite-loop-loader/index.js",
           },
           Object {
-            "loader": "../node_modules/babel-loader/lib/index.js",
+            "loader": "../../../node_modules/babel-loader/lib/index.js",
             "options": Object {
               "babelrc": false,
               "cacheDirectory": true,
               "plugins": Array [
                 Array [
-                  "../node_modules/babel-plugin-transform-object-rest-spread/lib/index.js",
+                  "../../../node_modules/babel-plugin-transform-object-rest-spread/lib/index.js",
                 ],
               ],
               "presets": Array [
                 Array [
-                  "../node_modules/babel-preset-env/lib/index.js",
+                  "../../../node_modules/babel-preset-env/lib/index.js",
                   Object {
                     "modules": false,
                     "targets": Object {

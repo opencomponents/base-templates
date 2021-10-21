@@ -10,15 +10,15 @@ const componentPath = path.join(__dirname, '../../../mocks/jade-component/');
 const getInfo = require('../index.js').getInfo;
 const publishPath = path.join(componentPath, '__package');
 
-test('Should correctly compile the oc component', done => {
+test('Should correctly compile the oc component', (done) => {
   const options = {
     componentPackage,
     ocPackage: {
-      version: '1.0.0'
+      version: '1.0.0',
     },
     componentPath,
     publishPath,
-    production: true
+    production: true,
   };
   fs.ensureDirSync(publishPath);
   compile(options, (err, res) => {
@@ -32,7 +32,7 @@ test('Should correctly compile the oc component', done => {
     expect(version).toBe(getInfo().version);
     nodeDir.paths(publishPath, (err, res) => {
       const files = res.files
-        .map(filePath => path.relative(__dirname, filePath))
+        .map((filePath) => path.relative(__dirname, filePath).replace(/\\/g, '/'))
         .sort();
       expect(files).toMatchSnapshot();
       fs.emptyDirSync(publishPath);
