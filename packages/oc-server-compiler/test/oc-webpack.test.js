@@ -99,7 +99,7 @@ test('webpack configurator with production=true', () => {
   expect(config).toMatchSnapshot();
 });
 
-test.only('webpack compiler', done => {
+test('webpack compiler', done => {
   const serverPath = path.join(
     __dirname,
     '../../../mocks/jade-component',
