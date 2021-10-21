@@ -6,7 +6,7 @@ describe('render method', () => {
     const key = 'not-valid-hashed-broken-view';
     const template = {
       compiler: [6, '>= 3.0.0'],
-      main: function() {
+      main: function () {
         return 'Hello world!';
       },
       useData: !0
@@ -42,7 +42,7 @@ describe('render method', () => {
     const key = 'c6fcae4d23d07fd9a7e100508caf8119e998d7a9';
     const template = {
       compiler: [7, '>= 4.0.0'],
-      main: function() {
+      main: function () {
         return 'Hello world!';
       },
       useData: !0
@@ -59,7 +59,7 @@ describe('render method', () => {
     const key = '9898be34d6ca0d1fe2da808ed14c3f089a7d4a78';
     const template = {
       compiler: [7, '>= 4.0.0'],
-      main: function(a, n, e, c, o) {
+      main: function (a, n, e, c, o) {
         let t,
           l = null != n ? n : {},
           s = e.helperMissing,
@@ -68,24 +68,18 @@ describe('render method', () => {
         return (
           '<img src="' +
           m(
-            (
-              (t =
-                null != (t = e.staticPath || (null != n ? n.staticPath : n))
-                  ? t
-                  : s),
-              typeof t === i
-                ? t.call(l, { name: 'staticPath', hash: {}, data: o })
-                : t
-            )
+            ((t =
+              null != (t = e.staticPath || (null != n ? n.staticPath : n))
+                ? t
+                : s),
+            typeof t === i
+              ? t.call(l, { name: 'staticPath', hash: {}, data: o })
+              : t)
           ) +
           'img/logo.png" />\n\n<div>Hello ' +
           m(
-            (
-              (t = null != (t = e.name || (null != n ? n.name : n)) ? t : s),
-              typeof t === i
-                ? t.call(l, { name: 'name', hash: {}, data: o })
-                : t
-            )
+            ((t = null != (t = e.name || (null != n ? n.name : n)) ? t : s),
+            typeof t === i ? t.call(l, { name: 'name', hash: {}, data: o }) : t)
           ) +
           '</div>\n'
         );
@@ -111,7 +105,7 @@ describe('render method', () => {
     const key = 'another-broken-view';
     const template = {
       compiler: [7, '>= 4.0.0'],
-      main: function() {
+      main: function () {
         throw new Error('blargh');
       },
       useData: !0

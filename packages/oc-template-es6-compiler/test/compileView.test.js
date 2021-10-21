@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs-extra');
 const compileView = require('../lib/compileView.js');
 
-test('valid component', (done) => {
+test('valid component', done => {
   const componentPath = path.join(__dirname, '../../../mocks/es6-component');
   const publishPath = path.join(componentPath, '_packageCompileViewTest');
   const publishFileName = 'template.js';
@@ -14,7 +14,7 @@ test('valid component', (done) => {
     componentPath,
     publishPath,
     publishFileName,
-    production: true,
+    production: true
   };
 
   compileView(options, (err, compiledViewInfo) => {
@@ -32,7 +32,7 @@ test('valid component', (done) => {
   });
 });
 
-test('invalid component', (done) => {
+test('invalid component', done => {
   const componentPath = path.join(__dirname, '../../../mocks/es6-component');
   const publishPath = path.join(componentPath, '_packageCompileViewTest2');
   const publishFileName = 'template.js';
@@ -44,7 +44,7 @@ test('invalid component', (done) => {
     componentPath,
     publishPath,
     publishFileName,
-    production: true,
+    production: true
   };
 
   compileView(options, (err, compiledViewInfo) => {

@@ -8,7 +8,7 @@ const MemoryFS = require('memory-fs');
 
 const {
   compiler: webpackCompiler,
-  configurator: webpackConfigurator,
+  configurator: webpackConfigurator
 } = require('../lib/oc-webpack');
 
 test('module APIs', () => {
@@ -21,14 +21,20 @@ test('webpack configurator with production=false', () => {
     dependencies: {},
     production: false,
     publishFileName: 'server.js',
-    serverPath: '/path/to/server.js',
+    serverPath: '/path/to/server.js'
   });
 
   // clean paths
   const target = config.module.rules[0].use;
   target[0].loader = path.relative(__dirname, target[0].loader);
-  target[0].options.presets[0][0] = path.relative(__dirname, target[0].options.presets[0][0]);
-  target[0].options.plugins[0][0] = path.relative(__dirname, target[0].options.plugins[0][0]);
+  target[0].options.presets[0][0] = path.relative(
+    __dirname,
+    target[0].options.presets[0][0]
+  );
+  target[0].options.plugins[0][0] = path.relative(
+    __dirname,
+    target[0].options.plugins[0][0]
+  );
   delete config.logger;
 
   config.output.path = config.output.path.replace(/\\/g, '/');
@@ -47,19 +53,26 @@ test('webpack configurator with production=true', () => {
     dependencies: {},
     production: true,
     publishFileName: 'server.js',
-    serverPath: '/path/to/server.js',
+    serverPath: '/path/to/server.js'
   });
 
   // clean paths
   const target = config.module.rules[0].use;
   target[0].loader = path.relative(__dirname, target[0].loader);
   target[1].loader = path.relative(__dirname, target[1].loader);
-  target[1].options.presets[0][0] = path.relative(__dirname, target[1].options.presets[0][0]);
-  target[1].options.plugins[0][0] = path.relative(__dirname, target[1].options.plugins[0][0]);
+  target[1].options.presets[0][0] = path.relative(
+    __dirname,
+    target[1].options.presets[0][0]
+  );
+  target[1].options.plugins[0][0] = path.relative(
+    __dirname,
+    target[1].options.plugins[0][0]
+  );
   delete config.logger;
 
   config.output.path = config.output.path.replace(/\\/g, '/');
-  config.module.rules[0].use[0].loader = config.module.rules[0].use[0].loader.replace(/\\/g, '/');
+  config.module.rules[0].use[0].loader =
+    config.module.rules[0].use[0].loader.replace(/\\/g, '/');
   const use = config.module.rules[0].use[1];
   use.loader = use.loader.replace(/\\/g, '/');
   use.options.sourceRoot = use.options.sourceRoot.replace(/\\/g, '/');
@@ -69,8 +82,12 @@ test('webpack configurator with production=true', () => {
   expect(config).toMatchSnapshot();
 });
 
-test('webpack compiler', (done) => {
-  const serverPath = path.join(__dirname, '../../../mocks/jade-component', 'server.js');
+test('webpack compiler', done => {
+  const serverPath = path.join(
+    __dirname,
+    '../../../mocks/jade-component',
+    'server.js'
+  );
 
   const dest = path.join(serverPath, '../build/server.js');
   const sourceMapDest = path.join(serverPath, '../build/server.js.map');
@@ -79,7 +96,7 @@ test('webpack compiler', (done) => {
     dependencies: { lodash: '' },
     production: false,
     publishFileName: 'server.js',
-    serverPath,
+    serverPath
   });
 
   webpackCompiler(config, (error, data) => {
@@ -96,8 +113,12 @@ test('webpack compiler', (done) => {
   });
 });
 
-test('webpack compiler verbose', (done) => {
-  const serverPath = path.join(__dirname, '../../../mocks/jade-component', 'server.js');
+test('webpack compiler verbose', done => {
+  const serverPath = path.join(
+    __dirname,
+    '../../../mocks/jade-component',
+    'server.js'
+  );
 
   const dest = path.join(serverPath, '../build/server.js');
   const loggerMock = { log: jest.fn() };
@@ -107,7 +128,7 @@ test('webpack compiler verbose', (done) => {
     dependencies: { lodash: '' },
     production: true,
     publishFileName: 'server.js',
-    serverPath,
+    serverPath
   });
 
   webpackCompiler(config, (error, data) => {
@@ -122,16 +143,22 @@ test('webpack compiler verbose', (done) => {
   });
 });
 
-test('webpack compiler with fatal error', (done) => {
+test('webpack compiler with fatal error', done => {
   const config = webpackConfigurator({
     stats: 'errors-only',
     dependencies: { lodash: '' },
     publishFileName: 'server.js',
-    serverPath: path.join(__dirname, '../../../mocks/jade-component', 'server.js'),
+    serverPath: path.join(
+      __dirname,
+      '../../../mocks/jade-component',
+      'server.js'
+    )
   });
 
-  config.plugins.push(function() {
-    this.plugin('run', (compiler, cb) => cb('This is a fatal compilation error'));
+  config.plugins.push(function () {
+    this.plugin('run', (compiler, cb) =>
+      cb('This is a fatal compilation error')
+    );
   });
 
   webpackCompiler(config, (error, data) => {
@@ -140,12 +167,12 @@ test('webpack compiler with fatal error', (done) => {
   });
 });
 
-test('webpack compiler with soft error', (done) => {
+test('webpack compiler with soft error', done => {
   const config = webpackConfigurator({
     stats: 'errors-only',
     dependencies: { lodash: '' },
     publishFileName: 'server.js',
-    serverPath: path.join(__dirname, 'some/not/valid/path', 'server.js'),
+    serverPath: path.join(__dirname, 'some/not/valid/path', 'server.js')
   });
 
   webpackCompiler(config, (error, data) => {
@@ -154,19 +181,23 @@ test('webpack compiler with soft error', (done) => {
   });
 });
 
-test('webpack compiler with warning', (done) => {
+test('webpack compiler with warning', done => {
   const loggerMock = { log: jest.fn() };
   const config = webpackConfigurator({
     logger: loggerMock,
     stats: 'normal',
     dependencies: { lodash: '' },
     publishFileName: 'server.js',
-    serverPath: path.join(__dirname, '../../../mocks/jade-component', 'server.js'),
+    serverPath: path.join(
+      __dirname,
+      '../../../mocks/jade-component',
+      'server.js'
+    )
   });
 
-  config.plugins.push(function() {
+  config.plugins.push(function () {
     this.plugin('run', (compiler, cb) => cb.call(compiler));
-    this.plugin('done', (stats) => stats.compilation.warnings.push('A warning'));
+    this.plugin('done', stats => stats.compilation.warnings.push('A warning'));
   });
 
   webpackCompiler(config, (error, data) => {
