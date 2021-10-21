@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-const MemoryFS = require('memory-fs');
-const webpack = require('webpack');
+const MemoryFS = require("memory-fs");
+const webpack = require("webpack");
 
 const memoryFs = new MemoryFS();
 
@@ -24,7 +24,7 @@ module.exports = function compiler(config, callback) {
     const info = stats.toJson();
     // handleSoftErrors
     if (stats.hasErrors()) {
-      softError = info.errors.toString();
+      softError = String(info.errors.map(x => x.message).filter(Boolean));
       return callback(softError);
     }
     // handleWarnings
@@ -32,7 +32,7 @@ module.exports = function compiler(config, callback) {
       warning = info.warnings.toString();
     }
 
-    const log = stats.toString(config.stats || 'errors-only');
+    const log = stats.toString(config.stats || "errors-only");
 
     if (log) {
       logger.log(log);
