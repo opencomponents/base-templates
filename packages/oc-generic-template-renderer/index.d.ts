@@ -21,7 +21,10 @@ declare const renderer: {
     version: string;
     externals?: Record<string, External>;
   }) => { type: string; version: string; externals: Array<ExternalInfo> };
-  render: (options: { model: unknown; template: CompiledTemplate }, cb: Callback<string>) => void;
+  render: (
+    options: { model: unknown; template: CompiledTemplate },
+    cb: Callback<string>
+  ) => void;
 };
 
 export = renderer;

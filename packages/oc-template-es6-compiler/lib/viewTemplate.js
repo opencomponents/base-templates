@@ -3,8 +3,8 @@ const viewTemplate = ({ css, bundle }) => `function(model){
   return '' + 
     template.default(model) +
     '${
-  css
-    ? '<style>' +
+      css
+        ? '<style>' +
           css +
           '</style>' +
           '<script>' +
@@ -16,8 +16,8 @@ const viewTemplate = ({ css, bundle }) => `function(model){
           "\\');" +
           '});' +
           '</script>'
-    : ''
-}'
+        : ''
+    }'
       
 }`;
 

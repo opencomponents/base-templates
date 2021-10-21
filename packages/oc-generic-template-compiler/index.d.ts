@@ -40,7 +40,10 @@ interface CompilerOptions {
   watch: boolean;
 }
 
-type CompileView = (options: CompilerOptions, cb: Callback<CompiledViewInfo>) => void;
+type CompileView = (
+  options: CompilerOptions,
+  cb: Callback<CompiledViewInfo>
+) => void;
 type CompileServer = (
   options: CompilerOptions & { compiledViewInfo: CompiledViewInfo },
   cb: Callback<any>

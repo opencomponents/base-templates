@@ -54,6 +54,13 @@ test('webpack configurator with production=false', () => {
   );
   delete config.logger;
 
+  config.output.path = config.output.path.replace(/\\/g, '/');
+  const use = config.module.rules[0].use[0];
+  use.loader = use.loader.replace(/\\/g, '/');
+  use.options.sourceRoot = use.options.sourceRoot.replace(/\\/g, '/');
+  use.options.presets[0][0] = use.options.presets[0][0].replace(/\\/g, '/');
+  use.options.plugins[0][0] = use.options.plugins[0][0].replace(/\\/g, '/');
+
   expect(config).toMatchSnapshot();
 });
 
@@ -79,6 +86,17 @@ test('webpack configurator with production=true', () => {
     target[1].options.plugins[0][0]
   );
   delete config.logger;
+
+  config.output.path = config.output.path.replace(/\\/g, '/');
+  config.module.rules[0].use[0].loader = config.module.rules[0].use[0].loader.replace(
+    /\\/g,
+    '/'
+  );
+  const use = config.module.rules[0].use[1];
+  use.loader = use.loader.replace(/\\/g, '/');
+  use.options.sourceRoot = use.options.sourceRoot.replace(/\\/g, '/');
+  use.options.presets[0][0] = use.options.presets[0][0].replace(/\\/g, '/');
+  use.options.plugins[0][0] = use.options.plugins[0][0].replace(/\\/g, '/');
 
   expect(config).toMatchSnapshot();
 });

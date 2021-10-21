@@ -96,7 +96,7 @@ _.each(scenarios, (scenario, testName) => {
       }
       result.oc.files.template.hashKey = 'dummyData';
       expect(result).toMatchSnapshot();
-      expect(files).toMatchSnapshot();
+      expect(files.map(x => x.replace(/\\/g, '/'))).toMatchSnapshot();
       done();
     });
   });
