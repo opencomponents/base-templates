@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function() {
+module.exports = function () {
   const d1 = new Date(),
     d2 = new Date(
       d1.getUTCFullYear(),

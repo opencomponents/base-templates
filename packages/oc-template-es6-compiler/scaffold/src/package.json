@@ -5,7 +5,10 @@
   "oc": {
     "files": {
       "data": "server.js",
-      "static": ["img", "css"],
+      "static": [
+        "img",
+        "css"
+      ],
       "template": {
         "src": "view.js",
         "type": "oc-template-es6"
