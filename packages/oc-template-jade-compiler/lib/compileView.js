@@ -2,7 +2,7 @@
 
 const fs = require('fs-extra');
 const hashBuilder = require('oc-hash-builder');
-const jade = require('jade-legacy');
+const jade = require('oc-jade-legacy');
 const ocViewWrapper = require('oc-view-wrapper');
 const path = require('path');
 const strings = require('oc-templates-messages');

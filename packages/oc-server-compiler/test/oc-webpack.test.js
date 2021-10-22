@@ -37,6 +37,13 @@ test('webpack configurator with production=false', () => {
   );
   delete config.logger;
 
+  config.output.path = config.output.path.replace(/\\/g, '/');
+  const use = config.module.rules[0].use[0];
+  use.loader = use.loader.replace(/\\/g, '/');
+  use.options.sourceRoot = use.options.sourceRoot.replace(/\\/g, '/');
+  use.options.presets[0][0] = use.options.presets[0][0].replace(/\\/g, '/');
+  use.options.plugins[0][0] = use.options.plugins[0][0].replace(/\\/g, '/');
+
   expect(config).toMatchSnapshot();
 });
 
@@ -62,6 +69,15 @@ test('webpack configurator with production=true', () => {
     target[1].options.plugins[0][0]
   );
   delete config.logger;
+
+  config.output.path = config.output.path.replace(/\\/g, '/');
+  config.module.rules[0].use[0].loader =
+    config.module.rules[0].use[0].loader.replace(/\\/g, '/');
+  const use = config.module.rules[0].use[1];
+  use.loader = use.loader.replace(/\\/g, '/');
+  use.options.sourceRoot = use.options.sourceRoot.replace(/\\/g, '/');
+  use.options.presets[0][0] = use.options.presets[0][0].replace(/\\/g, '/');
+  use.options.plugins[0][0] = use.options.plugins[0][0].replace(/\\/g, '/');
 
   expect(config).toMatchSnapshot();
 });
@@ -91,6 +107,7 @@ test('webpack compiler', done => {
     const sourceMapContentBundled = fs.readFileSync(sourceMapDest, 'UTF8');
     const sourceMapJson = JSON.parse(sourceMapContentBundled);
     sourceMapJson.sources[1] = '/path/to/component/server.js';
+    sourceMapJson.mappings = 'dummy';
     expect(sourceMapJson).toMatchSnapshot();
     done();
   });
@@ -138,7 +155,7 @@ test('webpack compiler with fatal error', done => {
     )
   });
 
-  config.plugins.push(function() {
+  config.plugins.push(function () {
     this.plugin('run', (compiler, cb) =>
       cb('This is a fatal compilation error')
     );
@@ -178,7 +195,7 @@ test('webpack compiler with warning', done => {
     )
   });
 
-  config.plugins.push(function() {
+  config.plugins.push(function () {
     this.plugin('run', (compiler, cb) => cb.call(compiler));
     this.plugin('done', stats => stats.compilation.warnings.push('A warning'));
   });

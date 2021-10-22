@@ -32,7 +32,7 @@ test('Should correctly compile the oc component', done => {
     expect(version).toBe(getInfo().version);
     nodeDir.paths(publishPath, (err, res) => {
       const files = res.files
-        .map(filePath => path.relative(__dirname, filePath))
+        .map(filePath => path.relative(__dirname, filePath).replace(/\\/g, '/'))
         .sort();
       expect(files).toMatchSnapshot();
       fs.emptyDirSync(publishPath);
