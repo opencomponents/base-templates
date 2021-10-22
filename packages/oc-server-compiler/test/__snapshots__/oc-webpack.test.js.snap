@@ -9,125 +9,96 @@ Object {
 `;
 
 exports[`webpack compiler 1`] = `
-"module.exports =
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = \\"\\";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = \\"./mocks/jade-component/server.js\\");
-/******/ })
-/************************************************************************/
-/******/ ({
-
-/***/ \\"./mocks/jade-component/server.js\\":
-/*!****************************************!*\\\\
-  !*** ./mocks/jade-component/server.js ***!
-  \\\\****************************************/
-/*! exports provided: data */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-\\"use strict\\";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \\"data\\", function() { return data; });
-const _ = __webpack_require__(/*! lodash */ \\"lodash\\");
-
-const data = (context, callback) => {
-  return callback(null, {});
-};
-
-/***/ }),
+"/******/ (() => { // webpackBootstrap
+/******/ 	\\"use strict\\";
+/******/ 	var __webpack_modules__ = ({
 
 /***/ \\"lodash\\":
 /*!*************************!*\\\\
   !*** external \\"lodash\\" ***!
   \\\\*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = require(\\"lodash\\");
 
 /***/ })
 
-/******/ });
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!****************************************!*\\\\
+  !*** ./mocks/jade-component/server.js ***!
+  \\\\****************************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   \\"data\\": () => (/* binding */ data)
+/* harmony export */ });
+const _ = __webpack_require__(/*! lodash */ \\"lodash\\");
+
+const data = (context, callback) => {
+  return callback(null, {});
+};
+})();
+
+module.exports = __webpack_exports__;
+/******/ })()
+;
 //# sourceMappingURL=server.js.map"
 `;
 
@@ -135,123 +106,77 @@ exports[`webpack compiler 2`] = `
 Object {
   "file": "server.js",
   "mappings": "dummy",
-  "names": Array [
-    "_",
-    "require",
-    "data",
-    "context",
-    "callback",
-  ],
+  "names": Array [],
   "sourceRoot": "",
   "sources": Array [
-    "webpack/bootstrap",
+    "external commonjs2 \\"lodash\\"",
     "/path/to/component/server.js",
-    "external \\"lodash\\"",
+    "webpack/runtime/define property getters",
+    "webpack/runtime/hasOwnProperty shorthand",
+    "webpack/runtime/make namespace object",
+    "/mocks/jade-component/mocks/jade-component/server.js",
   ],
   "sourcesContent": Array [
-    " 	// The module cache
- 	var installedModules = {};
+    "module.exports = require(\\"lodash\\");",
+    "// The module cache
+var __webpack_module_cache__ = {};
 
- 	// The require function
- 	function __webpack_require__(moduleId) {
+// The require function
+function __webpack_require__(moduleId) {
+	// Check if module is in cache
+	var cachedModule = __webpack_module_cache__[moduleId];
+	if (cachedModule !== undefined) {
+		return cachedModule.exports;
+	}
+	// Create a new module (and put it into the cache)
+	var module = __webpack_module_cache__[moduleId] = {
+		// no module.id needed
+		// no module.loaded needed
+		exports: {}
+	};
 
- 		// Check if module is in cache
- 		if(installedModules[moduleId]) {
- 			return installedModules[moduleId].exports;
- 		}
- 		// Create a new module (and put it into the cache)
- 		var module = installedModules[moduleId] = {
- 			i: moduleId,
- 			l: false,
- 			exports: {}
- 		};
+	// Execute the module function
+	__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 
- 		// Execute the module function
- 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+	// Return the exports of the module
+	return module.exports;
+}
 
- 		// Flag the module as loaded
- 		module.l = true;
-
- 		// Return the exports of the module
- 		return module.exports;
- 	}
-
-
- 	// expose the modules object (__webpack_modules__)
- 	__webpack_require__.m = modules;
-
- 	// expose the module cache
- 	__webpack_require__.c = installedModules;
-
- 	// define getter function for harmony exports
- 	__webpack_require__.d = function(exports, name, getter) {
- 		if(!__webpack_require__.o(exports, name)) {
- 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
- 		}
- 	};
-
- 	// define __esModule on exports
- 	__webpack_require__.r = function(exports) {
- 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
- 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
- 		}
- 		Object.defineProperty(exports, '__esModule', { value: true });
- 	};
-
- 	// create a fake namespace object
- 	// mode & 1: value is a module id, require it
- 	// mode & 2: merge all properties of value into the ns
- 	// mode & 4: return value when already ns object
- 	// mode & 8|1: behave like require
- 	__webpack_require__.t = function(value, mode) {
- 		if(mode & 1) value = __webpack_require__(value);
- 		if(mode & 8) return value;
- 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
- 		var ns = Object.create(null);
- 		__webpack_require__.r(ns);
- 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
- 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
- 		return ns;
- 	};
-
- 	// getDefaultExport function for compatibility with non-harmony modules
- 	__webpack_require__.n = function(module) {
- 		var getter = module && module.__esModule ?
- 			function getDefault() { return module['default']; } :
- 			function getModuleExports() { return module; };
- 		__webpack_require__.d(getter, 'a', getter);
- 		return getter;
- 	};
-
- 	// Object.prototype.hasOwnProperty.call
- 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-
- 	// __webpack_public_path__
- 	__webpack_require__.p = \\"\\";
-
-
- 	// Load entry module and return exports
- 	return __webpack_require__(__webpack_require__.s = \\"./mocks/jade-component/server.js\\");
 ",
+    "// define getter functions for harmony exports
+__webpack_require__.d = (exports, definition) => {
+	for(var key in definition) {
+		if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+			Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+		}
+	}
+};",
+    "__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))",
+    "// define __esModule on exports
+__webpack_require__.r = (exports) => {
+	if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+		Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+	}
+	Object.defineProperty(exports, '__esModule', { value: true });
+};",
     "const _ = require('lodash');
 
 export const data = (context, callback) => {
   return callback(null, {});
 };
 ",
-    "module.exports = require(\\"lodash\\");",
   ],
   "version": 3,
 }
 `;
 
-exports[`webpack compiler verbose 1`] = `"module.exports=function(a){function b(d){if(c[d])return c[d].exports;var e=c[d]={i:d,l:!1,exports:{}};return a[d].call(e.exports,e,e.exports,b),e.l=!0,e.exports}var c={};return b.m=a,b.c=c,b.d=function(a,c,d){b.o(a,c)||Object.defineProperty(a,c,{enumerable:!0,get:d})},b.r=function(a){'undefined'!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(a,Symbol.toStringTag,{value:'Module'}),Object.defineProperty(a,'__esModule',{value:!0})},b.t=function(a,c){if(1&c&&(a=b(a)),8&c)return a;if(4&c&&'object'==typeof a&&a&&a.__esModule)return a;var d=Object.create(null);if(b.r(d),Object.defineProperty(d,'default',{enumerable:!0,value:a}),2&c&&'string'!=typeof a)for(var e in a)b.d(d,e,function(b){return a[b]}.bind(null,e));return d},b.n=function(a){var c=a&&a.__esModule?function(){return a['default']}:function(){return a};return b.d(c,'a',c),c},b.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},b.p='',b(b.s=0)}([function(a,b,c){'use strict';c.r(b),c.d(b,'data',function(){return e});const d=c(1),e=(a,b)=>b(null,{})},function(a){a.exports=require('lodash')}]);"`;
+exports[`webpack compiler verbose 1`] = `"(()=>{\\"use strict\\";function a(d){var e=c[d];if(void 0!==e)return e.exports;var f=c[d]={exports:{}};return b[d](f,f.exports,a),f.exports}var b={793:(a)=>{a.exports=require(\\"lodash\\")}},c={};(()=>{a.d=(b,c)=>{for(var d in c)a.o(c,d)&&!a.o(b,d)&&Object.defineProperty(b,d,{enumerable:!0,get:c[d]})}})(),(()=>{a.o=(a,b)=>Object.prototype.hasOwnProperty.call(a,b)})(),(()=>{a.r=(a)=>{\\"undefined\\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(a,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(a,\\"__esModule\\",{value:!0})}})();var d={};(()=>{a.r(d),a.d(d,{data:()=>c});const b=a(793),c=(a,b)=>b(null,{})})(),module.exports=d})();"`;
 
 exports[`webpack compiler with fatal error 1`] = `"This is a fatal compilation error"`;
 
 exports[`webpack configurator with production=false 1`] = `
 Object {
-  "devtool": "#source-map",
+  "devtool": "cheap-module-source-map",
   "entry": "/path/to/server.js",
   "externals": Array [
     [Function],
@@ -265,7 +190,7 @@ Object {
         "test": /\\\\\\.js\\$/,
         "use": Array [
           Object {
-            "loader": "../../../node_modules/babel-loader/lib/index.js",
+            "loader": "../node_modules/babel-loader/lib/index.js",
             "options": Object {
               "babelrc": false,
               "cacheDirectory": true,
@@ -280,7 +205,7 @@ Object {
                   Object {
                     "modules": false,
                     "targets": Object {
-                      "node": 6,
+                      "node": 12,
                     },
                   },
                 ],
@@ -298,7 +223,7 @@ Object {
     "minimize": false,
   },
   "output": Object {
-    "devtoolFallbackModuleFilenameTemplate": "[absolute-resource-path]?[hash]",
+    "devtoolFallbackModuleFilenameTemplate": "[absolute-resource-path]?[contenthash]",
     "devtoolModuleFilenameTemplate": "[absolute-resource-path]",
     "filename": "server.js",
     "libraryTarget": "commonjs2",
@@ -318,7 +243,7 @@ Object {
 
 exports[`webpack configurator with production=true 1`] = `
 Object {
-  "devtool": "",
+  "devtool": false,
   "entry": "/path/to/server.js",
   "externals": Array [
     [Function],
@@ -335,7 +260,7 @@ Object {
             "loader": "../../infinite-loop-loader/index.js",
           },
           Object {
-            "loader": "../../../node_modules/babel-loader/lib/index.js",
+            "loader": "../node_modules/babel-loader/lib/index.js",
             "options": Object {
               "babelrc": false,
               "cacheDirectory": true,
@@ -350,7 +275,7 @@ Object {
                   Object {
                     "modules": false,
                     "targets": Object {
-                      "node": 6,
+                      "node": 12,
                     },
                   },
                 ],
@@ -368,7 +293,7 @@ Object {
     "minimize": false,
   },
   "output": Object {
-    "devtoolFallbackModuleFilenameTemplate": "[absolute-resource-path]?[hash]",
+    "devtoolFallbackModuleFilenameTemplate": "[absolute-resource-path]?[contenthash]",
     "devtoolModuleFilenameTemplate": "[absolute-resource-path]",
     "filename": "server.js",
     "libraryTarget": "commonjs2",
@@ -388,6 +313,9 @@ Object {
         "parserOpts": Object {},
         "sourceMap": undefined,
         "test": /\\\\\\.js\\(\\$\\|\\\\\\?\\)/i,
+      },
+      "plugin": Object {
+        "name": "BabelMinifyPlugin",
       },
     },
     DefinePlugin {

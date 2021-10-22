@@ -11,7 +11,7 @@ module.exports = function webpackConfigGenerator(options) {
     options.production !== undefined ? options.production : 'true';
 
   const sourceMaps = !production;
-  const devtool = sourceMaps ? '#source-map' : '';
+  const devtool = sourceMaps ? 'cheap-module-source-map' : false;
 
   const jsLoaders = [
     {
@@ -28,7 +28,7 @@ module.exports = function webpackConfigGenerator(options) {
             {
               modules: false,
               targets: {
-                node: 6
+                node: 12
               }
             }
           ]
@@ -71,7 +71,8 @@ module.exports = function webpackConfigGenerator(options) {
       filename: options.publishFileName,
       libraryTarget: 'commonjs2',
       devtoolModuleFilenameTemplate: '[absolute-resource-path]',
-      devtoolFallbackModuleFilenameTemplate: '[absolute-resource-path]?[hash]'
+      devtoolFallbackModuleFilenameTemplate:
+        '[absolute-resource-path]?[contenthash]'
     },
     externals: externalDependenciesHandlers(options.dependencies),
     module: {

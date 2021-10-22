@@ -9,7 +9,7 @@ test('When a module is being used withough being declared in the package', done 
   const handler = externalDependenciesHandler({});
   const handlerFunction = handler[0];
   expect(handlerFunction).toBeInstanceOf(Function);
-  handlerFunction(null, 'lodash', err => {
+  handlerFunction({ request: 'lodash' }, err => {
     expect(err).toMatchSnapshot();
     done();
   });
@@ -19,7 +19,7 @@ test('When a module/path is being used withough being declared in the package', 
   const handler = externalDependenciesHandler({});
   const handlerFunction = handler[0];
   expect(handlerFunction).toBeInstanceOf(Function);
-  handlerFunction(null, 'lodash/package.json', err => {
+  handlerFunction({ request: 'lodash/package.json' }, err => {
     expect(err).toMatchSnapshot();
     done();
   });
@@ -28,7 +28,7 @@ test('When a module/path is being used withough being declared in the package', 
 test('When a module declared in the package is being used', done => {
   const handler = externalDependenciesHandler({ lodash: '4.17.4' });
   const handlerFunction = handler[0];
-  handlerFunction(null, 'lodash', err => {
+  handlerFunction({ request: 'lodash' }, err => {
     expect(err).toBeUndefined();
     done();
   });
@@ -37,7 +37,7 @@ test('When a module declared in the package is being used', done => {
 test('When a module is a node core dependency', done => {
   const handler = externalDependenciesHandler();
   const handlerFunction = handler[0];
-  handlerFunction(null, 'url', err => {
+  handlerFunction({ request: 'url' }, err => {
     expect(err).toBeUndefined();
     done();
   });
@@ -71,7 +71,7 @@ test('Module declared with @org_namespace/module_name in the package is also all
   });
   const handlerFunction = handler[0];
 
-  handlerFunction(null, '@org/proxied-lodash', err => {
+  handlerFunction({ request: '@org/proxied-lodash' }, err => {
     expect(err).toBeUndefined();
     done();
   });

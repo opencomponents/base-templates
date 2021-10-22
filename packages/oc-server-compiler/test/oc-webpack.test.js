@@ -6,6 +6,23 @@ const path = require('path');
 const api = require('../lib/oc-webpack/index.js');
 const MemoryFS = require('memory-fs');
 
+class DonePlugin {
+  constructor(fail) {
+    this.fail = fail;
+  }
+
+  apply(compiler) {
+    if (this.fail) {
+      compiler.hooks.run.tap('Done Plugin', () => {
+        throw 'This is a fatal compilation error';
+      });
+    }
+    compiler.hooks.done.tap('Done Plugin', stats => {
+      stats.compilation.warnings.push('A warning');
+    });
+  }
+}
+
 const {
   compiler: webpackCompiler,
   configurator: webpackConfigurator
@@ -98,6 +115,7 @@ test('webpack compiler', done => {
     publishFileName: 'server.js',
     serverPath
   });
+  const quote = str => str.replace(/([.?*+^$[\]\\(){}-])/g, '\\$1');
 
   webpackCompiler(config, (error, data) => {
     const fs = new MemoryFS(data);
@@ -108,6 +126,12 @@ test('webpack compiler', done => {
     const sourceMapJson = JSON.parse(sourceMapContentBundled);
     sourceMapJson.sources[1] = '/path/to/component/server.js';
     sourceMapJson.mappings = 'dummy';
+    sourceMapJson.sources = sourceMapJson.sources.map(source =>
+      source
+        .replace(new RegExp(quote(process.cwd()), 'g'), '')
+        .replace(/\\/g, '/')
+        .replace(/\/\//g, '/')
+    );
     expect(sourceMapJson).toMatchSnapshot();
     done();
   });
@@ -136,7 +160,6 @@ test('webpack compiler verbose', done => {
     const serverContentBundled = fs.readFileSync(dest, 'UTF8');
     const consoleOutput = loggerMock.log.mock.calls[0][0];
     expect(serverContentBundled).toMatchSnapshot();
-    expect(consoleOutput).toMatch(/Hash:(.*?)3e35c21f374c53effca5/);
     expect(consoleOutput).toMatch(/Entrypoint(.*?)main(.*?)=(.*?)server.js/);
     expect(consoleOutput).toMatch(/external \"lodash\"/);
     done();
@@ -155,11 +178,7 @@ test('webpack compiler with fatal error', done => {
     )
   });
 
-  config.plugins.push(function () {
-    this.plugin('run', (compiler, cb) =>
-      cb('This is a fatal compilation error')
-    );
-  });
+  config.plugins.push(new DonePlugin(true));
 
   webpackCompiler(config, (error, data) => {
     expect(error).toMatchSnapshot();
@@ -176,7 +195,7 @@ test('webpack compiler with soft error', done => {
   });
 
   webpackCompiler(config, (error, data) => {
-    expect(error).toContain(`Entry module not found: Error: Can't resolve`);
+    expect(error).toContain("Module not found: Error: Can't resolve");
     done();
   });
 });
@@ -195,10 +214,7 @@ test('webpack compiler with warning', done => {
     )
   });
 
-  config.plugins.push(function () {
-    this.plugin('run', (compiler, cb) => cb.call(compiler));
-    this.plugin('done', stats => stats.compilation.warnings.push('A warning'));
-  });
+  config.plugins.push(new DonePlugin());
 
   webpackCompiler(config, (error, data) => {
     expect(loggerMock.log.mock.calls[0][0]).toContain('A warning');

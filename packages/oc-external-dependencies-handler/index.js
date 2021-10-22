@@ -21,9 +21,9 @@ module.exports = dependencies => {
   const matcher = /^[a-z@][a-z\-\/0-9\.]+$/i;
 
   return [
-    (context, req, callback) => {
-      if (matcher.test(req)) {
-        let dependencyName = req;
+    ({ request }, callback) => {
+      if (matcher.test(request)) {
+        let dependencyName = request;
         if (/^(?!@).*\//g.test(dependencyName)) {
           dependencyName = dependencyName.substring(
             0,

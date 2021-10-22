@@ -38,7 +38,7 @@ test('When the server.js compilation fails should return error', done => {
   options2.componentPackage.oc.files.data = 'not-found.js';
 
   compileServer(options2, err => {
-    expect(err).toContain('Entry module not found');
+    expect(err).toContain('Module not found');
     done();
   });
 });
