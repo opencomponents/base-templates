@@ -5,7 +5,9 @@
   "oc": {
     "files": {
       "data": "server.js",
-      "static": ["img"],
+      "static": [
+        "img"
+      ],
       "template": {
         "src": "template.hbs",
         "type": "oc-template-handlebars"

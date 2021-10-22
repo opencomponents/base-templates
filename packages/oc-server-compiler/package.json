@@ -1,8 +1,9 @@
 {
   "name": "oc-server-compiler",
-  "version": "2.1.8",
+  "version": "2.1.12",
   "description": "OC-Server-Compiler",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/opencomponents/base-templates.git"
@@ -21,22 +22,23 @@
   },
   "license": "MIT",
   "dependencies": {
-    "async": "^2.4.1",
+    "async": "3.1.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.2",
     "babel-minify-webpack-plugin": "0.3.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "fs-extra": "8.1.0",
-    "infinite-loop-loader": "1.0.6",
+    "infinite-loop-loader": "1.0.8",
     "memory-fs": "0.5.0",
-    "oc-external-dependencies-handler": "1.0.8",
-    "oc-hash-builder": "1.0.2",
+    "oc-external-dependencies-handler": "1.0.10",
+    "oc-hash-builder": "1.0.4",
     "webpack": "^4.8.3"
   },
   "files": [
     "lib/**/*",
     "index.js",
+    "index.d.ts",
     "LICENSE",
     "README.md"
   ]

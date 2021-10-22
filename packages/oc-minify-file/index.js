@@ -6,7 +6,7 @@ const CleanCss = require('clean-css');
 const strings = require('oc-templates-messages');
 const uglifyJs = require('uglify-js');
 
-module.exports = function(fileExtension, fileContent) {
+module.exports = function (fileExtension, fileContent) {
   if (fileExtension === '.js') {
     const presetOptions = {
       targets: {
@@ -18,8 +18,10 @@ module.exports = function(fileExtension, fileContent) {
     };
 
     const babelOptions = { presets: [[babelPresetEnv, presetOptions]] };
-    const es5TranspiledContent = babel.transform(fileContent, babelOptions)
-      .code;
+    const es5TranspiledContent = babel.transform(
+      fileContent,
+      babelOptions
+    ).code;
 
     return uglifyJs.minify(es5TranspiledContent).code;
   } else if (fileExtension === '.css') {
