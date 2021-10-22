@@ -91,8 +91,12 @@ _.each(scenarios, (scenario, testName) => {
   test(testName, done => {
     execute(scenario, (err, { result, files }) => {
       expect(err).toBeNull();
+      if (result.oc.files.dataProvider) {
+        result.oc.files.dataProvider.hashKey = 'dummyData';
+      }
+      result.oc.files.template.hashKey = 'dummyData';
       expect(result).toMatchSnapshot();
-      expect(files).toMatchSnapshot();
+      expect(files.map(x => x.replace(/\\/g, '/'))).toMatchSnapshot();
       done();
     });
   });

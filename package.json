@@ -1,15 +1,20 @@
 {
   "private": true,
   "devDependencies": {
-    "codecov": "3.0.2",
-    "husky": "0.14.3",
-    "jest": "22.4.4",
-    "jest-environment-jsdom": "22.4.3",
-    "lerna": "2.11.0",
-    "lint-staged": "7.1.2",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "codecov": "3.7.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "7.0.4",
+    "jest": "25.1.0",
+    "jest-environment-jsdom": "25.1.00",
+    "lerna": "4.0.0",
+    "lint-staged": "11.2.3",
     "node-dir": "0.1.17",
-    "oc": "^0.42.26",
-    "prettier-eslint-cli": "^4.7.1"
+    "oc": "0.49.2",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.2"
   },
   "scripts": {
     "clean": "lerna clean && rm -rf node_modules",
@@ -20,13 +25,13 @@
     "publish": "lerna publish --exact",
     "test": "jest",
     "updated": "lerna updated",
-    "setup": "yarn --production=false && lerna bootstrap"
+    "postinstall": "lerna bootstrap",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.js": [
-      "prettier-eslint --write",
-      "jest --findRelatedTests",
-      "git add"
+      "prettier --write",
+      "jest --findRelatedTests"
     ]
   },
   "jest": {

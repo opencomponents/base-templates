@@ -2,7 +2,7 @@
 
 /* istanbul ignore next */
 
-(function(f) {
+(function (f) {
   if (typeof exports === 'object' && typeof module !== 'undefined') {
     module.exports = f();
   } else if (typeof define === 'function' && define.amd) {
@@ -20,7 +20,7 @@
     }
     g.jade = f();
   }
-})(function() {
+})(function () {
   let define, module, exports;
   return (function e(t, n, r) {
     function s(o, u) {
@@ -35,7 +35,7 @@
         let l = (n[o] = { exports: {} });
         t[o][0].call(
           l.exports,
-          function(e) {
+          function (e) {
             let n = t[o][1][e];
             return s(n ? n : e);
           },
@@ -55,20 +55,20 @@
   })(
     {
       1: [
-        function(require, module, exports) {
+        function (require, module, exports) {
           'use strict';
 
           /**
-     * Merge two attribute objects giving precedence
-     * to values in object `b`. Classes are special-cased
-     * allowing for arrays and merging/joining appropriately
-     * resulting in a string.
-     *
-     * @param {Object} a
-     * @param {Object} b
-     * @return {Object} a
-     * @api private
-     */
+           * Merge two attribute objects giving precedence
+           * to values in object `b`. Classes are special-cased
+           * allowing for arrays and merging/joining appropriately
+           * resulting in a string.
+           *
+           * @param {Object} a
+           * @param {Object} b
+           * @return {Object} a
+           * @api private
+           */
 
           exports.merge = function merge(a, b) {
             if (arguments.length === 1) {
@@ -99,43 +99,45 @@
           };
 
           /**
-     * Filter null `val`s.
-     *
-     * @param {*} val
-     * @return {Boolean}
-     * @api private
-     */
+           * Filter null `val`s.
+           *
+           * @param {*} val
+           * @return {Boolean}
+           * @api private
+           */
 
           function nulls(val) {
             return val != null && val !== '';
           }
 
           /**
-     * join array as classes.
-     *
-     * @param {*} val
-     * @return {String}
-     */
+           * join array as classes.
+           *
+           * @param {*} val
+           * @return {String}
+           */
           exports.joinClasses = joinClasses;
           function joinClasses(val) {
-            return (Array.isArray(val)
-              ? val.map(joinClasses)
-              : val && typeof val === 'object'
-                ? Object.keys(val).filter(function(key) {
-                  return val[key];
-                })
-                : [val])
+            return (
+              Array.isArray(val)
+                ? val.map(joinClasses)
+                : val && typeof val === 'object'
+                ? Object.keys(val).filter(function (key) {
+                    return val[key];
+                  })
+                : [val]
+            )
               .filter(nulls)
               .join(' ');
           }
 
           /**
-     * Render the given classes.
-     *
-     * @param {Array} classes
-     * @param {Array.<Boolean>} escaped
-     * @return {String}
-     */
+           * Render the given classes.
+           *
+           * @param {Array} classes
+           * @param {Array.<Boolean>} escaped
+           * @return {String}
+           */
           exports.cls = function cls(classes, escaped) {
             let buf = [];
             for (let i = 0; i < classes.length; i++) {
@@ -153,10 +155,10 @@
             }
           };
 
-          exports.style = function(val) {
+          exports.style = function (val) {
             if (val && typeof val === 'object') {
               return Object.keys(val)
-                .map(function(style) {
+                .map(function (style) {
                   return style + ':' + val[style];
                 })
                 .join(';');
@@ -165,14 +167,14 @@
             }
           };
           /**
-     * Render the given attribute.
-     *
-     * @param {String} key
-     * @param {String} val
-     * @param {Boolean} escaped
-     * @param {Boolean} terse
-     * @return {String}
-     */
+           * Render the given attribute.
+           *
+           * @param {String} key
+           * @param {String} val
+           * @param {Boolean} escaped
+           * @param {Boolean} terse
+           * @return {String}
+           */
           exports.attr = function attr(key, val, escaped, terse) {
             if (key === 'style') {
               val = exports.style(val);
@@ -221,12 +223,12 @@
           };
 
           /**
-     * Render the given attributes object.
-     *
-     * @param {Object} obj
-     * @param {Object} escaped
-     * @return {String}
-     */
+           * Render the given attributes object.
+           *
+           * @param {Object} obj
+           * @param {Object} escaped
+           * @return {String}
+           */
           exports.attrs = function attrs(obj, terse) {
             let buf = [];
 
@@ -251,12 +253,12 @@
           };
 
           /**
-     * Escape the given string of `html`.
-     *
-     * @param {String} html
-     * @return {String}
-     * @api private
-     */
+           * Escape the given string of `html`.
+           *
+           * @param {String} html
+           * @return {String}
+           * @api private
+           */
 
           let jade_encode_html_rules = {
             '&': '&amp;',
@@ -281,14 +283,14 @@
           }
 
           /**
-     * Re-throw the given `err` in context to the
-     * the jade in `filename` at the given `lineno`.
-     *
-     * @param {Error} err
-     * @param {String} filename
-     * @param {String} lineno
-     * @api private
-     */
+           * Re-throw the given `err` in context to the
+           * the jade in `filename` at the given `lineno`.
+           *
+           * @param {Error} err
+           * @param {String} filename
+           * @param {String} lineno
+           * @api private
+           */
 
           exports.rethrow = function rethrow(err, filename, lineno, str) {
             if (!(err instanceof Error)) throw err;
@@ -309,7 +311,7 @@
             // Error context
             var context = lines
               .slice(start, end)
-              .map(function(line, i) {
+              .map(function (line, i) {
                 let curr = i + start + 1;
                 return (curr == lineno ? '  > ' : '    ') + curr + '| ' + line;
               })
@@ -335,7 +337,7 @@
         },
         { fs: 2 }
       ],
-      2: [function(require, module, exports) {}, {}]
+      2: [function (require, module, exports) {}, {}]
     },
     {},
     [1]

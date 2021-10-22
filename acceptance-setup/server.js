@@ -40,6 +40,7 @@ module.exports = (port, cb) => {
         if (err) {
           throw err;
         }
+
         res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
         const html = `<!DOCTYPE html>
         <html>
@@ -47,7 +48,7 @@ module.exports = (port, cb) => {
             <title>A page</title>
           </head>
           <body>
-            ${es6Component}
+            ${es6Component.replace(/data-hash=\".*?\"/, '')}
             ${handlebarsComponent}
             ${jadeComponent}
             ${ocClient}

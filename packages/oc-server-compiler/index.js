@@ -64,12 +64,12 @@ module.exports = (options, callback) => {
               err
                 ? null
                 : {
-                  type: 'node.js',
-                  hashKey: hashBuilder.fromString(
-                    compiledFiles[publishFileName]
-                  ),
-                  src: publishFileName
-                }
+                    type: 'node.js',
+                    hashKey: hashBuilder.fromString(
+                      compiledFiles[publishFileName]
+                    ),
+                    src: publishFileName
+                  }
             )
         )
     ],

@@ -1,9 +1,9 @@
 {
   "name": "acceptance-setup",
   "private": true,
-  "version": "0.0.5",
+  "version": "0.0.13",
   "devDependencies": {
-    "fs-extra": "5.0.0",
+    "fs-extra": "8.1.0",
     "request": "^2.83.0",
     "request-promise-native": "^1.0.5"
   }

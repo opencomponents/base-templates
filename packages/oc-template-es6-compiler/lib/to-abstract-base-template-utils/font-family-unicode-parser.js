@@ -1,10 +1,11 @@
 const RE_FONT_FAMILY = /font-family\s*:\s*([^;\n]+)[;\n]/g;
-const RE_FONT_NAMES = /(?:(?:'|(?:\\"))?([(?:\\\\)\w\d _-]+)(?:'|(?:\\"))?(,\s*)?)/g;
+const RE_FONT_NAMES =
+  /(?:(?:'|(?:\\"))?([(?:\\\\)\w\d _-]+)(?:'|(?:\\"))?(,\s*)?)/g;
 const RE_DOUBLE_COUTE = /"/g;
 const RE_SPACE = /[ ]+/g;
 const RE_UNICODE = /\\([\d\w]{4})/g;
 
-module.exports = function(source) {
+module.exports = function (source) {
   source = source.replace(RE_FONT_FAMILY, (str, fontNames) => {
     const strFontNames = fontNames
       .replace(RE_DOUBLE_COUTE, "'")

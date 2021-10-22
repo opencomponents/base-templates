@@ -20,24 +20,18 @@ const components = [
   {
     name: 'base-component-handlebars',
     template: require('../../packages/oc-template-handlebars'),
-    path: path.join(
-      __dirname,
-      '../../acceptance-components/base-component-handlebars'
-    )
+    path: path.join(__dirname, '../../acceptance-components/base-component-handlebars'),
   },
   {
     name: 'base-component-jade',
     template: require('../../packages/oc-template-jade'),
-    path: path.join(
-      __dirname,
-      '../../acceptance-components/base-component-jade'
-    )
+    path: path.join(__dirname, '../../acceptance-components/base-component-jade'),
   },
   {
     name: 'base-component-es6',
     template: require('../../packages/oc-template-es6'),
-    path: path.join(__dirname, '../../acceptance-components/base-component-es6')
-  }
+    path: path.join(__dirname, '../../acceptance-components/base-component-es6'),
+  },
 ];
 
 let registry;
@@ -45,20 +39,18 @@ let testServer;
 
 const semverRegex = /\bv?(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[\da-z-]+(?:\.[\da-z-]+)*)?(?:\+[\da-z-]+(?:\.[\da-z-]+)*)?\b/gi;
 
-beforeAll(done => {
-  components.forEach(component => {
+beforeAll((done) => {
+  components.forEach((component) => {
     fs.removeSync(path.join(component.path, '_package'));
   });
 
-  const promisify = fn => options =>
-    new Promise((resolve, reject) =>
-      fn(options, err => (err ? reject(err) : resolve()))
-    );
+  const promisify = (fn) => (options) =>
+    new Promise((resolve, reject) => fn(options, (err) => (err ? reject(err) : resolve())));
   const packageAsync = promisify(cli.package);
 
-  const packaged = components.map(component =>
+  const packaged = components.map((component) =>
     packageAsync({
-      componentPath: component.path
+      componentPath: component.path,
     })
   );
 
@@ -73,21 +65,19 @@ beforeAll(done => {
         baseUrl: registryUrl,
         env: {},
         templates: components
-          .map(component => component.template)
-          .filter(template => {
+          .map((component) => component.template)
+          .filter((template) => {
             // we need only the non-default templates here
             const type = template.getInfo().type;
-            return (
-              type !== 'oc-template-handlebars' && type !== 'oc-template-jade'
-            );
-          })
+            return type !== 'oc-template-handlebars' && type !== 'oc-template-jade';
+          }),
       });
 
-      registry.start(err => {
+      registry.start((err) => {
         if (err) {
           return done(err);
         }
-        testServer = server(serverPort, err => {
+        testServer = server(serverPort, (err) => {
           if (err) {
             return done(err);
           }
@@ -95,15 +85,15 @@ beforeAll(done => {
         });
       });
     })
-    .catch(err => {
+    .catch((err) => {
       return done(err);
     });
 });
 
-afterAll(done => {
+afterAll((done) => {
   testServer.close(() => {
     registry.close(() => {
-      components.forEach(component => {
+      components.forEach((component) => {
         fs.removeSync(path.join(component.path, '_package'));
       });
       done();
@@ -111,78 +101,89 @@ afterAll(done => {
   });
 });
 
-test('Registry should correctly serve rendered components', done => {
-  const rendered = components.map(component =>
+test('Registry should correctly serve rendered components', (done) => {
+  const rendered = components.map((component) =>
     r(registryUrl + `${component.name}/?name=SuperMario`)
-      .then(body => {
-        const bodyVersionless = body.replace(semverRegex, '6.6.6');
+      .then((body) => {
+        const bodyVersionless = body
+          .replace(semverRegex, '6.6.6')
+          .replace(/data-hash=\\\".*?\\\"/, '')
+          .replace(
+            /\[\\\"oc\\\",.*?\\\"reactComponents\\\",.*?\\\".*?\\\"\]/,
+            '["oc", "reactComponents", "dummyContent"]'
+          );
         return Promise.resolve(bodyVersionless);
       })
-      .catch(err => Promise.reject(err))
+      .catch((err) => Promise.reject(err))
   );
   Promise.all(rendered)
-    .then(responses => {
-      responses.forEach(response => expect(response).toMatchSnapshot());
+    .then((responses) => {
+      responses.forEach((response) =>
+        expect(response.replace(/awesome__\w+/g, 'awesome__HASH')).toMatchSnapshot()
+      );
       done();
     })
-    .catch(err => done(err));
+    .catch((err) => done(err));
 });
 
-test('Registry should correctly serve unrendered components', done => {
-  const unrendered = components.map(component =>
+test('Registry should correctly serve unrendered components', (done) => {
+  const unrendered = components.map((component) =>
     r({
       uri: registryUrl + `${component.name}/?name=SuperMario`,
       headers: {
-        Accept: 'application/vnd.oc.unrendered+json'
-      }
+        Accept: 'application/vnd.oc.unrendered+json',
+      },
     })
-      .then(body => {
-        const bodyVersionless = body.replace(semverRegex, '6.6.6');
+      .then((body) => {
+        const bodyVersionless = body.replace(semverRegex, '6.6.6').replace(/\"key\":\".*?\"/g, '');
         return Promise.resolve(bodyVersionless);
       })
-      .catch(err => Promise.reject(err))
+      .catch((err) => Promise.reject(err))
   );
 
   Promise.all(unrendered)
-    .then(responses => {
-      responses.forEach(response => expect(response).toMatchSnapshot());
+    .then((responses) => {
+      responses.forEach((response) => expect(response).toMatchSnapshot());
       done();
     })
-    .catch(err => done(err));
+    .catch((err) => done(err));
 });
 
-test('server-side-side rendering', done => {
+test('server-side-side rendering', (done) => {
   JSDOM.fromURL(`${serverUrl}?name=SuperMario`, {})
-    .then(dom => {
+    .then((dom) => {
       const domVersionless = dom.serialize().replace(semverRegex, '6.6.6');
-      expect(domVersionless).toMatchSnapshot();
+      expect(domVersionless.replace(/awesome__\w+/g, 'awesome__HASH')).toMatchSnapshot();
       done();
     })
-    .catch(err => done(err));
+    .catch((err) => done(err));
 });
 
-test('client-side-side rendering', done => {
-  const rendered = components.map(component =>
+test('client-side-side rendering', (done) => {
+  const rendered = components.map((component) =>
     JSDOM.fromURL(`${registryUrl}${component.name}/~preview?name=SuperMario`, {
       resources: 'usable',
-      runScripts: 'dangerously'
+      runScripts: 'dangerously',
     })
       .then(
-        dom =>
-          new Promise(resolve => {
+        (dom) =>
+          new Promise((resolve) => {
             setTimeout(() => {
               const node = dom.window.document.getElementById(component.name);
-              return resolve(node);
+              const nodeVersionless = node.outerHTML.replace(semverRegex, '6.6.6');
+              return resolve(nodeVersionless);
             }, 5000);
           })
       )
-      .catch(err => Promise.reject(err))
+      .catch((err) => Promise.reject(err))
   );
 
   Promise.all(rendered)
-    .then(responses => {
-      responses.forEach(response => expect(response).toMatchSnapshot());
+    .then((responses) => {
+      responses.forEach((response) =>
+        expect(response.replace(/awesome__\w+/g, 'awesome__HASH')).toMatchSnapshot()
+      );
       done();
     })
-    .catch(err => done(err));
+    .catch((err) => done(err));
 });

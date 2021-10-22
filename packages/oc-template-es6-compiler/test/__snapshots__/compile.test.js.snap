@@ -14,13 +14,13 @@ Object {
     "date": "",
     "files": Object {
       "dataProvider": Object {
-        "hashKey": "54f83b15df2010f8a93b5f2b2f60f0632b31b72b",
+        "hashKey": "dummyData",
         "src": "server.js",
         "type": "node.js",
       },
       "static": Array [],
       "template": Object {
-        "hashKey": "aeb102461ab63a924d5cfc368829bd90d88be6ad",
+        "hashKey": "dummyData",
         "src": "template.js",
         "type": "oc-template-es6",
         "version": "",

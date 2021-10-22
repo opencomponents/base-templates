@@ -3,7 +3,7 @@ base-templates
 
 Base-templates & utilties for the [OpenComponents](https://github.com/opentable/oc) template system
 
-[![CircleCI](https://circleci.com/gh/opencomponents/base-templates.svg?style=shield)](https://circleci.com/gh/opencomponents/base-templates)
+[![travis](https://travis-ci.org/opencomponents/base-templates.svg?branch=master)](https://travis-ci.org/opencomponents/base-templates)
 [![codecov](https://codecov.io/gh/opencomponents/base-templates/branch/master/graph/badge.svg)](https://codecov.io/gh/opencomponents/base-templates)
 
 
@@ -35,4 +35,3 @@ Base-templates & utilties for the [OpenComponents](https://github.com/opentable/
 | [`oc-template-jade-compiler`](/packages/oc-template-jade-compiler) | [![npm version](https://badge.fury.io/js/oc-template-jade-compiler.svg)](http://badge.fury.io/js/oc-template-jade-compiler) |
 | [`oc-templates-messages`](/packages/oc-templates-messages) | [![npm version](https://badge.fury.io/js/oc-templates-messages.svg)](http://badge.fury.io/js/oc-templates-messages) |
 | [`oc-view-wrapper`](/packages/oc-view-wrapper) | [![npm version](https://badge.fury.io/js/oc-view-wrapper.svg)](http://badge.fury.io/js/oc-view-wrapper) |
-| [`oc-webpack`](/packages/oc-webpack) | [![npm version](https://badge.fury.io/js/oc-webpack.svg)](http://badge.fury.io/js/oc-webpack) |

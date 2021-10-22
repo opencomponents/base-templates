@@ -11,7 +11,7 @@ Object {
     "date": "",
     "files": Object {
       "dataProvider": Object {
-        "hashKey": "b22a1857d6b7d45567a1e7338a70d05de7cfd8d3",
+        "hashKey": "dummyData",
         "src": "server.js",
         "type": "node.js",
       },
@@ -19,7 +19,7 @@ Object {
         "assets",
       ],
       "template": Object {
-        "hashKey": "096e8ec0a00c37c4bd669e2ad046892d93766ff0",
+        "hashKey": "dummyData",
         "src": "template.js",
         "type": "jade",
         "version": "",

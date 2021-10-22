@@ -70,3 +70,15 @@ test('The handler matcher should correctly match aganinst not valid modules', ()
   expect(handlerMatcher.test('./myModule.json')).toBe(false);
   expect(handlerMatcher.test('./myModule.js')).toBe(false);
 });
+
+test('Module declared with @org_namespace/module_name in the package is also allowed (proxied npm registry)', done => {
+  const handler = externalDependenciesHandler({
+    '@org/proxied-lodash': '4.17.4'
+  });
+  const handlerFunction = handler[0];
+
+  handlerFunction(null, '@org/proxied-lodash', err => {
+    expect(err).toBeUndefined();
+    done();
+  });
+});
