@@ -71,12 +71,14 @@ describe('transformLoopWithLimit', () => {
             expect(labeledNodeMock.parent.update.mock.calls[0].length).toBe(1);
           });
           it('should place the label AFTER the variable declaration', () => {
-            let iterPosition = labeledNodeMock.parent.update.mock.calls[0][0].indexOf(
-              'var __ITER = '
-            );
-            let labelPosition = labeledNodeMock.parent.update.mock.calls[0][0].indexOf(
-              'loop_label'
-            );
+            let iterPosition =
+              labeledNodeMock.parent.update.mock.calls[0][0].indexOf(
+                'var __ITER = '
+              );
+            let labelPosition =
+              labeledNodeMock.parent.update.mock.calls[0][0].indexOf(
+                'loop_label'
+              );
             expect(labelPosition).toBeGreaterThan(iterPosition);
           });
         } else {

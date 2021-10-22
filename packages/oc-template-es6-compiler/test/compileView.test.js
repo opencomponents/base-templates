@@ -25,6 +25,7 @@ test('valid component', done => {
       fs
         .readFileSync(path.join(publishPath, publishFileName), 'UTF8')
         .replace(viewHashKey, 'dummyData')
+        .replace(/awesome__\w+/g, 'awesome__HASH')
     ).toMatchSnapshot();
     fs.removeSync(publishPath);
     done();
@@ -47,7 +48,7 @@ test('invalid component', done => {
   };
 
   compileView(options, (err, compiledViewInfo) => {
-    expect(err).toContain('SyntaxError: Unexpected token (2:2)');
+    expect(err).toContain('Unexpected token (2:2)');
     done();
   });
 });

@@ -69,7 +69,9 @@ test('compile statics when oc.files.static contains valid folder and minify is f
         (err, res) => {
           const files = res.files.sort();
           expect(
-            files.map(file => path.relative(__dirname, file))
+            files.map(file =>
+              path.relative(__dirname, file).replace(/\\/g, '/')
+            )
           ).toMatchSnapshot();
           files.forEach(file => {
             if (!/.png$/.test(file)) {
@@ -95,7 +97,9 @@ test('compile statics when oc.files.static contains valid folder and minify is t
         (err, res) => {
           const files = res.files.sort();
           expect(
-            files.map(file => path.relative(__dirname, file))
+            files.map(file =>
+              path.relative(__dirname, file).replace(/\\/g, '/')
+            )
           ).toMatchSnapshot();
           files.forEach(file => {
             if (!/.png$/.test(file)) {
