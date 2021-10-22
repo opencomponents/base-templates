@@ -13,9 +13,9 @@ while(true){
 After:
 
 ```JavaScript
-var __ITER = 1000000000; 
+var __ITER = 1000000000;
 while(true) {
-  if (__ITER <= 0) { 
+  if (__ITER <= 0) {
     throw new Error("Loop exceeded maximum allowed iterations");
   }
   // your logic here
