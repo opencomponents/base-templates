@@ -1,6 +1,6 @@
 {
   "name": "oc-server-compiler",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "OC-Server-Compiler",
   "main": "index.js",
   "types": "index.d.ts",

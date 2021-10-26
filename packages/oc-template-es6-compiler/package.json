@@ -1,6 +1,6 @@
 {
   "name": "oc-template-es6-compiler",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "OC-Template-ES6-Compiler",
   "main": "index.js",
   "types": "index.d.ts",
@@ -36,7 +36,7 @@
     "oc-generic-template-compiler": "2.0.9",
     "oc-hash-builder": "1.0.5",
     "oc-minify-file": "1.0.19",
-    "oc-server-compiler": "2.2.0",
+    "oc-server-compiler": "2.2.1",
     "oc-statics-compiler": "2.0.16",
     "oc-template-es6": "1.0.7",
     "oc-templates-messages": "1.0.4",
