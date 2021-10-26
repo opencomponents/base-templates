@@ -114,7 +114,7 @@ Object {
     "webpack/runtime/define property getters",
     "webpack/runtime/hasOwnProperty shorthand",
     "webpack/runtime/make namespace object",
-    "/mocks/jade-component/mocks/jade-component/server.js",
+    "/mocks/jade-component/server.js",
   ],
   "sourcesContent": Array [
     "module.exports = require(\\"lodash\\");",
