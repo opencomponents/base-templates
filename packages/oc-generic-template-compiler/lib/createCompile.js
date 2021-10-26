@@ -80,6 +80,18 @@ module.exports =
         // Compile statics
         function (componentPackage, cb) {
           compileStatics(options, error => cb(error, componentPackage));
+        },
+        // Copy .env if available
+        function (componentPackage, cb) {
+          const env = componentPackage.oc.files.env;
+          if (env) {
+            const src = path.join(options.componentPath, env);
+            const dest = path.join(options.publishPath, '.env');
+
+            fs.copy(src, dest, err => cb(err, componentPackage));
+          } else {
+            cb(null, componentPackage);
+          }
         }
       ],
       callback
