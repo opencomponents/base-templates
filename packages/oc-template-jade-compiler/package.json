@@ -1,6 +1,6 @@
 {
   "name": "oc-template-jade-compiler",
-  "version": "7.0.6",
+  "version": "7.1.0",
   "description": "OC-Template-Jade-Compiler",
   "main": "index.js",
   "types": "index.d.ts",
@@ -26,14 +26,14 @@
     "jstransformer-clean-css": "^2.0.0",
     "jstransformer-uglify-css": "^1.0.0",
     "jstransformer-uglify-js": "^1.2.0",
-    "oc-generic-template-compiler": "2.0.8",
-    "oc-hash-builder": "1.0.4",
+    "oc-generic-template-compiler": "2.0.9",
+    "oc-hash-builder": "1.0.5",
     "oc-jade-legacy": "1.11.1",
-    "oc-server-compiler": "2.1.12",
-    "oc-statics-compiler": "2.0.15",
-    "oc-template-jade": "7.0.5",
+    "oc-server-compiler": "2.2.0",
+    "oc-statics-compiler": "2.0.16",
+    "oc-template-jade": "7.0.6",
     "oc-templates-messages": "1.0.4",
-    "oc-view-wrapper": "1.0.5",
+    "oc-view-wrapper": "1.0.6",
     "uglify-js": "3.7.6"
   },
   "files": [

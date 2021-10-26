@@ -1,6 +1,6 @@
 {
   "name": "oc-server-compiler",
-  "version": "2.1.12",
+  "version": "2.2.0",
   "description": "OC-Server-Compiler",
   "main": "index.js",
   "types": "index.d.ts",
@@ -29,10 +29,10 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "fs-extra": "10.0.0",
-    "infinite-loop-loader": "1.0.8",
+    "infinite-loop-loader": "1.0.9",
     "memory-fs": "0.5.0",
-    "oc-external-dependencies-handler": "1.0.10",
-    "oc-hash-builder": "1.0.4",
+    "oc-external-dependencies-handler": "1.1.0",
+    "oc-hash-builder": "1.0.5",
     "webpack": "^5.59.1"
   },
   "files": [
