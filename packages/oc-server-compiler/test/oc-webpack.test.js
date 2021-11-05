@@ -43,14 +43,11 @@ test('webpack configurator with production=false', () => {
 
   // clean paths
   const target = config.module.rules[0].use;
+
   target[0].loader = path.relative(__dirname, target[0].loader);
   target[0].options.presets[0][0] = path.relative(
     __dirname,
     target[0].options.presets[0][0]
-  );
-  target[0].options.plugins[0][0] = path.relative(
-    __dirname,
-    target[0].options.plugins[0][0]
   );
   delete config.logger;
 
@@ -59,7 +56,6 @@ test('webpack configurator with production=false', () => {
   use.loader = use.loader.replace(/\\/g, '/');
   use.options.sourceRoot = use.options.sourceRoot.replace(/\\/g, '/');
   use.options.presets[0][0] = use.options.presets[0][0].replace(/\\/g, '/');
-  use.options.plugins[0][0] = use.options.plugins[0][0].replace(/\\/g, '/');
 
   expect(config).toMatchSnapshot();
 });
@@ -81,10 +77,6 @@ test('webpack configurator with production=true', () => {
     __dirname,
     target[1].options.presets[0][0]
   );
-  target[1].options.plugins[0][0] = path.relative(
-    __dirname,
-    target[1].options.plugins[0][0]
-  );
   delete config.logger;
 
   config.output.path = config.output.path.replace(/\\/g, '/');
@@ -94,7 +86,6 @@ test('webpack configurator with production=true', () => {
   use.loader = use.loader.replace(/\\/g, '/');
   use.options.sourceRoot = use.options.sourceRoot.replace(/\\/g, '/');
   use.options.presets[0][0] = use.options.presets[0][0].replace(/\\/g, '/');
-  use.options.plugins[0][0] = use.options.plugins[0][0].replace(/\\/g, '/');
 
   expect(config).toMatchSnapshot();
 });
@@ -195,7 +186,7 @@ test('webpack compiler with soft error', done => {
   });
 
   webpackCompiler(config, (error, data) => {
-    expect(error).toContain("Module not found: Error: Can't resolve");
+    expect(error.message).toContain("Module not found: Error: Can't resolve");
     done();
   });
 });

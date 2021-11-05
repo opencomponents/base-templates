@@ -116,7 +116,7 @@ test('When server compilation fails should return an error', done => {
   };
 
   execute(options, err => {
-    expect(err).toContain('Module not found');
+    expect(err.message).toContain('Module not found');
     done();
   });
 });

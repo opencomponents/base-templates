@@ -48,11 +48,7 @@ module.exports = (options, callback) => {
 
       let css = null;
       if (data.build['main.css']) {
-        // This is an awesome hack by KimTaro that will blow your mind.
-        // Remove it once this get merged: https://github.com/webpack-contrib/css-loader/pull/523
-        css = fontFamilyUnicodeParser(
-          memoryFs.readFileSync(`/build/main.css`, 'UTF8')
-        );
+        css = memoryFs.readFileSync(`/build/main.css`, 'UTF8');
         // TODO: something seems to brake when "" in jess for japanese ^^
         // We convert single quotes to double quotes in order to
         // support the viewTemplate's string interpolation
