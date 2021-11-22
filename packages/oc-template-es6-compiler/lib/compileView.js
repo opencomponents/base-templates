@@ -9,7 +9,6 @@ const strings = require('oc-templates-messages');
 const MemoryFS = require('memory-fs');
 const minifyFile = require('oc-minify-file');
 const viewTemplate = require('./viewTemplate');
-const fontFamilyUnicodeParser = require('./to-abstract-base-template-utils/font-family-unicode-parser');
 const {
   compiler,
   configurator: webpackConfigurator
@@ -18,7 +17,6 @@ const {
 module.exports = (options, callback) => {
   const viewFileName = options.componentPackage.oc.files.template.src;
   const viewPath = path.join(options.componentPath, viewFileName);
-  const viewContent = fs.readFileSync(viewPath, 'UTF8');
   const publishPath = options.publishPath;
   const publishFileName = options.publishFileName || 'template.js';
   const production = options.production;
