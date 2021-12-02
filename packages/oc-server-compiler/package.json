@@ -1,6 +1,6 @@
 {
   "name": "oc-server-compiler",
-  "version": "2.2.1",
+  "version": "3.0.0",
   "description": "OC-Server-Compiler",
   "main": "index.js",
   "types": "index.d.ts",
@@ -22,8 +22,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "async": "^3.2.1",
     "@babel/core": "^7.14.2",
+    "async": "^3.2.1",
     "babel-loader": "^8.2.2",
     "babel-preset-env": "^1.7.0",
     "fs-extra": "10.0.0",
