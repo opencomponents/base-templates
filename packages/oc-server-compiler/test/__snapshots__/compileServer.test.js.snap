@@ -8,6 +8,6 @@ Object {
 }
 `;
 
-exports[`Should correctly compile the server 2`] = `"(()=>{\\"use strict\\";function a(d){var e=c[d];if(void 0!==e)return e.exports;var f=c[d]={exports:{}};return b[d](f,f.exports,a),f.exports}var b={793:(a)=>{a.exports=require(\\"lodash\\")}},c={};(()=>{a.d=(b,c)=>{for(var d in c)a.o(c,d)&&!a.o(b,d)&&Object.defineProperty(b,d,{enumerable:!0,get:c[d]})}})(),(()=>{a.o=(a,b)=>Object.prototype.hasOwnProperty.call(a,b)})(),(()=>{a.r=(a)=>{\\"undefined\\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(a,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(a,\\"__esModule\\",{value:!0})}})();var d={};(()=>{a.r(d),a.d(d,{data:()=>c});const b=a(793),c=(a,b)=>b(null,{})})(),module.exports=d})();"`;
+exports[`Should correctly compile the server 2`] = `"(()=>{\\"use strict\\";var e={793:e=>{e.exports=require(\\"lodash\\")}},r={};function o(t){var n=r[t];if(void 0!==n)return n.exports;var a=r[t]={exports:{}};return e[t](a,a.exports,o),a.exports}o.d=(e,r)=>{for(var t in r)o.o(r,t)&&!o.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})},o.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r),o.r=e=>{\\"undefined\\"!==typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})};var t={};(()=>{o.r(t),o.d(t,{data:()=>e});o(793);const e=(e,r)=>r(null,{})})(),module.exports=t})();"`;
 
 exports[`When server writing fails should return error 1`] = `"sorry I failed"`;

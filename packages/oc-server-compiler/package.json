@@ -23,17 +23,16 @@
   "license": "MIT",
   "dependencies": {
     "async": "^3.2.1",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.2",
-    "babel-minify-webpack-plugin": "0.3.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "@babel/core": "^7.14.2",
+    "babel-loader": "^8.2.2",
     "babel-preset-env": "^1.7.0",
     "fs-extra": "10.0.0",
     "infinite-loop-loader": "1.0.9",
     "memory-fs": "0.5.0",
     "oc-external-dependencies-handler": "1.1.0",
     "oc-hash-builder": "1.0.5",
-    "webpack": "^5.59.1"
+    "terser-webpack-plugin": "^5.1.4",
+    "webpack": "^5.61.0"
   },
   "files": [
     "lib/**/*",

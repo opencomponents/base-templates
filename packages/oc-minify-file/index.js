@@ -25,9 +25,11 @@ module.exports = function (fileExtension, fileContent) {
 
     return uglifyJs.minify(es5TranspiledContent).code;
   } else if (fileExtension === '.css') {
-    const result = new CleanCss().minify(fileContent);
+    const result = new CleanCss({
+      level: { 1: { specialComments: 0 } }
+    }).minify(fileContent);
 
-    if (result.warnings.length > 0 || result.errors.lenght > 0) {
+    if (result.warnings.length > 0 || result.errors.length > 0) {
       throw new Error(strings.errors.cssNotValid());
     }
 
