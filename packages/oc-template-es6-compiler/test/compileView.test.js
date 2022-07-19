@@ -48,7 +48,9 @@ test('invalid component', done => {
   };
 
   compileView(options, (err, compiledViewInfo) => {
-    expect(err).toContain('Unexpected token (2:2)');
+    expect(err).toContain(
+      "Support for the experimental syntax 'jsx' isn't currently enabled (2:3)"
+    );
     done();
   });
 });

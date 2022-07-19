@@ -1,67 +1,48 @@
 /*jshint camelcase:false */
 'use strict';
 
-const MinifyPlugin = require('babel-minify-webpack-plugin');
 const externalDependenciesHandlers = require('oc-external-dependencies-handler');
+const TerserPlugin = require('terser-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
 module.exports = function webpackConfigGenerator(options) {
-  const production =
-    options.production !== undefined ? options.production : 'true';
+  const isEnvProduction =
+    options.production !== undefined ? !!options.production : true;
 
-  const sourceMaps = !production;
+  const sourceMaps = !isEnvProduction;
   const devtool = sourceMaps ? 'cheap-module-source-map' : false;
 
-  const jsLoaders = [
-    {
-      loader: require.resolve('babel-loader'),
-      options: {
-        cacheDirectory: true,
-        retainLines: true,
-        sourceMaps,
-        sourceRoot: path.join(options.serverPath, '..'),
-        babelrc: false,
-        presets: [
-          [
-            require.resolve('babel-preset-env'),
-            {
-              modules: false,
-              targets: {
-                node: 12
-              }
-            }
-          ]
-        ],
-        plugins: [
-          [require.resolve('babel-plugin-transform-object-rest-spread')]
-        ]
-      }
-    }
-  ];
-
-  const plugins = [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(
-        production ? 'production' : 'development'
-      )
-    })
-  ];
-
-  if (production) {
-    jsLoaders.unshift({
-      loader: require.resolve('infinite-loop-loader')
-    });
-    plugins.unshift(new MinifyPlugin());
-  }
-
   return {
-    mode: production ? 'production' : 'development',
+    mode: isEnvProduction ? 'production' : 'development',
+    bail: isEnvProduction,
     optimization: {
-      // https://webpack.js.org/configuration/optimization/
-      // Override production mode optimization for minification
-      // As it currently breakes the build, still rely on babel-minify-webpack-plugin instead
-      minimize: false
+      minimize: isEnvProduction,
+      minimizer: [
+        new TerserPlugin({
+          terserOptions: {
+            parse: {
+              ecma: 8
+            },
+            compress: {
+              ecma: 5,
+              warnings: false,
+              comparisons: false,
+              inline: 2
+            },
+            mangle: {
+              safari10: true
+            },
+            keep_classnames: false,
+            keep_fnames: false,
+            output: {
+              ecma: 5,
+              comments: false,
+              ascii_only: true
+            }
+          }
+        })
+      ]
     },
     devtool,
     entry: options.serverPath,
@@ -80,11 +61,42 @@ module.exports = function webpackConfigGenerator(options) {
         {
           test: /\.js$/,
           exclude: /node_modules/,
-          use: jsLoaders
+          use: [
+            isEnvProduction && {
+              loader: require.resolve('infinite-loop-loader')
+            },
+            {
+              loader: require.resolve('babel-loader'),
+              options: {
+                cacheDirectory: true,
+                retainLines: true,
+                sourceMaps,
+                sourceRoot: path.join(options.serverPath, '..'),
+                babelrc: false,
+                presets: [
+                  [
+                    require.resolve('babel-preset-env'),
+                    {
+                      modules: false,
+                      targets: {
+                        node: 12
+                      }
+                    }
+                  ]
+                ]
+              }
+            }
+          ].filter(Boolean)
         }
       ]
     },
-    plugins,
+    plugins: [
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify(
+          isEnvProduction ? 'production' : 'development'
+        )
+      })
+    ],
     logger: options.logger || console,
     stats: options.stats
   };

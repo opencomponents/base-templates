@@ -24,7 +24,7 @@ module.exports = function compiler(config, callback) {
     const info = stats.toJson();
     // handleSoftErrors
     if (stats.hasErrors()) {
-      softError = info.errors.toString();
+      softError = String(info.errors.map(x => x.message).filter(Boolean));
       return callback(softError);
     }
     // handleWarnings

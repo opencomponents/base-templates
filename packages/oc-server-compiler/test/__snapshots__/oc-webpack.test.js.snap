@@ -170,12 +170,13 @@ export const data = (context, callback) => {
 }
 `;
 
-exports[`webpack compiler verbose 1`] = `"(()=>{\\"use strict\\";function a(d){var e=c[d];if(void 0!==e)return e.exports;var f=c[d]={exports:{}};return b[d](f,f.exports,a),f.exports}var b={793:(a)=>{a.exports=require(\\"lodash\\")}},c={};(()=>{a.d=(b,c)=>{for(var d in c)a.o(c,d)&&!a.o(b,d)&&Object.defineProperty(b,d,{enumerable:!0,get:c[d]})}})(),(()=>{a.o=(a,b)=>Object.prototype.hasOwnProperty.call(a,b)})(),(()=>{a.r=(a)=>{\\"undefined\\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(a,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(a,\\"__esModule\\",{value:!0})}})();var d={};(()=>{a.r(d),a.d(d,{data:()=>c});const b=a(793),c=(a,b)=>b(null,{})})(),module.exports=d})();"`;
+exports[`webpack compiler verbose 1`] = `"(()=>{\\"use strict\\";var e={793:e=>{e.exports=require(\\"lodash\\")}},r={};function o(t){var n=r[t];if(void 0!==n)return n.exports;var a=r[t]={exports:{}};return e[t](a,a.exports,o),a.exports}o.d=(e,r)=>{for(var t in r)o.o(r,t)&&!o.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})},o.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r),o.r=e=>{\\"undefined\\"!==typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\\"Module\\"}),Object.defineProperty(e,\\"__esModule\\",{value:!0})};var t={};(()=>{o.r(t),o.d(t,{data:()=>e});o(793);const e=(e,r)=>r(null,{})})(),module.exports=t})();"`;
 
 exports[`webpack compiler with fatal error 1`] = `"This is a fatal compilation error"`;
 
 exports[`webpack configurator with production=false 1`] = `
 Object {
+  "bail": false,
   "devtool": "cheap-module-source-map",
   "entry": "/path/to/server.js",
   "externals": Array [
@@ -190,15 +191,10 @@ Object {
         "test": /\\\\\\.js\\$/,
         "use": Array [
           Object {
-            "loader": "../node_modules/babel-loader/lib/index.js",
+            "loader": "../../../node_modules/babel-loader/lib/index.js",
             "options": Object {
               "babelrc": false,
               "cacheDirectory": true,
-              "plugins": Array [
-                Array [
-                  "../../../node_modules/babel-plugin-transform-object-rest-spread/lib/index.js",
-                ],
-              ],
               "presets": Array [
                 Array [
                   "../../../node_modules/babel-preset-env/lib/index.js",
@@ -221,6 +217,41 @@ Object {
   },
   "optimization": Object {
     "minimize": false,
+    "minimizer": Array [
+      TerserPlugin {
+        "options": Object {
+          "exclude": undefined,
+          "extractComments": true,
+          "include": undefined,
+          "minimizer": Object {
+            "implementation": [Function],
+            "options": Object {
+              "compress": Object {
+                "comparisons": false,
+                "ecma": 5,
+                "inline": 2,
+                "warnings": false,
+              },
+              "keep_classnames": false,
+              "keep_fnames": false,
+              "mangle": Object {
+                "safari10": true,
+              },
+              "output": Object {
+                "ascii_only": true,
+                "comments": false,
+                "ecma": 5,
+              },
+              "parse": Object {
+                "ecma": 8,
+              },
+            },
+          },
+          "parallel": true,
+          "test": /\\\\\\.\\[cm\\]\\?js\\(\\\\\\?\\.\\*\\)\\?\\$/i,
+        },
+      },
+    ],
   },
   "output": Object {
     "devtoolFallbackModuleFilenameTemplate": "[absolute-resource-path]?[contenthash]",
@@ -243,6 +274,7 @@ Object {
 
 exports[`webpack configurator with production=true 1`] = `
 Object {
+  "bail": true,
   "devtool": false,
   "entry": "/path/to/server.js",
   "externals": Array [
@@ -260,15 +292,10 @@ Object {
             "loader": "../../infinite-loop-loader/index.js",
           },
           Object {
-            "loader": "../node_modules/babel-loader/lib/index.js",
+            "loader": "../../../node_modules/babel-loader/lib/index.js",
             "options": Object {
               "babelrc": false,
               "cacheDirectory": true,
-              "plugins": Array [
-                Array [
-                  "../../../node_modules/babel-plugin-transform-object-rest-spread/lib/index.js",
-                ],
-              ],
               "presets": Array [
                 Array [
                   "../../../node_modules/babel-preset-env/lib/index.js",
@@ -290,7 +317,42 @@ Object {
     ],
   },
   "optimization": Object {
-    "minimize": false,
+    "minimize": true,
+    "minimizer": Array [
+      TerserPlugin {
+        "options": Object {
+          "exclude": undefined,
+          "extractComments": true,
+          "include": undefined,
+          "minimizer": Object {
+            "implementation": [Function],
+            "options": Object {
+              "compress": Object {
+                "comparisons": false,
+                "ecma": 5,
+                "inline": 2,
+                "warnings": false,
+              },
+              "keep_classnames": false,
+              "keep_fnames": false,
+              "mangle": Object {
+                "safari10": true,
+              },
+              "output": Object {
+                "ascii_only": true,
+                "comments": false,
+                "ecma": 5,
+              },
+              "parse": Object {
+                "ecma": 8,
+              },
+            },
+          },
+          "parallel": true,
+          "test": /\\\\\\.\\[cm\\]\\?js\\(\\\\\\?\\.\\*\\)\\?\\$/i,
+        },
+      },
+    ],
   },
   "output": Object {
     "devtoolFallbackModuleFilenameTemplate": "[absolute-resource-path]?[contenthash]",
@@ -300,24 +362,6 @@ Object {
     "path": "/path/to/build",
   },
   "plugins": Array [
-    BabelMinifyPlugin {
-      "options": Object {
-        "babel": Object {
-          "transform": [Function],
-        },
-        "comments": /\\^\\\\\\*\\*!\\|@preserve\\|@license\\|@cc_on/,
-        "exclude": undefined,
-        "include": undefined,
-        "minifyOpts": Object {},
-        "minifyPreset": [Function],
-        "parserOpts": Object {},
-        "sourceMap": undefined,
-        "test": /\\\\\\.js\\(\\$\\|\\\\\\?\\)/i,
-      },
-      "plugin": Object {
-        "name": "BabelMinifyPlugin",
-      },
-    },
     DefinePlugin {
       "definitions": Object {
         "process.env.NODE_ENV": "\\"production\\"",

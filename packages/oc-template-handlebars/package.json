@@ -1,6 +1,6 @@
 {
   "name": "oc-template-handlebars",
-  "version": "6.0.24",
+  "version": "6.0.25",
   "description": "OC-Template-Handlebars",
   "main": "index.js",
   "types": "index.d.ts",
@@ -24,7 +24,7 @@
   "dependencies": {
     "handlebars": "4.7.7",
     "nice-cache": "0.0.5",
-    "oc-generic-template-renderer": "2.0.8",
+    "oc-generic-template-renderer": "2.0.9",
     "oc-templates-messages": "1.0.4"
   },
   "files": [

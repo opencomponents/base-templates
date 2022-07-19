@@ -1,7 +1,7 @@
 const viewTemplate = ({ css, bundle }) => `function(model){
-  var template = ${bundle};
+  ${bundle};
   return '' + 
-    template.default(model) +
+    module.default(model) +
     '${
       css
         ? '<style>' +
