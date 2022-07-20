@@ -1,6 +1,6 @@
 {
   "name": "oc-template-es6-compiler",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "OC-Template-ES6-Compiler",
   "main": "index.js",
   "types": "index.d.ts",
@@ -32,7 +32,7 @@
     "infinite-loop-loader": "1.0.9",
     "memory-fs": "0.5.0",
     "mini-css-extract-plugin": "^2.1.0",
-    "oc-generic-template-compiler": "2.0.9",
+    "oc-generic-template-compiler": "2.1.0",
     "oc-hash-builder": "1.0.5",
     "oc-minify-file": "2.0.0",
     "oc-server-compiler": "3.0.0",
