@@ -1,4 +1,6 @@
 const createCompile = require('../lib/createCompile');
+const path = require('path');
+const fs = require('fs-extra');
 
 const compileStatics = jest.fn((options, cb) => cb());
 const compileView = jest.fn((options, cb) =>
@@ -9,6 +11,9 @@ const getInfo = jest.fn(() => ({ version: '6.6.6' }));
 jest.mock('fs-extra', () => ({
   writeJson: jest.fn((path, content, cb) => {
     cb(null, content);
+  }),
+  copy: jest.fn((src, dest, cb) => {
+    cb(null);
   })
 }));
 
@@ -133,6 +138,43 @@ test('If a data-provider is not given, the compiler function invokes all sub-com
       verbose: 'verbose',
       watch: 'watch'
     });
+    expect(fs.copy).not.toBeCalled();
+    done();
+  });
+});
+
+test('If env field is defined, the file will be copied as .env on the package', done => {
+  const compiler = createCompile({
+    compileServer,
+    compileView,
+    compileStatics,
+    getInfo
+  });
+  const options = {
+    componentPath: 'componentPath',
+    logger: 'logger',
+    minify: 'minify',
+    ocPackage: { version: '1.0.0' },
+    publishPath: 'publishPath',
+    verbose: 'verbose',
+    watch: 'watch',
+    production: 'prdoduction',
+    componentPackage: {
+      oc: {
+        files: {
+          template: { version: '0.0.1' },
+          env: 'src/.env.local'
+        }
+      }
+    }
+  };
+
+  compiler(options, result => {
+    expect(fs.copy).toBeCalledWith(
+      path.join('componentPath', 'src', '.env.local'),
+      path.join('publishPath', '.env'),
+      expect.any(Function)
+    );
     done();
   });
 });
