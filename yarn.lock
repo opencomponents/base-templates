@@ -2292,15 +2292,15 @@ async-each@^1.0.1:
   resolved "https://registry.yarnpkg.com/async-each/-/async-each-1.0.3.tgz#b727dbf87d7651602f06f4d4ac387f47d91b0cbf"
   integrity sha512-z/WhQ5FPySLdvREByI2vZiTWwCnF0moMJ1hK9YQwDTHKh6I7/uSckMetoRGb5UBZPC1z0jlw+n/XCgjeH7y1AQ==
 
-async@3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/async/-/async-3.1.1.tgz#dd3542db03de837979c9ebbca64ca01b06dc98df"
-  integrity sha512-X5Dj8hK1pJNC2Wzo2Rcp9FBVdJMGRR/S7V+lH46s8GVFhtbo5O4Le5GECCF/8PISVdkUA6mMPvgz7qTTD1rf1g==
-
 async@3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/async/-/async-3.2.1.tgz#d3274ec66d107a47476a4c49136aacdb00665fc8"
   integrity sha512-XdD5lRO/87udXCMC9meWdYiR+Nq6ZjUfXidViUZGu2F1MO4T3XwZ1et0hb2++BgLfhyJwy44BGB/yx80ABx8hg==
+
+async@3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/async/-/async-3.2.2.tgz#2eb7671034bb2194d45d30e31e24ec7e7f9670cd"
+  integrity sha512-H0E+qZaDEfx/FY4t7iLRv1W2fFI6+pyCeTw1uN20AQPiwqwM6ojPxHxdLv4z8hi2DtnW9BOckSspLucW7pIE5g==
 
 async@^2.4.1, async@^2.5.0:
   version "2.6.4"
@@ -8812,9 +8812,9 @@ oc-template-es6-compiler@1.1.13:
     webpack "^4.8.3"
 
 "oc-template-es6-compiler@file:packages/oc-template-es6-compiler":
-  version "2.0.0"
+  version "2.1.0"
   dependencies:
-    async "3.1.1"
+    async "3.2.2"
     autoprefixer "10.4.0"
     babel-loader "^8.2.2"
     babel-plugin-transform-object-rest-spread "^6.26.0"
@@ -8824,7 +8824,7 @@ oc-template-es6-compiler@1.1.13:
     infinite-loop-loader "1.0.9"
     memory-fs "0.5.0"
     mini-css-extract-plugin "^2.1.0"
-    oc-generic-template-compiler "2.0.9"
+    oc-generic-template-compiler "2.1.0"
     oc-hash-builder "1.0.5"
     oc-minify-file "2.0.0"
     oc-server-compiler "3.0.0"
@@ -8871,12 +8871,12 @@ oc-template-handlebars-compiler@6.2.18:
     uglify-js "3.6.0"
 
 "oc-template-handlebars-compiler@file:packages/oc-template-handlebars-compiler":
-  version "6.4.0"
+  version "6.5.0"
   dependencies:
-    async "3.1.1"
+    async "3.2.2"
     fs-extra "8.1.0"
     handlebars "4.7.7"
-    oc-generic-template-compiler "2.0.9"
+    oc-generic-template-compiler "2.1.0"
     oc-hash-builder "1.0.5"
     oc-server-compiler "3.0.0"
     oc-statics-compiler "2.1.0"
@@ -8925,13 +8925,13 @@ oc-template-jade-compiler@7.0.6:
     uglify-js "3.6.0"
 
 "oc-template-jade-compiler@file:packages/oc-template-jade-compiler":
-  version "7.2.0"
+  version "7.3.0"
   dependencies:
     fs-extra "8.1.0"
     jstransformer-clean-css "^2.0.0"
     jstransformer-uglify-css "^1.0.0"
     jstransformer-uglify-js "^1.2.0"
-    oc-generic-template-compiler "2.0.9"
+    oc-generic-template-compiler "2.1.0"
     oc-hash-builder "1.0.5"
     oc-jade-legacy "1.11.1"
     oc-server-compiler "3.0.0"
