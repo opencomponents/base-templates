@@ -4601,9 +4601,9 @@ decamelize@^1.0.0, decamelize@^1.1.0, decamelize@^1.1.2, decamelize@^1.2.0:
   integrity sha512-z2S+W9X73hAUUki+N+9Za2lBlun89zigOyGrsax+KUQ6wKW4ZoWpEYBkGhQjwAjjDCkWxhY0VKEhk8wzY7F5cA==
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
-  integrity sha512-hjf+xovcEn31w/EUYdTXQh/8smFL/dzYjohQGEIgjyNavaJfBY2p5F527Bo1VPATxv0VYTUC2bOcXvqFwk78Og==
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
+  integrity sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==
 
 dedent@^0.7.0:
   version "0.7.0"
@@ -8812,7 +8812,7 @@ oc-template-es6-compiler@1.1.13:
     webpack "^4.8.3"
 
 "oc-template-es6-compiler@file:packages/oc-template-es6-compiler":
-  version "2.0.0"
+  version "2.1.0"
   dependencies:
     async "3.1.1"
     autoprefixer "10.4.0"
@@ -8824,7 +8824,7 @@ oc-template-es6-compiler@1.1.13:
     infinite-loop-loader "1.0.9"
     memory-fs "0.5.0"
     mini-css-extract-plugin "^2.1.0"
-    oc-generic-template-compiler "2.0.9"
+    oc-generic-template-compiler "2.1.0"
     oc-hash-builder "1.0.5"
     oc-minify-file "2.0.0"
     oc-server-compiler "3.0.0"
@@ -8871,12 +8871,12 @@ oc-template-handlebars-compiler@6.2.18:
     uglify-js "3.6.0"
 
 "oc-template-handlebars-compiler@file:packages/oc-template-handlebars-compiler":
-  version "6.4.0"
+  version "6.5.0"
   dependencies:
     async "3.1.1"
     fs-extra "8.1.0"
     handlebars "4.7.7"
-    oc-generic-template-compiler "2.0.9"
+    oc-generic-template-compiler "2.1.0"
     oc-hash-builder "1.0.5"
     oc-server-compiler "3.0.0"
     oc-statics-compiler "2.1.0"
@@ -8925,13 +8925,13 @@ oc-template-jade-compiler@7.0.6:
     uglify-js "3.6.0"
 
 "oc-template-jade-compiler@file:packages/oc-template-jade-compiler":
-  version "7.2.0"
+  version "7.3.0"
   dependencies:
     fs-extra "8.1.0"
     jstransformer-clean-css "^2.0.0"
     jstransformer-uglify-css "^1.0.0"
     jstransformer-uglify-js "^1.2.0"
-    oc-generic-template-compiler "2.0.9"
+    oc-generic-template-compiler "2.1.0"
     oc-hash-builder "1.0.5"
     oc-jade-legacy "1.11.1"
     oc-server-compiler "3.0.0"
