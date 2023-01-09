@@ -55,6 +55,16 @@ test('The handler matcher should correctly match aganinst valid modules', () => 
   expect(handlerMatcher.test('@org/module/path')).toBe(true);
 });
 
+test('The handler function should detect valid scoped modules that import paths', (done) => {
+  const handler = externalDependenciesHandler({ lodash: '4.17.4', "@org/module": '1.0.0' });
+  const handlerFunction = handler[0];
+
+  handlerFunction({ request: '@org/module/path' }, err => {
+    expect(err).toBeUndefined();
+    done();
+  });
+});
+
 test('The handler matcher should correctly match aganinst not valid modules', () => {
   const handler = externalDependenciesHandler({ lodash: '4.17.4' });
   const handlerMatcher = handler[1];
