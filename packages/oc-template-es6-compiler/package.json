@@ -1,6 +1,6 @@
 {
   "name": "oc-template-es6-compiler",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "OC-Template-ES6-Compiler",
   "main": "index.js",
   "types": "index.d.ts",
@@ -21,31 +21,14 @@
     "email": "nick@balestra.ch"
   },
   "license": "MIT",
+  "devDependencies": {
+    "fs-extra": "^10.0.0"
+  },
   "dependencies": {
-    "async": "3.1.1",
-    "autoprefixer": "10.4.0",
-    "babel-loader": "^8.2.2",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
-    "css-loader": "^6.2.0",
-    "fs-extra": "^10.0.0",
-    "infinite-loop-loader": "1.0.9",
-    "memory-fs": "0.5.0",
-    "mini-css-extract-plugin": "^2.1.0",
     "oc-generic-template-compiler": "2.1.0",
-    "oc-hash-builder": "1.0.5",
-    "oc-minify-file": "2.0.0",
-    "oc-server-compiler": "3.0.0",
     "oc-statics-compiler": "2.1.0",
     "oc-template-es6": "1.0.7",
-    "oc-templates-messages": "1.0.4",
-    "oc-view-wrapper": "1.0.6",
-    "postcss": "^8.3.5",
-    "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-loader": "^6.1.1",
-    "postcss-normalize": "^10.0.1",
-    "postcss-preset-env": "^6.7.0",
-    "webpack": "^5.61.0"
+    "oc-vite-compiler": "^1.0.1"
   },
   "files": [
     "index.js",
