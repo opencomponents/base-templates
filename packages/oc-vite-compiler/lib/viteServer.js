@@ -22,7 +22,7 @@ async function compileServer(options) {
   const componentVersion = options.componentPackage.version;
   const production = !!options.production;
 
-  const wrapperFn = options.serverWrapper || (({ serverPath }) => `export { data } from ${removeExtension(serverPath)}`)
+  const wrapperFn = options.serverWrapper || (({ serverPath }) => `export { data } from "${removeExtension(serverPath)}"`)
   const higherOrderServerContent = wrapperFn({
     serverPath,
     componentName,
@@ -35,14 +35,16 @@ async function compileServer(options) {
   try {
     await fs.outputFile(higherOrderServerPath, higherOrderServerContent);
 
+    const plugins = options?.plugins ?? [];
+    const pluginsNames = plugins.map(x => x?.name).filter(Boolean);
     const baseConfig = await vite.loadConfigFromFile(process.cwd()).catch(() => null);
-    const basePlugins = baseConfig?.config?.plugins ?? [];
+    const basePlugins = baseConfig?.config?.plugins?.filter(p => !pluginsNames.includes(p?.name)) ?? [];
 
     const result = await vite.build({
       appType: 'custom',
       root: componentPath,
       mode: production ? 'production' : 'development',
-      plugins: [...options?.plugins ?? [], ...basePlugins],
+      plugins: [...plugins, ...basePlugins],
       logLevel: options.verbose ? 'info' : 'silent',
       build: {
         lib: { entry: higherOrderServerPath, formats: ['cjs'] },

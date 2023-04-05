@@ -46,7 +46,7 @@ async function compileView(options) {
   const production = !!options.production;
   const viewExtension = viewFileName.match(/\.\w{1,5}$/)?.[0] ?? '.js';
 
-  const viewWrapperFn = options.viewWrapper || (({ viewPath }) => `export { default } from '${removeExtension(viewPath)}';`)
+  const viewWrapperFn = options.viewWrapper || (({ viewPath }) => `export { default } from "${removeExtension(viewPath)}";`)
   const viewWrapperContent = viewWrapperFn({ viewPath });
   const viewWrapperName = `_viewWrapperEntry${viewExtension}`;
   const viewWrapperPath = path.join(tempPath, viewWrapperName);
@@ -58,14 +58,16 @@ async function compileView(options) {
     return externals;
   }, {});
 
+  const plugins = options?.plugins ?? [];
+  const pluginsNames = plugins.map(x => x?.name).filter(Boolean);
   const baseConfig = await vite.loadConfigFromFile(process.cwd()).catch(() => null);
-  const basePlugins = baseConfig?.config?.plugins ?? [];
+  const basePlugins = baseConfig?.config?.plugins?.filter(p => !pluginsNames.includes(p?.name)) ?? [];
 
   const result = await vite.build({
     appType: 'custom',
     root: componentPath,
     mode: production ? 'production' : 'development',
-    plugins: [...options.plugins, EnvironmentPlugin(['NODE_ENV']), cssModules(), ...basePlugins],
+    plugins: [...plugins, EnvironmentPlugin(['NODE_ENV']), cssModules(), ...basePlugins],
     logLevel: 'silent',
     build: {
       sourcemap: !production,
