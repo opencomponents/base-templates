@@ -73,7 +73,7 @@ async function compileView(options) {
       sourcemap: !production,
       lib: { entry: viewWrapperPath, formats: ['iife'], name: clientName },
       write: false,
-      minify: production,
+      minify: production ? 'terser' : false,
       rollupOptions: {
         external: Object.keys(globals),
         output: {
