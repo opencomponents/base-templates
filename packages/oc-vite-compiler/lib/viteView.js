@@ -73,7 +73,7 @@ async function compileView(options) {
       sourcemap: !production,
       lib: { entry: viewWrapperPath, formats: ['iife'], name: clientName },
       write: false,
-      minify: production ? 'terser' : false,
+      minify: production,
       rollupOptions: {
         external: Object.keys(globals),
         output: {
@@ -92,7 +92,6 @@ async function compileView(options) {
   const bundleHash = hashBuilder.fromString(bundle);
   const wrappedBundle = `(function() {
     ${bundle}
-
     return ${clientName};
   })()`;
 
@@ -107,11 +106,8 @@ async function compileView(options) {
     bundle: wrappedBundle,
     hash: bundleHash
   });
-  const templateStringCompressed = production
-    ? templateString.replace(/\s+/g, ' ')
-    : templateString;
-  const hash = hashBuilder.fromString(templateStringCompressed);
-  const view = ocViewWrapper(hash, templateStringCompressed);
+  const hash = hashBuilder.fromString(templateString);
+  const view = ocViewWrapper(hash, templateString);
 
   await fs.unlink(viewWrapperPath);
   await fs.mkdir(publishPath, { recursive: true });
