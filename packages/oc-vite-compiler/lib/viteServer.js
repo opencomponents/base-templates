@@ -6,6 +6,7 @@ const coreModules = require('builtin-modules');
 const hashBuilder = require('oc-hash-builder');
 
 const nodeModuleMatcher = /^[a-z@][a-z\-/0-9.]+$/i;
+const moduleWithPathMatcher = /^(?!@).*\//g;
 const removeExtension = (path) => path.replace(/\.(j|t)sx?$/, '');
 
 async function compileServer(options) {
@@ -53,6 +54,10 @@ async function compileServer(options) {
         rollupOptions: {
           external: (id) => {
             if (nodeModuleMatcher.test(id)) {
+              if (moduleWithPathMatcher.test(id)) {
+                id = id.split('/')[0];
+              }
+
               if (!externals.includes(id)) {
                 throw new Error(`Missing dependencies from package.json => ${id}`);
               }
