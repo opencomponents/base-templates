@@ -1,6 +1,6 @@
 {
   "name": "oc-template-es6-compiler",
-  "version": "3.0.2",
+  "version": "3.1.0",
   "description": "OC-Template-ES6-Compiler",
   "main": "index.js",
   "types": "index.d.ts",
@@ -28,7 +28,7 @@
     "oc-generic-template-compiler": "2.1.0",
     "oc-statics-compiler": "2.1.0",
     "oc-template-es6": "1.0.7",
-    "oc-vite-compiler": "^1.0.3"
+    "oc-vite-compiler": "^1.1.1"
   },
   "files": [
     "index.js",
