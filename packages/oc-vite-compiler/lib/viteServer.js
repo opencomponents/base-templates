@@ -25,6 +25,7 @@ async function compileServer(options) {
 
   const wrapperFn = options.serverWrapper || (({ serverPath }) => `export { data } from "${removeExtension(serverPath)}"`)
   const higherOrderServerContent = wrapperFn({
+    bundleHashKey: options.compiledViewInfo.bundle.hashKey,
     serverPath,
     componentName,
     componentVersion

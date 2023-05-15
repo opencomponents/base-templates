@@ -130,7 +130,8 @@ async function compileView(options) {
       type: options.componentPackage.oc.files.template.type,
       hashKey: hash,
       src: publishFileName
-    }
+    },
+    bundle: { hashKey: bundleHash }
   };
 }
 

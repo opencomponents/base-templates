@@ -1,6 +1,6 @@
 {
   "name": "oc-vite-compiler",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "OC-Vite-Compiler",
   "main": "index.js",
   "repository": {
