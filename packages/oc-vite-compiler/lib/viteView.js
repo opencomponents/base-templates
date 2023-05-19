@@ -1,14 +1,14 @@
 const { callbackify } = require('util');
 const path = require('path');
 const fs = require('fs-extra');
-const vite = require('vite');
+const vite = require('oc-vite');
 const EnvironmentPlugin = require('vite-plugin-environment').default;
 const hashBuilder = require('oc-hash-builder');
 const ocViewWrapper = require('oc-view-wrapper');
 const cssModules = require('./cssModulesPlugin');
 
 const clientName = 'clientBundle';
-const removeExtension = (path) => path.replace(/\.(t|j)sx?$/, '');
+const removeExtension = path => path.replace(/\.(t|j)sx?$/, '');
 
 const partition = (array, predicate) => {
   const matches = [];
@@ -47,7 +47,10 @@ async function compileView(options) {
   const production = !!options.production;
   const viewExtension = viewFileName.match(/\.\w{1,5}$/)?.[0] ?? '.js';
 
-  const viewWrapperFn = options.viewWrapper || (({ viewPath }) => `export { default } from "${removeExtension(viewPath)}";`)
+  const viewWrapperFn =
+    options.viewWrapper ||
+    (({ viewPath }) =>
+      `export { default } from "${removeExtension(viewPath)}";`);
   const viewWrapperContent = viewWrapperFn({ viewPath });
   const viewWrapperName = `_viewWrapperEntry${viewExtension}`;
   const viewWrapperPath = path.join(tempPath, viewWrapperName);
@@ -61,14 +64,23 @@ async function compileView(options) {
 
   const plugins = options?.plugins ?? [];
   const pluginsNames = plugins.map(x => x?.name).filter(Boolean);
-  const baseConfig = await vite.loadConfigFromFile(process.cwd()).catch(() => null);
-  const basePlugins = baseConfig?.config?.plugins?.filter(p => !pluginsNames.includes(p?.name)) ?? [];
+  const baseConfig = await vite
+    .loadConfigFromFile(process.cwd())
+    .catch(() => null);
+  const basePlugins =
+    baseConfig?.config?.plugins?.filter(p => !pluginsNames.includes(p?.name)) ??
+    [];
 
   const result = await vite.build({
     appType: 'custom',
     root: componentPath,
     mode: production ? 'production' : 'development',
-    plugins: [...plugins, EnvironmentPlugin(['NODE_ENV']), cssModules(), ...basePlugins],
+    plugins: [
+      ...plugins,
+      EnvironmentPlugin(['NODE_ENV']),
+      cssModules(),
+      ...basePlugins
+    ],
     logLevel: 'silent',
     build: {
       sourcemap: !production,
@@ -81,11 +93,13 @@ async function compileView(options) {
           globals
         }
       }
-    }
-    , experimental: {
+    },
+    experimental: {
       renderBuiltUrl(filename, { hostType }) {
         if (hostType === 'js') {
-          return { runtime: `__toOcStaticPathUrl(${JSON.stringify(filename)})` };
+          return {
+            runtime: `__toOcStaticPathUrl(${JSON.stringify(filename)})`
+          };
         } else {
           return { relative: true };
         }
@@ -93,12 +107,17 @@ async function compileView(options) {
     }
   });
   const out = Array.isArray(result) ? result[0] : result;
-  const bundle = out.output.find((x) => x.facadeModuleId.endsWith(viewWrapperName)).code;
+  const bundle = out.output.find(x =>
+    x.facadeModuleId.endsWith(viewWrapperName)
+  ).code;
   const [cssAssets, otherAssets] = partition(
-    out.output.filter((x) => x.type === 'asset'),
-    (x) => x.fileName.endsWith('.css')
+    out.output.filter(x => x.type === 'asset'),
+    x => x.fileName.endsWith('.css')
   );
-  const cssStyles = cssAssets.map((x) => x.source.replace(/\r?\n/g, '') ?? '').join(' ').replace(/'/g, '"');
+  const cssStyles = cssAssets
+    .map(x => x.source.replace(/\r?\n/g, '') ?? '')
+    .join(' ')
+    .replace(/'/g, '"');
   const bundleHash = hashBuilder.fromString(bundle);
   const wrappedBundle = `(function() {
     ${bundle}

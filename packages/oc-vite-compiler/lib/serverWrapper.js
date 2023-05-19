@@ -1,4 +1,4 @@
-const removeExtension = (path) => path.replace(/\.(j|t)sx?$/, '');
+const removeExtension = path => path.replace(/\.(j|t)sx?$/, '');
 
 const higherOrderServerTemplate = ({
   serverPath,

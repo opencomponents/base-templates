@@ -1,6 +1,6 @@
 const path = require('path');
 const { callbackify } = require('util');
-const vite = require('vite');
+const vite = require('oc-vite');
 const fs = require('fs-extra');
 const coreModules = require('builtin-modules');
 const hashBuilder = require('oc-hash-builder');
@@ -31,7 +31,10 @@ async function compileServer(options) {
     componentVersion
   });
   const tempFolder = path.join(publishPath, 'temp');
-  const higherOrderServerPath = path.join(tempFolder, '__oc_higherOrderServer.ts');
+  const higherOrderServerPath = path.join(
+    tempFolder,
+    '__oc_higherOrderServer.ts'
+  );
   const externals = [...Object.keys(dependencies), ...coreModules];
 
   try {
@@ -39,8 +42,13 @@ async function compileServer(options) {
 
     const plugins = options?.plugins ?? [];
     const pluginsNames = plugins.map(x => x?.name).filter(Boolean);
-    const baseConfig = await vite.loadConfigFromFile(process.cwd()).catch(() => null);
-    const basePlugins = baseConfig?.config?.plugins?.filter(p => !pluginsNames.includes(p?.name)) ?? [];
+    const baseConfig = await vite
+      .loadConfigFromFile(process.cwd())
+      .catch(() => null);
+    const basePlugins =
+      baseConfig?.config?.plugins?.filter(
+        p => !pluginsNames.includes(p?.name)
+      ) ?? [];
 
     const result = await vite.build({
       appType: 'custom',
@@ -53,14 +61,16 @@ async function compileServer(options) {
         write: false,
         minify: production,
         rollupOptions: {
-          external: (id) => {
+          external: id => {
             if (nodeModuleMatcher.test(id)) {
               if (moduleWithPathMatcher.test(id)) {
                 id = id.split('/')[0];
               }
 
               if (!externals.includes(id)) {
-                throw new Error(`Missing dependencies from package.json => ${id}`);
+                throw new Error(
+                  `Missing dependencies from package.json => ${id}`
+                );
               }
               return true;
             }
