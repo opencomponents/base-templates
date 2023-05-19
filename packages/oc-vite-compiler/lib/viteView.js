@@ -33,7 +33,8 @@ async function compileView(options) {
   }
 
   const staticFiles = options.componentPackage.oc.files.static;
-  const staticFolder = Array.isArray(staticFiles) ? staticFiles[0] : staticFiles;
+  let staticFolder = Array.isArray(staticFiles) ? staticFiles[0] : staticFiles;
+  staticFolder = staticFolder.replace(/^\//, '').replace(/\/$/, '');
   const viewFileName = options.componentPackage.oc.files.template.src;
   const componentPath = options.componentPath;
   const viewPath = processRelativePath(viewFileName);
@@ -81,6 +82,15 @@ async function compileView(options) {
         }
       }
     }
+    , experimental: {
+      renderBuiltUrl(filename, { hostType }) {
+        if (hostType === 'js') {
+          return { runtime: `__toOcStaticPathUrl(${JSON.stringify(filename)})` };
+        } else {
+          return { relative: true };
+        }
+      }
+    }
   });
   const out = Array.isArray(result) ? result[0] : result;
   const bundle = out.output.find((x) => x.facadeModuleId.endsWith(viewWrapperName)).code;
@@ -106,8 +116,16 @@ async function compileView(options) {
     bundle: wrappedBundle,
     hash: bundleHash
   });
-  const hash = hashBuilder.fromString(templateString);
-  const view = ocViewWrapper(hash, templateString);
+  const wrappedTemplateString = `function(model) {
+    var __toOcStaticPathUrl = function(args) {
+      return model.component.props._staticPath + '${staticFolder}/' + args;
+    } 
+    var innerFn = ${templateString};
+    return innerFn(model);
+  }
+  `;
+  const hash = hashBuilder.fromString(wrappedTemplateString);
+  const view = ocViewWrapper(hash, wrappedTemplateString);
 
   await fs.unlink(viewWrapperPath);
   await fs.mkdir(publishPath, { recursive: true });

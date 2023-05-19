@@ -4,10 +4,10 @@ const vite = require('vite');
 const fs = require('fs-extra');
 const coreModules = require('builtin-modules');
 const hashBuilder = require('oc-hash-builder');
+const serverWrapper = require('./serverWrapper');
 
 const nodeModuleMatcher = /^[a-z@][a-z\-/0-9.]+$/i;
 const moduleWithPathMatcher = /^(?!@).*\//g;
-const removeExtension = (path) => path.replace(/\.(j|t)sx?$/, '');
 
 async function compileServer(options) {
   const componentPath = options.componentPath;
@@ -23,7 +23,7 @@ async function compileServer(options) {
   const componentVersion = options.componentPackage.version;
   const production = !!options.production;
 
-  const wrapperFn = options.serverWrapper || (({ serverPath }) => `export { data } from "${removeExtension(serverPath)}"`)
+  const wrapperFn = options.serverWrapper || serverWrapper;
   const higherOrderServerContent = wrapperFn({
     bundleHashKey: options.compiledViewInfo.bundle.hashKey,
     serverPath,
