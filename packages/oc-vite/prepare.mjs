@@ -3,10 +3,10 @@ import child_process from 'node:child_process';
 import fs from 'fs';
 
 const exec = promisify(child_process.exec);
-const readJSON = (filePath) => JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+const readJSON = filePath => JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
 const pkgJson = readJSON('./package.json', 'utf-8');
-const rmDir = (path) => {
+const rmDir = path => {
   try {
     fs.rmSync(path, { recursive: true });
   } catch {
@@ -17,13 +17,19 @@ const rmDir = (path) => {
 /**
  * Check before publishing that the fields of package.json are equal to the ones
  * in the vite package
- * @param {*} pkgJson 
- * @param {*} vitePkgJson 
+ * @param {*} pkgJson
+ * @param {*} vitePkgJson
  */
 function checkPackages(pkgJson, vitePkgJson) {
   const fields = [
-    'dependencies', 'optionalDependencies', 'peerDependencies',
-    'peerDependenciesMeta', 'engines', 'license', 'author', 'keywords'
+    'dependencies',
+    'optionalDependencies',
+    'peerDependencies',
+    'peerDependenciesMeta',
+    'engines',
+    'license',
+    'author',
+    'keywords'
   ];
   const differences = [];
 
@@ -43,7 +49,7 @@ function checkPackages(pkgJson, vitePkgJson) {
 
 /**
  * Remove condition of always inlining assets on build mode
- * @param {string} file 
+ * @param {string} file
  */
 function fixBuild(path) {
   const file = fs.readFileSync(path, 'utf-8');
@@ -51,7 +57,9 @@ function fixBuild(path) {
   const buildCondition = 'config.build.lib ||';
 
   if (file.match(buildCondition).length !== 1) {
-    throw new Error('Source code does not match expectations for automatic replacement of condition');
+    throw new Error(
+      'Source code does not match expectations for automatic replacement of condition'
+    );
   }
 
   const fixedBuild = file.replace(buildCondition, '');
@@ -67,6 +75,7 @@ async function main() {
 
   console.log('Cloning repository');
   await exec('git clone https://github.com/vitejs/vite.git');
+  await exec(`git checkout v${pkgJson.version}`, { cwd: './vite' });
   rmDir('./vite/.git');
 
   const vitePkgJson = await readJSON('./vite/packages/vite/package.json');
