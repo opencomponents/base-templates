@@ -28,7 +28,7 @@
     "oc-generic-template-compiler": "2.1.0",
     "oc-statics-compiler": "2.1.0",
     "oc-template-es6": "1.0.7",
-    "oc-vite-compiler": "^1.1.1"
+    "oc-vite-compiler": "^2.0.2"
   },
   "files": [
     "index.js",
