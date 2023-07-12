@@ -1,6 +1,6 @@
 {
   "name": "oc-vite",
-  "version": "4.3.9",
+  "version": "4.4.3",
   "type": "module",
   "license": "MIT",
   "author": "Evan You",
@@ -49,9 +49,9 @@
     "prepare": "node prepare.mjs"
   },
   "dependencies": {
-    "esbuild": "^0.17.5",
-    "postcss": "^8.4.23",
-    "rollup": "^3.21.0"
+    "esbuild": "^0.18.10",
+    "postcss": "^8.4.25",
+    "rollup": "^3.25.2"
   },
   "optionalDependencies": {
     "fsevents": "~2.3.2"
@@ -62,6 +62,7 @@
     "sass": "*",
     "stylus": "*",
     "sugarss": "*",
+    "lightningcss": "^1.21.0",
     "terser": "^5.4.0"
   },
   "peerDependenciesMeta": {
@@ -78,6 +79,9 @@
       "optional": true
     },
     "sugarss": {
+      "optional": true
+    },
+    "lightningcss": {
       "optional": true
     },
     "terser": {

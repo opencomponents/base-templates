@@ -1,6 +1,7 @@
 import { promisify } from 'node:util';
 import child_process from 'node:child_process';
 import fs from 'fs';
+import equal from 'deep-equal';
 
 const exec = promisify(child_process.exec);
 const readJSON = filePath => JSON.parse(fs.readFileSync(filePath, 'utf-8'));
@@ -34,10 +35,10 @@ function checkPackages(pkgJson, vitePkgJson) {
   const differences = [];
 
   for (const field of fields) {
-    const pkg = JSON.stringify(pkgJson[field]);
-    const vitePkg = JSON.stringify(vitePkgJson[field]);
+    const pkg = pkgJson[field];
+    const vitePkg = vitePkgJson[field];
 
-    if (pkg !== vitePkg) {
+    if (!equal(pkg, vitePkg)) {
       differences.push({ field, differences: { pkg, vitePkg } });
     }
   }
@@ -67,6 +68,28 @@ function fixBuild(path) {
   fs.writeFileSync(path, fixedBuild, 'utf-8');
 }
 
+/**
+ * Amplify rollup to add 10 more kbs to the limit
+ * @param {string} file
+ */
+function fixRollup(path) {
+  const file = fs.readFileSync(path, 'utf-8');
+
+  const buildCondition = /bundleSizeLimit\((\d+)\)/;
+
+  if (!file.match(buildCondition)) {
+    throw new Error(
+      'Source code does not match expectations for automatic replacement of rollup limit'
+    );
+  }
+
+  const fixedBuild = file.replace(buildCondition, (match, limit) =>
+    match.replace(limit, Number(limit) + 10)
+  );
+
+  fs.writeFileSync(path, fixedBuild, 'utf-8');
+}
+
 async function main() {
   rmDir('./bin');
   rmDir('./dist');
@@ -88,6 +111,7 @@ async function main() {
 
   console.log('Building');
   fixBuild('./vite/packages/vite/src/node/plugins/asset.ts');
+  fixRollup('./vite/packages/vite/rollup.config.ts');
   await exec('pnpm build', { cwd: './vite/packages/vite' });
 
   console.log('Moving folders');
