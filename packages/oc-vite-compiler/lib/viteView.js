@@ -83,7 +83,7 @@ async function compileView(options) {
     ],
     logLevel: 'silent',
     build: {
-      sourcemap: !production,
+      sourcemap: production ? false : 'inline',
       lib: { entry: viewWrapperPath, formats: ['iife'], name: clientName },
       write: false,
       minify: production,
