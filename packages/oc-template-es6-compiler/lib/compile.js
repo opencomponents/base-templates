@@ -1,11 +1,25 @@
 'use strict';
 
-const compileServer = require('oc-server-compiler');
 const compileStatics = require('oc-statics-compiler');
 const createCompile = require('oc-generic-template-compiler').createCompile;
 const getInfo = require('oc-template-es6').getInfo;
+const { viteView, viteServer } = require('oc-vite-compiler');
+const htmlTemplate = require('./viewTemplate');
 
-const compileView = require('./compileView');
+const compiler = createCompile({
+  compileView: (options, cb) =>
+    viteView(
+      {
+        ...options,
+        htmlTemplate,
+      },
+      cb
+    ),
+  compileServer: viteServer,
+  compileStatics,
+  getInfo
+});
+
 
 // OPTIONS
 // =======
@@ -17,9 +31,4 @@ const compileView = require('./compileView');
 // publishPath
 // verbose,
 // watch,
-module.exports = createCompile({
-  compileServer,
-  compileStatics,
-  compileView,
-  getInfo
-});
+module.exports = compiler;

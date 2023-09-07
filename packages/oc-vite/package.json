@@ -1,0 +1,91 @@
+{
+  "name": "oc-vite",
+  "version": "4.4.3",
+  "type": "module",
+  "license": "MIT",
+  "author": "Evan You",
+  "description": "Modification of vite that allows to have external assets on library mode",
+  "bin": {
+    "vite": "bin/vite.js"
+  },
+  "keywords": [
+    "frontend",
+    "framework",
+    "hmr",
+    "dev-server",
+    "build-tool",
+    "vite"
+  ],
+  "main": "./dist/node/index.js",
+  "types": "./dist/node/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/node/index.d.ts",
+      "import": "./dist/node/index.js",
+      "require": "./index.cjs"
+    },
+    "./client": {
+      "types": "./client.d.ts"
+    },
+    "./dist/client/*": "./dist/client/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "client.d.ts",
+    "index.cjs",
+    "types"
+  ],
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitejs/vite.git",
+    "directory": "packages/vite"
+  },
+  "scripts": {
+    "prepare": "node prepare.mjs"
+  },
+  "dependencies": {
+    "esbuild": "^0.18.10",
+    "postcss": "^8.4.25",
+    "rollup": "^3.25.2"
+  },
+  "optionalDependencies": {
+    "fsevents": "~2.3.2"
+  },
+  "peerDependencies": {
+    "@types/node": ">= 14",
+    "less": "*",
+    "sass": "*",
+    "stylus": "*",
+    "sugarss": "*",
+    "lightningcss": "^1.21.0",
+    "terser": "^5.4.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/node": {
+      "optional": true
+    },
+    "sass": {
+      "optional": true
+    },
+    "stylus": {
+      "optional": true
+    },
+    "less": {
+      "optional": true
+    },
+    "sugarss": {
+      "optional": true
+    },
+    "lightningcss": {
+      "optional": true
+    },
+    "terser": {
+      "optional": true
+    }
+  }
+}
