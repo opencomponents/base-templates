@@ -34,7 +34,7 @@ async function compileView(options) {
 
   const staticFiles = options.componentPackage.oc.files.static;
   let staticFolder = Array.isArray(staticFiles) ? staticFiles[0] : staticFiles;
-  staticFolder = staticFolder.replace(/^\//, '').replace(/\/$/, '');
+  staticFolder = staticFolder?.replace(/^\//, '').replace(/\/$/, '');
   const viewFileName = options.componentPackage.oc.files.template.src;
   const componentPath = options.componentPath;
   const viewPath = processRelativePath(viewFileName);
