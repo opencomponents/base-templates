@@ -3389,7 +3389,7 @@ bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.11.9:
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.12.0.tgz#775b3f278efbb9718eec7361f483fb36fbbfea88"
   integrity sha512-c98Bf3tPniI+scsdk237ku1Dc3ujXQTSgyiPUDEOe7tRkhrqridvh8klBv0HCEso1OLOYcHuCv/cS6DNxKH+ZA==
 
-bn.js@^5.0.0, bn.js@^5.1.1:
+bn.js@^5.0.0, bn.js@^5.2.1:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-5.2.1.tgz#0bc527a6a0d18d0aa8d5b0538ce4a77dccfa7b70"
   integrity sha512-eXRvHzWyYPBuB4NBy0cmYQjGitUrtqwbvlzP3G6VFnNRbsZQIxQ10PbKKHt8gZ/HW/D/747aDl+QkDqg3KQLMQ==
@@ -3489,7 +3489,7 @@ browserify-des@^1.0.0:
     inherits "^2.0.1"
     safe-buffer "^5.1.2"
 
-browserify-rsa@^4.0.0, browserify-rsa@^4.0.1:
+browserify-rsa@^4.0.0, browserify-rsa@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/browserify-rsa/-/browserify-rsa-4.1.0.tgz#b2fd06b5b75ae297f7ce2dc651f918f5be158c8d"
   integrity sha512-AdEER0Hkspgno2aR97SAf6vi0y0k8NuOpGnVH3O99rcA5Q6sh8QxcngtHuJ6uXwnfAXNM4Gn1Gb7/MV1+Ymbog==
@@ -3498,19 +3498,19 @@ browserify-rsa@^4.0.0, browserify-rsa@^4.0.1:
     randombytes "^2.0.1"
 
 browserify-sign@^4.0.0:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/browserify-sign/-/browserify-sign-4.2.1.tgz#eaf4add46dd54be3bb3b36c0cf15abbeba7956c3"
-  integrity sha512-/vrA5fguVAKKAVTNJjgSm1tRQDHUU6DbwO9IROu/0WAzC8PKhucDSh18J0RMvVeHAn5puMd+QHC2erPRNf8lmg==
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/browserify-sign/-/browserify-sign-4.2.2.tgz#e78d4b69816d6e3dd1c747e64e9947f9ad79bc7e"
+  integrity sha512-1rudGyeYY42Dk6texmv7c4VcQ0EsvVbLwZkA+AQB7SxvXxmcD93jcHie8bzecJ+ChDlmAm2Qyu0+Ccg5uhZXCg==
   dependencies:
-    bn.js "^5.1.1"
-    browserify-rsa "^4.0.1"
+    bn.js "^5.2.1"
+    browserify-rsa "^4.1.0"
     create-hash "^1.2.0"
     create-hmac "^1.1.7"
-    elliptic "^6.5.3"
+    elliptic "^6.5.4"
     inherits "^2.0.4"
-    parse-asn1 "^5.1.5"
-    readable-stream "^3.6.0"
-    safe-buffer "^5.2.0"
+    parse-asn1 "^5.1.6"
+    readable-stream "^3.6.2"
+    safe-buffer "^5.2.1"
 
 browserify-zlib@^0.2.0:
   version "0.2.0"
@@ -4848,7 +4848,7 @@ electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.47, electron-to-chromium@
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.510.tgz#446c50d7533c1e71a84b00a3b37ab06dd601d890"
   integrity sha512-xPfLIPFcN/WLXBpQ/K4UgE98oUBO5Tia6BD4rkSR0wE7ep/PwBVlgvPJQrIBpmJGVAmUzwPKuDbVt9XV6+uC2g==
 
-elliptic@^6.5.3:
+elliptic@^6.5.3, elliptic@^6.5.4:
   version "6.5.4"
   resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.5.4.tgz#da37cebd31e79a1367e941b592ed1fbebd58abbb"
   integrity sha512-iLhC6ULemrljPZb+QutR5TQGB+pdW6KGD5RSegS+8sorOZT+rdQFbsQFJgvN3eRqNALqJer4oQ16YvJHlU8hzQ==
@@ -8909,12 +8909,12 @@ oc-template-es6-compiler@1.1.13:
     webpack "^4.8.3"
 
 "oc-template-es6-compiler@file:packages/oc-template-es6-compiler":
-  version "3.2.0"
+  version "3.2.2"
   dependencies:
-    oc-generic-template-compiler "2.1.0"
-    oc-statics-compiler "2.1.0"
+    oc-generic-template-compiler "2.1.1"
+    oc-statics-compiler "2.1.1"
     oc-template-es6 "1.0.7"
-    oc-vite-compiler "^2.1.0"
+    oc-vite-compiler "2.1.0"
 
 oc-template-es6@1.0.3:
   version "1.0.3"
@@ -8948,15 +8948,15 @@ oc-template-handlebars-compiler@6.2.18:
     uglify-js "3.6.0"
 
 "oc-template-handlebars-compiler@file:packages/oc-template-handlebars-compiler":
-  version "6.5.0"
+  version "6.5.1"
   dependencies:
     async "3.2.2"
     fs-extra "8.1.0"
     handlebars "4.7.7"
-    oc-generic-template-compiler "2.1.0"
+    oc-generic-template-compiler "2.1.1"
     oc-hash-builder "1.0.5"
     oc-server-compiler "3.0.0"
-    oc-statics-compiler "2.1.0"
+    oc-statics-compiler "2.1.1"
     oc-template-handlebars "6.0.25"
     oc-templates-messages "1.0.4"
     oc-view-wrapper "1.0.6"
@@ -9002,17 +9002,17 @@ oc-template-jade-compiler@7.0.6:
     uglify-js "3.6.0"
 
 "oc-template-jade-compiler@file:packages/oc-template-jade-compiler":
-  version "7.3.0"
+  version "7.3.1"
   dependencies:
     fs-extra "8.1.0"
     jstransformer-clean-css "^2.0.0"
     jstransformer-uglify-css "^1.0.0"
     jstransformer-uglify-js "^1.2.0"
-    oc-generic-template-compiler "2.1.0"
+    oc-generic-template-compiler "2.1.1"
     oc-hash-builder "1.0.5"
     oc-jade-legacy "1.11.1"
     oc-server-compiler "3.0.0"
-    oc-statics-compiler "2.1.0"
+    oc-statics-compiler "2.1.1"
     oc-template-jade "7.0.6"
     oc-templates-messages "1.0.4"
     oc-view-wrapper "1.0.6"
@@ -9041,6 +9041,20 @@ oc-view-wrapper@1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/oc-view-wrapper/-/oc-view-wrapper-1.0.5.tgz#b9ba0231d16f50a5533448ac06d0acc19252b09b"
   integrity sha512-gqEuWxmMpFYGU2pzbs/PoQaZmG+ACUKGY4fs8MQmBKF7y3Bgf1xBTu9FGscTDVMzYLTYtps3S9RtjnLm0syrtA==
+
+oc-vite-compiler@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/oc-vite-compiler/-/oc-vite-compiler-2.1.0.tgz#641d33eb5c5f9c2fe206b6fc3662d2d553c44459"
+  integrity sha512-2tr98LYYAcqw+T2E+fMatPxakvERyDrCHDVNUATTeT3wWXn9FU9Py3EufOPRNEMU+0ouIVbm3ZoZL5r6ovu6YQ==
+  dependencies:
+    "@babel/core" "^7.18.9"
+    builtin-modules "^3.3.0"
+    fs-extra "^10.1.0"
+    oc-hash-builder "^1.0.5"
+    oc-view-wrapper "^1.0.6"
+    oc-vite "^4.4.3"
+    vite "^4.4.3"
+    vite-plugin-environment "^1.1.3"
 
 oc@0.49.2:
   version "0.49.2"
@@ -9322,7 +9336,7 @@ parent-module@^1.0.0:
   dependencies:
     callsites "^3.0.0"
 
-parse-asn1@^5.0.0, parse-asn1@^5.1.5:
+parse-asn1@^5.0.0, parse-asn1@^5.1.6:
   version "5.1.6"
   resolved "https://registry.yarnpkg.com/parse-asn1/-/parse-asn1-5.1.6.tgz#385080a3ec13cb62a62d39409cb3e88844cdaed4"
   integrity sha512-RnZRo1EPU6JBnra2vGHj0yhp6ebyjBZpmUCLHWiFhxlzvBCCpAuZ7elsBp1PVAbQN0/04VD/19rfzlBSwLstMw==
@@ -10285,7 +10299,7 @@ readable-stream@1.1.x:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-readable-stream@3, readable-stream@^3.0.0, readable-stream@^3.0.2, readable-stream@^3.6.0:
+readable-stream@3, readable-stream@^3.0.0, readable-stream@^3.0.2, readable-stream@^3.6.0, readable-stream@^3.6.2:
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.6.2.tgz#56a9b36ea965c00c5a93ef31eb111a0f11056967"
   integrity sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==
