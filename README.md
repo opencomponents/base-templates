@@ -1,17 +1,17 @@
 base-templates
 ==============
 
-Base-templates & utilties for the [OpenComponents](https://github.com/opentable/oc) template system
+Base-templates & utilities for the [OpenComponents](https://github.com/opentable/oc) template system
 
 [![travis](https://travis-ci.org/opencomponents/base-templates.svg?branch=master)](https://travis-ci.org/opencomponents/base-templates)
 [![codecov](https://codecov.io/gh/opencomponents/base-templates/branch/master/graph/badge.svg)](https://codecov.io/gh/opencomponents/base-templates)
 
+The new template system has been moved to [vite-templates](https://github.com/opencomponents/vite-templates).
 
 ## Templates
 
 | Type | Version |
 |--------|-------|
-| [`oc-template-es6`](/packages/oc-template-es6) | [![npm version](https://badge.fury.io/js/oc-template-es6.svg)](http://badge.fury.io/js/oc-template-es6) |
 | [`oc-template-handlebars`](/packages/oc-template-handlebars) | [![npm version](https://badge.fury.io/js/oc-template-handlebars.svg)](http://badge.fury.io/js/oc-template-handlebars) |
 | [`oc-template-jade`](/packages/oc-template-jade) | [![npm version](https://badge.fury.io/js/oc-template-jade.svg)](http://badge.fury.io/js/oc-template-jade) |
 

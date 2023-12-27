@@ -1,8 +1,0 @@
-bin/
-dist/
-node_modules/
-types/
-vite/
-pnpm-lock.yaml
-index.cjs
-client.d.ts
