@@ -5,7 +5,7 @@ interface PackageJson {
   dependencies?: Record<string, string>;
   devDependencies?: Record<string, string>;
 }
-interface CompiledViewInfo {
+export interface CompiledViewInfo {
   template: {
     type: string;
     hashKey: string;
@@ -37,14 +37,16 @@ export interface CompilerOptions {
   verbose: boolean;
   watch: boolean;
 }
+export interface CompilerServerOptions extends CompilerOptions {
+  compiledViewInfo: CompiledViewInfo;
+}
+
 export type CompileView = (
   options: CompilerOptions,
   cb: Callback<CompiledViewInfo>
 ) => void;
 export type CompileServer = (
-  options: CompilerOptions & {
-    compiledViewInfo: CompiledViewInfo;
-  },
+  options: CompilerServerOptions,
   cb: Callback<any>
 ) => void;
 export type CompileStatics = (
