@@ -1,21 +1,20 @@
 type Callback<T = unknown> = (err: Error | null, data: T) => void;
-
 interface PackageJson {
   name: string;
   version: string;
   dependencies?: Record<string, string>;
   devDependencies?: Record<string, string>;
 }
-
 interface CompiledViewInfo {
   template: {
     type: string;
     hashKey: string;
     src: string;
   };
-  bundle: { hashKey: string };
+  bundle: {
+    hashKey: string;
+  };
 }
-
 type OcOptions = {
   files: {
     data: string;
@@ -26,8 +25,7 @@ type OcOptions = {
     static: string[];
   };
 };
-
-interface CompilerOptions {
+export interface CompilerOptions {
   componentPackage: PackageJson & {
     oc: OcOptions;
   };
@@ -39,17 +37,21 @@ interface CompilerOptions {
   verbose: boolean;
   watch: boolean;
 }
-
-type CompileView = (
+export type CompileView = (
   options: CompilerOptions,
   cb: Callback<CompiledViewInfo>
 ) => void;
-type CompileServer = (
-  options: CompilerOptions & { compiledViewInfo: CompiledViewInfo },
+export type CompileServer = (
+  options: CompilerOptions & {
+    compiledViewInfo: CompiledViewInfo;
+  },
   cb: Callback<any>
 ) => void;
-type CompileStatics = (options: CompilerOptions, cb: Callback<'ok'>) => void;
-type GetInfo = () => {
+export type CompileStatics = (
+  options: CompilerOptions,
+  cb: Callback<'ok'>
+) => void;
+export type GetInfo = () => {
   type: string;
   version: string;
   externals: Array<{
@@ -58,14 +60,16 @@ type GetInfo = () => {
     url: string;
   }>;
 };
-
-declare const compiler: {
-  createCompile: (compilers: {
-    compileView: CompileView;
-    compileServer: CompileServer;
-    compileStatics: CompileStatics;
-    getInfo: GetInfo;
-  }) => (options: CompilerOptions, cb: Callback) => void;
+export type Compilers = {
+  compileView: CompileView;
+  compileServer: CompileServer;
+  compileStatics: CompileStatics;
+  getInfo: GetInfo;
 };
-
-export = compiler;
+export declare const createCompile: ({
+  compileServer,
+  compileView,
+  compileStatics,
+  getInfo
+}: Compilers) => (options: CompilerOptions, callback: Callback) => void;
+export {};
