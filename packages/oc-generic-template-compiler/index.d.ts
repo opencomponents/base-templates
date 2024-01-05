@@ -21,6 +21,11 @@ type OcOptions = {
     template: {
       src: string;
       type: string;
+      externals?: Array<{
+        name: string;
+        global: string | string[];
+        url: string;
+      }>;
     };
     static: string[];
   };
