@@ -12,6 +12,11 @@ const coreModules = require('builtin-modules');
 const strings = require('oc-templates-messages');
 const _ = require('lodash');
 
+function getPosition(string, subString, index) {
+  return string.split(subString, index).join(subString).length;
+}
+
+
 module.exports = dependencies => {
   const deps = dependencies || {};
 
@@ -28,6 +33,12 @@ module.exports = dependencies => {
           dependencyName = dependencyName.substring(
             0,
             dependencyName.indexOf('/')
+          );
+        }
+        if (/^(@).*\//g.test(dependencyName)) {
+          dependencyName = dependencyName.substring(
+            0,
+            getPosition(dependencyName, "/", 2)
           );
         }
         if (missingExternalDependency(dependencyName, deps)) {
