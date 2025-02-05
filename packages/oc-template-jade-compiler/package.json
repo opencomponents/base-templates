@@ -1,6 +1,6 @@
 {
   "name": "oc-template-jade-compiler",
-  "version": "7.4.0",
+  "version": "7.5.0",
   "description": "OC-Template-Jade-Compiler",
   "main": "index.js",
   "types": "index.d.ts",
@@ -29,7 +29,7 @@
     "oc-generic-template-compiler": "2.1.1",
     "oc-hash-builder": "1.0.5",
     "oc-jade-legacy": "1.11.1",
-    "oc-server-compiler": "3.0.0",
+    "oc-server-compiler": "4.0.0",
     "oc-statics-compiler": "3.0.0",
     "oc-template-jade": "7.0.6",
     "oc-templates-messages": "1.0.4",

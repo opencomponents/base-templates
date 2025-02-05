@@ -1,6 +1,6 @@
 {
   "name": "oc-template-handlebars-compiler",
-  "version": "6.6.0",
+  "version": "6.7.0",
   "description": "OC-Template-Handlebars-Compiler",
   "main": "index.js",
   "types": "index.d.ts",
@@ -27,7 +27,7 @@
     "handlebars": "4.7.7",
     "oc-generic-template-compiler": "2.1.1",
     "oc-hash-builder": "1.0.5",
-    "oc-server-compiler": "3.0.0",
+    "oc-server-compiler": "4.0.0",
     "oc-statics-compiler": "3.0.0",
     "oc-template-handlebars": "6.0.25",
     "oc-templates-messages": "1.0.4",

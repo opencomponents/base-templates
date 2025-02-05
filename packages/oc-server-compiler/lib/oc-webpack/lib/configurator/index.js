@@ -75,7 +75,7 @@ module.exports = function webpackConfigGenerator(options) {
                 babelrc: false,
                 presets: [
                   [
-                    require.resolve('babel-preset-env'),
+                    require.resolve('@babel/preset-env'),
                     {
                       modules: false,
                       targets: {
