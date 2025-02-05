@@ -1,7 +1,7 @@
 'use strict';
 
-const babel = require('babel-core');
-const babelPresetEnv = require('babel-preset-env');
+const babel = require('@babel/core');
+const babelPresetEnv = require('@babel/preset-env');
 const CleanCss = require('clean-css');
 const strings = require('oc-templates-messages');
 const uglifyJs = require('uglify-js');
@@ -9,16 +9,17 @@ const uglifyJs = require('uglify-js');
 module.exports = function (fileExtension, fileContent) {
   if (fileExtension === '.js') {
     const presetOptions = {
+      forceAllTransforms: true,
       targets: {
-        browsers: 'ie 8',
-        uglify: true
+        browsers: 'ie 11'
       },
-      useBuiltIns: true,
+      useBuiltIns: false,
       modules: false
     };
 
     const babelOptions = { presets: [[babelPresetEnv, presetOptions]] };
-    const es5TranspiledContent = babel.transform(
+
+    const es5TranspiledContent = babel.transformSync(
       fileContent,
       babelOptions
     ).code;
