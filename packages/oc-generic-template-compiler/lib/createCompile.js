@@ -58,6 +58,7 @@ module.exports =
         // Compile package.json
         function (componentPackage, cb) {
           componentPackage.oc.files.template.version = getInfo().version;
+          componentPackage.oc.files.template.minOcVersion = getInfo().minOcVersion;
           componentPackage.oc.version = ocPackage.version;
           componentPackage.oc.packaged = true;
           componentPackage.oc.date = getUnixUtcTimestamp();
