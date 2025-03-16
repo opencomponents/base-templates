@@ -3,7 +3,7 @@ declare const compiler: (
     componentPackage: {
       oc: {
         files: {
-          static?: string[];
+          static?: string[] | string;
         };
       };
       minify?: boolean;
