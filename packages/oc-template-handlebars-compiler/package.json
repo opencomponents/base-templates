@@ -1,6 +1,6 @@
 {
   "name": "oc-template-handlebars-compiler",
-  "version": "6.7.0",
+  "version": "6.7.1",
   "description": "OC-Template-Handlebars-Compiler",
   "main": "index.js",
   "types": "index.d.ts",
