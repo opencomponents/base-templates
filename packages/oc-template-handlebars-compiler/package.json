@@ -24,7 +24,7 @@
   "dependencies": {
     "async": "3.2.2",
     "fs-extra": "8.1.0",
-    "handlebars": "4.7.7",
+    "handlebars": "4.7.9",
     "oc-generic-template-compiler": "2.1.1",
     "oc-hash-builder": "1.0.5",
     "oc-server-compiler": "4.0.0",
