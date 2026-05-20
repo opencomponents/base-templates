@@ -29,7 +29,7 @@
     "oc-hash-builder": "1.0.5",
     "oc-server-compiler": "4.0.0",
     "oc-statics-compiler": "3.0.0",
-    "oc-template-handlebars": "6.0.25",
+    "oc-template-handlebars": "6.0.26",
     "oc-templates-messages": "1.0.4",
     "oc-view-wrapper": "1.0.6",
     "uglify-js": "3.7.6"
